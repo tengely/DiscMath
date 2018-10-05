@@ -1,0 +1,3156 @@
+% !TEX root = lectnote.tex
+% !TEX spellcheck = en_GB-oed 
+
+\chapter{Solutions}\label{cha:solutions}
+
+\section{Introduction}
+\begin{enumerate}
+\item[\ref{intro-ex-1}]
+There are three given sets $A=\halmaz{3,4,6,7,8},B=\halmaz{2,4,5,6,8}$ and $C=\halmaz{1,2,4,5,8}$. 
+We have that
+\begin{align*}
+A\setminus B&=\halmaz{3,7}\\
+C\cap B&=\halmaz{2,4,5,8}.
+\end{align*}
+Thus 
+$$
+(A\setminus B)\cup(C\cap B)=\halmaz{2,3,4,5,7,8}.
+$$
+
+\item[\ref{intro-ex-2}]
+We have three sets $A=\halmaz{1,3,4,6,7},B=\halmaz{2,4,5,6,8}$ and $C=\halmaz{1,3,4,5,8}$. 
+\begin{align*}
+(A\cap B)&=\halmaz{4,6}\\
+(C\cap B)&=\halmaz{4,5,8}.
+\end{align*}
+Therefore
+$$
+(A\cap B)\setminus(C\cap B)=\halmaz{6}.
+$$
+
+\item[\ref{intro-ex-3}]
+Now the three given sets are $A=\halmaz{1,3,4,6,7},B=\halmaz{2,4,6,8}$ and $C=\halmaz{1,3,4,8}$. 
+\begin{align*}
+(A\setminus B)&=\halmaz{1,3,7}\\
+(C\setminus B)&=\halmaz{1,3}.
+\end{align*}
+So we obtain
+$$
+(A\setminus B)\cup(C\setminus B)=\halmaz{1,3,7}.
+$$
+
+\item[\ref{intro-ex-4}]
+
+(a) The elements of the set are 7, 10 and 13.
+
+(b) The elements of the set are 0, 1 and 4.
+
+(c) The possible differences are $3-1, 3-2, 4-1, 4-2, 5-1$ and $5-2$, thus the elements of the set are 1, 2, 3 and 4.
+
+\item[\ref{intro-ex-5}]
+
+(a) $\halmazvonal{2k}{ k\in\halmaz{1,2,3,4,5}}$, 
+
+(b) $\halmazvonal{k^2}{k\in\halmaz{1,2,3,4,5}}$, 
+
+(c) $\halmazvonal{2^{-k}}{ k\in\mathbb{N}\cup\halmaz{0}}$,
+
+(d) $\halmazvonal{a/b }{a,b\in\mathbb{N}, b\leq a\leq 2b}$. 
+
+\item[\ref{intro-ex-6}]
+
+(a) 
+\begin{center}
+\begin{venndiagram3sets}
+\fillACapB\fillC
+\end{venndiagram3sets}
+\end{center}
+
+(b)
+\begin{center}
+\begin{venndiagram3sets}
+\fillANotB\fillANotC
+\end{venndiagram3sets}
+\end{center}
+
+(c)
+\begin{center}
+\begin{venndiagram3sets}
+\fillACapC\fillBCapC
+\end{venndiagram3sets}
+\end{center}
+
+(d)
+\begin{center}
+\begin{venndiagram3sets}
+\fillACapC\fillBCapC\fillACapB
+\end{venndiagram3sets}
+\end{center}
+
+(e)
+\begin{center}
+\begin{venndiagram3sets}
+\fillACapBNotC\fillBCapCNotA\fillACapCNotB
+\end{venndiagram3sets}
+\end{center}
+
+(f)
+\begin{center}
+\begin{venndiagram3sets}
+\fillANotB\fillBNotC\fillCNotA
+\end{venndiagram3sets}
+\end{center}
+
+\item[\ref{intro-ex-7}]
+The set $A\cap B\cap C$ is a subset of all other sets for which we have certain cardinality conditions, so we may set
+$$
+A\cap B\cap C=\halmaz{1,2}.
+$$
+The conditions for $|A\cap B|, |A\cap C|$ and $|B\cap C|$ are satisfied. We have that $|A|=4$, that means that two elements
+are missing from $A\setminus(B\cup C)$. We let $A\setminus(B\cup C)=\halmaz{3,4}$. Similarly for $B\setminus(A\cup C)$ and $C\setminus(A\cup B)$. We obtain that
+\begin{center}
+\begin{venndiagram3sets}[labelABC={\tiny{1,2}},labelOnlyA={\tiny{3,4}},labelOnlyB={\tiny{5,6}},labelOnlyC={\tiny{7,8}}]
+\end{venndiagram3sets}
+\end{center}
+
+\item[\ref{intro-ex-8}]
+Following the solution of Exercise \ref{intro-ex-7} we get:
+\begin{center}
+\begin{venndiagram3sets}[labelABC={\tiny{1,2}},labelOnlyBC={\tiny{3}},labelOnlyA={\tiny{4,5}},labelOnlyB={\tiny{6,7}},labelOnlyC={\tiny{8,9,10}}]
+\end{venndiagram3sets}
+\end{center}
+
+\item[\ref{intro-ex-9}]
+
+(a) $\sum_{i=4}^7 i=4+5+6+7$,
+
+(b) $\sum_{i=1}^5 (i^2-i)=0+2+6+12+20$,
+
+(c) $\sum_{i=1}^4 10^i=10+100+1000+10000$,
+
+(d) $\sum_{2\leq i\leq 5} \frac{1}{2^i}=\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}$,
+
+(e) $\sum_{i\in S} (-1)^i$, where $S=\halmaz{2,3,5,8}$ is $1+(-1)+(-1)+1$.
+
+
+
+\item[\ref{intro-ex-10}]
+
+(a) $2+4+6+8+10=\sum_{i=1}^5 2i$,
+
+(b) $1+4+7+10=\sum_{i=0}^3 (3i+1)$,
+
+(c) $\frac{1}{4}+\frac{1}{2}+1+2+4=\sum_{i=-2}^2 2^i$,
+
+(d) $\frac{1}{4}-\frac{1}{2}+1-2+4=\sum_{i=-2}^2 (-2)^i$.
+
+\item[\ref{intro-ex-11}]
+
+(a) $\prod_{i=-4}^{-1} i=(-4)\cdot(-3)\cdot(-2)\cdot(-1)$,
+
+(b) $\prod_{i=1}^4 (i^2)=1\cdot 4\cdot 9\cdot 16$,
+
+(c) $\prod_{i=1}^3 2^i=2\cdot 4\cdot 8$,
+
+(d) $\prod_{-2\leq i\leq 3} \frac{1}{2^i}=4\cdot 2\cdot 1\cdot \frac{1}{2}\cdot \frac{1}{4}\cdot \frac{1}{8}$,
+
+(e) $\prod_{i\in S} (-1)^i$, where $S=\halmaz{2,4,6,7}$ is $(-1)^2\cdot(-1)^4\cdot(-1)^6\cdot(-1)^7$.
+
+\item[\ref{intro-ex-12}]
+
+(a) $1\cdot 3\cdot 5\cdot 7=\prod_{i=0}^3 (2i+1)$,
+
+(b) $(-1)\cdot 2\cdot 5\cdot 8=\prod_{i=0}^3 (3i-1)$,
+
+(c) $\frac{1}{9}\cdot\frac{1}{3}\cdot 1\cdot 3\cdot 9=\prod_{i=-2}^2 3^{i}$.
+
+
+
+
+\item[\ref{ex:factorial1}]
+The values are
+\begin{align*}
+0! &= 1, \\
+1! &= 1, \\
+2! &= 2, \\
+3! &= 6, \\
+4! &= 24, \\
+5! &= 120, \\
+6! &= 720, \\
+7! &= 5~040, \\
+8! &= 40~320.
+\end{align*}
+
+\item[\ref{ex:factorial2}]
+The values are
+\begin{align*}
+5+3! &= 5+6 = 11, \\
+(5+3)! = 8! &= 40~320, \\
+4-2\cdot 3! &= 4-2\cdot 6 = 4-12=-8, \\
+(4-2)\cdot 3! &= (4-2) \cdot 6 = 2 \cdot 6 = 12, \\
+4 - (2 \cdot 3)! &= 4 - 6! = 4 - 720 = -716, \\
+3 \cdot 2! &= 3 \cdot 2 = 6, \\
+(3 \cdot 2)! &= 6! = 720, \\
+4 \cdot 3! &= 4 \cdot 6 = 24, \\
+4! \cdot 5 &= 24 \cdot 5 = 120. 
+\end{align*}
+
+\item[\ref{ex:factorial3}]
+Let 
+\[
+S_n = \halmazvonal{k}{k \text{ is a positive integer}, k\leq n} = \halmaz{1, 2, \dots , n}. 
+\]
+Then it is easy to see that $S_n = S_{n-1} \cup \halmaz{n}$, 
+that is, $S_n$ is the disjoint union of $S_{n-1}$ and $\halmaz{n}$. 
+Then by the definition of the factorial, 
+we have 
+\[
+n! = \prod_{k \in S_n} k = \left( \prod_{k \in \halmaz{n}} k \right) \cdot \left( \prod_{k \in S_{n-1}} k \right) = n \cdot (n-1)!. 
+\]
+If $n \geq 2$, then another proof could be 
+\[
+n! = n \cdot \underbrace{(n-1) \cdot (n-2) \cdot \dots \cdot 2 \cdot 1 }_{(n-1)!}= n \cdot (n-1)!. 
+\]
+Nevertheless, the claim is true for $n=1$, as well: 
+\[
+1! = 1 = 1 \cdot 1 = 1 \cdot 0!. 
+\]
+
+
+\item[\ref{intro-ex-13}]
+
+(a) We obtain that
+\begin{align*}
+678 &= 1\cdot 567+111\\
+567 &= 5\cdot 111+12\\
+111 &= 9\cdot 12+3\\
+12 &= 4\cdot 3+0.
+\end{align*}
+Thus $\gcd(678,567)=3$. We work backwards to compute $x$ and $y:$
+\begin{align*}
+3&=111-9\cdot 12\\
+ &=111-9\cdot (567-5\cdot 111)=-9\cdot 567+46\cdot 111\\
+ &=-9\cdot 567+46 \cdot (678-567)=46\cdot 678-55\cdot 567.
+\end{align*}
+Hence we have
+$$
+46\cdot 678-55\cdot 567=\gcd(678,567)=3.
+$$
+
+(b) We get that
+\begin{align*}
+803 &= 2\cdot 319+165\\
+ 319 &= 1\cdot 165+154\\
+ 165 &= 1\cdot 154+11\\
+ 154 &= 14\cdot 11+0.
+\end{align*}
+It follows that $\gcd(803,319)=11$. Now we find $x$ and $y:$
+\begin{align*}
+11&= 165-154\\
+  &= 165-(319-165)=-319+2\cdot 165\\
+  &= -319+2 \cdot (803-2\cdot 319)=2\cdot 803-5\cdot 319.
+\end{align*}
+So we get the equation
+$$
+2\cdot 803-5\cdot 319=\gcd(803,319)=11.
+$$
+
+(c) In this case the computations go as follows
+\begin{align*}
+2701 &= 1\cdot 2257+444\\
+ 2257 &= 5\cdot 444+37\\
+ 444 &= 12\cdot 37+0.
+\end{align*}
+Therefore $\gcd(2701,2257)=37$. We determine $x$ and $y:$
+\begin{align*}
+37&= 2257-5\cdot 444\\
+  &= 2257-5(2701-2257)=-5\cdot 2701+6\cdot 2257.
+\end{align*}
+We have that 
+$$
+-5\cdot 2701+6\cdot 2257=\gcd(2701,2257)=37.
+$$
+
+(d) The summary of the computations:
+\begin{align*}
+3397 &= 1\cdot 1849+1548\\
+ 1849 &= 1\cdot 1548+301\\
+ 1548 &= 5\cdot 301+43\\
+ 301 &= 7\cdot 43+0.
+\end{align*}
+That is, $\gcd(3397,1849)=43$. It remains to compute $x$ and $y:$
+\begin{align*}
+43&=1548-5\cdot 301\\
+  &=1548-5(1849-1548)=-5\cdot 1849+6\cdot 1548\\
+  &= -5\cdot 1849+6(3397-1849)=6\cdot 3397-11\cdot 1849.
+\end{align*}
+Thus we obtain the equation
+$$
+6\cdot 3397-11\cdot 1849=\gcd(3397,1849)=43.
+$$
+
+
+
+\item[\ref{ex:numsyst1}]
+
+Write 21 in base 2 first. 
+Now, 16 is the highest 2-power not greater than 21, 
+$21 = 1 \cdot 16 +5$, 
+and we continue with the remainder 5. 
+Now, 4 is the highest 2-power not greater than 5, 
+$5 = 1\cdot 4 + 1$, 
+and we continue with the remainder 1. 
+Finally, 1 is the highest 2-power not greater than 1, 
+$1 = 1 \cdot 1 + 0$. 
+Thus 
+\[
+21_{10} = 1 \cdot 16 + 1 \cdot 4 + 1\cdot 1 = 1 \cdot 2^4 + 1 \cdot 2^2 + 1 \cdot 2^0 = 10101_2. 
+\]
+
+Now, write 50 in base 3. 
+Here, 27 is the highest 3-power not greater than 50, 
+$50 = 1 \cdot 27 + 23$, 
+and we continue with the remainder 23. 
+Now, 9 is the highest 3-power not greater than 23, 
+$23 = 2\cdot 9 + 5$, 
+and we continue with the remainder 5. 
+Now, 3 is the highest 3-power not greater than 5, 
+$5 = 1\cdot 3 + 2$, 
+and we continue with the remainder 2. 
+Finally, 1 is the highest 3-power not greater than 2, 
+$2 = 2 \cdot 1 + 0$. 
+Thus 
+\[
+50_{10} = 1 \cdot 27 + 2 \cdot 9 + 1 \cdot 3 + 2\cdot 1 = 1 \cdot 3^3 + 2 \cdot 3^2 + 1 \cdot 3^1 + 2 \cdot 3^0  = 1212_3. 
+\]
+
+Finally, write 2814 in base 16. 
+Now, 256 is the highest 16-power not greater than 2814 
+(the next 16-power is 4096), 
+$2814 = 10 \cdot 256 + 254$, 
+and we continue with the remainder 254. 
+Now, 16 is the highest 16-power not greater than 254, 
+$254 = 15\cdot 16 + 14$, 
+and we continue with the remainder 14. 
+Finally, 1 is the highest 16-power not greater than 14, 
+$14 = 14 \cdot 1 + 0$. 
+Thus 
+\[
+2814_{10} = 10 \cdot 256 + 15 \cdot 16 + 14 \cdot 1 = 10 \cdot 16^2 + 15 \cdot 16^1 + 14 \cdot 16^0   = AFE_{16}. 
+\]
+
+
+\item[\ref{ex:numsyst2}]
+
+Rewrite $21_{10}$ into base 2 first. 
+\begin{align*}
+21 &= 10 \cdot 2 + 1, \\
+10 &= 5 \cdot 2 + 0, \\
+5 &= 2 \cdot 2 + 1, \\
+2 &= 1 \cdot 2 + 0, \\
+1 &= 0 \cdot 2 + 1. 
+\end{align*}
+The remainders backwards are 1, 0, 1, 0, 1, thus 
+\[
+21_{10} = 10101_{2}. 
+\]
+
+Now, rewrite $50_{10}$ into base 3. 
+\begin{align*}
+50 &= 16 \cdot 3 + 2, \\
+16 &= 5 \cdot 3 + 1, \\
+5 &= 1 \cdot 3 + 2, \\
+1 &= 0 \cdot 3 + 1. 
+\end{align*}
+The remainders backwards are 1, 2, 1, 2, thus 
+\[
+50_{10} = 1212_{3}. 
+\]
+
+Finally, rewrite $250_{10}$ into base 8. 
+\begin{align*}
+250 &= 31 \cdot 8 + 2, \\
+31 &= 3 \cdot 8 + 7, \\
+3 &= 0 \cdot 8 + 3. 
+\end{align*}
+The remainders backwards are 3, 7, 2, thus 
+\[
+250_{10} = 372_{8}. 
+\]
+
+\item[\ref{ex:numsyst3}]
+\begin{enumerate}
+\item
+\begin{align*}
+111001101_2 &= 461_{10}, \\
+1010101_2 &= 85_{10}, \\
+11111_2 &= 31_{10}, \\
+10110_2 &= 22_{10}, \\
+101010101_2 &= 341_{10}, \\
+10001000_2 &= 136_{10}, \\
+1010111_2 &= 87_{10}, \\
+111101_2 &= 61_{10}, \\
+21102_3 &= 200_{10}, \\
+1234_5 &= 194_{10}, \\
+1234_7 &= 466_{10}, \\
+1234_8 &= 668_{10}, \\
+777_8 &= 511_{10}, \\
+345_8 &= 229_{10}, \\ 
+2012_8 &= 1034_{10}, \\
+4565_8 &= 2421_{10}, \\
+1123_8 &= 595_{10}, \\
+666_8 &= 438_{10}, \\
+741_8 &= 481_{10}, \\
+CAB_{16} &= 3243_{10}, \\ 
+BEE_{16} &= 3054_{10}, \\
+EEE_{16} &= 3822_{10}, \\
+4D4_{16} &= 1236_{10}, \\
+ABC_{16} &= 2748_{10}, \\
+9B5_{16} &= 2485_{10}, \\
+DDD_{16} &=3549_{10}, \\
+3F2_{16} &= 1010_{10}.
+\end{align*}
+
+\item
+\begin{align*}
+64_{10} &= 100 0000_2 = 2101_3 = 224_5 = 121_7 = 100_8 = 71_9 = 40_{16}, \\
+50_{10} &= 11 0010_2 = 1212_3 = 200_5 = 101_7 = 62_8 = 55_9 = 32_{16}, \\
+16_{10} &= 1 0000_2 = 121_3 = 31_5 = 22_7 = 20_8 = 17_9 = 10_{16}, \\
+100_{10} &= 110 0100_2 = 1 0201_3 = 400_5 = 202_7 = 144_8 = 121_9 \\
+&= 64_{16}, \\
+2012_{10} &= 111 1101 1100_2 = 220 2112_3 = 3 1022_5 = 5603_7 = 3734_8 \\
+&= 2675_9 = 7DC_{16}, \\
+200_{10} &= 1100 1000_2 = 2 1102_3 = 1300_5 = 404_7 = 310_8 = 242_9 \\
+&= C8_{16}, \\
+151_{10} &= 1001 0111_2 = 1 2121_3 = 1101_5 = 304_7 = 227_8 = 177_9 \\
+&= 97_{16}, \\
+48_{10} &= 11 0000_2 = 1210_3 = 143_5 = 66_7 = 60_8 = 53_9 = 30_{16}, \\
+99_{10} &= 110 0011_2 = 1 0200_3 = 344_5 = 201_7 = 143_8 = 120_9 \\
+&= 63_{16}, \\
+999_{10} &= 11 1110 0111_2 = 110 1000_3 = 1 2444_5 = 2625_7 = 1747_8 \\
+&= 1330_9 = 3E7_{16}. 
+\end{align*}
+
+\item
+\begin{align*}
+1121_3 &= 43_{10} = 101011_2, \\
+4312_5 &= 582_{10} = 1461_7, \\
+654_8 &= 428_{10} = 525_9, \\
+AD2_{16} &= 2770_{10} = 11035_7, \\
+543_8 &= 355_{10} = 111011_3, \\
+543_9 &= 444_{10} = 121110_3. 
+\end{align*}
+
+\item
+\begin{align*}
+777_8 &= 111111111_2 = 1FF_{16}, \\
+345_8 &= 11100101_2 = E5_{16}, \\
+2012_8 &= 10000001010_2 = 40A_{16}, \\
+456_8 &= 100101110_2 = 12E_{16}, \\
+235_8 &= 10011101_2 = 9D_{16}, \\
+147_8 &= 1100111_2 = 67_{16}, \\
+741_8 &= 111100001_2 = 1E1_{16}, \\ 
+CAB_{16} &= 110010101011_2 = 6253_8, \\
+BEE_{16} &= 101111101110_2 = 5756_8, \\
+EEE_{16} &= 111011101110_2 = 7356_8, \\
+4D3_{16} &= 10011010011_2 = 2323_8, \\
+ABC_{16} &= 101010111100_2 = 5274_8, \\
+FEE_{16} &= 111111101110_2 = 7756_8, \\
+9B5_{16} &= 100110110101_2 = 4665_8, \\
+3F2_{16} &= 1111110010_2 = 1762_8. 
+\end{align*}
+
+\end{enumerate}
+
+
+\end{enumerate}
+\newpage
+\section{Counting}
+
+\begin{enumerate}
+
+\item[\ref{ex:sumk}]
+Let $n$ be odd first, 
+like it was with $n=199$. 
+Then if we rearrange the summands (first with last, second with one but last, etc.). 
+then the middle term will remain, 
+which is $\frac{n+1}{2}$: 
+\begin{align*}
+& 1 + 2 + \dots + \left(n-1\right) + n = \left(1 + n\right) + \left(2 + n-1\right) + \dots \\
+&+ \left(\frac{n-1}{2} + \frac{n+3}{2} \right) + \frac{n+1}{2} = (n+1) + (n+1) + \dots \\
+&+ (n+1) +  \frac{n+1}{2} = \left( n+1 \right) \cdot \frac{n-1}{2} + \frac{n+1}{2} \\
+&= \left( n+1 \right) \cdot \left( \frac{n-1}{2} + \frac{1}{2} \right) = \frac{(n+1) \cdot n}{2}. 
+\end{align*}
+If $n$ is even, 
+then after rearranging the summands, no term will remain: 
+\begin{align*}
+& 1 + 2 + \dots + \left(n-1\right) + n = \left(1 + n\right) + \left(2 + n-1\right) + \dots \\
+&+ \left(\frac{n}{2} + \frac{n+2}{2} \right) = (n+1) + (n+1) + \dots \\
+&+ (n+1) = \left( n+1 \right) \cdot \frac{n}{2} = \frac{(n+1) \cdot n}{2}. 
+\end{align*}
+
+\item[\ref{ex:5people3hanshake}]
+If everyone shakes hands with three other, 
+then they do not shake hand with exactly one person. 
+It is easier to consider who does not shake hand with whom. 
+The first person does not shake hand with someone. 
+Then of the remaining three people the first does not shake hand with someone from these three. 
+That leaves one person, who does not shake hand with someone else, 
+but everybody else has already been accounted for about not shaking hands with somebody. 
+Thus, it is not possible that each of the five people shake hands with three others. 
+
+This argument does not work if someone is allowed to shake hands with someone else more than once. 
+Nevertheless, the answer is still \emph{no}. 
+Use the same argument we used for proving Corollary~\ref{cor:handshakes}. 
+If we sum up all the handshakes for everyone, we obtain $5 \cdot 3 = 15$, 
+as each of the 5 people shakes hand with 3 others. 
+This way, we counted every handshake twice, 
+thus to obtain the number of handshakes we need to divide it by 2. 
+But $15/2$ is not an integer, 
+while the number of handshakes should be an integer. 
+This contradiction proves that it is not possible that each of 5 people shakes hand with 3 others. 
+
+For 7 people we can use this argument, again. 
+If we sum up all the handshakes for everyone, we obtain $7 \cdot 3 = 21$, 
+as each of the 7 people shakes hand with 3 others. 
+This way, we counted every handshake twice, 
+thus to obtain the number of handshakes we need to divide it by 2. 
+But $21/2$ is not an integer, 
+while the number of handshakes should be an integer. 
+This contradiction proves that it is not possible that each of 7 people shakes hand with 3 others. 
+
+\item[\ref{ex:kisses}]
+The four boys shake hands with each other, 
+that is, $\frac{4 \cdot 3}{2} = 6$ handshakes. 
+The four girls kisses each other, 
+those are $\frac{4 \cdot 3}{2} = 6$ kisses by the same formula we use for handshakes. 
+Finally, a boy and a girl kisses, as well. 
+All four boys kiss all four girls on the cheek, 
+which is $4 \cdot 4 = 16$ more kisses. 
+Ultimately, there are 6 handshakes and 22 kisses. 
+
+\item[\ref{ex:isitpossible1}]
+\begin{enumerate}
+\item
+Not possible. 
+If there are five packs, each of them containing odd many rabbits, 
+then altogether in the five packs there are odd many rabbits 
+(odd$+$odd$+$odd$+$odd$+$odd is odd). 
+As 100 is not an odd number, 
+it is not possible to do the required distribution. 
+
+\item%[\ref{ex:isitpossible2}]
+It is possible, 
+e.g.\ $3 \cdot 3 \cdot 1 \cdot 1\cdot 1$. 
+Another possibility could be $9 \cdot 1 \cdot (-1) \cdot 1 \cdot (-1)$, 
+or simply $9$ (as only one integer).
+
+\item%[\ref{ex:isitpossible3}]
+It is possible, 
+e.g.\  $3 \cdot 3 \cdot 1 \cdot 1\cdot 1\cdot 1 \cdot (-1) \cdot 1 \cdot (-1)$, 
+or another possibility is $9 \cdot 1 \cdot (-1) \cdot 1 \cdot (-1) \cdot 1 \cdot (-1) \cdot 1 \cdot (-1)$. 
+
+\item%[\ref{ex:isitpossible4}]
+Not possible. 
+If the product of integer numbers is 9, then all of them are odd. 
+But then the sum of 9 odd integer numbers is odd again, 
+and hence cannot be 0. 
+\end{enumerate}
+
+\item[\ref{ex:sum24}]
+\begin{enumerate}
+\item
+We can apply Proposition~\ref{prop:sumk} and obtain
+\[
+1 + 2 + 3 + \dots + 23 + 24 = \frac{24\cdot 25}{2} = 300. 
+\]
+
+\item%[\ref{ex:sum24_2}]
+This is a bit more tricky, %than Exercise~\ref{ex:sum24_1}, 
+but not much. 
+One needs to calculate the denominator, as we just calculated the numerator. 
+Now, 
+\begin{align*}
+1-2+3-4+ \dots + 23-24 &= (1-2) + (3-4) + \dots + (23-24) \\
+(-1) + (-1) + \dots + (-1) &= -12. 
+\end{align*}
+Thus the fraction we needed to compute is $\frac{300}{-12} = -25$. 
+
+Another way to calculate the denominator could have been the following: 
+\begin{align*}
+&1-2+3-4+ \dots + 23-24 = 1+2 + 3+4 + \dots + 23+24 \\
+&- 2 \cdot (2 + 4 + \dots + 24) = 300 - 2 \cdot 2 \cdot (1 + 2 + \dots + 12) \\
+&= 300 - 4 \cdot \frac{12\cdot 13}{2} = 300- 312 = -12. 
+\end{align*}
+\end{enumerate}
+
+%\item[\ref{ex:wedding}]
+%\begin{enumerate}
+%\item
+%There are four different ways to choose the wedding couple: 
+%that both the bride and the groom has a sibling, 
+%that only the bride has a sibling, 
+%only the groom has a sibling,
+%or neither of them has a sibling. 
+%In the first case we have 8 possibilities to choose the registrar, 
+%\item
+%Yes, it does not matter in which order they choose. 
+%\end{enumerate}
+%
+
+\item[\ref{ex:noofbase2numbers}]
+There is only one possibility for the first digit (it cannot be 0, only 1), 
+and there are two possibilities for every other digit. 
+Thus, the number of $n$-digit positive integers in base 2 is
+\[
+1 \cdot \underbrace{2 \cdot \dots \cdot 2}_{n-1} = 2^{n-1}. 
+\]
+
+
+\item[\ref{ex:palindrome}]
+If $abc_{10}$ is a base 10 three-digit palindrome number, 
+then $a = c$, and $a \neq 0$. 
+Thus we can choose $a$ in 9-many ways and $b$ in 10-many ways, 
+and hence the number of three-digit palindrome numbers is $9 \cdot 10 = 90$. 
+
+For determining the at most three-digit palindrome numbers, 
+we need to find the one-digit long and two-digit long palindrome numbers. 
+Every one-digit number is a palindrome number. 
+There are exactly 9 two-digit palindrome numbers: 
+the $aa_{10}$ numbers for $a\neq 0$. 
+That is, 
+there are $9+9+90=108$ at most three-digit palindrome numbers. 
+
+Now, consider the number of $n$-digit palindrome numbers in base $k$.
+One thing to note is that the first half of the number determines the back half completely. 
+Thus we need to count how many ways can we choose the first half. 
+Let $n$ be even first. 
+Then the first digit is the same as the last digit and differs from 0: 
+there are $(k-1)$-many possibilities to choose for the first digit. 
+The second digit is the same as the one but last: 
+there are $k$-possibilities to choose this digit, etc. 
+Finally, the digit at the $n/2$ position is the same as the digit at the $n/2+1$ position:
+there are $k$ possibilities to choose this digit. 
+Thus, altogether the number of $n$-digit base $k$ palindrome numbers (for even $n$) is 
+\[
+(k-1) \cdot \underbrace{k \cdot \dots \cdot k}_{n/2-1} = (k-1) \cdot k^{n/2-1}. 
+\]
+If $n$ is odd, 
+then the same argument works, except that the middle digit will not have a pair. 
+Thus, altogether the number of $n$-digit base $k$ palindrome numbers (for odd $n$) is 
+\[
+(k-1) \cdot \underbrace{k \cdot \dots \cdot k}_{(n-1)/2} = (k-1) \cdot k^{(n-1)/2}. 
+\]
+
+\item[\ref{ex:Hungarianwords}]
+There are 44 letters in the Hungarian alphabet, 
+therefore there are $44^{n}$-many $n$ letter long words in Hungarian by Theorem~\ref{thm:sequence}. 
+That is, $44^5 , 44^7, 44^{10}$-many %\hspace{10pt}
+$5, 7, 10$ letter long words can be created, respectively.
+
+\item[\ref{ex:toto}]
+There are three possibilities for every game, 
+there are 14 games, 
+thus the number of required tickets is
+\[
+\underbrace{3 \cdot 3 \cdot \dots \cdot 3}_{14} = 3^{14} = 4~782~969. 
+\]
+
+\item[\ref{ex:company}]
+We apply Theorem~\ref{thm:sequence}. 
+Now, we allow spaces, 
+thus the alphabet contains 27 letters. 
+There are $27^{20}$ possibilities for a 20 letter long string (name), 
+2 possibilities for the gender, 
+$27^{10}$ possibilities for a 10 letter long string (job title), 
+and $10^8$ possibilities for an at most 8 digit long base 10 number (payment). 
+Thus, the number of possibilities is
+\[
+27^{20} \cdot 2 \cdot 27^{10} \cdot 10^{8}. 
+\]
+
+
+\item[\ref{ex:subsetsof3elemetset}]
+The subsets of $\halmaz{1, 2, 3}$ are 
+$\halmaz{} = \emptyset$, 
+$\halmaz{1}$, $\halmaz{2}$, $\halmaz{3}$, 
+$\halmaz{1, 2}$, $\halmaz{1, 3}$, $\halmaz{2, 3}$, 
+$\halmaz{1, 2, 3}$. 
+
+The subsets of $\halmaz{a, b, c}$ are 
+$\halmaz{} = \emptyset$, 
+$\halmaz{a}$, $\halmaz{b}$, $\halmaz{c}$, 
+$\halmaz{a, b}$, $\halmaz{a, c}$, $\halmaz{b, c}$, 
+$\halmaz{a, b, c}$. 
+
+The subsets of $\halmaz{\text{Alice, Beth, Carrie}}$ are 
+$\halmaz{} = \emptyset$, 
+$\halmaz{\text{Alice}}$, $\halmaz{\text{Beth}}$, $\halmaz{\text{Carrie}}$, 
+$\halmaz{\text{Alice, Beth}}$, $\halmaz{\text{Alice, Carrie}}$, $\halmaz{\text{Beth, Carrie}}$, 
+and finally $\halmaz{\text{Alice, Beth, Carrie}}$. 
+
+The subsets of $\halmaz{apple, banana, cherry}$ are 
+$\halmaz{} = \emptyset$, 
+$\halmaz{\text{apple}}$, $\halmaz{\text{banana}}$, $\halmaz{\text{cherry}}$, 
+$\halmaz{\text{apple, banana}}$, $\halmaz{\text{apple, cherry}}$, $\halmaz{\text{banana, cherry}}$, 
+and $\halmaz{\text{apple, banana, cherry}}$. 
+
+All sets have 8 subsets. 
+
+\item[\ref{ex:abcde}]
+The set $\halmaz{a, b, c, d}$ has 16 subsets: 
+$\halmaz{} = \emptyset$, 
+$\halmaz{a}$, $\halmaz{b}$, $\halmaz{c}$, $\halmaz{d}$, 
+$\halmaz{a, b}$, $\halmaz{a, c}$, $\halmaz{a, d}$, $\halmaz{b, c}$, $\halmaz{b, d}$, $\halmaz{c, d}$, 
+$\halmaz{a, b, c}$, $\halmaz{a, b, d}$, $\halmaz{a, c, d}$, $\halmaz{b, c, d}$, 
+$\halmaz{a, b, c, d}$. 
+
+The set $\halmaz{a, b, c, d, e}$ has 32 subsets: 
+$\halmaz{} = \emptyset$, 
+$\halmaz{a}$, $\halmaz{b}$, $\halmaz{c}$, $\halmaz{d}$, $\halmaz{e}$, 
+$\halmaz{a, b}$, $\halmaz{a, c}$, $\halmaz{a, d}$, $\halmaz{a, e}$, $\halmaz{b, c}$, 
+$\halmaz{b, d}$, $\halmaz{b, e}$, $\halmaz{c, d}$, $\halmaz{c, e}$, $\halmaz{d, e}$, 
+$\halmaz{a, b, c}$, $\halmaz{a, b, d}$, $\halmaz{a, b, e}$, $\halmaz{a, c, d}$, $\halmaz{a, c, e}$,
+$\halmaz{a, d, e}$, $\halmaz{b, c, d}$, $\halmaz{b, c, e}$, $\halmaz{b, d, e}$, $\halmaz{c, d, e}$,
+$\halmaz{a, b, c, d}$, $\halmaz{a, b, c, e}$, $\halmaz{a, b, d, e}$, $\halmaz{a, c, d, e}$, $\halmaz{b, c, d, e}$,  
+$\halmaz{a, b, c, d, e}$. 
+
+
+
+\item[\ref{ex:subsettrytheproof}]
+The decision algorithm is collected in 
+the following table ($T$ is the subset of $S = \halmaz{a, b, c}$): 
+%Table~\ref{tab:subsettrytheproof}. 
+
+%\begin{table}[!htb]
+%\caption{Decision algorithm on the subsets of $\halmaz{a, b, c}$.}\label{tab:subsettrytheproof}
+%\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{4}{|c|}{$a \in T$} & \multicolumn{4}{|c|}{$a \notin T$} \\
+\hline
+\multicolumn{2}{|c|}{$b \in T$} & \multicolumn{2}{|c|}{$b \notin T$} & \multicolumn{2}{|c|}{$b \in T$} & \multicolumn{2}{|c|}{$b \notin T$}\\
+\hline
+$c \in T$ & $c \notin T$ & $c \in T$ & $c \notin T$ & $c \in T$ & $c \notin T$ & $c \in T$ & $c \notin T$ \\
+\hline
+$\halmaz{a, b, c}$ & $\halmaz{a, b}$ & $\halmaz{a, c}$ & $\halmaz{a}$ & $\halmaz{b, c}$ & $\halmaz{b}$ & $\halmaz{c}$ & $\halmaz{} = \emptyset $ \\
+\hline
+\end{tabular}
+%\end{center}
+%\end{table}
+
+First we decide whether or not $a \in T$, 
+then (independently on our first choice) we decide whether or not $b \in T$,
+then (independently on our earlier choices) we decide whether or not $c \in T$.
+That way, we obtain $2 \cdot 2 \cdot 2 = 8$ subsets. 
+
+\item[\ref{ex:subsetabcd}]
+There are 8 subsets of $\halmaz{a, b, c, d}$ not containing $d$: 
+$\halmaz{} = \emptyset$, 
+$\halmaz{a}$, $\halmaz{b}$, $\halmaz{c}$, 
+$\halmaz{a, b}$, $\halmaz{a, c}$, $\halmaz{b, c}$, 
+$\halmaz{a, b, c}$. 
+These are the subsets of $\halmaz{a, b, c}$. 
+There are 8 subsets of $\halmaz{a, b, c, d}$ containing $d$: 
+$\halmaz{d}$, $\halmaz{a, d}$, $\halmaz{b, d}$, $\halmaz{c, d}$, 
+$\halmaz{a, b, d}$, $\halmaz{a, c, d}$, $\halmaz{b, c, d}$, 
+$\halmaz{a, b, c, d}$. 
+These are the subsets of $\halmaz{a, b, c}$ with the element $d$ added to them. 
+
+
+\item[\ref{ex:subsetabcd01}]
+The binary representation of the subsets of $\halmaz{a, b, c, d}$ can be seen in Table~\ref{tab:abcdbinary} on page~\pageref{tab:abcdbinary}. 
+\begin{table}[!htb]
+\caption{Subsets of $\halmaz{a, b, c, d}$ represented as binary numbers}\label{tab:abcdbinary}
+\begin{center}
+\begin{tabular}{c|c|c}
+subset of $\halmaz{a, b, c, d}$ & binary number & decimal number \\
+\hline
+$\halmaz{}$ & $0000_2$ & 0 \\
+$\halmaz{a}$ & $0001_2$ & 1 \\
+$\halmaz{b}$ & $0010_2$ & 2 \\
+$\halmaz{a, b}$ & $0011_2$ & 3 \\
+$\halmaz{c}$ & $0100_2$ & 4 \\
+$\halmaz{a, c}$ & $0101_2$ & 5 \\
+$\halmaz{b, c}$ & $0110_2$ & 6 \\
+$\halmaz{a, b,c }$ & $0111_2$ & 7 \\
+$\halmaz{d}$ & $1000_2$ & 8 \\
+$\halmaz{a, d}$ & $1001_2$ & 9 \\
+$\halmaz{b, d}$ & $1010_2$ & 10 \\
+$\halmaz{a, b, d}$ & $1011_2$ & 11 \\
+$\halmaz{c, d}$ & $1100_2$ & 12 \\
+$\halmaz{a, c, d}$ & $1101_2$ & 13 \\
+$\halmaz{b, c, d}$ & $1110_2$ & 14 \\
+$\halmaz{a, b, c, d}$ & $1111_2$ & 15 
+\end{tabular}
+\end{center}
+\end{table}
+
+\item[\ref{ex:encode1}]
+After computing the binary representation, 
+we just add the elements corresponding to the places where the digits are 1. 
+\begin{center}
+\begin{tabular}{c|c|c}
+decimal number & binary number & subset of $S$ \\
+\hline 
+11 & $1011_2$ & $\halmaz{a_0, a_1, a_3}$ \\
+7 & $0111_2$ & $\halmaz{a_0, a_1, a_2}$ \\
+15 & $1111_2$ & $\halmaz{a_0, a_1, a_2, a_3}$
+\end{tabular}
+\end{center}
+
+\item[\ref{ex:encode2}]
+After computing the binary representation, 
+we just add the elements corresponding to the places where the digits are 1. 
+\begin{center}
+\begin{tabular}{c|c|c}
+decimal number & binary number & subset of $S$ \\
+\hline 
+11 & $01011_2$ & $\halmaz{a_0, a_1, a_3}$ \\
+7 & $00111_2$ & $\halmaz{a_0, a_1, a_2}$ \\
+15 & $01111_2$ & $\halmaz{a_0, a_1, a_2, a_3}$ \\
+16 & $10000_2$ & $\halmaz{a_4}$ \\
+31 & $11111_2$ & $\halmaz{a_0, a_1, a_2, a_3, a_4}$
+\end{tabular}
+\end{center}
+Note, that the encoding was defined in such a way, 
+that the subset of $\halmaz{a_0, a_1, a_2, a_3}$ corresponding to $k$ is the same as 
+the subset of $\halmaz{a_0, a_1, a_2, a_3, a_4}$ corresponding to $k$ (for arbitrary $0\leq k\leq 15$). 
+
+\item[\ref{ex:encode3}]
+After computing the binary representation, 
+we just add the elements corresponding to the places where the digits are 1. 
+\begin{center}
+\begin{tabular}{c|c|c}
+decimal number & binary number & subset of $S$ \\
+\hline 
+49 & $110001_2$ & $\halmaz{a_0, a_4, a_5}$
+\end{tabular}
+\end{center}
+
+\item[\ref{ex:encode4}]
+After computing the binary representation, 
+we just add the elements corresponding to the places where the digits are 1. 
+\begin{center}
+\begin{tabular}{c|c|c}
+decimal number & binary number & subset of $S$ \\
+\hline 
+101 & $1100101_2$ & $\halmaz{a_0, a_2, a_5, a_6}$
+\end{tabular}
+\end{center}
+
+\item[\ref{ex:encode5}]
+After computing the binary representation, 
+we just add the elements corresponding to the places where the digits are 1. 
+\begin{center}
+\begin{tabular}{c|c|c}
+decimal number & binary number & subset of $S$ \\
+\hline 
+199 & $11000111_2$ & $\halmaz{a_0, a_1, a_2, a_6, a_7}$
+\end{tabular}
+\end{center}
+
+
+\item[\ref{ex:ExamEFGH}]
+All possibilities are listed in Table~\ref{tab:ExamEFGH} on page~\pageref{tab:ExamEFGH}. 
+
+\begin{table}[!htb]
+\caption{The orders in which Ed, Frank, George and Hugo can take the exam}\label{tab:ExamEFGH}
+\begin{center}
+\begin{tabular}{c|c|c|c}
+first & second & third & fourth\\
+\hline
+Ed & Frank & George & Hugo \\
+Ed & Frank & Hugo & George \\
+Ed & George & Frank & Hugo \\
+Ed & George & Hugo & Frank \\
+Ed & Hugo & Frank & George \\
+Ed & Hugo & George & Frank \\
+Frank & Ed & George & Hugo \\
+Frank & Ed & Hugo & George \\
+Frank & George & Ed & Hugo \\
+Frank & George & Hugo & Ed \\
+Frank & Hugo & Ed & George \\
+Frank & Hugo & George & Ed \\
+George & Ed & Frank & Hugo \\
+George & Ed & Hugo & Frank \\
+George & Frank & Ed & Hugo \\
+George & Frank & Hugo & Ed \\
+George & Hugo & Ed & Frank \\
+George & Hugo & Frank & Ed \\
+Hugo & Ed & Frank & George \\
+Hugo & Ed & George & Frank \\
+Hugo & Frank & Ed & George \\
+Hugo & Frank & George & Ed \\
+Hugo & George& Ed & Frank \\
+Hugo & George & Frank & Ed 
+\end{tabular}
+\end{center}
+\end{table}
+
+\item[\ref{ex:perm1}]
+The number of permutations of $\halmaz{1, 2, 3, 4}$ is $4! =24$. 
+
+\item[\ref{ex:perm2}]
+The number of permutations of $\halmaz{a, b, c, d}$ is $4! =24$. 
+
+\item[\ref{ex:perm3}]
+The number of permutations of 8 people is $8! = 40~320$. 
+If the boys sit on seats from 1 to 5, 
+and girls sit on seats from 6 to 8, 
+then we need to count the number of permutations of the boys and girls separately. 
+The boys can sit on their seats in $5! = 120$-many ways. 
+The girls (independently on how the boys sit) can sit on their seats in $3! = 6$-many ways. 
+Altogether, 
+they can sit in $6 \cdot 120 = 720$-many ways. 
+
+\item[\ref{ex:retinas}]
+The number of anagrams of `retinas' is the same as the number of permutations of the letters `r', `e', `t', `i', `n', `a' and `s'. 
+There are 7 different letters, hence the number of permutations is $7! = 5~040$. 
+
+\item[\ref{ex:puppy}]
+Again, let us color the `p's in the anagrams by three colors: 
+\textcolor{red}{red}, \textcolor{green}{green}, \textcolor{blue}{blue}. 
+This way, there will be $5!=120$-many coloured anagrams of puppy, 
+the same as the number of permutations of five different elements. 
+Now, group together those anagrams, 
+which only differ by their colouring. 
+For example the group `puppy' would contain 
+`\textcolor{red}{p}u\textcolor{green}{p}\textcolor{blue}{p}y', 
+`\textcolor{red}{p}u\textcolor{blue}{p}\textcolor{green}{p}y', 
+`\textcolor{green}{p}u\textcolor{red}{p}\textcolor{blue}{p}y', 
+`\textcolor{green}{p}u\textcolor{blue}{p}\textcolor{red}{p}y', 
+`\textcolor{blue}{p}u\textcolor{red}{p}\textcolor{green}{p}y', 
+`\textcolor{blue}{p}u\textcolor{green}{p}\textcolor{red}{p}y'. 
+How do we know that there are six coloured `puppy's? 
+The coloured `puppy's only differ in the colourings of the `p's. 
+The first `p' can be coloured by 3 different colours, 
+the next `p' (right after the `u') can be coloured by two different colours 
+(it cannot be coloured by the same colour as the first `p'), 
+then the last `p' should be coloured by the remaining colour. 
+Thus, there are $3 \cdot 2 \cdot 1 = 6$-many coloured `puppy's. 
+Similarly, there are 6 coloured versions of every anagram. 
+Therefore there are $\frac{120}{6} = 20$ (uncoloured) anagrams of `puppy'. 
+These are 
+`pppuy',
+`pppyu',
+`ppupy',
+`ppypu',
+`ppuyp',
+`ppyup',
+`puppy',
+`pyppu',
+`pupyp',
+`pypup',
+`puypp',
+`pyupp',
+`upppy',
+`ypppu',
+`uppyp',
+`yppup',
+`upypp',
+`ypupp',
+`uyppp',
+`yuppp'. 
+
+\item[\ref{ex:anagrams1}]
+\begin{enumerate}
+\item
+The word `college' contains 7 letters, two of them are `e's and two of them are `l's, 
+thus the number of anagrams is 
+\[
+\frac{7!}{2! \cdot 2!} = \frac{5~040}{2 \cdot 2} = 1~260. 
+\]
+
+\item%[\ref{ex:anagrams2}]
+The word `discrete' contains 8 letters, two of them are `e's, 
+thus the number of anagrams is 
+\[
+\frac{8!}{2!} = \frac{40~320}{2} = 20~160. 
+\]
+
+\item%[\ref{ex:anagrams3}]
+The word `mathematics' contains 11 letters, two of them are `a's, two of them are `m's  and two of them are `t's, 
+thus the number of anagrams is 
+\[
+\frac{11!}{2! \cdot 2! \cdot 2!} = \frac{39~916~800}{2 \cdot 2 \cdot 2} = 4~989~600. 
+\]
+
+\item%[\ref{ex:anagrams4}]
+The expression `discrete mathematics' contains 19 letters, 
+two of them are `i's, 
+two of them are `s's, 
+two of them are `c's, 
+three of them are `e's, 
+three of them are `t's, 
+two of them are `m's  and 
+two of them are `a's,  
+thus the number of anagrams is 
+\begin{align*}
+\frac{19!}{2! \cdot 2! \cdot 2! \cdot 3! \cdot 3! \cdot 2! \cdot 2!} &= \frac{121~645~100~408~832~000}{2 \cdot 2 \cdot 2 \cdot 6 \cdot 6 \cdot 2 \cdot 2} \\
+&= 105~594~705~216~000. 
+\end{align*}
+
+\item%[\ref{ex:anagrams5}]
+The expression `college discrete mathematics' contains 26 letters, 
+three of them are `c's, 
+two of them are `l's, 
+five of them are `e's, 
+two of them are `i's, 
+two of them are `s's, 
+three of them are `t's, 
+two of them are `m's  and 
+two of them are `a's,  
+thus the number of anagrams is 
+\begin{align*}
+\frac{26!}{3! \cdot 2! \cdot 5! \cdot 2! \cdot 2! \cdot 3! \cdot 2! \cdot 2!} &= \frac{403~291~461~126~605~635~584~000~000}{6 \cdot 2 \cdot 120 \cdot 2 \cdot 2 \cdot 6 \cdot 2 \cdot 2} \\
+&= 2~917~328~277~825~561~600~000. 
+\end{align*}
+\end{enumerate}
+
+\item[\ref{ex:anagrams2}]
+\emph{First solution.}
+Let us create the (not meaningful) word `aaaaabbbbccc', 
+and consider its anagrams. 
+Put the bouquets into one particular order, 
+and consider an anagram. 
+This anagram represents a distribution of the bouquets among the triplets: 
+if a letter is `a' in the anagram, the corresponding bouquet will be taken by Alice, 
+if a letter is `b' in the anagram, the corresponding bouquet will be taken by Beth, 
+if a letter is `c' in the anagram, the corresponding bouquet will be taken by Carrie. 
+For example, the distribution for the anagram `abcbbaaaccba' is that 
+Alice takes the first, sixth, seventh, eighth and twelfth bouquets, 
+Beth takes the second, fourth, fifth and eleventh bouquets, 
+and Carrie takes the third, ninth and tenth bouquets. 
+This gives a one-to-one correspondence between the possible distributions of the bouquets and the anagrams of `aaaaabbbbccc'. 
+Therefore by Theorem~\ref{thm:permrepetition} the number of distributions is
+\[
+\frac{12!}{5! \cdot 4! \cdot 3!} = \frac{479~001~600}{120 \cdot 24 \cdot 6} = 27~720. 
+\]
+
+\emph{Second solution.}
+Imagine that the triplets put the 12 bouquets in some order, 
+and then Alice takes the first 5, 
+Beth takes the next four, 
+and Carrie takes the last three. 
+Thus, the original order of the bouquets determine who gets which bouquet. 
+Of course, 
+some of these orders give the same result: 
+if we only permute the first five elements or the next four elements, 
+or the final three elements, 
+then clearly everyone obtains exactly the same bouquets. 
+Thus, the number of possible distributions is the number of permutations of the 12 bouquets, 
+divided by the number of permutations of the first five elements, 
+the number of permutations of the next four elements, 
+the number of permutations of the last three elements. 
+That is, 
+the number of possible distributions is 
+\[
+\frac{12!}{5! \cdot 4! \cdot 3!} = \frac{479~001~600}{120 \cdot 24 \cdot 6} = 27~720. 
+\]
+
+
+\item[\ref{ex:22-6}]
+The two numbers are equal, as the following calculation shows
+\[
+\frac{22!}{16!} = \frac{22 \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 \cdot 16!}{16!} 
+= 22 \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17. 
+\]
+
+\item[\ref{ex:orderedsubsets}]
+Altogether there are $n!$ possible orders for the $n$ elements (this is the number of permutations of $n$ elements). 
+But not all of these are considered to be different, because we are only interested in the first $k$ elements. 
+Those cases will be considered the same where the first $k$ elements are the same (and in the same order). 
+%Just as we did in Section~\ref{sec:anagrams} for counting the anagrams, 
+That is, we group together those permutations of the $n$ elements, 
+where the order of the first $k$ elements is the same. 
+We can name every group with the order of the first $k$ elements. 
+Thus, we are interested in the number of groups we have. 
+In one group there are those permutations, 
+where the order of the first $k$ elements is the same, 
+thus they only differ in the last $(n-k)$ elements. 
+There are $(n-k)!$ possible permutations of the last $(n-k)$ elements, 
+therefore every group contains $(n-k)!$ orderings of the $n$ elements. 
+Hence, 
+the number of ordered $k$-element subsets is
+\begin{align*}
+\frac{n!}{(n-k)!} &= \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1) \cdot (n-k)!}{(n-k)!} \\
+&= n \cdot (n-1) \cdot \dots \cdot (n-k+1).
+\end{align*}
+
+\item[\ref{ex:forma1}]
+By Theorem~\ref{thm:orderedsubsets} the number of possibilities 
+\begin{enumerate}
+\item
+for the first eight cars is
+\[
+22 \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 \cdot 16 \cdot 15 = 12~893~126~400,
+\]
+
+\item
+for the first ten cars is
+\[
+22 \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 \cdot 16 \cdot 15 \cdot 14 \cdot 13 = 2~346~549~004~800.
+\]
+\end{enumerate}
+
+\item[\ref{ex:competition}]
+By Theorem~\ref{thm:orderedsubsets} the number of ordered subsets is
+\begin{enumerate}
+\item
+\[
+10 \cdot 9 \cdot 8 = 720, 
+\]
+
+\item
+\[
+12 \cdot 11 \cdot 10 = 1~320, 
+\]
+
+\item
+\[
+10 \cdot 9 \cdot 8 \cdot 7 = 5~040, 
+\]
+
+\item
+\[
+12 \cdot 11 \cdot 10 \cdot 9 = 11~880, 
+\]
+
+\item
+\[
+8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 = 6~720, 
+\]
+
+\item
+\[
+10 \cdot 9 \cdot 8 \cdot 7 \cdot 6= 30~240. 
+\]
+\end{enumerate}
+
+
+\item[\ref{ex:90choose5}]
+The two numbers are equal, as the following calculation shows
+\[
+\frac{90!}{5! \cdot 85!} = \frac{90 \cdot 89 \cdot 88 \cdot 87 \cdot 86 \cdot 85!}{5! \cdot 85!} = \frac{90 \cdot 89 \cdot 88 \cdot 87 \cdot 86}{5!}.
+\]
+
+
+\item[\ref{ex:smallnchoosek}]
+The required binomial coefficients are computed and arranged into a triangle in Table~\ref{tab:pascal6} on page~\pageref{tab:pascal6}. 
+\begin{table}[!htb]
+\caption{Small binomial coefficients.}\label{tab:pascal6}
+\begin{center}
+\begin{sideways}%table}[!htb]%[H]
+%\caption{Small binomial coefficients}\label{tab:pascal6}
+\begin{tabular}{cccccccccccccc} 
+%$n=0$:
+& & & & & & $\binom{0}{0} = 1$ \\
+\noalign{\smallskip\smallskip} 
+%$n=1$:
+& & & & & $\binom{1}{0} = 1$ & & $\binom{1}{1} = 1$ \\
+\noalign{\smallskip\smallskip} 
+%$n=2$:
+& & & & $\binom{2}{0} = 1$ & & $\binom{2}{1} = 2$ & & $\binom{2}{2} = 1$ \\
+\noalign{\smallskip\smallskip} 
+%$n=3$:
+& & & $\binom{3}{0} = 1$ & & $\binom{3}{1} = 3$ & & $\binom{3}{2} = 3$ & & $\binom{3}{3} = 1$ \\
+\noalign{\smallskip\smallskip} 
+%$n=4$:
+& & $\binom{4}{0} = 1$ & & $\binom{4}{1} = 4$ & & $\binom{4}{2} = 6$ & & $\binom{4}{3} = 4$ & & $\binom{4}{4} = 1$ \\
+\noalign{\smallskip\smallskip} 
+& $\binom{5}{0} = 1$ & & $\binom{5}{1} = 5$ & & $\binom{5}{2} = 10$ & & $\binom{5}{3} = 10$ & & $\binom{5}{4} = 5$ & & $\binom{5}{5} = 1$ \\
+\noalign{\smallskip\smallskip} 
+$\binom{6}{0} = 1$ & & $\binom{6}{1} = 6$ & & $\binom{6}{2} = 15$ & & $\binom{6}{3} = 20$ & & $\binom{6}{4} = 15$ & & $\binom{6}{5} = 6$ & & $\binom{6}{6} = 1$ \\
+\noalign{\smallskip\smallskip} 
+\end{tabular}
+\end{sideways}%table}
+\end{center}
+\end{table}
+
+\item[\ref{ex:nicenchoosek}]
+By the definition
+\begin{align*}
+\binom{n}{0} &= \frac{n!}{0! \cdot (n-0)!} = \frac{n!}{0! \cdot n!} = \frac{1}{0!} = \frac{1}{1} = 1, \\
+\binom{n}{1} &= \frac{n!}{1! \cdot (n-1)!} = \frac{n \cdot (n-1)!}{1! \cdot (n-1)!} = \frac{n}{1!} = \frac{n}{1} = n, \\
+\binom{n}{2} &= \frac{n!}{2! \cdot (n-2)!} = \frac{n \cdot (n-1) \cdot (n-2)!}{2! \cdot (n-2)!} = \frac{n \cdot (n-1)}{2!} = \frac{n \cdot (n-1)}{2}, \\
+\binom{n}{n-2} &= \frac{n!}{(n-2)! \cdot (n-(n-2))!} = \frac{n \cdot (n-1) \cdot (n-2)!}{(n-2)! \cdot 2!} = \frac{n \cdot (n-1)}{2!} \\
+&= \frac{n \cdot (n-1)}{2}, \\
+\binom{n}{n-1} &= \frac{n!}{(n-1)! \cdot (n-(n-1))!} = \frac{n \cdot (n-1)!}{(n-1)! \cdot 1!} = \frac{n}{1!} = \frac{n}{1} = n, \\
+\binom{n}{n} &= \frac{n!}{n! \cdot (n-n)!} = \frac{n!}{n! \cdot 0!} = \frac{1}{0!} = \frac{1}{1} = 1.
+\end{align*}
+
+
+\item[\ref{ex:sumsmallnchoosek}]
+Using Table~\ref{tab:pascal6} from Exercise~\ref{ex:smallnchoosek}, 
+it is not hard to determine the required sums:
+\begin{align*}
+\sum_{k=0}^0 \binom{0}{k} &= \binom{0}{0} = 1, \\
+\sum_{k=0}^1 \binom{1}{k} &= \binom{1}{0} + \binom{1}{1} = 1 + 1 = 2, \\
+\sum_{k=0}^2 \binom{2}{k} &= \binom{2}{0} + \binom{2}{1} + \binom{2}{2} = 1 + 2 + 1 = 4, \\
+\sum_{k=0}^3 \binom{3}{k} &= \binom{3}{0} + \binom{3}{1} + \binom{3}{2} + \binom{3}{3} = 1 + 3 + 3 + 1 = 8, \\ 
+\sum_{k=0}^4 \binom{4}{k} &= \binom{4}{0} + \binom{4}{1} + \binom{4}{2} + \binom{4}{3} + \binom{4}{4} \\
+&= 1 + 4 + 6 + 4 + 1 = 16, \\ 
+\sum_{k=0}^5 \binom{5}{k} &= \binom{5}{0} + \binom{5}{1} + \binom{5}{2} + \binom{5}{3} + \binom{5}{4} + \binom{5}{5} \\
+&= 1 + 5 + 10 + 10 + 5 + 1 = 32, \\
+\sum_{k=0}^6 \binom{6}{k} &= \binom{6}{0} + \binom{6}{1} + \binom{6}{2} + \binom{6}{3} + \binom{6}{4} + \binom{6}{5} + \binom{6}{6} \\
+&= 1 + 6 + 15 + 20 + 15 + 6 + 1 = 64. 
+\end{align*}
+
+
+
+\item[\ref{ex:nmidnchoose2}]
+Now, $n$ divides $\binom{n}{2}$ if and only if the quotient $\binom{n}{2} / n$ is an integer. 
+Here
+\[
+\frac{\binom{n}{2}}{n} = \frac{\frac{n\cdot (n-1)}{2}}{n} = \frac{n-1}{2}, 
+\]
+and this is an integer number if and only if $2 \nmid n$, that is, if and only if $n$ is odd. 
+
+\item[\ref{ex:n^2binom}]
+Using the formula for $\binom{n+1}{2}$ and $\binom{n}{2}$ we have 
+\begin{align*}
+\binom{n+1}{2} + \binom{n}{2} &= \frac{(n+1) \cdot n}{2} + \frac{n \cdot (n-1)}{2} = \frac{n^2+n}{2} + \frac{n^2-n}{2} \\
+&= \frac{n^2 + n + n^2 -n }{2} = \frac{2n^2}{2} = n^2. 
+\end{align*}
+
+
+
+
+
+
+
+
+
+\item[\ref{ex:piratesgeq1}]
+Let the pirates be $P_1, \dots , P_n$. 
+They put the gold pieces in a line. 
+Then they want to divide it into $n$ parts by putting sticks between gold pieces. 
+The leftmost part will go to $P_1$, 
+the next part from left goes to $P_2$, etc. 
+The rightmost part will go to $P_n$. 
+To this end, they use $n-1$ sticks to divide the $k$ gold pieces into $n$ parts. 
+What is left from the first stick is for $P_1$, 
+what is between the first and second sticks is for $P_2$, etc., 
+and everything right from the last stick is taken by $P_n$. 
+They can put the sticks between gold pieces. 
+They cannot put a stick before the first gold piece, 
+because then $P_1$ would not get any pieces. 
+Similarly, they cannot put a stick after the last gold piece, 
+because $P_n$ needs to receive at least one gold piece. 
+Finally, they cannot put two sticks between the same two gold pieces, 
+because then one of the pirates would not get any gold piece.
+Thus, they need to put $n-1$ sticks somewhere in the spaces between the gold pieces, 
+but they cannot put two sticks between the same two gold pieces. 
+That is, they need to find which $n-1$ places they put sticks to. 
+There are $k-1$ places between $k$ gold pieces, 
+and they need to find $n-1$, where they put the $n-1$ sticks. 
+This can be done in $\binom{k-1}{n-1}$-many ways. 
+
+\item[\ref{ex:piratesgeq2}]
+Let every pirate take one gold piece right at the very beginning. 
+Then there remains $k-n$ gold pieces to further distribute. 
+Moreover, now every pirate needs one more gold piece. 
+Thus we reduced the problem to the one solved in Theorem~\ref{thm:piratesgeq1}: 
+$n$ pirates want to distribute $k-n$ gold pieces such that everyone gets at least one gold piece. 
+By Theorem~\ref{thm:piratesgeq1} this can be done in $\binom{k-n-1}{n-1}$-many ways. 
+
+\item[\ref{ex:piratesgeq012}]
+All 15 possibilities are written in Table~\ref{tab:piratesgeq012} on page~\pageref{tab:piratesgeq012}. 
+\begin{table}[!htb]
+\caption{Possibilities to distribute seven gold pieces among three pirates such that Black Bellamy gets at least one gold piece and Calico Jack gets at least two gold pieces.}\label{tab:piratesgeq012}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Anne Bonney & Black Bellamy & Calico Jack \\
+\hline
+\hline
+4 & 1 & 2 \\
+0 & 5 & 2 \\
+0 & 1 & 6 \\
+3 & 2 & 2 \\
+3 & 1 & 3 \\
+1 & 4 & 2 \\
+0 & 4 & 3 \\
+1 & 1 & 5 \\
+0 & 2 & 5 \\
+2 & 3 & 2 \\
+2 & 1 & 4 \\
+0 & 3 & 4 \\
+2 & 2 & 3 \\
+1 & 3 & 3 \\
+1 & 2 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\item[\ref{ex:pirates1}]
+By applying Theorem~\ref{thm:pirates}, 
+we obtain
+\begin{enumerate}
+\item
+\[
+\binom{9 - 1}{3 - 1} = \binom{8}{2} = 28, 
+\]
+
+\item
+\[
+\binom{8+3 - 1}{3 - 1} = \binom{10}{2} = 45, 
+\]
+
+\item
+\[
+\binom{7+3 - 1}{3 - 1} = \binom{9}{2} = 36, 
+\]
+
+\item
+\[
+\binom{11-3 - 1}{3 - 1} = \binom{7}{2} = 21, 
+\]
+
+\item
+\[
+\binom{9 - 1}{4 - 1} = \binom{8}{3} = 56, 
+\]
+
+\item
+\[
+\binom{7+4 - 1}{4 - 1} = \binom{10}{3} = 120, 
+\]
+
+\item
+\[
+\binom{12-4 - 1}{4 - 1} = \binom{7}{3} = 35, 
+\]
+
+\item
+\[
+\binom{10 -1 -2 -3 +4 - 1}{4 - 1} = \binom{7}{3} = 35, 
+\]
+
+\item
+\[
+\binom{15 -1 -2 -3 -4+4 - 1}{4 - 1} = \binom{8}{3} = 56, 
+\]
+
+\item
+\[
+\binom{15 -1 -1 -3 -3+5 - 1}{5 - 1} = \binom{11}{4} = 330. 
+\]
+\end{enumerate}
+
+\item[\ref{ex:equations1}]
+By applying Corollary~\ref{cor:pirates}, 
+we obtain that the number of solutions is
+\begin{enumerate}
+\item
+\[
+\binom{9 - 1}{3 - 1} = \binom{8}{2} = 28, 
+\]
+
+\item
+\[
+\binom{8+3 - 1}{3 - 1} = \binom{10}{2} = 45, 
+\]
+
+\item
+\[
+\binom{7+3 - 1}{3 - 1} = \binom{9}{2} = 36, 
+\]
+
+\item
+\[
+\binom{11-3 - 1}{3 - 1} = \binom{7}{2} = 21, 
+\]
+
+\item
+\[
+\binom{9 - 1}{4 - 1} = \binom{8}{3} = 56, 
+\]
+
+\item
+\[
+\binom{7+4 - 1}{4 - 1} = \binom{10}{3} = 120, 
+\]
+
+\item
+\[
+\binom{12-4 - 1}{4 - 1} = \binom{7}{3} = 35, 
+\]
+
+\item
+\[
+\binom{10 -1 -2 -3 +4 - 1}{4 - 1} = \binom{7}{3} = 35, 
+\]
+
+\item
+\[
+\binom{15 -1 -2 -3 -4+4 - 1}{4 - 1} = \binom{8}{3} = 56, 
+\]
+
+\item
+\[
+\binom{15 -1 -1 -3 -3+5 - 1}{5 - 1} = \binom{11}{4} = 330. 
+\]
+\end{enumerate}
+
+\item[\ref{ex:TuroRudi}]
+It is the same problem as the gold distribution: 
+imagine that everybody of the three siblings gets the brand they like. 
+Then the problem is equivalent to distributing 10 desserts among the three children such that everyone gets at least one. 
+There are $\binom{10-1}{3-1} = \binom{9}{2} = 45$-many ways to do this by Theorem~\ref{thm:pirates}. 
+
+\item[\ref{ex:ballsinurn1}]
+Applying Table~\ref{tab:nchoosek} we obtain that the number of choices is 
+\begin{enumerate}
+\item
+\[
+\binom{9 + 3 -1}{3} = \binom{11}{3} = 165, 
+\]
+
+\item
+\[
+\binom{9 + 3 -1}{9} = \binom{11}{9} = 55, 
+\]
+
+\item
+\[
+\frac{10!}{5!} = 30~240, 
+\]
+
+\item
+\[0,\]
+
+\item
+\[
+\binom{45}{6} = 8~145~060, 
+\]
+
+\item
+\[0,\]
+
+\item
+\[
+100^{10} = 10^{20}, 
+\]
+
+\item
+\[10^{100}.\] 
+\end{enumerate}
+\end{enumerate}
+
+
+\newpage
+\section{Proof Techniques}
+%\renewcommand{\theenumi}{3.\arabic{enumi}}
+\begin{enumerate}
+\item[\ref{induction-1}] The statement $S(n)$ is that 8 divides $9^n-1$. Clearly we have
+\begin{align*}
+9^1-1=8&=1\cdot 8,\\
+9^2-1=80&=10\cdot 8.
+\end{align*}
+Hence $S(1)$ is true and $S(2)$ is true as well. Assume that $S(k)$ is true for some
+$k\in\mathbb{N}$. It remains to prove that $S(k+1)$ is true. We have that $S(k)$ is true, that is, 8 divides $9^k-1$. Hence there exists
+an integer $A$ such that $9^k-1=8\cdot A$. It remains to prove that $9^{k+1}-1$ is a multiple of 8. We have that
+$$
+9(9^k-1)=8\cdot A\cdot 9.
+$$
+Hence we get
+$$
+9^{k+1}-1=8\cdot A\cdot 9+8=8(9A+1).
+$$
+That is, 8 divides $9^{k+1}-1$. Thus $S(k+1)$ is true, so the statement is true for all positive integers.
+
+\item[\ref{induction-2}] The statement $S(n)$ is that 6 divides $5^{2n-1}+1$. We compute $5^{2n-1}+1$ for some
+small values:
+\begin{align*}
+5^{2\cdot 1-1}+1=6&=1\cdot 6,\\
+5^{2\cdot 2-1}+1=126&=21\cdot 6.
+\end{align*}
+It is now obvious that $S(1)$ is true and $S(2)$ is true, too. Assume that $S(k)$ is true for some
+$k\in\mathbb{N}$. That is, there exists $A$ such that 
+$$5^{2k-1}+1=6\cdot A.$$ 
+We multiply this latter 
+equation by $5^2:$
+$$
+5^2\cdot 5^{2k-1}+5^2=6\cdot A \cdot 5^2.
+$$
+We would like to have the expression of $S(k+1)$ on the left-hand side, that is, $5^{2(k+1)-1}+1=5^{2k+1}+1$.
+So we subtract 24 to obtain
+$$
+5^{2k+1}+1=6\cdot A \cdot 5^2-24=6(25A-4).
+$$
+It follows that 6 divides $5^{2k+1}+1$, hence $S(k+1)$ is true. We have proved that $S(n)$ is true for
+all positive integers.
+
+\item[\ref{induction-3}] Here we deal with the sum of the first $n$ odd integers. For $n\in\halmaz{1,2,3,4,5}$
+we have
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$n$ & $\sum_{i=1}^n (2i-1)$\\
+\hline
+1 & $1=1^2$\\
+\hline
+2 & $1+3=2^2$\\
+\hline
+3 & $1+3+5=3^2$\\
+\hline
+4 & $1+3+5+7=4^2$\\
+\hline
+5 & $1+3+5+7+9=5^2$\\
+\hline
+\end{tabular}
+\end{center}
+Hence the given formula provides correct answers. Let $S(n)$ be the statement that the sum of the first $n$
+odd integers is $n^2$. We have already proved that $S(1)$ is true. Assume that $S(k)$ is true for some
+$k\geq 1$, that is,
+$$
+\sum_{i=1}^k(2i-1)=k^2.
+$$
+It remains to show that $S(k+1)$ is true, that is,
+$$
+\sum_{i=1}^{k+1}(2i-1)=(k+1)^2.
+$$
+The left-hand side can be written as
+$$
+\sum_{i=1}^{k+1}(2i-1)=\left(1+3+\ldots+(2k-1)\right)+(2k+1).
+$$
+By the induction hypotheses we have
+$$
+\left(1+3+\ldots+(2k-1)\right)=k^2,
+$$
+so we obtain
+$$
+\left(1+3+\ldots+(2k-1)\right)+(2k+1)=k^2+2k+1=(k+1)^2.
+$$
+Thus the statement $S(k+1)$ is true and the result follows.
+
+\item[\ref{induction-4}] We consider here the sum of the first $n$ squares, which is
+$$
+1^2+2^2+\ldots+n^2.
+$$
+The statement $S(n)$ is that 
+$$
+\sum_{i=1}^n i^2=\frac{n(n+1)(2n+1)}{6}.
+$$
+The statement is clearly true for $n=1$, since $1^2=\frac{1\cdot 2\cdot 3}{6}$. Assume that the statement is true
+for certain $k\geq 1$, that is, 
+$$
+\sum_{i=1}^k i^2=\frac{k(k+1)(2k+1)}{6}.
+$$
+Let us study $S(k+1)$. The sum of the first $k+1$ squares can be written as the sum of the first $k$ squares increased by $(k+1)^2$,
+that is, we have
+$$
+\sum_{i=1}^{k+1} i^2=\left(\sum_{i=1}^k i^2\right)+(k+1)^2.
+$$
+The induction hypotheses says that 
+$$
+\sum_{i=1}^k i^2=\frac{k(k+1)(2k+1)}{6},
+$$
+hence we obtain
+$$
+\sum_{i=1}^{k+1} i^2=\frac{k(k+1)(2k+1)}{6}+(k+1)^2.
+$$
+The right-hand side equals to
+\begin{align*}
+&\frac{k(k+1)(2k+1)}{6}+\frac{6(k+1)^2}{6}=\frac{(k+1)\left(k(2k+1)+6(k+1)\right)}{6}=\\
+&=\frac{(k+1)(2k^2+7k+6)}{6}=\frac{(k+1)(k+2)(2k+3)}{6}.
+\end{align*}
+Therefore $S(k+1)$ is true and the problem has been solved.
+
+\item[\ref{induction-4a}] We list the sum of the first $n$ cubes in the following table for $n\in\halmaz{1,2,3,4}$. 
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$n$ & $\sum_{i=1}^n i^3$\\
+\hline
+1 & $1^3=1=\left(\frac{1\cdot 2}{2}\right)^2$\\
+\hline
+2 & $1^3+2^3=9=\left(\frac{2\cdot 3}{2}\right)^2$\\
+\hline
+3 & $1^3+2^3+3^3=36=\left(\frac{3\cdot 4}{2}\right)^2$\\
+\hline
+4 & $1^3+2^3+3^3+4^3=100=\left(\frac{4\cdot 5}{2}\right)^2$\\
+\hline
+\end{tabular}
+\end{center}
+The statement $S(n)$ to prove is that 
+$$
+\sum_{i=1}^n i^3=\left(\frac{n(n+1)}{2}\right)^2.
+$$
+We showed that $S(1),S(2),S(3)$ and $S(4)$ are true. Assume that for some $1\leq k\in\mathbb{N}$ the statement $S(k)$ is true. We try to conclude that $S(k+1)$ is true.
+We have 
+$$
+\sum_{i=1}^{k+1} i^3= \left(\sum_{i=1}^{k} i^3\right)+(k+1)^3.
+$$
+By the induction hypothesis we can write the right-hand side as
+\begin{align*}
+& \left(\frac{k(k+1)}{2}\right)^2+(k+1)^3=\frac{k^2(k+1)^2+4(k+1)^3}{4}=\\
+& \frac{(k+1)^2}{4}(k^2+4k+4)=\left(\frac{(k+1)(k+2)}{2}\right)^2.
+\end{align*}
+It follows that $S(k+1)$ is true and therefore the identity is true for all positive integers $n$.
+
+\item[\ref{ex:sumk(k+1)}]
+Let $S(n)$ be the statement that 
+\[
+\sum_{i=1}^{n-1}{i(i+1)}=\frac{\left(n-1\right)n\left(n+1\right)}{3}.
+\]
+If $n=2$, then the left-hand side is
+\[
+\sum_{i=1}^1{i(i+1)}={2}, 
+\]
+and the right-hand side is $\frac{1\cdot 2 \cdot 3}{3}$, hence $S(1)$ is true. Assume that $S(k)$ is true for some $1\leq k\in\mathbb{N}$.
+The statement $S(k+1)$ says that
+\[
+\sum_{i=1}^{k}{i(i+1)}=\frac{k\left(k+1\right)\left(k+2\right)}{3}.
+\]
+On the other hand, by the induction hypothesis
+\begin{align*}
+& \sum_{i=1}^{k}{i(i+1)}=\left(\sum_{i=1}^{k-1}{i(i+1)}\right)+{k(k+1)}=\\
+& =\frac{\left(k-1\right)k\left(k+1\right)}{3}+{k(k+1)}=\frac{\left(k-1\right)k\left(k+1\right)+3k(k+1)}{3}=\\
+& =\frac{k\left(k+1\right)\left(k+2\right)}{3}.
+\end{align*}
+Therefore $S(k+1)$ is true and the identity
+\[
+\sum_{i=1}^{n-1} {i(i+1)}=\frac{\left(n-1\right)n\left(n+1\right)}{3}
+\]
+is valid for all positive integers $n$.
+
+
+\item[\ref{induction-4b}] Let $S(n)$ be the statement that 
+$$
+\sum_{i=1}^n\frac{1}{i(i+1)}=\frac{n}{n+1}.
+$$
+If $n=1$, then the left-hand side is
+$$
+\sum_{i=1}^1\frac{1}{i(i+1)}=\frac{1}{2}, 
+$$
+and the right-hand side is $\frac{1}{2}$, hence $S(1)$ is true. Assume that $S(k)$ is true for some $1\leq k\in\mathbb{N}$.
+The statement $S(k+1)$ says that
+$$
+\sum_{i=1}^{k+1}\frac{1}{i(i+1)}=\frac{k+1}{k+2}.
+$$
+On the other hand, by the induction hypothesis
+\begin{align*}
+& \sum_{i=1}^{k+1}\frac{1}{i(i+1)}=\left(\sum_{i=1}^{k}\frac{1}{i(i+1)}\right)+\frac{1}{(k+1)(k+2)}=\\
+& =\frac{k}{k+1}+\frac{1}{(k+1)(k+2)}=\frac{k(k+2)+1}{(k+1)(k+2)}=\\
+& =\frac{(k+1)^2}{(k+1)(k+2)}=\frac{k+1}{k+2}.
+\end{align*}
+Therefore $S(k+1)$ is true and the identity
+$$
+\sum_{i=1}^n\frac{1}{i(i+1)}=\frac{n}{n+1}
+$$
+is valid for all positive integers $n$.
+
+
+\item[\ref{induction-5}] Let us compute the first few elements of the sequence
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$n$ & $a_n$\\
+\hline
+1 & 1\\
+\hline
+2 & 8\\
+\hline
+3 & $a_2+2a_1=10$\\
+\hline
+4 & $a_3+2a_2=26$\\
+\hline
+5 & $a_4+2a_3=46$\\
+\hline
+\end{tabular}
+\end{center}
+Now we compute the values of the formula $\frac{3}{2}\cdot 2^n+2\cdot (-1)^n$ for $n\in\halmaz{1,2,3,4,5}$
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$n$ & $\frac{3}{2}2^n+2(-1)^n$\\
+\hline
+1 & 1\\
+\hline
+2 & 8\\
+\hline
+3 & 10\\
+\hline
+4 & 26\\
+\hline
+5 & 46\\
+\hline
+\end{tabular}
+\end{center}
+We checked that $a_n=\frac{3}{2}\cdot 2^n+2\cdot (-1)^n$ for $n\in\halmaz{1,2,3,4,5}$. Assume that the statement is true
+for $S(k-1)$ and $S(k)$ for some $2\leq k\in\mathbb{N}$, that is,
+\begin{align*}
+a_{k-1}&=\frac{3}{2}\cdot 2^{k-1}+2\cdot (-1)^{k-1},\\
+a_k&=\frac{3}{2}\cdot 2^k+2\cdot (-1)^k.
+\end{align*}
+The statement for $k+1$ is that $a_{k+1}=\frac{3}{2}\cdot 2^{k+1}+2\cdot (-1)^{k+1}$. By definition we have that
+$$
+a_{k+1}=a_{k}+2a_{k-1}.
+$$
+Hence by the induction hypotheses we obtain
+$$
+a_{k+1}=\frac{3}{2}\cdot 2^k+2\cdot (-1)^k+2\left(\frac{3}{2}\cdot 2^{k-1}+2\cdot (-1)^{k-1}\right).
+$$
+A direct computation yields that
+$$
+a_{k+1}=\frac{3}{2}\cdot 2^{k+1}+2\cdot (-1)^{k+1},
+$$
+which is the statement we wanted to prove. We showed that the given formula is correct.
+
+\item[\ref{induction-6}] We note that there is a solution in Chapter~\ref{Recurrence sequences} which does not
+use induction. Here we will prove it by induction. Our statement $S(n)$ is that the number 
+$$
+f(n)=\left(\frac{3-\sqrt{33}}{2}\right)^n+\left(\frac{3+\sqrt{33}}{2}\right)^n
+$$
+is an integer and it is a multiple of 3. Let us consider the statement for $n=1$ and 2.
+If $n=1$, then we get that $f(1)=3$. So it is an integer and it is a multiple of 3. If $n=2$, then we have
+$$
+f(2)=\frac{9-6\sqrt{33}+33}{4}+\frac{9+6\sqrt{33}+33}{4}=21.
+$$
+Again we obtained an integer that is divisible by 3. Assume that $S(k-1)$ and $S(k)$ are true for some $2\leq k\in\mathbb{N}$.
+We will use the fact that the numbers $\frac{3-\sqrt{33}}{2}$ and $\frac{3+\sqrt{33}}{2}$ are roots of the quadratic equation
+$$
+x^2-3x-6,
+$$
+that is, we have
+\begin{align*}
+\left(\frac{3-\sqrt{33}}{2}\right)^2&= 3 \cdot \left(\frac{3-\sqrt{33}}{2}\right)+6,\\
+\left(\frac{3+\sqrt{33}}{2}\right)^2&= 3 \cdot \left(\frac{3+\sqrt{33}}{2}\right)+6.
+\end{align*}
+The induction hypothesis says that $f(k-1)$ and $f(k)$ are integers which are multiples of 3. What about the number $f(k+1)$?
+We have
+\begin{align*}
+& f(k+1)=\left(\frac{3-\sqrt{33}}{2}\right)^{k+1}+\left(\frac{3+\sqrt{33}}{2}\right)^{k+1}=\\
+& \left(\frac{3-\sqrt{33}}{2}\right)^{k-1}\left(3\cdot \left(\frac{3-\sqrt{33}}{2}\right)+6\right)
++\left(\frac{3+\sqrt{33}}{2}\right)^{k-1}\left(3\cdot \left(\frac{3+\sqrt{33}}{2}\right)+6\right)=\\
+& 3\cdot \left(\left(\frac{3-\sqrt{33}}{2}\right)^{k}+\left(\frac{3+\sqrt{33}}{2}\right)^{k}\right)+6\cdot \left(\left(\frac{3-\sqrt{33}}{2}\right)^{k-1}+\left(\frac{3+\sqrt{33}}{2}\right)^{k-1}\right)=\\
+& 3f(k)+6f(k-1).
+\end{align*}
+Since $f(k-1)$ and $f(k)$ are integers we see that $f(k+1)$ is an integer and it is a multiple of 3.
+
+\item[\ref{induction-7}] We compute $a_n$ for some $n:$
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$n$ & $a_n$\\
+\hline
+1 & $\approx 1.4142$\\
+\hline
+2 & $\approx 1.8477$\\
+\hline
+3 & $\approx 1.9615$\\
+\hline
+4 & $\approx 1.9903$\\
+\hline
+5 & $\approx 1.9975$\\
+\hline
+\end{tabular}
+\end{center}
+Let $S(n)$ be the statement that $a_n\leq 2$. Our computations show that $S(1)$ is true. Assume that $S(k)$ is true for some $k\geq 1$,
+that is, $a_k\leq 2$. We consider the statement $S(k+1)$. By definition of the sequence we have 
+$$
+a_{k+1}=\sqrt{2+a_k}.
+$$
+By the induction hypothesis $a_k\leq 2$, hence
+$$
+a_{k+1}\leq \sqrt{2+2}=2.
+$$
+The statement $S(k+1)$ has been proved and thus we have that $a_n\leq 2$ for all $n\in\mathbb{N}$.
+
+\item[\ref{induction-8}]
+We prove the statement by induction. If $n=1$, then the 1-digit integer $a_1=2$ is divisible by 2. Therefore the statement is true
+for $n=1$. It is not difficult to deal with the case $n=2$. There are only four possible integers
+$$
+a_1a_2\in\halmaz{11,12,21,22}.
+$$
+It is easy to see that $2^2$ divides 12. Assume that the statement is true for some $1\leq k\in\mathbb{N}$, that is, there exists a
+$k$-digit integer $a_1a_2\ldots a_k$ which is a multiple of $2^k$. Let us consider the statement for $k+1$. By induction hypothesis
+we have
+$$
+a_1a_2\ldots a_k=2^k\cdot A.
+$$
+We claim that either
+$$
+10^{k}+a_1a_2\ldots a_k=1a_1a_2\ldots a_k
+$$
+or
+$$
+2\cdot 10^{k}+a_1a_2\ldots a_k=2a_1a_2\ldots a_k
+$$
+is a multiple of $2^{k+1}$. We can rewrite the above integers as follows
+\begin{align*}
+& 10^{k}+a_1a_2\ldots a_k=10^k+2^k\cdot A=2^k(5^k+A),\\
+& 2\cdot 10^{k}+a_1a_2\ldots a_k=2\cdot 10^{k}+2^k\cdot A=2^k(2\cdot 5^k+A).
+\end{align*}
+If $A$ is odd, then $5^k+A$ is even. In this case 
+$$
+1a_1a_2\ldots a_k
+$$
+is an integer having $k+1$ digits and it is divisible by $2^{k+1}$.
+If $A$ is even, then $2\cdot 5^k+A$ is even. That is, 
+$$
+2a_1a_2\ldots a_k
+$$
+is a $(k+1)$-digit number which is a multiple of $2^{k+1}$.
+
+\item[\ref{induction-9}]
+
+(a) The first few elements of the Fibonacci sequence are
+$$
+1,1,2,3,5,8,13,21,34,55,\ldots
+$$
+Let us consider the sum of the first $n$ elements for $n\in\halmaz{1,2,3,4,5}$
+\begin{align*}
+n&=1: 1,\\
+n&=2: 1+1=2,\\
+n&=3: 1+1+2=4,\\
+n&=4: 1+1+2+3=7,\\
+n&=5: 1+1+2+3+5=12.
+\end{align*}
+It is easy to see that the identity holds for $n\in\halmaz{1,2,3,4,5}$. Assume that the statement is true for some $1\leq k\in\mathbb{N}$,
+that is, 
+$$
+F_1+F_2+\ldots+F_k=F_{k+2}-1.
+$$
+Consider the sum of the first $k+1$ Fibonacci numbers
+$$
+F_1+F_2+\ldots+F_k+F_{k+1}.
+$$
+By induction hypothesis we get
+$$
+F_1+F_2+\ldots+F_k+F_{k+1}=F_{k+2}-1+F_{k+1}.
+$$
+By definition $F_{k+1}+F_{k+2}=F_{k+3}$, hence
+$$
+F_1+F_2+\ldots+F_k+F_{k+1}=F_{k+3}-1.
+$$
+Therefore the identity holds for all positive integers.
+
+(b) Compute $F_1^2+F_2^2+\ldots+F_n^2$ for $n\in\halmaz{1,2,3,4,5}$
+\begin{align*}
+n&=1: 1^2=1=F_1F_2,\\
+n&=2: 1^2+1^2=2=F_2F_3,\\
+n&=3: 1^2+1^2+2^2=6=F_3F_4,\\
+n&=4: 1^2+1^2+2^2+3^2=15=F_4F_5,\\
+n&=5: 1^2+1^2+2^2+3^2+5^2=40=F_5F_6.
+\end{align*}
+That is, the identity is valid for $n\in\halmaz{1,2,3,4,5}$. Assume that the statement is true for some $1\leq k\in\mathbb{N}$,
+that is, 
+$$
+F_1^2+F_2^2+\ldots+F_k^2=F_kF_{k+1}.
+$$
+Let us deal with the sum
+$$
+F_1^2+F_2^2+\ldots+F_k^2+F_{k+1}^2.
+$$
+Applying the induction hypothesis we obtain
+$$
+(F_1^2+F_2^2+\ldots+F_k^2)+F_{k+1}^2=F_kF_{k+1}+F_{k+1}^2=F_{k+1}(F_k+F_{k+1}),
+$$
+and by definition $F_k+F_{k+1}=F_{k+2}$, so we have
+$$
+(F_1^2+F_2^2+\ldots+F_k^2)+F_{k+1}^2=F_{k+1}F_{k+2}.
+$$
+Thus the identity holds for all positive integers.
+
+(c) Here we consider the identity
+$$
+F_1+F_3+\ldots+F_{2n-1}=F_{2n}.
+$$
+If $n=1$, then the left-hand side is $F_1=1$ and the right-hand side is $F_2=1$. Hence the identity holds.
+Assume that for some $1\leq k\in\mathbb{N}$ the identity is valid, that is, 
+$$
+F_1+F_3+\ldots+F_{2k-1}=F_{2k}.
+$$
+In case of $k+1$ terms we have
+$$
+F_1+F_3+\ldots+F_{2k-1}+F_{2k+1}.
+$$
+By induction we get
+$$
+(F_1+F_3+\ldots+F_{2k-1})+F_{2k+1}=F_{2k}+F_{2k+1}=F_{2k+2}=F_{2(k+1)}.
+$$
+Thus the identity is valid for all positive integers.
+
+(d) The identity to prove is as follows: 
+$$
+F_2+F_4+\ldots+F_{2n}=F_{2n+1}-1.
+$$
+If $n=1$, then the left-hand side is $F_2=1$ and the right-hand side is $F_3-1=2-1=1$. So the identity is valid.
+Assume that for some $1\leq k\in\mathbb{N}$ the identity holds, that is, 
+$$
+F_2+F_4+\ldots+F_{2k}=F_{2k+1}-1.
+$$
+Let us handle the sum for $k+1$ terms, that is, the sum
+$$
+F_2+F_4+\ldots+F_{2k}+F_{2k+2}.
+$$
+It can be written as 
+$$
+(F_2+F_4+\ldots+F_{2k})+F_{2k+2}=F_{2k+1}-1+F_{2k+2}=F_{2k+3}-1.
+$$
+Thus the identity has been proved for all positive integers.
+
+\item[\ref{induction-10}]
+
+(a) First compute $F_{3n}$ for some $n$, let say for $n=1,2,3$.
+We have
+\begin{align*}
+& F_3=2,\\
+& F_6=8,\\
+& F_9=34.
+\end{align*}
+We checked that $F_{3n}$ is even for $n=1,2,3$. Assume that $F_{3k}$ is even for some $1\leq k\in\mathbb{N}$. For $k+1$ we
+have $F_{3(k+1)}=F_{3k+3}$. By definition
+$$
+F_{3k+3}=F_{3k+2}+F_{3k+1}=F_{3k+1}+F_{3k}+F_{3k+1}=2\cdot F_{3k+1}+F_{3k}.
+$$
+By induction $F_{3k}$ is even, so $2\cdot F_{3k+1}+F_{3k}$ is even. The statement is true.
+
+(b) If $n=1$, then $F_{5\cdot 1}=5$. That is, the property holds for $n=1$. Assume that $F_{5k}$ is a multiple of 5 for 
+some $1\leq k\in\mathbb{N}$. For $k+1$ we have
+\begin{align*}
+& F_{5(k+1)}=F_{5k+5}=F_{5k+4}+F_{5k+3}=F_{5k+3}+F_{5k+2}+F_{5k+2}+F_{5k+1}=\\
+& 3F_{5k+2}+2F_{5k+1}=3(F_{5k+1}+F_{5k})+2F_{5k+1}=5F_{5k+1}+3F_{5k}.
+\end{align*}
+It is clear that 5 divides $5F_{5k+1}$ and induction hypothesis implies that $3F_{5k}$ is a multiple of 5.
+Therefore 5 divides $5F_{5k+1}+3F_{5k}$. We proved the property for $k+1$. It follows that $F_{5n}$ is a multiple of 
+5 for all $n \in \mathbb{N}$.
+
+
+
+\item[\ref{contra-0}] We provide an indirect proof. Assume that $x\leq 5$ and $y\leq 5$. We obtain that
+$$
+x+y\leq 10,
+$$
+a contradiction, since $x+y>10$, by assumption.
+
+\item[\ref{contra-0a}] Suppose the opposite of the statement, that is, there exists an integer $n$ for which $n^2-2$ is divisible by 4.
+Then for some $k\in\mathbb{Z}$ we have $n^2-2=4k$. Hence $n^2=2(2k+1)$. It follows that $n$ is even, so $n=2n_1$ for some integer $n_1$.
+We obtain that 
+$$
+4n_1^2=2(2k+1).
+$$
+After dividing the equation by 2 we get
+$$
+2(n_1^2-k)=1,
+$$
+a contradiction since 2 does not divide 1.
+
+\item[\ref{contra-1}] Assume the opposite, that is, the number $\sqrt{2}+\sqrt{3}$ is rational. Then there exist
+$a$ and $b$ such that $\sqrt{2}+\sqrt{3}=\frac{a}{b}$ for some $a\in\mathbb{Z}$ and $b\in\mathbb{N}$ and the greatest common divisor of $a$ and $b$ is 1.
+Squaring both sides of the equation $\sqrt{2}+\sqrt{3}=\frac{a}{b}$ we get
+$$
+2+2\sqrt{6}+3=\frac{a^2}{b^2}.
+$$
+That is, 
+$$
+\sqrt{6}=\frac{a^2-5b^2}{2b^2}.
+$$
+On the right-hand side there is a rational number, so to get a contradiction we have to prove that $\sqrt{6}$ is irrational.
+We prove it indirectly. Assume that $\sqrt{6}$ is rational. Then there exist $c$ and $d$ such that $\sqrt{6}=\frac{c}{d}$ for some $c\in\mathbb{Z}$ and $d\in\mathbb{N}$ 
+and the greatest common divisor of $c$ and $d$ is 1. We obtain that
+$$
+6d^2=c^2,
+$$
+that is, $c$ is even. Therefore $c=2c_1$ for some $c_1$. It follows that
+$$
+6d^2=4c_1^2\Rightarrow 3d^2=2c_1^2.
+$$
+We have that 2 divides $3d^2$. Since 2 does not divide 3 it must divide $d^2$. It means that $d^2$ is even, so $d$ is even, a contradiction.
+We have proved that $\sqrt{6}$ is irrational and thus we have that $\sqrt{2}+\sqrt{3}$ is irrational.
+
+\item[\ref{contra-2}] Suppose the opposite of the statement, that is, there exists $x=\frac{p}{q}$ with $p\in\mathbb{Z},q\in\mathbb{N}$
+and $\gcd(p,q)=1$ such that
+$$
+a\left(\frac{p}{q}\right)^2+b\frac{p}{q}+c=0.
+$$
+Multiply the equation by $q^2$ to obtain (we note that $q\neq 0$)
+$$
+ap^2+bpq+cq^2=0.
+$$
+Assume that $p$ is even and $q$ is odd. In this case $ap^2$ is even, $bpq$ is even and $cq^2$ is odd. Hence $ap^2+bpq+cq^2$ is odd,
+a contradiction. Now assume that $p$ is odd and $q$ is even. Here we obtain that $ap^2$ is odd, $bpq$ is even and $cq^2$ is even.
+Again we get a contradiction. Finally, assume that $p$ is odd and $q$ is odd. We get that $ap^2$ is odd, $bpq$ is odd and $cq^2$ is odd,
+so $ap^2+bpq+cq^2$ is odd, a contradiction. We remark that the case $p$ is even, $q$ is even is not possible since $\gcd(p,q)=1$.
+The statement follows.
+
+\item[\ref{contra-3}] Assume that the statement is false, that is, 
+\begin{align*}
+a_1&<\frac{a_1+a_2+\ldots+a_n}{n},\\
+a_2&<\frac{a_1+a_2+\ldots+a_n}{n},\\
+&\vdots\\
+a_n&<\frac{a_1+a_2+\ldots+a_n}{n}.
+\end{align*}
+Take the sum of the above inequalities to get
+$$
+a_1+a_2+\ldots+a_n<n\cdot\left(\frac{a_1+a_2+\ldots+a_n}{n}\right)=a_1+a_2+\ldots+a_n.
+$$
+That is, we obtained a contradiction and the statement is proved.
+
+\item[\ref{contra-4}] We provide an indirect proof. Assume that there exists a positive integer $n$ for which
+$$
+\gcd(F_n,F_{n+1})=d>1.
+$$
+That is, $d$ divides $F_n$ and $d$ divides $F_{n+1}$. Then $d$ divides the difference of these two Fibonacci
+numbers. The difference is equal to
+$$
+F_{n+1}-F_n=F_{n-1}.
+$$
+Since $d$ divides the left-hand side we obtain that $d$ divides the right-hand side, that is, $d\mid F_{n-1}$.
+We apply the previous argument again
+$$
+d\mid F_n\mbox{ and }d\mid F_{n-1}\mbox{ hence }d\mid (F_n-F_{n-1}).
+$$
+In this way we get that $d\mid F_{n-2}$. Now we have that $d\mid F_{n-1}$ and $d\mid F_{n-2}$, so $d\mid (F_{n-1}-F_{n-2})$.
+Since $F_{n-1}-F_{n-2}=F_{n-3}$ we obtain that $d$ divides $F_{n-3}$. We continue this process to reach a 
+contradiction, namely that $d\mid F_2=1$ and $d\mid F_1=1$. Hence for consecutive Fibonacci numbers $F_n$ and $F_{n+1}$
+we have
+$$
+\gcd(F_n,F_{n+1})=1.
+$$
+
+\item[\ref{proof-cons-1}] First we solve the equation $5x_1+7x_2=1$ in integers $x_1,x_2$ by applying
+the Euclidean algorithm. We get that 
+$$
+5\cdot 3+7\cdot(-2)=1,
+$$
+therefore 
+$$
+(3n,-2n)
+$$
+is a solution to the equation $5x_1+7x_2=n$. By Theorem~\ref{LinDioph} we obtain a parametric formula 
+$$
+(3n-7t,-2n+5t)\quad t\in\mathbb{Z}
+$$
+for the integer solutions $(x_1,x_2)$ of the equation $5x_1+7x_2=n$. To have non-negative solutions we need
+\begin{align*}
+3n-7t&\geq 0\Rightarrow t\leq \frac{3n}{7}\\
+-2n+5t&\geq 0\Rightarrow t\geq \frac{2n}{5}.
+\end{align*}
+So we have the following inequalities
+$$
+\frac{2n}{5}\leq t\leq \frac{3n}{7}.
+$$
+If there is a $t\in\mathbb{Z}$ in the interval $[\frac{2n}{5},\frac{3n}{7}]$, then $n$ can be represented
+in the form $5x_1+7x_2$. Denote by $I_n$ the set $\halmazvonal{t}{\frac{2n}{5}\leq t\leq \frac{3n}{7}, t\in\mathbb{Z}}$. 
+\begin{center}
+\begin{tabular}{|c|c||c|c||c|c||c|c|}
+\hline
+$n$ & $I_n$ & $n$ & $I_n$ & $n$ & $I_n$ & $n$ & $I_n$\\
+\hline
+1 & $\emptyset$ & 8 & $\emptyset$ &15 & $\halmaz{ 6 }$ &22 & $\halmaz{ 9 }$\\
+\hline
+2 & $\emptyset$ & 9 & $\emptyset$ &16 & $\emptyset$ &23 & $\emptyset$\\
+\hline
+3 & $\emptyset$ &10 & $\halmaz{ 4 }$ &17 & $\halmaz{ 7 }$ &24 & $\halmaz{ 10 }$\\
+\hline
+4 & $\emptyset$ &11 & $\emptyset$ &18 & $\emptyset$ &25 & $\halmaz{ 10 }$\\
+\hline
+5 & $\halmaz{ 2 }$ &12 & $\halmaz{ 5 }$ &19 & $\halmaz{ 8 }$ &26 & $\halmaz{ 11 }$\\
+\hline
+6 & $\emptyset$ &13 & $\emptyset$ &20 & $\halmaz{ 8 }$ &27 & $\halmaz{ 11 }$\\
+\hline
+7 & $\halmaz{ 3 }$ &14 & $\halmaz{ 6 }$ &21 & $\halmaz{ 9 }$ &28 & $\halmaz{ 12 }$\\
+\hline
+\end{tabular}
+\end{center}
+Hence $n=23$ cannot be represented. However for all $n\in\halmaz{24,25,26,27,28}$ we have 
+solutions. From these solutions we can easily obtain solutions for all $n\geq 24$.
+
+\item[\ref{proof-cons-2}] An integer solution to the equation $4x_1+5x_2=1$ is
+$$
+(x_1,x_2)=(-1,1).
+$$
+Hence we have a particular solution 
+$$
+(x_1,x_2)=(-n,n)
+$$
+in case of the equation $4x_1+5x_2=n$. It is now clear that all solutions can be obtained from the parametrization
+$$
+(-n-5t,n+4t)\quad t\in\mathbb{Z}.
+$$
+To have non-negative solutions one needs
+\begin{align*}
+-n-5t&\geq 0\Rightarrow t\leq \frac{-n}{5}\\
+n+4t&\geq 0\Rightarrow t\geq \frac{-n}{4}.
+\end{align*}
+Thus we have
+$$
+-\frac{n}{4}\leq t\leq -\frac{n}{5}.
+$$
+Denote by $I_n$ the set $\halmazvonal{t}{-\frac{n}{4}\leq t\leq -\frac{n}{5}, t\in\mathbb{Z}}$. 
+We determine $I_n$ for $1\leq n\leq 15$.
+\begin{center}
+\begin{tabular}{|c|c||c|c||c|c|}
+\hline
+$n$ & $I_n$ & $n$ & $I_n$ & $n$ & $I_n$\\
+\hline
+1 & $\emptyset$ & 6 & $\emptyset$ &11 & $\emptyset$\\
+\hline
+2 & $\emptyset$ & 7 & $\emptyset$ &12 & $\halmaz{ -3 }$\\
+\hline
+3 & $\emptyset$ & 8 & $\halmaz{ -2 }$ &13 & $\halmaz{ -3 }$\\
+\hline
+4 & $\halmaz{ -1 }$ & 9 & $\halmaz{ -2 }$ &14 & $\halmaz{ -3 }$\\
+\hline
+5 & $\halmaz{ -1 }$ &10 & $\halmaz{ -2 }$ &15 & $\halmaz{ -3 }$\\
+\hline
+\end{tabular}
+\end{center}
+So we get that $n=11$ cannot be represented in the appropriate form. 
+The solutions for $n\in\halmaz{12,13,14,15}$ can be used to determine solutions for
+$n\geq 12$. In case of 13 we have
+$$
+13=4\cdot 2+5\cdot 1.
+$$
+It implies that
+$$
+4(k+3)+1=4(k+2)+5\cdot 1\quad k\in\mathbb{N}\cup\halmaz{0}.
+$$
+Thus, if $n=4K+1$, then $(x_1,x_2)=(K-1,1),K\geq 1$.
+
+\item[\ref{proof-cons-3}] We can rewrite the equation as 
+$$
+2(2x_1+3x_2)+9x_3=n
+$$
+and another possibility is as follows
+$$
+4x_1+3(2x_2+3x_3)=n.
+$$
+We will use the second form because the largest coefficient is 4 while in case of the first form the largest
+coefficient is 9. So we have
+$$
+4x_1+3y_1=n.
+$$
+A particular solution is $(n,-n)$, therefore we get
+\begin{align*}
+x_1&=n+3t,\\
+y_1&=-n-4t
+\end{align*}
+for some $t\in\mathbb{Z}$. We have that $y_1=2x_2+3x_3=-n-4t$. This equation has a particular solution
+$(n-2t,-n)$, therefore we obtain that
+\begin{align*}
+x_2&=n-2t+3s,\\
+x_3&=-n-2s
+\end{align*}
+for some $s,t\in\mathbb{Z}$. That is, the parametrization of the integral solution of the equation is
+given by
+\begin{align*}
+x_1&=n+3t,\\
+x_2&=n-2t+3s,\\
+x_3&=-n-2s
+\end{align*}
+for some $s,t\in\mathbb{Z}$.
+
+\item[\ref{proof-cons-4}] In the previous exercise we determined the parametrization of the integer 
+solutions of the equation. It is as follows
+\begin{align*}
+x_1&=n+3t,\\
+x_2&=n-2t+3s,\\
+x_3&=-n-2s
+\end{align*}
+for some $s,t\in\mathbb{Z}$. We would like to have only non-negative integer solutions hence we
+get the system of inequalities
+\begin{align*}
+0&\leq n+3t,\\
+0&\leq n-2t+3s,\\
+0&\leq -n-2s.
+\end{align*}
+We easily obtain upper bound for $s$ and lower bound for $t$ as follows
+\begin{align*}
+-\frac{n}{3}&\leq t,\\
+-\frac{n}{2}&\geq s.
+\end{align*}
+Our system of inequalities implies that
+\begin{align*}
+-2n\leq &6t\leq 3n+9s,\\
+-2n+4t\leq &6s\leq -3n.
+\end{align*}
+That is, 
+\begin{align*}
+-5n &\leq 9s,\\
+ 4t &\leq -n.
+\end{align*}
+Now we have lower bound for $s$ and upper bound for $t$. Define the intervals $I_s,I_t$ as follows $I_s=[-\frac{5n}{9},-\frac{n}{2}]$
+and $I_t=[-\frac{n}{3},-\frac{n}{4}]$. The length of $I_s$ is at least 1 if $n\geq 18$ and the length of $I_t$ is at least 1 if $n\geq 12$.
+Therefore the equation has a non-negative integer solution if $n\geq 18$. It remains to handle the cases $1\leq n\leq 17$.
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$n$ & integer(s) in $I_s$ & integer(s) in $I_t$ & solution(s): $(x_1,x_2,x_3)$\\
+\hline
+1 & - & - & -\\
+\hline
+2 & -1 & - & -\\
+\hline
+3 & - & -1 & -\\
+\hline
+4 & -2 & -1 & $(1,0,0)$\\
+\hline
+5 & - & - & -\\
+\hline
+6 & -3 & -2 & $(0,1,0)$\\
+\hline
+7 & - & -2 & -\\
+\hline
+8 & -4 & -2 & $(2,0,0)$\\
+\hline
+9 & -5 & -3 & $(0,0,1)$\\
+\hline
+10 & -5 & -3 & $(1,1,0)$\\
+\hline
+11 & -6 & -3 & -\\
+\hline
+12 & -6 & -4,-3 & $(0,2,0),(3,0,0)$\\
+\hline
+13 & -7 & -4 & $(1,0,1)$\\
+\hline
+14 & -7 & -4 & $(2,1,0)$\\
+\hline
+15 & -8 & -5,-4 & $(0,1,1)$\\
+\hline
+16 & -8 & -5,-4 & $(1,2,0),(4,0,0)$\\
+\hline
+17 & -9 & -5 & $(2,0,1)$\\
+\hline
+\end{tabular}
+\end{center}
+Thus the largest positive integer $n$ for which the equation 
+$$
+4x_1+6x_2+9x_3=n
+$$
+has no non-negative integer solution is 11.
+
+
+\item[\ref{pigeon-0a}] The pigeonholes are the possible birthdays, there are 366 pigeonholes.
+There are 367 people (playing the role of pigeons). Therefore there is at least one pigeonhole
+containing at least two people.
+
+\item[\ref{pigeon-0b}] The pigeonholes are the possible birthdays, so there are 366 pigeonholes.
+There are 1500 people and $\frac{1500}{366}\approx 4.098$, hence there is at least one pigeonhole containing at least
+4 people. That means that at least 4 people were born on the same day of the year.
+
+\item[\ref{pigeon-1}] We define the pigeonholes as disjoint subsets of the set 
+$$\halmaz{1,2,3,4,5,6,7,8,9,10,11,12},$$
+that is, 
+$$
+\halmaz{1,12},\halmaz{2,11},\halmaz{3,10},\halmaz{4,9},\halmaz{5,8},\halmaz{6,7}.
+$$
+The pigeons are the selected integers. We have six pigeonholes and seven pigeons, therefore there exists
+a subset containing two selected integers. The subsets are constructed in such a way that the sum of the elements
+are 13, so the sum of the two integers belonging to the same subset is 13. 
+
+\item[\ref{pigeon-2}] The pigeons are the 11 chosen integers. We define the pigeonholes as follows: 
+\begin{align*}
+& \halmaz{1,2},\halmaz{3,4},\halmaz{5,6},\halmaz{7,8},\halmaz{9,10},\\
+& \halmaz{11,12},\halmaz{13,14},\halmaz{15,16},\halmaz{17,18},\halmaz{19,20}.
+\end{align*}
+There are 10 pigeonholes and 11 pigeons, so there exists a pigeonhole containing 2 pigeons.
+Thus the statement is true.
+
+\item[\ref{pigeon-3}] We divide the unit square into four smaller squares:
+
+\setlength{\unitlength}{1.5cm}
+\begin{center}
+\begin{picture}(2, 2)
+  \linethickness{0.075mm}
+  \multiput(0, 0)(1, 0){3}{\line(0, 1){2}}
+  \multiput(0, 0)(0, 1){3}{\line(1, 0){2}}
+  \put(.2, .7){\circle*{.04}}
+  \put(1.6, 1.38){\circle*{.04}}
+  \put(1.77, 1.29){\circle*{.04}}
+  \put(.67, 1.35){\circle*{.04}}
+  \put(1.23, .33){\circle*{.04}}
+\end{picture}
+\end{center}
+% \begin{center}
+% \begin{tabular}{|ccc|ccc|}
+% \hline
+%  & . &  &  &  & \\
+%  &  &  &  & . & \\
+%  &  &  &  &  & \\
+%  \hline
+%  &  &  &  &  & \\
+% . &  &  &  &  & .\\
+%  &  &  & . &  & \\
+% \hline
+% \end{tabular}
+% \end{center}
+The subsquares are the pigeonholes and the points are the pigeons. Hence by the pigeonhole principle
+there are at least two points in the same subsquare. The largest distance in a subsquare is the length 
+of the diagonal which is $\sqrt{2}/2$. The statement is proved.
+
+\item[\ref{pigeon-4}] We can write the elements of $A$ in the form $2^a\cdot b$, where $a\geq 0$ and 
+$b$ is an odd integer between 1 and 99. There are 50 odd integers in the interval $[1,2,\ldots,100]$
+therefore the pigeonhole principle implies that among the 51 integers there are at least two with the same
+$b$. That is, we have two integers $2^{a_1}\cdot b$ and $2^{a_2}\cdot b$. If $a_1<a_2$, then 
+$2^{a_1}\cdot b$ divides $2^{a_2}\cdot b$. The statement is proved.
+
+\item[\ref{pigeon-5}] We apply Theorem~\ref{pigeon-III}. Here the pigeonholes are the grades, so $n=5$.
+There are $m_1$ students who get grade 1, $m_2$ students who get grade 2 etc. According to the theorem
+one needs $m_1+m_2+m_3+m_4+m_5-5+1$ students to ensure that for some $i$ $m_i$ students get the same grade.
+Hence we take $m_1=m_2=m_3=m_4=m_5=4$. Therefore there must be at least 16 students in the class.
+
+\item[\ref{pigeon-6}] We note that it is possible to place 14 bishops such that they cannot hit each other,
+a solution is given by
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$\circledast$ & $\circledast$ & $\circledast$ & $\circledast$ & $\circledast$ & $\circledast$ & $\circledast$ & $\circledast$\\
+ \hline
+ &  &  &  &  &  &  & \\
+ \hline
+ &  &  &  &  &  &  & \\
+ \hline
+ &  &  &  &  &  &  & \\
+ \hline
+ &  &  &  &  &  &  & \\
+ \hline
+ &  &  &  &  &  &  & \\
+ \hline
+ &  &  &  &  &  &  & \\
+ \hline
+ & $\circledast$ & $\circledast$ & $\circledast$ & $\circledast$ & $\circledast$ & $\circledast$ & \\
+ \hline
+\end{tabular}
+\end{center}
+It remains to show that it is not possible to place more than 14 bishops in such a way that they can not hit each other.
+A natural idea is to divide the 64 chess squares into 14 groups such that if two bishops are in the same group then
+they can hit each other. We can produce 14 such groups
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+4 & 8 & 5 & 9 & 6 & 10 & 7 & 11\\
+\hline
+8 & 4 & 9 & 5 & 10 & 6 & 11 & 7\\
+\hline
+3 & 9 & 4 & 10 & 5 & 11 & 6 & 12\\
+\hline
+9 & 3 & 10 & 4 & 11 & 5 & 12 & 6\\
+\hline
+2 & 10 & 3 & 11 & 4 & 12 & 5 & 13\\
+\hline
+10 & 2 & 11 & 3 & 12 & 4 & 13 & 5\\
+\hline
+1 & 11 & 2 & 12 & 3 & 13 & 4 & 14\\
+\hline
+11 & 1 & 12 & 2 & 13 & 3 & 14 & 4\\
+\hline
+\end{tabular}
+\end{center}
+
+\item[\ref{card-1}]
+
+(a) The first card is $7\clubsuit$, hence the suit of the hidden card is $\clubsuit$. The distance can be obtained from the following table
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+distance & order of the 3 cards\\
+\hline
+1 & $3\diamondsuit,J\diamondsuit,A\spadesuit$\\
+\hline
+2 & $3\diamondsuit,A\spadesuit,J\diamondsuit$\\
+\hline
+3 & $J\diamondsuit,3\diamondsuit,A\spadesuit$\\
+\hline
+4 & $J\diamondsuit,A\spadesuit,3\diamondsuit$\\
+\hline
+5 & $A\spadesuit,3\diamondsuit,J\diamondsuit$\\
+\hline
+6 & $A\spadesuit,J\diamondsuit,3\diamondsuit$\\
+\hline
+\end{tabular}
+\end{center}
+That is, we have 
+$$
+d(7\clubsuit,\mbox{hidden card})=1.
+$$
+Thus the hidden card is $8\clubsuit$.
+
+(b) The suit of the secret card is $\diamondsuit$ since the first card in the sequence is $J\diamondsuit$.
+It remains to decode the distance of the secret card and $J\diamondsuit:$
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+distance & order of the 3 cards\\
+\hline
+1 & $9\clubsuit,8\heartsuit,Q\heartsuit$\\
+\hline
+2 & $9\clubsuit,Q\heartsuit,8\heartsuit$\\
+\hline
+3 & $8\heartsuit,9\clubsuit,Q\heartsuit$\\
+\hline
+4 & $8\heartsuit,Q\heartsuit,9\clubsuit$\\
+\hline
+5 & $Q\heartsuit,9\clubsuit,8\heartsuit$\\
+\hline
+6 & $Q\heartsuit,8\heartsuit,9\clubsuit$\\
+\hline
+\end{tabular}
+\end{center}
+We get that the distance is 2, so the secret card is $K\diamondsuit$.
+
+(c) It is clear that the suit of the hidden card is $\heartsuit$. We can determine the distance using the following table
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+distance & order of the 3 cards\\
+\hline
+1 & $6\diamondsuit,J\diamondsuit,10\heartsuit$\\
+\hline
+2 & $6\diamondsuit,10\heartsuit,J\diamondsuit$\\
+\hline
+3 & $J\diamondsuit,6\diamondsuit,10\heartsuit$\\
+\hline
+4 & $J\diamondsuit,10\heartsuit,6\diamondsuit$\\
+\hline
+5 & $10\heartsuit,6\diamondsuit,J\diamondsuit$\\
+\hline
+6 & $10\heartsuit,J\diamondsuit,6\diamondsuit$\\
+\hline
+\end{tabular}
+\end{center}
+In this case the distance is 6, therefore the hidden card is $2\heartsuit$.
+
+(d) The first card is $10\diamondsuit$, so the suit of the hidden card is $\diamondsuit$. It remains to figure out the distance.
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+distance & order of the 3 cards\\
+\hline
+1 & $5\diamondsuit,2\spadesuit,4\spadesuit$\\
+\hline
+2 & $5\diamondsuit,4\spadesuit,2\spadesuit$\\
+\hline
+3 & $2\spadesuit,5\diamondsuit,4\spadesuit$\\
+\hline
+4 & $2\spadesuit,4\spadesuit,5\diamondsuit$\\
+\hline
+5 & $4\spadesuit,5\diamondsuit,2\spadesuit$\\
+\hline
+6 & $4\spadesuit,2\spadesuit,5\diamondsuit$\\
+\hline
+\end{tabular}
+\end{center}
+The order of the remaining three cards is $4\spadesuit,2\spadesuit,5\diamondsuit$, hence the distance is 6.
+Thus the announced hidden card is $3\diamondsuit$.
+
+(e) It is easy to see that the suit of the hidden card is $\spadesuit$. We can determine the distance using the following table
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+distance & order of the 3 cards\\
+\hline
+1 & $7\diamondsuit,3\heartsuit,7\heartsuit$\\
+\hline
+2 & $7\diamondsuit,7\heartsuit,3\heartsuit$\\
+\hline
+3 & $3\heartsuit,7\diamondsuit,7\heartsuit$\\
+\hline
+4 & $3\heartsuit,7\heartsuit,7\diamondsuit$\\
+\hline
+5 & $7\heartsuit,7\diamondsuit,3\heartsuit$\\
+\hline
+6 & $7\heartsuit,3\heartsuit,7\diamondsuit$\\
+\hline
+\end{tabular}
+\end{center}
+That is, the distance of the two cards is 2. Therefore the hidden card is $10\spadesuit$.
+
+\item[\ref{card-2}]
+
+(a) We need two cards having the same suit. In this example there are two possibilities
+\begin{align*}
+& 3\clubsuit,7\clubsuit\Rightarrow\mbox{ the hidden card is }7\clubsuit,\mbox{ the distance is 4,}\\
+& 2\diamondsuit,5\diamondsuit\Rightarrow\mbox{ the hidden card is }5\diamondsuit, \mbox{ the distance is 3.}
+\end{align*}
+
+If the hidden card is $7\clubsuit$, then we have to encode 4 using the cards 
+$$
+2\diamondsuit<5\diamondsuit<A\spadesuit.
+$$
+We have that 4 corresponds to the ordering 2,3,1, therefore the order of the remaining four cards is
+$$
+3\clubsuit,5\diamondsuit,A\spadesuit,2\diamondsuit.
+$$
+
+If the secret card is $5\diamondsuit$, then the distance to encode is 3, which is 2,1,3. The correct order of the four
+cards is
+$$
+2\diamondsuit,7\clubsuit,3\clubsuit,A\spadesuit.
+$$
+
+(b) The assistant chooses $A\diamondsuit$ as the card to announce. We have that $d(J\diamondsuit,A\diamondsuit)=3$.
+One encodes distance 3 as 2,1,3. Thus the order of the four cards is 
+$$
+J\diamondsuit,8\heartsuit,10\clubsuit,4\spadesuit.
+$$
+
+(c) The hidden card is $8\spadesuit$, the distance is 1, therefore the assistant hands the four cards in the following order
+to the magician
+$$
+7\spadesuit,A\clubsuit,6\diamondsuit,K\heartsuit.
+$$
+
+(d) Here the assistant may use the following pairs of cards
+\begin{align*}
+(I). &\ 3\spadesuit,7\spadesuit\Rightarrow\mbox{ hidden card: }7\spadesuit,\mbox{ distance: }4,\\
+(II). &\  3\spadesuit,9\spadesuit\Rightarrow\mbox{ hidden card: }9\spadesuit,\mbox{ distance: }6,\\
+(III). &\  7\spadesuit,9\spadesuit\Rightarrow\mbox{ hidden card: }9\spadesuit,\mbox{ distance: }2.
+\end{align*}
+The corresponding sequences are
+\begin{align*}
+(I). &\ 3\spadesuit,8\diamondsuit,9\spadesuit,7\clubsuit,\\
+(II). &\ 3\spadesuit,7\spadesuit,8\diamondsuit,7\clubsuit,\\
+(III). &\ 7\spadesuit,7\clubsuit,3\spadesuit,8\diamondsuit.
+\end{align*}
+
+
+(e) In this case the assistant has two choices
+\begin{align*}
+(I). &\ J\diamondsuit,Q\diamondsuit\Rightarrow\mbox{ hidden card: }Q\diamondsuit,\mbox{ distance: }1,\\
+(II). &\ 7\heartsuit,10\heartsuit\Rightarrow\mbox{ hidden card: }10\heartsuit,\mbox{ distance: }3.
+\end{align*}
+The corresponding sequences of cards are
+\begin{align*}
+(I). &\ J\diamondsuit,7\heartsuit,10\heartsuit,3\spadesuit,\\
+(II). &\ 7\heartsuit,Q\diamondsuit,J\diamondsuit,3\spadesuit.
+\end{align*}
+
+\end{enumerate}
+
+
+\newpage
+\section{Pascal's triangle}
+
+%\renewcommand{\theenumi}{4.\arabic{enumi}}
+
+\begin{enumerate}
+%\stepcounter{enumi}
+\item[\ref{ex:pascalbinomialsame}]
+We prove that the two triangles are the same by induction. 
+That is, we prove that the $k$th element of the $n$th row is the same in both triangles, 
+and we prove this by induction on $n$. 
+For $n=0$ the two triangles have the same zero row: $\binom{0}{0} = 1$. 
+Assume that the two triangles are equal in the $(n-1)$st row. 
+We prove that the two triangles contain the same numbers in the $n$th row, as well. 
+The first and the last numbers are the same: $\binom{n}{0} = 1$, $\binom{n}{n} = 1$. 
+Now, consider the $k$th element of the $n$th row for an arbitrary $1\leq k\leq n-1$. 
+In Pascal's triangle it is the sum of the two numbers above it, 
+that is, it is the sum of the $(k-1)$st and the $k$th number of row $(n-1)$. 
+By the induction hypotheses, 
+row $n-1$ is the same in Pascal's triangle and in the triangle of the Binomial coefficients. 
+That is, the $(k-1)$st element of row $(n-1)$ is $\binom{n-1}{k-1}$, 
+the $k$th element of row $(n-1)$ is $\binom{n-1}{k}$. 
+By Proposition~\ref{prop:binomsum} we have $\binom{n-1}{k-1}+ \binom{n-1}{k} = \binom{n}{k}$. 
+That is, the $k$th number of the $n$th row in Pascal's triangle is the same 
+as the $k$th number of the $n$th row in the triangle of the Binomial coefficients. 
+This is true for arbitrary $1\leq k\leq n-1$, 
+thus the $n$th row of Pascal's triangle is the same as the $n$th row of the triangle of the binomial coefficients. 
+This finishes the induction proof, 
+the two triangles are the same. 
+
+\item[\ref{ex:pascal12}]
+The first twelve rows of Pascal's triangle can be seen in Table~\ref{tab:pascal12} on page~\pageref{tab:pascal12}. 
+
+\begin{table}[!htb]
+\caption{First twelve rows of Pascal's triangle.}\label{tab:pascal12}
+\begin{center}
+\begin{sideways}%table}[!htb]%[H]
+%\caption{First twelve rows of Pascal's triangle}\label{tab:pascal10}
+\begin{tabular}{ccccccccccccccccccccccccc} 
+& & & & & & & & & & & & 1\\
+\noalign{\smallskip\smallskip} 
+& & & & & & & & & & & 1 & & 1\\
+\noalign{\smallskip\smallskip} 
+& & & & & & & & & & 1 & & 2 & & 1\\
+\noalign{\smallskip\smallskip} 
+& & & & & & & & & 1 & & 3 & & 3 & & 1\\
+\noalign{\smallskip\smallskip} 
+& & & & & & & & 1 & & 4 & & 6 & & 4 & & 1\\
+\noalign{\smallskip\smallskip} 
+& & & & & & & 1 & & 5 & & 10 & & 10 & & 5 & & 1 \\
+\noalign{\smallskip\smallskip} 
+& & & & & & 1 & & 6 & & 15 & & 20 & & 15 & & 6 & & 1 \\
+\noalign{\smallskip\smallskip} 
+& & & & & 1 & & 7 & & 21 & & 35 & & 35 & & 21 & & 7 & & 1 \\
+\noalign{\smallskip\smallskip} 
+& & & & 1 & & 8 & & 28 & & 56 & & 70 & & 56 & & 28 & & 8 & & 1 \\
+\noalign{\smallskip\smallskip} 
+& & & 1 & & 9 & & 36 & & 84 & & 126 & & 126 & & 84 & & 36 & & 9 & & 1 \\
+\noalign{\smallskip\smallskip} 
+& & 1 & & 10 & & 45 & & 120 & & 210 & & 252 & & 210 & & 120 & & 45 & & 10 & & 1 \\
+\noalign{\smallskip\smallskip} 
+& 1 & & 11 & & 55 & & 165 & & 330 & & 462 & & 462 & & 330 & & 165 & & 55 & & 11 & & 1 \\
+\noalign{\smallskip\smallskip} 
+1 & & 12 & & 66 & & 220 & & 495 & & 792 & & 924 & & 792 & & 495 & & 220 & & 66 & & 12 & & 1 \\
+\noalign{\smallskip\smallskip} 
+\end{tabular}
+\end{sideways}%table}
+\end{center}
+\end{table}
+
+%\stepcounter{enumi}
+
+\item[\ref{ex:binomialwriteout}]
+The Binomial theorem holds for $n=0$ and $n=1$, as well: 
+$(x+y)^0 = 1 = \binom{0}{0} x^0 y^0$, 
+$(x+y)^1 = x + y = \binom{1}{0} x^1 y^0 + \binom{1}{1} x^0 y^1$. 
+Now, we can prove the theorem by induction on $n$. 
+Assume that the statement holds for $n-1$, 
+that is, 
+\[
+(x+y)^{n-1} = x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{1} xy^{n-2} + y^{n-1}. 
+\]
+This is the induction hypothesis. 
+Now, compute $(x+y)^n$ using the same method as before, 
+and use the induction hypothesis for expanding $(x+y)^{n-1}$: 
+\begin{align}
+\notag (x+y)^n &= (x+y)^{n-1} \cdot (x+y) \\ 
+\notag &= \left( x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{n-2} xy^{n-2} + y^{n-1} \right) \cdot \left( x + y \right) \\
+\notag &= \left( x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{n-2} xy^{n-2} + y^{n-1} \right) \cdot x \\
+\notag &+ \left( x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{n-2} xy^{n-2} + y^{n-1} \right) \cdot y \\
+\notag &= x^{n} + \binom{n-1}{1} x^{n-1}y + \dots + \binom{n-1}{n-2} x^2y^{n-2} + xy^{n-1} \\
+\notag &+ x^{n-1}y + \binom{n-1}{1} x^{n-2}y^2 + \dots + \binom{n-1}{n-2} xy^{n-1} + y^{n} \\
+\notag &= x^{n} + \binom{n-1}{1} x^{n-1}y + \dots + \binom{n-1}{n-2} x^2y^{n-2} + \binom{n-1}{n-1} xy^{n-1} \\
+\notag &+ \binom{n-1}{0} x^{n-1}y + \binom{n-1}{1} x^{n-2}y^2 + \dots + \binom{n-1}{n-2} xy^{n-1} + y^{n} \\
+\notag &= x^n + \left( \binom{n-1}{1} + \binom{n-1}{0} \right) x^{n-1}y + \dots \\
+%\notag &+ \left( \binom{n-1}{2} + \binom{n-1}{1} \right) x^{n-2}y^2 + \dots 
+\notag &\dots + \left( \binom{n-1}{k} + \binom{n-1}{k-1} \right) x^{n-k}y^k + \dots \\
+\notag &\dots + \left( \binom{n-1}{n-1} + \binom{n-1}{n-2} \right) xy^{n-1} + y^n \\
+\label{eq:binomsum2} &= x^n + \binom{n}{1} x^{n-1}y + \dots %\binom{n}{2} x^{n-2}y^2 + \dots \\
+%\notag &
++ \binom{n}{k} x^{n-k}y^k + \dots %+ \binom{n}{n-2}x^2y^{n-2} 
++ \binom{n}{n-1}xy^{n-1} + y^n.
+\end{align}
+Here, we have expanded $(x+y)^{n-1}$ using the induction hypothesis, 
+and multiplied it by $(x+y)$ by expanding the brackets. 
+Then we collected together the same terms $x^{n-k}y^k$ for every $k=0, 1, \dots , n-1, n$. 
+Finally, in \eqref{eq:binomsum2} we used the generating rule of Pascal's triangle (Proposition~\ref{prop:binomsum}). 
+
+\item[\ref{ex:binomialnchoosek}]
+Consider $(x+y)^n$: 
+\[
+(x+y)^n = a_n x^n + a_{n-1}x^{n-1}y + a_{n-2}x^{n-2}y^2 + \dots + a_2x^2y^{n-2} + a_1xy^{n-1} + a_0y^n, 
+\] 
+for some numbers $a_n, a_{n-1}, \dots, a_1, a_0$. 
+How do we obtain the coefficient $a_k$ for $x^{n-k}y^k$? 
+Now, $(x+y)^n$ is the $n$-fold product of $(x+y)$ by itself: 
+\[
+(x+y)^n = \underbrace{(x+y) (x+y)  \dots (x+y) (x+y)}_{n\text{ times}}. 
+\]
+The multiplication of these $n$ factors is carried out by choosing a term from each factor ($x$ or $y$) in every possible way, 
+multiplying these $n$ terms, and then adding the resulting products together. 
+Thus the coefficient of $x^{n-k}y^k$ is the number of possibilities to choose $(n-k)$-times the $x$ and $k$-times the $y$ out of the $n$ factors. 
+Altogether there are $n$ many $y$'s to choose from, 
+and we need to choose $k$ of them (and the remaining $(n-k)$ factors will be chosen as $x$). 
+This can be done in $\binom{n}{k}$-many ways. 
+%Now, we need to determine which 2 of the 6 y's we choose. 
+%This can be done in $\binom{6}{2}$-many ways, 
+Therefore the coefficient of $x^{n-k}y^k$ is $a_k=\binom{n}{k}$. 
+
+\item[\ref{ex:binomial1+1}]
+\begin{align*}
+2^n &= (1+1)^n = 1^n + n \cdot 1^{n-1}\cdot 1 + \binom{n}{2} \cdot 1^{n-2}\cdot 1^2 + \dots + n \cdot 1 \cdot 1^{n-1} + 1^n \\
+&= 1 + n + \binom{n}{2} + \dots + \binom{n}{k} + \dots + \binom{n}{n-2} + n + 1 = \sum_{k=0}^n \binom{n}{k}. 
+\end{align*}
+
+\item[\ref{ex:binomial1-1}]
+\begin{align*}
+0 &= 0^n = (1-1)^n \\
+&= 1^n + n \cdot 1^{n-1}\cdot (-1) + \binom{n}{2} \cdot 1^{n-2}\cdot (-1)^2 + \dots + n \cdot 1 \cdot (-1)^{n-1} + (-1)^n \\
+&= 1 - n  + \binom{n}{2}  - \dots + (-1)^{k} \binom{n}{k} + \dots + (-1)^{n-1} n + (-1)^n \\
+&= \sum_{k=0}^n (-1)^k \binom{n}{k}. 
+\end{align*}
+
+\item[\ref{ex:expandusingbinomialthm}]
+Using the Binomial theorem we obtain  
+\begin{align*}
+(x+y)^8&= \sum_{k=0}^8 \binom{8}{k} x^{8-k} y^k = x^8 + 8 x^7y + 28x^6y^2 + 56 x^5y^3 \\
+&+ 70 x^4 y^4 + 56 x^3 y^5 + 28 x^2 y^6 + 8 x y^7 + y^8, \\
+(x-y)^8&= \sum_{k=0}^8 \binom{8}{k} x^{8-k} \left( -y \right)^k = x^8 - 8 x^7y + 28x^6y^2 - 56 x^5y^3 \\
+&+ 70 x^4 y^4 - 56 x^3 y^5 + 28 x^2 y^6 - 8 x y^7 + y^8, \\
+(a+1)^{10} &= \sum_{k=0}^{10} \binom{10}{k} \cdot a^{10-k}\cdot 1^k = a^{10} + 10a^9 + 45a^8 + 120a^7 \\
+&+ 210a^6 + 252a^5 + 210a^4 + 120 a^3 + 45 a^2 + 10a + 1, \\
+(b-3)^5 &= \sum_{k=0}^5 \binom{5}{k} b^{5-k} \left( -3 \right)^k = b^5 -15 b^4 + 90 b^3 \\
+&-270 b^2 + 405 b - 243, \\
+(1 + 2/x)^5 &= \sum_{k=0}^5 \binom{5}{k} \cdot 1^{5-k} \cdot \left( \frac{2}{x} \right)^k = 1 + \frac{10}{x} + \frac{40}{x^2} + \frac{80}{x^3} + \frac{80}{x^4} + \frac{32}{x^5}, \\
+\left( a + b \right)^6 &= \sum_{k=0}^6 \binom{6}{k} a^{6-k} b^k = a^6 + 6a^5b + 15 a^4 b^2 + 20 a^3 b^3 \\
+&+ 15 a^2 b^4 + 6ab^5 + b^6, \\
+\left( 1 + x \right)^5 &= \sum_{k=0}^5 \binom{5}{k} \cdot 1^{5-k} \cdot x^k = 1 + 5x + 10x^2 \\
+&+ 10x^3 + 5x^4 + x^5, \\
+\left(3a + 4b \right)^4 &= \sum_{k=0}^4 \binom{4}{k} \cdot \left(3a\right)^{4-k} \cdot \left(4b\right)^k = \left( 3a \right)^4 + 4 \cdot \left( 3a \right)^3 \cdot \left( 4b \right) \\
+&+ 6 \cdot \left( 3a \right)^2 \cdot \left( 4b \right)^2 + 4 \cdot \left( 3a \right) \cdot \left( 4b \right)^3 + \left( 4b \right)^4  = 81 a^4 \\
+&+ 432 a^3b + 864 a^2b^2 + 768 ab^3 + 256 b^4, \\
+\left( 3 - 2x \right)^4 &= \sum_{k=0}^4 \binom{4}{k} \cdot 3^{4-k} \cdot \left(-2x\right)^k = 3^4 - 4 \cdot 3^3 \cdot \left( 2x \right) + 6 \cdot 3^2 \cdot \left( 2x \right)^2 \\
+&- 4 \cdot 3 \cdot \left( 2x \right)^3 + \left( 2x \right)^4  = 81 - 216 x + 216 x^2 - 96 x^3 + 16 x^4.
+\end{align*}
+
+\item[\ref{ex:coefficientinbinomialthm}]
+By the Binomial theorem 
+\[
+\left( 1-\frac{x}{2} \right)^9 = \sum_{k=0}^9 \binom{9}{k} \cdot 1^{9-k} \cdot \left( - \frac{x}{2} \right)^k = \sum_{k=0}^9 \left( -1 \right)^k \cdot \frac{\binom{9}{k}}{2^k} \cdot x^k. 
+\]
+Here, the fourth term corresponds to $x^3$, that is, $\left( -1 \right)^3 \cdot \binom{9}{3}/2^3 x^3 = - 84/8 x^3 = -21/2 x^3 = -10.5 x^3$. 
+The coefficient of $x^5$ is $\left( -1 \right)^5 \cdot \binom{9}{5}/2^5 = - 126/32  = -63/16 = -3.9375$. 
+
+\item[\ref{ex:alternatingsum}]
+If $n$ is odd, then every binomial coefficient occurs twice in the sum: once with positive sign, and once with negative sign. 
+Indeed, the sign of $\binom{n}{k}$ is $(-1)^k$ and the sign of $\binom{n}{n-k}$ is $(-1)^{n-k}$. 
+They cannot have the same sign, because their product is $(-1)^k \cdot (-1)^{n-k} = (-1)^n = -1$, as $n$ is odd. 
+Thus every binomial coefficient occurs twice with different signs, their sum is 0, and the whole sum is 0, as well. 
+
+\item[\ref{ex:alternatingsum2}]
+Consider the alternating sum of the $n$th row (for $n\geq 1$), 
+and use the generating rule of Pascal's triangle: 
+{\small
+\begin{align*}
+& \binom{n}{0} - \binom{n}{1} + \binom{n}{2} - \dots + (-1)^{n-1} \cdot \binom{n}{n-1} + (-1)^{n} \cdot \binom{n}{n} \\
+&= \binom{n-1}{0} - \left( \binom{n-1}{0} + \binom{n-1}{1} \right) + \left( \binom{n-1}{1} + \binom{n-1}{2} \right)  - \dots \\
+%\left( \binom{n}{2} + \binom{n}{3} \right) 
+%+ \dots \\
+&+ %(-1)^{n-1} \cdot \left( \binom{n}{n-2} + \binom{n}{n-1} \right)  + 
+(-1)^{n-1} \cdot \left( \binom{n-1}{n-2} + \binom{n-1}{n-1} \right) + (-1)^{n} \cdot \binom{n-1}{n-1} \\
+%\notag &= \binom{n}{0} + 2 \cdot \left[ \binom{n}{1} + \binom{n}{2} + \binom{n}{3} + \dots + \binom{n}{n-2} + \binom{n}{n-1} \right] + \binom{n}{n} \\
+&= \left( \binom{n-1}{0} - \binom{n-1}{0} \right) + \left( - \binom{n-1}{1} + \binom{n-1}{1} \right) + \\
+&+\left( \binom{n-1}{2} - \binom{n-1}{2} \right) + \dots 
+%&+ \left( \left( -1 \right)^{n-2} \cdot \binom{n}{n-2} + \left( -1 \right)^{n-1} \cdot \binom{n}{n-2} \right)  \\
++ \left( \left( -1 \right)^{n-2} \cdot \binom{n-1}{n-2} + \left( -1 \right)^{n-1} \cdot \binom{n-1}{n-2} \right)  \\
+&+ \left( \left( -1 \right)^{n-1} \cdot \binom{n-1}{n-1} + \left( -1 \right)^{n} \cdot \binom{n-1}{n-1} \right) \\
+&= 0 + 0 + 0 + \dots + 0 + 0 = 0. 
+\end{align*}}
+First, we replaced $\binom{n}{0}=1$ by $\binom{n-1}{0}=1$, 
+and $\binom{n}{n} = 1$ by $\binom{n-1}{n-1} = 1$, then we used the generating rule of Pascal's triangle. 
+Then we observed that every $\binom{n-1}{k}$ occurs twice in the sum: first with a positive sign, then right after it with a negative sign 
+(for $0\leq k\leq n-1$). 
+
+\item[\ref{ex:n+mchoosek}]
+Again, we give a combinatorial meaning to both sides of \eqref{eq:n+mchoosek}. 
+The right hand side gives a clue: 
+$\binom{n+m}{l}$ is the number of ways to choose $l$ elements out of an $(n+m)$-element set, 
+say 
+\[
+S = \halmaz{1, 2, \dots , n, n+1, n+2, \dots , n+m}.
+\] 
+Our plan is to prove that the left hand side of \eqref{eq:n+mchoosek} is the number of $l$-element subsets of $S$, as well. 
+Let $S_1 = \halmaz{1, 2, \dots , n}$ and $S_2 = \halmaz{n+1, n+2, \dots , n+m}$. 
+Now, try to count the number of ways to choose $l$ elements of $S$ by counting how many elements we choose from $S_1$ and from $S_2$. 
+If we choose 0 element from $S_1$, then we must choose $l$ elements from $S_2$. 
+We can do this in $\binom{n}{0} \cdot \binom{m}{l}$-many ways. 
+If we choose 1 element from $S_1$, then we must choose $l-1$ elements from $S_2$. 
+We can do this in $\binom{n}{1} \cdot \binom{m}{l-1}$-many ways. 
+If we choose 2 elements from $S_1$, then we must choose $l-2$ elements from $S_2$. 
+We can do this in $\binom{n}{2} \cdot \binom{m}{l-2}$-many ways. 
+In general, if we choose k elements from $S_1$, then we must choose $l-k$ elements from $S_2$. 
+We can do this in $\binom{n}{k} \cdot \binom{m}{l-k}$-many ways. 
+In the end, if we choose $l$ elements from $S_1$, then we must choose $0$ element from $S_2$. 
+We can do this in $\binom{n}{l} \cdot \binom{m}{0}$-many ways. 
+Thus, choosing $l$ elements out of $n+m$ can be done in the following number of ways: 
+\[
+\binom{n}{0} \cdot \binom{m}{l} + \binom{n}{1} \cdot \binom{m}{l-1} + \dots %+ \binom{n}{n-1} \cdot \binom{n}{1} 
++ \binom{n}{l}\cdot \binom{m}{0} = \sum_{k=0}^l \binom{n}{k} \cdot \binom{m}{l-k}. 
+\]
+That is, both sides of \eqref{eq:n+mchoosek} counts the number of ways of choosing $l$ elements out of an $(n+m)$-element set, 
+and therefore must be equal. 
+
+If we choose $n=m=l$, 
+and use the symmetry of Pascal's triangle $\binom{n}{k} = \binom{n}{n-k}$, 
+then we obtain exactly equation \eqref{eq:sumsquaresofrow}. 
+
+\item[\ref{ex:n+mchoosek2}]
+Consider $(x+y)^{n+m}$, and expand it using the Binomial theorem: 
+\[
+(x+y)^{n+m} = \sum_{k=0}^{n+m} \binom{n+m}{k} x^{n+m-k} \cdot y^{k}. 
+\]
+Then the right hand side of \eqref{eq:n+mchoosek} is the coefficient of the term $x^{n+m-l}y^l$. 
+We prove that the left hand side is the coefficient of $x^{n+m-l}y^l$, as well. 
+For this, we compute $(x+y)^{n+m}$ by multiplying $(x+y)^n \cdot (x+y)^m$ after expanding both factors using the Binomial theorem: 
+\[
+(x+y)^{n+m} = (x+y)^n \cdot (x+y)^m = \left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right) \cdot \left( \sum_{k=0}^m \binom{m}{k} x^{m-k}y^k \right). 
+\]
+Now, let us compute the coefficient of $x^{n+m-l} y^l$. 
+When do we obtain $x^{n+m-l} y^l$ when we multiply $\left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right)$ by $\left( \sum_{k=0}^m \binom{m}{k} x^{m-k}y^k \right)$? 
+%Take for example $x^n$ from the first factor, this must be multiplied by $y^n$ from the second factor to obtain $x^n y^n$. 
+%The coefficient of $x^n$ in the first factor is $\binom{n}{0}$, the coefficient of $y^n$ in the second factor is $\binom{n}{n}$, 
+%thus this multiplication contributes by $\binom{n}{0} \cdot \binom{n}{n}$ to the coefficient of $x^n y^n $ in $(x+y)^{2n}$. 
+%Similarly, the term $x^{n-1}y$ from the first factor, this must be multiplied by $xy^{n-1}$ from the second factor to obtain $x^n y^n$. 
+%The coefficient of $x^n$ in the first factor is $\binom{n}{1}$, the coefficient of $y^n$ in the second factor is $\binom{n}{n-1}$, 
+%thus this multiplication contributes by $\binom{n}{1} \cdot \binom{n}{n-1}$ to the coefficient of $x^n y^n $ in $(x+y)^{2n}$. 
+%In general, 
+For some $0\leq k\leq l$ the term $x^{n-k}y^k$ in the first factor must be multiplied by $x^{m-l+k} y^{l-k}$ from the second factor. 
+The coefficient of $x^{n-k}y^k$ in the first factor is $\binom{n}{k}$, the coefficient of $x^{m-l+k}y^{l-k}$ in the second factor is $\binom{m}{l-k}$, 
+thus this multiplication contributes by $\binom{n}{k} \cdot \binom{m}{l-k}$ to the coefficient of $x^{n+m-l} y^l $ in $(x+y)^{n+m}$. 
+That is, the coefficient of $x^{n+m-l} y^l$ in $(x+y)^{n+m}$ is 
+\[
+\sum_{k=0}^l \binom{n}{k} \cdot \binom{m}{l-k}. 
+\]
+Moreover, the coefficient of $x^{n+m-l}y^l$ in $(x+y)^{n+m}$ is $\binom{n+m}{l}$, thus the two numbers must be equal, 
+which proves \eqref{eq:n+mchoosek}: 
+%Applying the symmetry of Pascal's triangle (that is, $\binom{n}{k} = \binom{n}{n-k}$), 
+%we obtain \eqref{eq:sumsquaresofrow}:
+\[
+\sum_{k=0}^n \binom{n}{k} \cdot \binom{m}{l-k} = \binom{n+m}{l}. 
+\]
+
+\item[\ref{ex:diagonal}]
+We can try to prove the identity by induction on $m$. 
+For $m=0$ the identity holds, as the left hand side is $\binom{n}{0} = 1$, 
+the right hand side is $\binom{n+1}{0} = 1$, as well. 
+Assume that the identity holds for $m-1$, that is, 
+\[
+\sum_{k=0}^{m-1} \binom{n+k}{k} = \binom{n}{0} + \binom{n+1}{1} + \dots + \binom{n+m-1}{m-1} = \binom{n+m}{m-1}. 
+\]
+This is the induction hypothesis. 
+Now we prove the identity for $m$. 
+\begin{align*}
+& \sum_{k=0}^{m} \binom{n+k}{k} = \underbrace{\binom{n}{0} + \binom{n+1}{1} + \dots + \binom{n+m-1}{m-1}}_{= \binom{n+m}{m-1}, \text{ by the induction hypothesis}} + \binom{n+m}{m} \\
+&= \binom{n+m}{m-1} + \binom{n+m}{m} = \binom{n+m+1}{m}. 
+\end{align*}
+Here, we first used the induction hypothesis, 
+then the generating rule of Pascal's triangle (Proposition~\ref{prop:binomsum}). 
+
+We can spare ourselves an induction proof if we use $\binom{n+k}{k} = \binom{n+k}{n}$. 
+That is, 
+\begin{align*}
+&\sum_{k=0}^{m} \binom{n+k}{k} = \binom{n}{0} + \binom{n+1}{1} + \dots + \binom{n+m}{m} \\ 
+&= \binom{n}{n} + \binom{n+1}{n} + \dots + \binom{n+m-1}{n} = \sum_{k=n}^{n+m} \binom{k}{n} \\
+&= \binom{n+m+1}{n+1} = \binom{n+m+1}{m} 
+\end{align*}
+by Proposition~\ref{prop:sumkchoosem}. 
+
+\item[\ref{ex:rowp}]
+The $k$th element of row $p$ is 
+\[
+\binom{p}{k} = \frac{p!}{k!\cdot (p-k)!}. 
+\]
+This number is an integer number, the nominator is divisible by the prime $p$. 
+However, for $1\leq k\leq p-1$, the denominator only contains positive integers strictly less than $p$. 
+Thus, when we simplify this fraction for obtaining the resulting integer, 
+the factor $p$ in the nominator will not cancel out with anything in the denominator, 
+and thus $p$ will divide the integer $\binom{p}{k}$. 
+
+If $p$ is not a prime, 
+then this property does not necessarily hold.
+For example if $n$ is even then by Exercise~\ref{ex:nmidnchoose2} we have $n \nmid \binom{n}{2}$. 
+Furthermore, in the first 12 rows we have 
+\begin{align*}
+6 &\nmid \binom{6}{3} = 20, \\
+&& 8 &\nmid \binom{8}{4} = 70, \\
+9 &\nmid \binom{9}{3} = 84, \\
+&& && 10 &\nmid \binom{10}{5} = 252, \\
+12 &\nmid \binom{12}{3} = 220, & 12 &\nmid \binom{12}{4} = 495. 
+\end{align*}
+
+
+
+
+\end{enumerate}
+
+\newpage
+\section{Recurrence sequences}
+\begin{enumerate}
+\item[\ref{seq-ex-1}]
+We use the notation as follows
+1: the largest disk, 2: the second largest disk, 3: the second smallest disk, 4: the smallest disk.
+At the beginning there are 4 disks on peg $A$, it is denoted as $\halmaz{1,2,3,4}$, while peg $B$ and peg $C$
+has no disks at all, so we write $\halmaz{}$.
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\# move & peg $A$ & peg $B$ & peg $C$\\
+\hline
+0 & $\halmaz{ 1, 2, 3, 4 }$ & $\halmaz{}$ & $\halmaz{}$\\
+\hline
+1 & $\halmaz{ 1, 2, 3 }$ & $\halmaz{ 4 }$ & $\halmaz{}$\\
+\hline
+2 & $\halmaz{ 1, 2 }$ & $\halmaz{ 4 }$ & $\halmaz{ 3 }$\\
+\hline
+3 & $\halmaz{ 1, 2 }$ & $\halmaz{}$ & $\halmaz{ 3, 4 }$\\
+\hline
+4 & $\halmaz{ 1 }$ & $\halmaz{ 2 }$ & $\halmaz{ 3, 4 }$\\
+\hline
+5 & $\halmaz{ 1, 4 }$ & $\halmaz{ 2 }$ & $\halmaz{ 3 }$\\
+\hline
+6 & $\halmaz{ 1, 4 }$ & $\halmaz{ 2, 3 }$ & $\halmaz{}$\\
+\hline
+7 & $\halmaz{ 1 }$ & $\halmaz{ 2, 3, 4 }$ & $\halmaz{}$\\
+\hline
+8 & $\halmaz{}$ & $\halmaz{ 2, 3, 4 }$ & $\halmaz{ 1 }$\\
+\hline
+9 & $\halmaz{}$ & $\halmaz{ 2, 3 }$ & $\halmaz{ 1, 4 }$\\
+\hline
+10 & $\halmaz{ 3 }$ & $\halmaz{ 2 }$ & $\halmaz{ 1, 4 }$\\
+\hline
+11 & $\halmaz{ 3, 4 }$ & $\halmaz{ 2 }$ & $\halmaz{ 1 }$\\
+\hline
+12 & $\halmaz{ 3, 4 }$ & $\halmaz{ }$ & $\halmaz{ 1, 2 }$\\
+\hline
+13 & $\halmaz{ 3 }$ & $\halmaz{ 4 }$ & $\halmaz{ 1, 2 }$\\
+\hline
+14 & $\halmaz{ }$ & $\halmaz{ 4 }$ & $\halmaz{ 1, 2, 3 }$\\
+\hline
+15 & $\halmaz{ }$ & $\halmaz{ }$ & $\halmaz{ 1, 2, 3, 4 }$\\
+\hline
+\end{tabular}
+\end{center}
+
+\item[\ref{seq-ex-2}]
+The idea is to determine geometric progressions satisfying the same recurrence relation as $a_n$.
+Let $g_n$ be a geometric progression with the above mentioned property such that $g_n=g_0r^n$ for some $g_0$ and $r$.
+It follows that
+$$
+r^2=7r-10\Rightarrow r^2-7r+10=0.
+$$
+Solving the quadratic equation yields that $r=2$ or 5. We obtained two appropriate progressions and we know that linear combinations
+of these progressions satisfy exactly the same recurrence. Define $W_n$ as follows
+$$
+W_n=s\cdot 2^n+t\cdot 5^n.
+$$
+We try to fix $s$ and $t$ such that $W_0=a_0$ and $W_1=a_1$. We get that
+\begin{align*}
+&W_0=a_0=0,\\
+&W_1=a_1=2.
+\end{align*}
+Therefore
+\begin{align*}
+s+t&=0,\\
+2s+5t&=2.
+\end{align*}
+The solution of the above system of equations is $s=-2/3, t=2/3$.
+Hence
+$$
+a_n=W_n=-\frac{2}{3}\cdot 2^n+\frac{2}{3}\cdot 5^n.
+$$
+
+\item[\ref{seq-ex-3}]
+Let $g_n$ be a geometric progression satisfying the same recurrence relation as $a_n$ such that $g_n=g_0r^n$ for some $g_0$ and $r$.
+We have that 
+$$
+r^2=4r-3\Rightarrow r^2-4r+3=0.
+$$
+That is, $r\in\halmaz{1,3}$. The linear combination we consider now is
+$$
+W_n=s\cdot 1^n+t\cdot 3^n=s+t\cdot 3^n.
+$$
+The additional conditions imply that
+\begin{align*}
+&W_0=a_0=1,\\
+&W_1=a_1=13.
+\end{align*}
+Therefore
+\begin{align*}
+s+t&=1,\\
+s+3t&=13.
+\end{align*}
+We get the solution $s=-5,t=6$. The explicit formula for $a_n$ is
+$$
+-5+6\cdot 3^n.
+$$
+
+\item[\ref{seq-ex-4}]
+This is an example of an order 3 linear recurrence. We define $g_n=g_0r^n$ for some $g_0$ and $r$, which is a geometric
+progression. We assume that it satisfies the same recurrence relation as $a_n$, that is, we obtain
+$$
+r^3=-2r^2+r+2.
+$$
+It is a cubic polynomial. We look for integer solutions. If there is an integral root, then it divides 2. Hence the possible integral roots
+are $\pm 2,\pm 1$.
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$r$ & $r^3+2r^2-r-2$\\
+\hline
+-2 & 0\\
+\hline
+-1 & 0\\
+\hline
+1 & 0\\
+\hline
+2 & 12\\
+\hline
+\end{tabular}
+\end{center}
+The cubic polynomial $r^3+2r^2-r-2$ can be written as $\left(x-1\right) \cdot \left(x+1\right) \cdot \left(x+2\right)$, that is, there are three integral roots.
+In this case we have three geometric progressions satisfying the recurrence, therefore the appropriate linear combination
+is
+$$
+W_n=s\cdot (-2)^n+t\cdot (-1)^n+u\cdot 1^n.
+$$
+The corresponding system of linear equations is
+\begin{align*}
+s+t+u&=0,\\
+-2s-t+u&=1,\\
+4s+t+u&=2.
+\end{align*}
+We subtract the first equation from the third one to get $3s=2$. So we have that $s=2/3$.
+We eliminate $s$ from the first two equations
+\begin{align*}
+t+u&=-\frac{2}{3},\\
+-t+u&=\frac{7}{3}.
+\end{align*}
+It is easy to see that $u=5/6$ and $t=-3/2$.
+The explicit formula for $a_n$ is 
+\[
+\frac23 \cdot (-2)^n-\frac32\cdot (-1)^n+\frac56. 
+\]
+
+\item[\ref{seq-ex-5}]
+The solution is similar to the previous one, so we only provide some details of the computation.
+The cubic polynomial in this case is
+$$
+r^3-6r^2+11r-6.
+$$
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$r$ & $r^3-6r^2+11r-6$\\
+\hline
+$-6$ & $-504$\\
+\hline
+$-3$ & $-120$\\
+\hline
+$-2$ & $-60$\\
+\hline
+$-1$ & $-24$\\
+\hline
+$ 1$ & $0$\\
+\hline
+$ 2$ & $0$\\
+\hline
+$ 3$ & $0$\\
+\hline
+$ 6$ & $60$\\
+\hline
+\end{tabular}
+\end{center}
+The three roots of the equation are 1, 2 and 3. Let $W_n=s\cdot 1^n+t\cdot 2^n+u\cdot 3^n$.
+The initial values should be equal as well, hence
+\begin{align*}
+s+t+u&=0,\\
+s+2t+3u&=0,\\
+s+4t+9u&=1.
+\end{align*}
+It is easy to eliminate $s$ from the second and the third equation
+\begin{align*}
+t+2u&=0,\\
+3t+8u&=1.
+\end{align*}
+Therefore $u=1/2, t=-1$ and $s=1/2$. We obtain the following explicit formula
+$$
+a_n=\frac{1}{2}-2^n+\frac{1}{2}\cdot 3^n.
+$$
+
+\item[\ref{seq-ex-6}]
+In this exercise we have an order 2 recurrence sequence. Following the method we described 
+we get a quadratic polynomial
+$$
+r^2-4r+4=(r-2)^2.
+$$
+It has only a multiple root, so we have to consider the linear combinations of $2^n$ and $n\cdot 2^n$.
+That is, 
+$$
+W_n=s\cdot 2^n+tn\cdot 2^n.
+$$
+The initial values of $a_n$ are $a_0=-1$ and $a_1=0$, hence the system of linear equations is
+\begin{align*}
+s&=-1,\\
+2s+2t&=0.
+\end{align*}
+It is clear that $s=-1$ and $t=1$. Thus the closed-form formula for $a_n$ is
+$$
+-2^n+n\cdot 2^n.
+$$
+
+\item[\ref{seq-ex-7}]
+As before we reduce the problem to a polynomial equation, which is
+$$
+r^3-5r^2+3r+9.
+$$
+There are 6 possible integral roots, the divisors of 9, that is, $\halmaz{\pm 9,\pm 3,\pm 1}$.
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$r$ & $r^3-5r^2+3r+9$\\
+\hline
+$-9$ & $-1152$\\
+\hline
+$-3$ & $-72$\\
+\hline
+$-1$ & $0$\\
+\hline
+$1$ & $8$\\
+\hline
+$3$ & $0$\\
+\hline
+$9$ & $360$\\
+\hline
+\end{tabular}
+\end{center}
+We obtained only 2 roots of the cubic polynomial. Dividing the polynomial $r^3-5r^2+3r+9$ by $(r+1)\cdot (r-3)$
+we get $r-3$ and the remainder is 0. That means that 
+$$
+r^3-5r^2+3r+9=(r+1)\cdot (r-3)^2.
+$$
+There is a double root, so $W_n$ is defined as
+$$
+s\cdot (-1)^n+t\cdot 3^n+un\cdot 3^n.
+$$
+Substituting $n=0,1,2$ yields
+\begin{align*}
+s+t&=3,\\
+-s+3t+3u&=4,\\
+s+9t+18u&=29.
+\end{align*}
+Using that $s=3-t$ we obtain
+\begin{align*}
+4t+3u&=7,\\
+8t+18u&=26.
+\end{align*}
+So we have the solution $s=2,t=1$ and $u=1$. The explicit formula for $a_n$ is given by
+$$
+2\cdot (-1)^n+3^n+n\cdot 3^n.
+$$
+
+\item[\ref{seq-ex-8}]
+Consider the sequence
+$$
+u_n=\left(\frac{5-3\sqrt{5}}{2}\right)^n+\left(\frac{5+3\sqrt{5}}{2}\right)^n,\quad n\geq 0.
+$$
+We have $u_0=2$ and $u_1=5$. We try to find a second order linear recurrence satisfied by $u_n$.
+If there is such a recurrence, then the corresponding quadratic polynomial is
+$$
+\left(r-\frac{5-3\sqrt{5}}{2}\right)\cdot \left(r-\frac{5+3\sqrt{5}}{2}\right)=r^2-5r-5.
+$$
+Therefore the possible recurrence relation is
+$$
+u_n=5u_{n-1}+5u_{n-2}=5\cdot (u_{n-1}+u_{n-2}).
+$$
+Now we have that $u_n$ is an integer for all $n$ and $u_n$ is a multiple of 5 if $n\geq 1$.
+
+\item[\ref{seq-ex-9}]
+We have a sequence
+$$
+u_n=(4-\sqrt{3})^n+(4+\sqrt{3})^n,\quad n\geq 0.
+$$
+One computes that $u_0=2$ and $u_1=8$, that is, the first two elements of the sequence is divisible by 2.
+The quadratic polynomial
+$$
+\left(r-4+\sqrt{2}\right)\cdot \left(r-4-\sqrt{2}\right)=r^2-8r+14
+$$
+is the polynomial corresponding to the appropriate recurrence relation. Hence the recurrence sequence is given by
+\begin{align*}
+u_0&=2,\\
+u_1&=8,\\
+u_n&=8u_{n-1}-14u_{n-2}\quad n\geq 2.
+\end{align*}
+The statement follows easily since $u_0=2\cdot 1, u_1=2\cdot 4$ and $u_n=2\cdot(4u_{n-1}-7u_{n-2})$.
+\end{enumerate}
+%\end{enumerate}
+
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+

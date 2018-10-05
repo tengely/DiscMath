@@ -1,0 +1,33 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Introduction}{4}
+\contentsline {section}{\numberline {1.1}Sets}{5}
+\contentsline {section}{\numberline {1.2}Sums and products}{11}
+\contentsline {section}{\numberline {1.3}The Euclidean algorithm}{15}
+\contentsline {section}{\numberline {1.4}Numeral systems}{18}
+\contentsline {chapter}{\numberline {2}Counting}{25}
+\contentsline {section}{\numberline {2.1}Sequences}{29}
+\contentsline {section}{\numberline {2.2}Number of subsets}{32}
+\contentsline {section}{\numberline {2.3}Permutations}{38}
+\contentsline {section}{\numberline {2.4}Anagrams}{40}
+\contentsline {section}{\numberline {2.5}The number of ordered subsets of a given size}{43}
+\contentsline {section}{\numberline {2.6}The number of subsets of a given size }{46}
+\contentsline {section}{\numberline {2.7}Distributing money}{51}
+\contentsline {section}{\numberline {2.8}Balls from urns}{61}
+\contentsline {chapter}{\numberline {3}Proof techniques}{66}
+\contentsline {section}{\numberline {3.1}Proofs by induction}{66}
+\contentsline {section}{\numberline {3.2}Proofs by contradiction}{75}
+\contentsline {section}{\numberline {3.3}Constructive proofs}{78}
+\contentsline {section}{\numberline {3.4}Pigeonhole principle}{86}
+\contentsline {section}{\numberline {3.5}A card trick}{90}
+\contentsline {chapter}{\numberline {4}Pascal's triangle}{93}
+\contentsline {section}{\numberline {4.1}Binomial theorem}{96}
+\contentsline {section}{\numberline {4.2}Identities}{100}
+\contentsline {chapter}{\numberline {5}Recurrence sequences}{112}
+\contentsline {section}{\numberline {5.1}Examples of recurrence relations}{112}
+\contentsline {section}{\numberline {5.2}Linear recurrence relations of order $k$}{117}
+\contentsline {chapter}{\numberline {6}Solutions}{129}
+\contentsline {section}{\numberline {6.1}Introduction}{129}
+\contentsline {section}{\numberline {6.2}Counting}{142}
+\contentsline {section}{\numberline {6.3}Proof Techniques}{160}
+\contentsline {section}{\numberline {6.4}Pascal's triangle}{186}
+\contentsline {section}{\numberline {6.5}Recurrence sequences}{194}
