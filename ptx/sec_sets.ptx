@@ -1,0 +1,474 @@
+
+
+<section xml:id="sec_sets">
+  <title>Sets</title>
+  <p>
+    In mathematics a set is a collection of objects that are called elements.
+    Usually we denote sets by capital letters
+    and elements by small letters.
+    If <m>A</m> is a set and <m>a</m> is an element of <m>A</m>,
+    then we write <m>a\in A</m>.
+    If <m>a</m> is not an element of <m>A</m>, then we write
+    <m>a\notin A</m>.
+    Now we deal with the problem how to provide a set.
+
+    <ul>
+      <li>
+        <p>
+          <em>Sets given by enumeration.</em>
+          If we have a set containing certain elements,
+          then we enclose these elements
+          in braces.
+          For example,
+          if <m>A</m> is a set containing 1, 2 and 3 we write <m>A=\halmaz{1,2,3}</m>.
+          This notation is difficult to use
+          if the given set has large amount of elements.
+          In this case we list only some
+          (usually consecutive)
+          elements such that
+          it is easy to see which are the remaining elements of the set.
+          As an example let us assume that <m>B</m> is a set containg
+          the integers between 1 and 1000.
+          Here we write <m>B=\halmaz{1,2,3,\ldots,1000}</m>.
+          If <m>C</m> is the set containing the odd integers
+          between 1 and 99, then we have <m>C=\halmaz{1,3,5,\ldots,99}</m>.
+          It is also possible to provide some families of sets,
+          for example
+          <me>
+            D_1=\{1\}, D_k=\halmaz{1,3,\ldots,2k-1}
+          </me>.
+          In this case <m>D_k</m> denotes the set containing the first <m>k</m> positive odd integers.
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>k</m></cell>
+              <cell><m>D_k</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>1</cell>
+              <cell><m>\halmaz{1}</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>2</cell>
+              <cell><m>\halmaz{1,3}</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>3</cell>
+              <cell><m>\halmaz{1,3,5}</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>4</cell>
+              <cell><m>\halmaz{1,3,5,7}</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <em>Standard sets.</em>
+          There are certain frequently used sets which have their own symbols.
+          These are the set of natural numbers, the set of integers,
+          the set of rational numbers,
+          the set of real numbers and the set of complex numbers. <m>\mathbb{N}=\halmaz{1,2,3,\ldots}</m>,
+          the set of natural numbers. <m>\mathbb{Z}=\halmaz{\ldots,-2,-1,0,1,2,\ldots}</m>,
+          the set of integers. <m>\mathbb{Q}</m>,
+          the set of rational numbers. <m>\mathbb{R}</m>,
+          the set of real numbers. <m>\mathbb{C}</m>,
+          the set of complex numbers.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <em>Set-builder notation.</em>
+          It is also possible to define sets using the so-called set-builder notation.
+          As an example consider the set <m>D_3=\halmaz{1,3,5}</m>,
+          we can define this set in many different ways, e.g.\
+          <md>
+            <mrow>\halmaz{1,3,5}\amp =\halmazvonal{a}{(a-1)(a-3)(a-5)=0},</mrow>
+            <mrow>\halmaz{1,3,5}\amp =\halmazvonal{a}{a=2k-1, k\in\halmaz{1,2,3}},</mrow>
+            <mrow>\halmaz{1,3,5}\amp =\halmazvonal{a}{1\leq a\leq 5, \mbox{ and \(a\) is odd} }</mrow>
+          </md>.
+          We can use semicolon instead of the vertical line, as well:
+          <md>
+            <mrow>\halmaz{1,3,5}\amp =\halmazpont{a}{(a-1)(a-3)(a-5)=0},</mrow>
+            <mrow>\halmaz{1,3,5}\amp =\halmazpont{a}{a=2k-1, k\in\halmaz{1,2,3}},</mrow>
+            <mrow>\halmaz{1,3,5}\amp =\halmazpont{a}{1\leq a\leq 5, \mbox{ and \(a\) is odd} }</mrow>
+          </md>.
+          Let us define the set of even natural numbers:
+          <me>
+            \halmazvonal{2n}{n\in\mathbb{N}}
+          </me>.
+          The set of rational numbers can be given as follows
+          <me>
+            \halmazvonal{a/b}{a,b\in\mathbb{Z}, b\neq 0}
+          </me>.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    To study some basic properties of sets we give some definitions.
+    First we introduce the concept of cardinality.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        A set is called <term>finite</term>
+        if it has finite number of elements.
+        If a set is not finite it is called <term>infinite.</term>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Now we consider cardinality of finite sets.
+    The cardinality of infinite sets is more complicated and we will not discuss it.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        Let <m>A</m> be a finite set.
+        The <term>cardinality</term>
+        of <m>A</m> is the number of different elements of <m>A</m>.
+        Notation: <m>|A|</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    For example,
+    the cardinality of <m>D_3</m> is 3 and the cardinality of the set <m>\halmaz{1,2,3,6,7,8}</m> is 6.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        Let <m>A</m> and <m>B</m> be sets.
+        The set <m>B</m> is a <term>subset</term>
+        of <m>A</m> if and only if every element of <m>B</m> is an element of <m>A</m>.
+        Notation: <m>B\subseteq A</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    There is a special set which is a subset of all sets,
+    the so-called <em>empty set.</em>
+    As the name suggests it is the set which has no element,
+    that is, its cardinality is 0.
+    The empty set is denoted by <m>\emptyset</m>.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        If <m>B\subseteq A</m> and <m>B\neq\emptyset, B\neq A</m>,
+        then <m>B</m> is a <term>proper subset</term> of <m>A</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <definition>
+    <statement>
+      <p>
+        Let <m>A</m> and <m>B</m> be sets.
+        The two sets are <term>equal</term>
+        if <m>A\subseteq B</m> and <m>B\subseteq A</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Now we define some basic operations of sets.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        Let <m>A</m> and <m>B</m> be sets.
+        The <term>intersection</term>
+        of <m>A</m> and <m>B</m> is the set <m>\halmazvonal{x}{ x\in A \mbox{ and } x\in B}</m>.
+        Notation: <m>A\cap B</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The so-called Venn diagrams are often useful in case of sets to understand the situation better.
+    By shading the appropriate region we illustrate the intersection of <m>A</m> and <m>B</m>. \begin{venndiagram2sets} \fillACapB \end{venndiagram2sets} Let
+    <m>A=\halmaz{1,2,3,4,5}</m> and <m>B=\halmaz{3,4,5,6,7}</m>.
+    The intersection of these two sets is the set <m>A\cap B=\halmaz{3,4,5}</m>.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        Let <m>A</m> and <m>B</m> be sets.
+        The <term>union</term> of <m>A</m> and <m>B</m> is the set <m>\halmazvonal{x}{x\in A \mbox{ or } x\in B}</m>.
+        Notation: <m>A\cup B</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The corresponding Venn diagram is as follows. \begin{venndiagram2sets} \fillA\fillB \end{venndiagram2sets} Let
+    <m>A=\halmaz{1,2,3,4,5}</m> and <m>B=\halmaz{3,4,5,6,7}</m>.
+    The union of these two sets is the set <m>A\cup B=\halmaz{1,2,3,4,5,6,7}</m>.
+    It is easy to see that the following properties hold
+    <m>A\cap B=B\cap A</m> and <m>A\cup B=B\cup A</m>.
+    It is not true for the difference of two sets.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        Let <m>A</m> and <m>B</m> be sets.
+        The <term>difference</term>
+        of <m>A</m> and <m>B</m> is the set <m>\halmazvonal{x}{ | x\in A \mbox{ and } x\notin B}</m>.
+        Notation: <m>A\setminus B</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The Venn diagram of <m>A\setminus B:</m>
+    \begin{venndiagram2sets}
+    \fillOnlyA
+    \end{venndiagram2sets}
+    To see the difference between
+    <m>A\setminus B</m> and <m>B\setminus A</m> we draw
+    the Venn diagram of <m>B\setminus A</m> as well:
+    \begin{venndiagram2sets}
+    \fillOnlyB
+    \end{venndiagram2sets}
+    Again, let <m>A=\halmaz{1,2,3,4,5}</m> and <m>B=\halmaz{3,4,5,6,7}</m>.
+    Now we have that
+    <md>
+      <mrow>A\setminus B \amp =\halmaz{1,2},</mrow>
+      <mrow>B\setminus A \amp =\halmaz{6,7}</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Now we introduce the symmetric difference of sets.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        Let <m>A</m> and <m>B</m> be sets.
+        The <term>symmetric difference</term>
+        of <m>A</m> and <m>B</m> is the set <m>(A\cup B)\setminus(A\cap B)</m>.
+        Notation: <m>A\triangle B</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The Venn diagram of the symmetric difference of <m>A</m> and <m>B:</m>
+    \begin{venndiagram2sets}
+    \fillANotB\fillBNotA
+    \end{venndiagram2sets}
+    We give an example using sets
+    <m>A=\halmaz{1,2,3,4,5}</m> and <m>B=\halmaz{3,4,5,6,7}</m>.
+    We obtain that
+    <me>
+      A\triangle B=\halmaz{1,2,6,7}
+    </me>.
+  </p>
+
+  <p>
+    Finally, we define the complement of a set.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        Let <m>U</m> be a set
+        (called the universe)
+        and <m>A</m> is a subset of <m>U</m>.
+        The complement of <m>A</m> consists of elements of <m>U</m> which do not belong to <m>A</m>.
+        Notation: <m>\overline{A}</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The corresponding Venn diagram is as follows.
+  </p>
+  <image>
+    <latex-image>
+      <![CDATA[\begin{tikzpicture}\filldraw[fill=gray] (-2,-2) rectangle (3,2);
+      \scope 
+      \clip (0,0) circle (1);
+      \fill[white] (0,0) circle (1);
+      \endscope
+      \draw (0,0) circle (1) (0,1) node [text=black,below] {\(A\)}
+      (0,0) circle (1) (0,1) node [text=black,above] {\(\overline{A}\)}
+      (-2,-2) rectangle (3,2) node [text=black,above] {\(U\)};\end{tikzpicture}]]>
+    </latex-image>
+  </image>
+  <p>
+    As an example consider the sets
+    <m>U=\{1,2,3,4,5,6\}</m> and <m>A=\{1,3,5\}</m>.
+    The complement of <m>A</m> is the set <m>\{2,4,6\}</m>.
+  </p>
+  <exercise xml:id="intro-ex-1">
+    <statement>
+      <p>
+        Let <m>A=\halmaz{3,4,6,7,8},B=\halmaz{2,4,5,6,8}</m> and <m>C=\halmaz{1,2,4,5,8}</m>.
+        What are the elements of the set <m>(A\setminus B)\cup(C\cap B)</m>?
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="intro-ex-2">
+    <statement>
+      <p>
+        Let <m>A=\halmaz{1,3,4,6,7},B=\halmaz{2,4,5,6,8}</m> and <m>C=\halmaz{1,3,4,5,8}</m>.
+        What are the elements of the set <m>(A\cap B)\setminus(C\cap B)</m>?
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="intro-ex-3">
+    <statement>
+      <p>
+        Let <m>A=\halmaz{1,3,4,6,7},B=\halmaz{2,4,6,8}</m> and <m>C=\halmaz{1,3,4,8}</m>.
+        What are the elements of the set <m>(A\setminus B)\cup(C\setminus B)</m>?
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="intro-ex-4">
+    <statement>
+      <p>
+        List all elements of the following sets:
+      </p>
+
+      <p>
+        (a) <m>\halmazvonal{3k+1}{k\in\halmaz{2,3,4}}</m>,
+      </p>
+
+      <p>
+        (b) <m>\halmazvonal{k^2}{ k\in\halmaz{-1,0,1,2}}</m>,
+      </p>
+
+      <p>
+        (c) <m>\halmazvonal{u-v}{u\in\halmaz{3,4,5}, v\in\halmaz{1,2}}</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="intro-ex-5">
+    <statement>
+      <p>
+        Describe the following sets using set-builder notation.
+      </p>
+
+      <p>
+        (a) <m>\halmaz{2,4,6,8,10}</m>,
+      </p>
+
+      <p>
+        (b) <m>\halmaz{1,4,9,16,25}</m>,
+      </p>
+
+      <p>
+        (c) <m>\halmaz{1,\frac{1}{2},\frac{1}{4},\ldots, \frac{1}{2^k}, \ldots}</m>,
+      </p>
+
+      <p>
+        (d) the set of rational numbers between 1 and 2.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="intro-ex-6">
+    <statement>
+      <p>
+        Draw a Venn diagram for the following sets:
+      </p>
+
+      <p>
+        (a) <m>(A\cap B)\cup C</m>,
+      </p>
+
+      <p>
+        (b) <m>(A\setminus B)\cup(A\setminus C)</m>,
+      </p>
+
+      <p>
+        (c) <m>(A\cup B)\cap C</m>,
+      </p>
+
+      <p>
+        (d) <m>(A\cap B)\cup(B\cap C)\cup(A\cap C)</m>,
+      </p>
+
+      <p>
+        (e) <m>\left((A\cap B)\setminus C\right)\cup \left((A\cap C)\setminus B\right)\cup \left((B\cap C)\setminus A\right)</m>,
+      </p>
+
+      <p>
+        (f) <m>(A\setminus B)\cup(B\setminus C)\cup(C\setminus A)</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="intro-ex-7">
+    <statement>
+      <p>
+        Provide three sets <m>A,B</m> and <m>C</m> which satisfy the following cardinality conditions
+        <me>
+          |A\cap B\cap C|=2
+        </me>,
+        <me>
+          |A\cap B|=|A\cap C|=|B\cap C|=2
+        </me>,
+        <me>
+          |A|=|B|=|C|=4
+        </me>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="intro-ex-8">
+    <statement>
+      <p>
+        Provide three sets <m>A,B</m> and <m>C</m> which satisfy the following cardinality conditions
+        <me>
+          |A\cap B\cap C|=2
+        </me>,
+        <me>
+          |A\cap B|=2, |A\cap C|=2, |B\cap C|=3
+        </me>,
+        <me>
+          |A|=4, |B|=5, |C|=6
+        </me>.
+      </p>
+    </statement>
+  </exercise>
+</section>
+

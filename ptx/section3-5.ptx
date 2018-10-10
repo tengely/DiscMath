@@ -1,0 +1,231 @@
+
+
+<section>
+  <title>A card trick</title>
+  <p>
+    In this section we introduce a card trick,
+    which is based on several mathematical ideas.
+    In fact the trick combines several tools from this chapter.
+    To understand how it works one should be familiar with the pigeonhole principle,
+    proof by contradiction and some tiny amount of combinatorics.
+    Here is the trick.
+  </p>
+
+  <p>
+    An assistant asks the audience to choose five cards from a normal deck of 52 playing cards.
+    They can choose any five as they like.
+    They pass those five cards to the assistant,
+    who reveals four of them to the magician,
+    one remains only known by the audience and the assistant.
+    The magician looks at the four cards handed to him and announces the 5th card,
+    the secret one.
+  </p>
+
+  <p>
+    This mathematical card trick was invented by William Fitch Cheney Jr. and it was first published by Wallace Lee in Maths Miracles in 1950.<fn>William Wallace Lee, <em>Maths Miracles</em>, Durham, N.<nbsp />C. (1950)</fn></p>
+
+  <p>
+    How does this trick work?
+    First we apply the pigeonhole principle to obtain a very important imformation.
+    There are only 4 suits
+    (clubs <m>\clubsuit</m>, diamonds <m>\diamondsuit</m>,
+    hearts <m>\heartsuit</m> and spades <m>\spadesuit</m>)
+    while there are 5 cards choosen.
+    An application of pigeonhole principle yields that at least 2 cards must be of the same suit.
+    The assistant and the magician have an agreement about the ordering of cards,
+    e.g.<nbsp /><m>A-2-3-\ldots-J-Q-K</m>.
+    There are two cards having the same suit,
+    say <m>C_1</m> and <m>C_2</m>.
+  </p>
+
+  <figure>
+    <image width="40%" source="images/KartyaKorbe.png" />
+  </figure>
+
+  <p>
+    It is possible to define a distance between them.
+    One considers the 13 same-suit cards arranged in a circle from <m>A</m> to <m>K</m> going clockwise.
+    Given <m>C_1</m> and <m>C_2</m> one defines the distance
+    <m>d(C_1,C_2)</m> as the clockwise distance from <m>C_1</m> to <m>C_2</m>.
+    The second observation is that either
+    <m>d(C_1,C_2)\leq 6</m> or <m>d(C_2,C_1)\leq 6</m>.
+    This statement can be proved indirectly.
+    Assume that <m>d(C_1,C_2)>6</m> and <m>d(C_2,C_1)>6</m>.
+    Then there must be at least 14 cards having the same suit,
+    a contradiction.
+    Let us consider an example.
+    If the two cards are <m>C_1=3</m> and <m>C_2=J</m>,
+    then we have that <m>d(3,J)=8</m> and <m>d(J,3)=5</m>.
+    This fact is used to decide which card is going to be at the top of the pile.
+    Assume that <m>d(C_i,C_j)\leq 6</m>.
+    The assistant will place card <m>C_i</m> at the top of the pile and <m>C_j</m> will be the hidden card.
+    The assistant still has to decide how to order the remaining 3 cards.
+    Here comes a tiny combinatorics involved,
+    three cards can be ordered in <m>3!=6</m> different ways.
+    That is, somehow the assistant will be able to encode the distance <m>d(C_i,C_j)\leq 6</m>.
+    The 52 cards are ordered following the rules:
+  </p>
+
+  <p>
+    rule I.: <m>\clubsuit\lt \diamondsuit\lt \heartsuit\lt \spadesuit</m>,
+  </p>
+
+  <p>
+    rule II.: <m>A\lt 2\lt 3\lt \ldots\lt J\lt Q\lt K</m>,
+  </p>
+
+  <p>
+    So we have <m>A\clubsuit\lt 2\clubsuit\lt \ldots\lt Q\spadesuit\lt K\spadesuit</m>.
+    Back to the last three cards.
+    Let us denote by 1 the card having the lowest rank,
+    by 3 the card having the highest rank and by 2 the remaining one.
+    It is easy to make an agreement about the encoding of the distance,
+    an example is given in the following table
+  </p>
+  <tabular>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>d(C_i,C_j)</m></cell>
+      <cell>order of the 3 cards</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell>1,2,3</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell>1,3,2</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>3</cell>
+      <cell>2,1,3</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>4</cell>
+      <cell>2,3,1</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>5</cell>
+      <cell>3,1,2</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>6</cell>
+      <cell>3,2,1</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    It is time to start the card trick!
+    Assume that the assistant gets the following cards from the audience:
+    <m>3\clubsuit, K\clubsuit, 8\diamondsuit, 5\heartsuit</m> and <m>Q\spadesuit</m>.
+    Here <m>3\clubsuit, K\clubsuit</m> are two cards having the same suit.
+    What about their distance?
+    One has
+    <md>
+      <mrow>d(3\clubsuit, K\clubsuit)\amp = 10,</mrow>
+      <mrow>d(K\clubsuit, 3\clubsuit)\amp = 3</mrow>
+    </md>.
+  </p>
+
+  <p>
+    The assistant has to encode 3.
+    The ordering of the remaining three cards is <m>(1=8\diamondsuit)\lt (2=5\heartsuit)\lt (3=Q\spadesuit)</m>.
+    That is,
+    <me>
+      d(K\clubsuit, 3\clubsuit)=3\Rightarrow 5\heartsuit, 8\diamondsuit, Q\spadesuit
+    </me>.
+  </p>
+
+  <p>
+    Therefore the pile of cards the assistant gives to the magician is
+    <me>
+      K\clubsuit, 5\heartsuit, 8\diamondsuit, Q\spadesuit
+    </me>.
+  </p>
+  <exercise xml:id="card-1">
+    <statement>
+      <p>
+        What card is being encoded by the following sequences of four cards?
+      </p>
+
+      <p>
+        (a) <m>7\clubsuit,3\diamondsuit,J\diamondsuit,A\spadesuit</m>,
+      </p>
+
+      <p>
+        (b) <m>J\diamondsuit,9\clubsuit,Q\heartsuit,8\heartsuit</m>,
+      </p>
+
+      <p>
+        (c) <m>9\heartsuit,10\heartsuit,J\diamondsuit,6\diamondsuit</m>,
+      </p>
+
+      <p>
+        (d) <m>10\diamondsuit,4\spadesuit,2\spadesuit,5\diamondsuit</m>,
+      </p>
+
+      <p>
+        (e) <m>8\spadesuit,7\diamondsuit,7\heartsuit,3\heartsuit</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="card-2">
+    <statement>
+      <p>
+        Which card should be the hidden card?
+        How to order the remaining four cards to encode the hidden one?
+      </p>
+
+      <p>
+        (a) <m>3\clubsuit,7\clubsuit,5\diamondsuit,2\diamondsuit,A\spadesuit</m>,
+      </p>
+
+      <p>
+        (b) <m>10\clubsuit,A\diamondsuit,J\diamondsuit,8\heartsuit,4\spadesuit</m>,
+      </p>
+
+      <p>
+        (c) <m>A\clubsuit,6\diamondsuit,K\heartsuit,7\spadesuit,8\spadesuit</m>,
+      </p>
+
+      <p>
+        (d) <m>7\clubsuit,8\diamondsuit,3\spadesuit,7\spadesuit,9\spadesuit</m>,
+      </p>
+
+      <p>
+        (e) <m>J\diamondsuit,Q\diamondsuit,7\heartsuit,10\heartsuit,3\spadesuit</m>.
+      </p>
+    </statement>
+  </exercise>
+</section>
+

@@ -1,0 +1,834 @@
+
+
+<section>
+  <title>Linear recurrence relations of order <m>k</m></title>
+  <p>
+    In this section by a sequence we mean an ordered list
+    <me>
+      \halmaz{a_n}_{n=0}^{\infty}, a_n\in S
+    </me>
+    for some set <m>S</m>.
+    For example
+    <me>
+      1,2,4,8,16,32,64,\ldots
+    </me>
+    is a sequence containing non-negative powers of 2.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        A sequence <m>\halmaz{a_n}_{n=0}^{\infty}</m> is said to satisfy a
+        <term>linear recurrence</term> relation of order <m>k</m> if
+        <me>
+          a_n=c_{n-1}a_{n-1}+c_{n-2}a_{n-2}+\ldots+c_{n-k}a_{n-k}+b_n, c_{n-k}\neq 0, n\geq k
+        </me>,
+        where <m>c_{n-1},\ldots,c_{n-k},b_n</m> are some constants.
+        If <m>b_n=0</m>, then we say that the sequence
+        satisfies a <term>homogeneous linear recurrence</term> relation of order <m>k</m>.
+        In case of a linear recurrence relation of order <m>k</m> the values of <m>a_0,a_1,\ldots,a_{k-1}</m>
+        are called the <term>initial values</term> of the sequence.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    For example the sequence appeared in case of Tower of Hanoi is a sequence of order 1:
+    <md>
+      <mrow>T_0\amp =0,</mrow>
+      <mrow>T_n\amp =2T_{n-1}+1 \mbox{ for } n\geq 1</mrow>
+    </md>.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        Let <m>\halmaz{a_n}_{n=0}^{\infty}</m> be a linear recurrence relation of order 1, that is,
+        <me>
+          a_n=ua_{n-1}+v
+        </me>
+        for some constants <m>u,v</m>.
+        If <m>u=1</m>, then
+        <me>
+          a_n=a_0+nv
+        </me>,
+        otherwise
+        <me>
+          a_n=u^na_0+\frac{u^n-1}{u-1}v
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      If <m>u=1</m>, then the defining equation simplifies as follows
+      <me>
+        a_n=a_{n-1}+v
+      </me>.
+    </p>
+
+    <p>
+      We prove the statement by induction.
+      The initial value of the sequence is <m>a_0</m>.
+      Using the above formula for <m>a_n</m> we obtain
+      <md>
+        <mrow>a_1\amp =a_0+v,</mrow>
+        <mrow>a_2\amp =a_1+v=a_0+2v,</mrow>
+        <mrow>a_3\amp =a_2+v=a_0+3v</mrow>
+      </md>.
+    </p>
+
+    <p>
+      Hence the statement is clearly true for <m>n=1,2</m> and 3.
+      Assume that the statement is true
+      for <m>n=k</m>, that is,
+      <me>
+        a_k=a_0+kv
+      </me>.
+    </p>
+
+    <p>
+      The statement for <m>n=k+1</m> is that <m>a_{k+1}=a_0+(k+1)v</m>.
+      By the recurrence definition we
+      have <m>a_{k+1}=a_{k}+v</m>.
+      By induction we obtain that
+      <me>
+        a_{k+1}=a_0+kv+v=a_0+(k+1)v
+      </me>,
+      which is the desired result for <m>n=k+1</m>.
+    </p>
+
+    <p>
+      Now assume that <m>u\neq 1</m>.
+      We apply induction again.
+      As in the previous case we compute the first few values of the sequence
+      <md>
+        <mrow>a_1\amp =ua_0+v,</mrow>
+        <mrow>a_2\amp =ua_1+v=u^2a_0+uv+v,</mrow>
+        <mrow>a_3\amp =ua_2+v=u^3a_0+u^2v+uv+v</mrow>
+      </md>.
+    </p>
+
+    <p>
+      It follows that the statement is true if <m>n=1,2,3</m>.
+      Assume that the statement is true
+      for <m>n=k</m>, that is,
+      <me>
+        a_k=u^ka_0+\frac{u^k-1}{u-1}v
+      </me>.
+    </p>
+
+    <p>
+      We need to show that the statement is true for <m>n=k+1</m>,
+      so <m>a_{k+1}=u^{k+1}a_0+\frac{u^{k+1}-1}{u-1}v</m>.
+      The recurrence definition yields that
+      <m>a_{k+1}=ua_{k}+v</m>.
+      Using the assumption one has that
+      <me>
+        a_{k+1}=ua_{k}+v=u\cdot \left(u^ka_0+\frac{u^k-1}{u-1}v\right)+v=u^{k+1}a_0+u\frac{u^k-1}{u-1}v+v
+      </me>.
+    </p>
+
+    <p>
+      From the well-known identity <m>u^m-1=(u-1)\cdot (u^{m-1}+u^{m-2}+\ldots+u+1)</m> one gets that
+      <me>
+        \frac{u^m-1}{u-1}=u^{m-1}+u^{m-2}+\ldots+u+1
+      </me>
+      for <m>u\neq 1</m>.
+      So we have <m>u\frac{u^k-1}{u-1}\cdot v+v=(u^k+u^{k-1}+\ldots+u)v+v=(u^k+u^{k-1}+\ldots+u+1)\cdot v</m>.
+      Finally we obtain that
+      <me>
+        a_{k+1}=u^{k+1}a_0+(u^k+u^{k-1}+\ldots+u+1)v=u^{k+1}a_0+\frac{u^{k+1}-1}{u-1}v
+      </me>,
+      and the statement follows.
+    </p>
+  </proof>
+
+  <p>
+    It is easy to compute an explicit formula for the sequence <m>T_n</m> related to the problem of Tower of Hanoi.
+    Here <m>T_n</m> is defined as
+    <md>
+      <mrow>T_0\amp =0,</mrow>
+      <mrow>T_n\amp =2T_{n-1}+1 \mbox{ for } n\geq 1</mrow>
+    </md>,
+    that is, <m>u=2</m> and <m>v=1</m>.
+    The theorem implies that
+    <me>
+      T_n=u^nT_0+\frac{u^n-1}{u-1}v=2^n\cdot 0+\frac{2^n-1}{2-1}\cdot 1=2^n-1
+    </me>.
+  </p>
+
+  <p>
+    Consider another example, let <m>a_n</m> be a sequence defined by
+    <md>
+      <mrow>a_0\amp =3,</mrow>
+      <mrow>a_n\amp =2a_{n-1}+2 \mbox{ for } n\geq 1</mrow>
+    </md>.
+  </p>
+
+  <p>
+    We apply the theorem and we have
+    <me>
+      a_n=2^n\cdot 3+\frac{2^n-1}{2-1}\cdot 2=2^n\cdot 3+2^{n+1}-2=5\cdot 2^n-2
+    </me>.
+  </p>
+
+  <p>
+    We have proved a theorem about linear recurrence relations of order 1, given such a recurrence
+    we are able to provide an explicit formula.
+    What about higher order linear recurrence relations?
+    To make the presentation simpler we will consider homogeneous linear recurrence relations of order <m>k</m>,
+    where <m>k\geq 2</m>.
+    So we study the structure of the recurrence given by
+    <men xml:id="hlr">
+      a_n=c_{n-1}a_{n-1}+c_{n-2}a_{n-2}+\ldots+c_{n-k}a_{n-k}, c_{n-k}\neq 0, n\geq k
+    </men>,
+    where <m>c_{n-1},\ldots,c_{n-k}</m> are some constants.
+  </p>
+
+  <theorem xml:id="UV">
+    <statement>
+      <p>
+        Assume that <m>U_n</m> and <m>V_n</m> are sequences satisfying <xref ref="hlr" /> and <m>s,t</m> are constants.
+        The linear combination
+        <me>
+          W_n=sU_n+tV_n
+        </me>
+        gives another solution of <xref ref="hlr" />.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Since <m>U_n</m> and <m>V_n</m> satisfy <xref ref="hlr" /> we have
+      <md>
+        <mrow>U_n\amp =c_{n-1}U_{n-1}+c_{n-2}U_{n-2}+\ldots+c_{n-k}U_{n-k},</mrow>
+        <mrow>V_n\amp =c_{n-1}V_{n-1}+c_{n-2}V_{n-2}+\ldots+c_{n-k}V_{n-k}</mrow>
+      </md>.
+    </p>
+
+    <p>
+      Substituting these formulas into the definition of <m>W_n</m> we get
+      <md>
+        <mrow>W_n=\amp s(c_{n-1}U_{n-1}+c_{n-2}U_{n-2}+\ldots+c_{n-k}U_{n-k})+</mrow>
+        <mrow>\amp t(c_{n-1}V_{n-1}+c_{n-2}V_{n-2}+\ldots+c_{n-k}V_{n-k})=</mrow>
+        <mrow>\amp c_{n-1}(sU_{n-1}+tV_{n-1})+c_{n-2}(sU_{n-2}+tV_{n-2})+\ldots+</mrow>
+        <mrow>\amp +c_{n-k}(sU_{n-k}+tV_{n-k})=</mrow>
+        <mrow>\amp c_{n-1}W_{n-1}+c_{n-2}W_{n-2}+\ldots+c_{n-k}W_{n-k}</mrow>
+      </md>.
+    </p>
+
+    <p>
+      It turned out that <m>W_n</m> is also a solution of <xref ref="hlr" />.
+    </p>
+  </proof>
+
+  <p>
+    The previous theorem suggests a strategy to determine explicit formula
+    for higher order linear homogeneous recurrence relations.
+    First we look for solutions
+    of the concrete recurrence relation,
+    then we consider linear combinations of them
+    and we try to fix the constants in such a way that the initial values of the given sequence
+    are the same as in case of the sequence obtained by linear combination.
+    What kind of solutions
+    should we look for?
+    Here we need some numerical experiences.
+    Consider the example
+    <md>
+      <mrow>a_0\amp =2,</mrow>
+      <mrow>a_1\amp =2,</mrow>
+      <mrow>a_n\amp =2a_{n-1}+3a_{n-2}, n\geq 2</mrow>
+    </md>.
+  </p>
+
+  <p>
+    The above sequence is a homogeneous linear recurrence sequence of order <m>2</m>.
+    We can easily compute the first few elements of the sequence,
+    <m>a_2=10, a_3=26, a_4=82</m>.
+    Let us consider the ratio of consecutive elements of the sequence.
+  </p>
+  <tabular>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>n</m></cell>
+      <cell><m>\frac{a_n}{a_{n-1}}</m></cell>
+      <cell><m>n</m></cell>
+      <cell><m>\frac{a_n}{a_{n-1}}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell><m>1</m></cell>
+      <cell>5</cell>
+      <cell><m>\approx 2.951</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell><m>5</m></cell>
+      <cell>6</cell>
+      <cell><m>\approx 3.017</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>3</cell>
+      <cell><m>2.6</m></cell>
+      <cell>7</cell>
+      <cell><m>\approx 2.995</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>4</cell>
+      <cell><m>\approx 3.154</m></cell>
+      <cell>8</cell>
+      <cell><m>\approx 3.002</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    The ratios are very close to a constant,
+    in this case very close to 3 for <m>n\in\halmaz{4,5,6,7,8}</m>.
+    At the beginning of this chapter we studied sequences for which the ratio of consecutive elements
+    is a constant, these are geometric progressions.
+    Let us look for geometric progressions satisfying
+    the same recurrence relation as <m>a_n</m>.
+    If <m>g_n</m> is a sequence given by
+    the formula
+    <me>
+      g_n=rg_{n-1}
+    </me>,
+    where <m>r</m> is the common ratio of the sequence with initial value <m>g_0</m>,
+    then we have that
+    <m>g_n=g_0r^n</m>.
+    That is, <m>g_n</m> is a geometric progression.
+    Let us assume that for some initial
+    value <m>g_0</m> and for some <m>r</m> the progression satisfies the same recurrence relation as <m>a_n</m>.
+    Now we obtain
+    <me>
+      g_n=2g_{n-1}+3g_{n-2}
+    </me>.
+  </p>
+
+  <p>
+    It follows that
+    <me>
+      g_0r^n=2g_0r^{n-1}+3g_0r^{n-2}
+    </me>.
+  </p>
+
+  <p>
+    The constant zero progression is not useful for our purposes we assume that <m>g_0\neq 0</m> and <m>r\neq 0</m>.
+    After dividing by <m>g_0r^{n-2}</m> we get
+    <me>
+      r^2=2r+3
+    </me>.
+  </p>
+
+  <p>
+    If there is such a progression,
+    then <m>r</m> is a root of the quadratic polynomial <m>r^2-2r-3</m>.
+    One can determine the roots by the well-known formula,
+    which is in our case
+    <me>
+      \frac{2\pm\sqrt{4-4(-3)}}{2}
+    </me>.
+  </p>
+
+  <p>
+    That is, the roots are <m>3</m> and <m>-1</m>.
+    We have two different solutions of the recurrence relation
+    and <xref ref="UV">Theorem</xref>
+    implies that linear combinations of these two solutions yield another solutions.
+    Let us consider the sequence <m>W_n=s3^n+t(-1)^n</m>.
+    We should fix <m>s,t</m> in such a way that
+    <md>
+      <mrow>\amp W_0=a_0=2,</mrow>
+      <mrow>\amp W_1=a_1=2</mrow>
+    </md>.
+  </p>
+
+  <p>
+    We get a system of equations in two unknowns
+    <md>
+      <mrow>W_0=2\amp \Rightarrow s\cdot 3^0+t\cdot (-1)^0=2,</mrow>
+      <mrow>W_1=2\amp \Rightarrow s\cdot 3^1+t\cdot (-1)^1=2</mrow>
+    </md>.
+  </p>
+
+  <p>
+    The first equation implies that <m>t=2-s</m>.
+    The second equation can be written as <m>3s+(2-s)(-1)=2</m>,
+    that is, <m>4s=4</m> and we get that <m>s=1,t=1</m>.
+    Now we have a sequence <m>W_n=3^n+(-1)^n</m> which satisfies the appropriate recurrence relation and has the same initial values as <m>a_n</m>.
+    Thus <m>W_n=a_n</m>.
+    In this way we obtained an explicit formula for the recurrence sequence <m>a_n</m> given by
+    <me>
+      3^n+(-1)^n
+    </me>.
+  </p>
+
+  <p>
+    We may try to apply the above method to determine an explicit formula for the famous Fibonacci sequence:
+    <md>
+      <mrow>F_0\amp =0,</mrow>
+      <mrow>F_1\amp =1,</mrow>
+      <mrow>F_n\amp =F_{n-1}+F_{n-2}, n\geq 2</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Let <m>g_n</m> be a geometric progression such that
+    <m>g_n=g_0r^n</m> for some <m>g_0</m> and <m>r</m>.
+    Assume that <m>g_n</m> satisfies the recurrence relation.
+    It follows that
+    <me>
+      r^2=r+1
+    </me>.
+  </p>
+
+  <p>
+    The two roots of this quadratic polynomial are
+    <me>
+      \frac{1-\sqrt{5}}{2}\mbox{ and } \frac{1+\sqrt{5}}{2}
+    </me>.
+  </p>
+
+  <p>
+    Let <m>W_n</m> be a linear combination of the appropriate geometric progressions, that is,
+    <me>
+      W_n=s\cdot \left(\frac{1-\sqrt{5}}{2}\right)^n+t\cdot \left(\frac{1+\sqrt{5}}{2}\right)^n
+    </me>.
+  </p>
+
+  <p>
+    It remains to find <m>s</m> and <m>t</m> for which
+    <md>
+      <mrow>\amp W_0=F_0=0,</mrow>
+      <mrow>\amp W_1=F_1=1</mrow>
+    </md>.
+  </p>
+
+  <p>
+    The above equations imply that
+    <md>
+      <mrow>s+t\amp =0</mrow>
+      <mrow>s\cdot \left(\frac{1-\sqrt{5}}{2}\right)+t\cdot \left(\frac{1+\sqrt{5}}{2}\right)\amp =1</mrow>
+    </md>.
+  </p>
+
+  <p>
+    We immediately get that <m>t=-s</m>.
+    Therefore
+    <me>
+      s\cdot \left(\frac{1-\sqrt{5}}{2}\right)-s\cdot \left(\frac{1+\sqrt{5}}{2}\right)=1
+    </me>.
+  </p>
+
+  <p>
+    The latter equation yields that <m>s=\frac{-\sqrt{5}}{5}</m>,
+    so <m>t=\frac{\sqrt{5}}{5}</m>.
+    The explicit formula in case of the Fibonacci sequence is
+    <me>
+      F_n=\frac{-\sqrt{5}}{5}\cdot \left(\frac{1-\sqrt{5}}{2}\right)^n+\frac{\sqrt{5}}{5}\cdot \left(\frac{1+\sqrt{5}}{2}\right)^n
+    </me>.
+  </p>
+
+  <p>
+    Let us see if the previous argument works for homogeneous linear recurrence sequence of order greater than 2.
+    We define <m>a_n</m> as
+    <md>
+      <mrow>a_0\amp =5,</mrow>
+      <mrow>a_1\amp =-3,</mrow>
+      <mrow>a_2\amp =11,</mrow>
+      <mrow>a_n\amp =-a_{n-1}+4a_{n-2}+4a_{n-3}, n\geq 3</mrow>
+    </md>.
+  </p>
+
+  <p>
+    The sequence <m>a_n</m> is a homogeneous linear recurrence sequence of order 3, since <m>a_n</m> depends on
+    the previous 3 elements of the sequence.
+    We try to find a geometric progression <m>g_n=g_0r^n</m> satisfying
+    the above recurrence
+    <me>
+      g_0r^n=-g_0r^{n-1}+4g_0r^{n-2}+4g_0r^{n-3}
+    </me>.
+  </p>
+
+  <p>
+    Again we exclude the case <m>g_0r=0</m>,
+    so we may simplify the equation by <m>g_0r^{n-3}</m>.
+    So we obtain
+    <me>
+      r^3+r^2-4r-4=0
+    </me>.
+  </p>
+
+  <p>
+    This time we have a cubic polynomial and finding the roots of a cubic is more difficult than determining
+    the roots of a quadratic polynomial.
+    We may try to find some special roots e.g.<nbsp />integral roots.
+    To find integral roots we can rewrite the equation in the form
+    <me>
+      r\cdot (r^2+r-4)=4
+    </me>.
+  </p>
+
+  <p>
+    If <m>r</m> is an integer,
+    then the expression on the left-hand side is a multiple of two integers.
+    The multiple of two integers is equal to 4, that is,
+    we have only a few possibilities since <m>r</m> has to divide 4.
+    That is <m>r\in\halmaz{-4,-2,-1,1,2,4}</m>.
+    Evaluate the cubic polynomial at these values:
+  </p>
+  <tabular>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>r</m></cell>
+      <cell><m>r^3+r^2-4r-4</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>-4</cell>
+      <cell>-36</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>-2</cell>
+      <cell>0</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>-1</cell>
+      <cell>0</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell>-6</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell>0</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>4</cell>
+      <cell>60</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    We are lucky, there are 3 integral roots: <m>-2,-1</m> and 2.
+    It means by <xref ref="UV">Theorem</xref> that any linear combinations
+    of the geometric progressions
+    <m>(-2)^n, (-1)^n</m> and <m>2^n</m> will satisfy the same recurrence relation as <m>a_n</m>.
+    Now define <m>W_n=s(-2)^n+t(-1)^n+u2^n</m>.
+    Our task is to fix <m>s,t</m> and <m>u</m> such that
+    <md>
+      <mrow>\amp W_0=a_0=5,</mrow>
+      <mrow>\amp W_1=a_1=-3,</mrow>
+      <mrow>\amp W_2=a_2=11</mrow>
+    </md>.
+  </p>
+
+  <p>
+    These equations yield a system of equations in three unknowns.
+    <md>
+      <mrow>s+t+u\amp =5</mrow>
+      <mrow>-2s-t+2u\amp =-3</mrow>
+      <mrow>4s+t+4u\amp =11</mrow>
+    </md>.
+  </p>
+
+  <p>
+    We can eliminate <m>s</m> and <m>u</m> using the first and the third equations.
+    To do so we multiply the first equation by 4:
+    <md>
+      <mrow>4s+4t+4u\amp =20</mrow>
+      <mrow>-2s-t+2u\amp =-3</mrow>
+      <mrow>4s+t+4u\amp =11</mrow>
+    </md>.
+  </p>
+
+  <p>
+    We subtract the third equation from the first one and we get
+    <me>
+      3t=9
+    </me>,
+    that is, <m>t=3</m>.
+    The system of equations can be simplified now:
+    <md>
+      <mrow>s+u\amp =2</mrow>
+      <mrow>-2s+2u\amp =0</mrow>
+    </md>.
+  </p>
+
+  <p>
+    The second equation implies that <m>s=u</m>,
+    so from the first equation we have that <m>s=u=1</m>.
+    The explicit formula for the sequence <m>a_n</m> is
+    <me>
+      (-2)^n+3\cdot (-1)^n+2^n
+    </me>.
+  </p>
+
+  <p>
+    We remark that the previous argument does not work if we have a root with multiplicity greater than 1.
+    Without providing the details of the theory we note that it is also possible to handle such cases.
+    For example
+    assume that a linear recurrence of order 2 is given and the corresponding quadratic polynomial has a double root <m>r</m>.
+    We have that <m>r^n</m> and <m>nr^n</m> are solutions of the same recurrence.
+    In general, if we have a linear recurrence of order <m>k</m>
+    and the corresponding polynomial has a root <m>r</m> with multiplicity <m>m</m>, then
+    <me>
+      r^n, nr^n,\ldots n^{m-1}r^n
+    </me>
+    are solutions of the same recurrence.
+    Let us consider an example.
+    <md>
+      <mrow>u_0\amp =4,</mrow>
+      <mrow>u_1\amp =-1,</mrow>
+      <mrow>u_2\amp =-1,</mrow>
+      <mrow>u_3\amp =-43,</mrow>
+      <mrow>u_n\amp =5u_{n-1}-6u_{n-2}-4u_{n-3}+8u_{n-4}, n\geq 4</mrow>
+    </md>.
+  </p>
+
+  <p>
+    The corresponding quartic polynomial
+    <m>r^4-5r^3+6r^2+4r-8</m> can be written as <m>(r+1)(r-2)^3</m>,
+    that is, <m>-1</m> is a simple root and 2 is a root with multiplicity 3.
+    Therefore we define <m>W_n</m> as
+    <me>
+      s\cdot (-1)^n+t\cdot 2^n+xn\cdot 2^n+yn^2\cdot 2^n
+    </me>.
+  </p>
+
+  <p>
+    Then we obtain four equations in four unknowns
+    <md>
+      <mrow>s+t\amp =4</mrow>
+      <mrow>-s+2t+2x+2y\amp =-1</mrow>
+      <mrow>s+4t+8x+16y\amp =-1</mrow>
+      <mrow>-s+8t+24x+72y\amp =-43</mrow>
+    </md>.
+  </p>
+
+  <p>
+    We get that <m>s=4-t</m>, hence
+    <md>
+      <mrow>3t+2x+2y\amp =3</mrow>
+      <mrow>3t+8x+16y\amp =-5</mrow>
+      <mrow>9t+24x+72y\amp =-39</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Using the first equation we can eliminate <m>t</m> from the second and the third equations.
+    <md>
+      <mrow>6x+14y\amp =-8</mrow>
+      <mrow>18x+66y\amp =-48</mrow>
+    </md>.
+  </p>
+
+  <p>
+    The above system has the solution <m>x=1, y=-1</m>.
+    We get that <m>t=1</m> and <m>s=3</m>.
+    Thus
+    <me>
+      u_n=3\cdot (-1)^n+2^n+n\cdot 2^n-n^2\cdot 2^n
+    </me>.
+  </p>
+
+  <p>
+    As an application we deal with an inverse problem,
+    let us be given the sequence
+    <me>
+      u_n=\left(\frac{3-\sqrt{33}}{2}\right)^n+\left(\frac{3+\sqrt{33}}{2}\right)^n, n\geq 0
+    </me>.
+  </p>
+
+  <p>
+    Our statement is that <m>u_n</m> is an integer sequence and 3 divides <m>u_n</m> for <m>n\geq 1</m>.
+    This statement
+    can be proved by induction
+    (<xref ref="induction-6">Exercise</xref>),
+    but now we apply the theory of linear recurrence sequences.
+    We are given an
+    explicit formula and we would like to determine a linear recurrence sequence which has the same closed-form
+    solution.
+    It is easy to see that <m>u_0=2</m> and <m>u_1=3</m>.
+    If we have an appropriate recurrence,
+    then <m>\frac{3-\sqrt{33}}{2}</m>
+    and <m>\frac{3+\sqrt{33}}{2}</m> are roots of some quadratic polynomial:
+    <me>
+      \left(r-\frac{3-\sqrt{33}}{2}\right)\cdot \left(r-\frac{3+\sqrt{33}}{2}\right)=r^2-3r-6
+    </me>.
+  </p>
+
+  <p>
+    From this polynomial we have the following recurrence relation <m>u_n=3u_{n-1}+6u_{n-2}</m>.
+    That is, we have a recurrence sequence
+    <md>
+      <mrow>u_0\amp =2,</mrow>
+      <mrow>u_1\amp =3,</mrow>
+      <mrow>u_n\amp =3u_{n-1}+6u_{n-2}=3(u_{n-1}+2u_{n-2})</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Since <m>u_0</m> and <m>u_1</m> are integers and
+    <m>u_{n-1},u_{n-2}</m> have integral coefficients in the recurrence relation,
+    the sequence <m>u_n</m> is an integral sequence.
+    It is clear that <m>u_1=3</m> is divisible by 3 and similarly <m>u_n=3(u_{n-1}+2u_{n-2})</m> is a multiple of 3.
+  </p>
+  <exercise xml:id="seq-ex-1">
+    <statement>
+      <p>
+        Find the shortest sequence of moves that transfers a tower of 4 disks from peg <m>A</m> to peg <m>C</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="seq-ex-2">
+    <statement>
+      <p>
+        Find a closed-form formula for the following sequence defined by:
+        <me>
+          a_n=7a_{n-1}-10a_{n-2}\mbox{ for } n\geq 2\mbox{ and } a_0=0,a_1=2
+        </me>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="seq-ex-3">
+    <statement>
+      <p>
+        Find an explicit formula for the following sequence defined by:
+        <me>
+          a_n=4a_{n-1}-3a_{n-2}\mbox{ for } n\geq 2\mbox{ and } a_0=1,a_1=13
+        </me>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="seq-ex-4">
+    <statement>
+      <p>
+        Find a closed-form formula for the following sequence defined by:
+        <me>
+          a_n=-2a_{n-1}+a_{n-2}+2a_{n-3}\mbox{ for } n\geq 3\mbox{ and } a_0=0,a_1=1,a_2=2
+        </me>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="seq-ex-5">
+    <statement>
+      <p>
+        Find an explicit formula for the following sequence defined by:
+        <me>
+          a_n=6a_{n-1}-11a_{n-2}+6a_{n-3}\mbox{ for } n\geq 3\mbox{ and } a_0=0,a_1=0,a_2=1
+        </me>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="seq-ex-6">
+    <statement>
+      <p>
+        Find a closed-form formula for the following sequence defined by:
+        <me>
+          a_n=4a_{n-1}-4a_{n-2}\mbox{ for } n\geq 2\mbox{ and } a_0=-1,a_1=0
+        </me>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="seq-ex-7">
+    <statement>
+      <p>
+        Find an explicit formula for the following sequence defined by:
+        <me>
+          a_n=5a_{n-1}-3a_{n-2}-9a_{n-3}\mbox{ for } n\geq 3\mbox{ and } a_0=3,a_1=4,a_2=29
+        </me>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="seq-ex-8">
+    <statement>
+      <p>
+        Prove that the sequence defined by
+        <me>
+          u_n=\left(\frac{5-3\sqrt{5}}{2}\right)^n+\left(\frac{5+3\sqrt{5}}{2}\right)^n, n\geq 0
+        </me>
+        contains only integers and <m>u_n</m> is divisible by 5 if <m>n\geq 1</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="seq-ex-9">
+    <statement>
+      <p>
+        Prove that the sequence defined by
+        <me>
+          (4-\sqrt{2})^n+(4+\sqrt{2})^n, n\geq 0
+        </me>
+        contains only integers divisible by 2.
+      </p>
+    </statement>
+  </exercise>
+</section>
+

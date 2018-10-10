@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<mathbook xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+  <docinfo>
+    <macros>
+    \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+    #1}}{\thechapter~
+    #1}}
+    \renewcommand{\sectionmark}[1]{}
+    \newcommand{\abs}[1]{\left|#1\right|}
+    \renewcommand{\theenumi}{5.\arabic{enumi}}
+    \newcommand{\norm}[1]{\left\|#1\right\|}
+    \newcommand{\norma}[1]{\left\|#1\right\|}
+    \newcommand{\BM}[1]{\text{\boldmath$#1$}}
+    \newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+    \newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+    \newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+    \newcommand{\N}{\mathbb{N}}
+    \newcommand{\len}{\norm}
+    \newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+    \newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+    \newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+    \newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+    \newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+    \newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+    \renewcommand{\headrulewidth}{0pt}
+    </macros>
+    <latex-image-preamble>
+    \usepackage{tikz}
+    \usepackage{tkz-graph}
+    \usepackage{tkz-euclide}
+    \usetikzlibrary{patterns}
+    \usetikzlibrary{positioning}
+    \usetikzlibrary{matrix,arrows}
+    \usetikzlibrary{calc}
+    \usetikzlibrary{shapes}
+    \usetikzlibrary{through,intersections,decorations,shadows,fadings}
+
+    \usepackage{pgfplots}
+
+    </latex-image-preamble>
+  </docinfo>
+
+  <book>
+    <title>\huge{Lecture Notes for College Discrete Mathematics}\\</title>
+    <frontmatter>
+      <titlepage>
+        <author>
+          <personname>\Large{G\'{a}bor Horv\'{a}th</personname>
+        </author>
+
+        <author>
+          <personname>Szabolcs Tengely}</personname>
+        </author>
+      </titlepage>
+    </frontmatter>
+
+    <xi:include href="./cha_intro.ptx" />
+
+    <xi:include href="./cha_counting.ptx" />
+
+    <xi:include href="./cha_proof.ptx" />
+
+    <xi:include href="./cha_Pascal.ptx" />
+
+    <xi:include href="./Recurrence_sequences.ptx" />
+
+    <xi:include href="./cha_solutions.ptx" />
+
+    <backmatter>
+      <xi:include href="./bibliography.ptx" />
+    </backmatter>
+  </book>
+</mathbook>
+

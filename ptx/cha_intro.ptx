@@ -1,0 +1,64 @@
+
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="cha_intro">
+  <title>Introduction</title>
+  <introduction>
+    <p>
+      These lecture notes are based on the class material
+      <q>College Discrete Mathematics</q>
+      for students in the Foundation Semester year at University of Debrecen, Hungary.
+      The lecture notes are intended to help the students understand and learn the course material,
+      but they do not substitute participation and active work on the class.
+    </p>
+
+    <p>
+      Discrete mathematics deals with the non-continuous mathematics.
+      This usually means finite mathematics,
+      but properties of natural numbers are discussed, as well.
+      The course sets the basis for future mathematical classes,
+      and is essential to understand those later.
+    </p>
+
+    <p>
+      In <xref ref="cha_intro">Chapter</xref>
+      we introduce basic mathematical concepts, such as sets, subsets,
+      sums and products, the Euclidean algorithm and numeral systems.
+      In <xref ref="cha_counting">Chapter</xref>
+      we show different counting arguments.
+      We count the number of sequences,
+      subsets, permutations, and anagrams.
+      Then we consider the number of ordered subsets,
+      the number of subsets of a given size.
+      Finally, we count the number of possibilities to distribute money,
+      and to take out some balls from an urn.
+    </p>
+
+    <p>
+      In <xref ref="cha_proof">Chapter</xref>
+      we explain different basic mathematical proof methods,
+      such as mathematical induction and proof by contradiction.
+      We show how one can prove theorems in a constructive way,
+      or by using the pigeonhole principle.
+      At the end of the chapter we use these proof techniques to bring the reader
+      <q>behind the curtains</q> of a mathematical card trick.
+    </p>
+
+    <p>
+      In <xref ref="cha_Pascal">Chapter</xref>
+      we consider Pascal's famous triangle built up from the binomial coefficients.
+      We prove several identities related to the triangle,
+      and use it to show the Binomial theorem.
+      In <xref ref="Recurrence_sequences">Chapter</xref>
+      recurrence sequences are discussed.
+      We start by the famous Towers of Hanoi,
+      then work our way up to more general recurrence sequences and to the explicit formulas determining them.
+      Finally, in <xref ref="cha_solutions">Chapter</xref>
+      we give all solutions to the exercises occurring in the lecture notes.
+    </p>
+  </introduction>
+  <xi:include  href="sec_sets.ptx" />
+  <xi:include  href="sec_sumsproducts.ptx" />
+  <xi:include  href="Euc.ptx" />
+  <xi:include  href="sec_numeralsystem.ptx" />
+</chapter>
+

@@ -1,0 +1,362 @@
+
+
+<section>
+  <title>Pascal's triangle</title>
+  <ol>
+    <li>
+      <p>
+        <xref ref="ex_pascalbinomialsame"></xref>
+        We prove that the two triangles are the same by induction.
+        That is, we prove that the <m>k</m>th element of the <m>n</m>th row is the same in both triangles,
+        and we prove this by induction on <m>n</m>.
+        For <m>n=0</m> the two triangles have the same zero row:
+        <m>\binom{0}{0} = 1</m>.
+        Assume that the two triangles are equal in the <m>(n-1)</m>st row.
+        We prove that the two triangles contain the same numbers in the <m>n</m>th row, as well.
+        The first and the last numbers are the same:
+        <m>\binom{n}{0} = 1</m>, <m>\binom{n}{n} = 1</m>.
+        Now, consider the <m>k</m>th element of the <m>n</m>th row for an arbitrary <m>1\leq k\leq n-1</m>.
+        In Pascal's triangle it is the sum of the two numbers above it, that is,
+        it is the sum of the <m>(k-1)</m>st and the <m>k</m>th number of row <m>(n-1)</m>.
+        By the induction hypotheses,
+        row <m>n-1</m> is the same in Pascal's triangle and in the triangle of the Binomial coefficients.
+        That is, the <m>(k-1)</m>st element of row <m>(n-1)</m> is <m>\binom{n-1}{k-1}</m>,
+        the <m>k</m>th element of row <m>(n-1)</m> is <m>\binom{n-1}{k}</m>.
+        By <xref ref="prop_binomsum">Proposition</xref>
+        we have <m>\binom{n-1}{k-1}+ \binom{n-1}{k} = \binom{n}{k}</m>.
+        That is, the <m>k</m>th number of the <m>n</m>th row in Pascal's triangle is the same as the <m>k</m>th number of the <m>n</m>th row in the triangle of the Binomial coefficients.
+        This is true for arbitrary <m>1\leq k\leq n-1</m>,
+        thus the <m>n</m>th row of Pascal's triangle is the same as the <m>n</m>th row of the triangle of the binomial coefficients.
+        This finishes the induction proof,
+        the two triangles are the same.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_pascal12"></xref> The first twelve rows of Pascal's triangle can be seen in <xref ref="tab_pascal12">Table</xref>
+        on <xref ref="tab_pascal12">page</xref>. <table xml:id="tab_pascal12"> <caption>First twelve rows of Pascal's triangle.</caption> <tabular> <row> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell>1</cell> </row> <row> <cell>\noalign</cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell>1</cell> <cell></cell> <cell>1</cell> </row> <row> <cell>\noalign</cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell>1</cell> <cell></cell> <cell>2</cell> <cell></cell> <cell>1</cell> </row> <row> <cell>\noalign</cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell>1</cell> <cell></cell> <cell>3</cell> <cell></cell> <cell>3</cell> <cell></cell> <cell>1</cell> </row> <row> <cell>\noalign</cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell>1</cell> <cell></cell> <cell>4</cell> <cell></cell> <cell>6</cell> <cell></cell> <cell>4</cell> <cell></cell> <cell>1</cell> </row> <row> <cell>\noalign</cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell>1</cell> <cell></cell> <cell>5</cell> <cell></cell> <cell>10</cell> <cell></cell> <cell>10</cell> <cell></cell> <cell>5</cell> <cell></cell> <cell>1</cell> </row> <row> <cell>\noalign</cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell>1</cell> <cell></cell> <cell>6</cell> <cell></cell> <cell>15</cell> <cell></cell> <cell>20</cell> <cell></cell> <cell>15</cell> <cell></cell> <cell>6</cell> <cell></cell> <cell>1</cell> </row> <row> <cell>\noalign</cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell>1</cell> <cell></cell> <cell>7</cell> <cell></cell> <cell>21</cell> <cell></cell> <cell>35</cell> <cell></cell> <cell>35</cell> <cell></cell> <cell>21</cell> <cell></cell> <cell>7</cell> <cell></cell> <cell>1</cell> </row> <row> <cell>\noalign</cell> <cell></cell> <cell></cell> <cell></cell> <cell>1</cell> <cell></cell> <cell>8</cell> <cell></cell> <cell>28</cell> <cell></cell> <cell>56</cell> <cell></cell> <cell>70</cell> <cell></cell> <cell>56</cell> <cell></cell> <cell>28</cell> <cell></cell> <cell>8</cell> <cell></cell> <cell>1</cell> </row> <row> <cell>\noalign</cell> <cell></cell> <cell></cell> <cell>1</cell> <cell></cell> <cell>9</cell> <cell></cell> <cell>36</cell> <cell></cell> <cell>84</cell> <cell></cell> <cell>126</cell> <cell></cell> <cell>126</cell> <cell></cell> <cell>84</cell> <cell></cell> <cell>36</cell> <cell></cell> <cell>9</cell> <cell></cell> <cell>1</cell> </row> <row> <cell>\noalign</cell> <cell></cell> <cell>1</cell> <cell></cell> <cell>10</cell> <cell></cell> <cell>45</cell> <cell></cell> <cell>120</cell> <cell></cell> <cell>210</cell> <cell></cell> <cell>252</cell> <cell></cell> <cell>210</cell> <cell></cell> <cell>120</cell> <cell></cell> <cell>45</cell> <cell></cell> <cell>10</cell> <cell></cell> <cell>1</cell> </row> <row> <cell>\noalign</cell> <cell>1</cell> <cell></cell> <cell>11</cell> <cell></cell> <cell>55</cell> <cell></cell> <cell>165</cell> <cell></cell> <cell>330</cell> <cell></cell> <cell>462</cell> <cell></cell> <cell>462</cell> <cell></cell> <cell>330</cell> <cell></cell> <cell>165</cell> <cell></cell> <cell>55</cell> <cell></cell> <cell>11</cell> <cell></cell> <cell>1</cell> </row> <row> <cell>\noalign 1</cell> <cell></cell> <cell>12</cell> <cell></cell> <cell>66</cell> <cell></cell> <cell>220</cell> <cell></cell> <cell>495</cell> <cell></cell> <cell>792</cell> <cell></cell> <cell>924</cell> <cell></cell> <cell>792</cell> <cell></cell> <cell>495</cell> <cell></cell> <cell>220</cell> <cell></cell> <cell>66</cell> <cell></cell> <cell>12</cell> <cell></cell> <cell>1</cell> </row> <row> <cell>\noalign</cell> </row> </tabular> </table>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_binomialwriteout"></xref>
+        The Binomial theorem holds for <m>n=0</m> and <m>n=1</m>,
+        as well: 
+        <m>(x+y)^0 = 1 = \binom{0}{0} x^0 y^0</m>, 
+        <m>(x+y)^1 = x + y = \binom{1}{0} x^1 y^0 + \binom{1}{1} x^0 y^1</m>. 
+        Now, we can prove the theorem by induction on <m>n</m>. 
+        Assume that the statement holds for <m>n-1</m>, 
+        that is,
+        <me>
+          (x+y)^{n-1} = x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{1} xy^{n-2} + y^{n-1}
+        </me>.
+        This is the induction hypothesis. 
+        Now, compute <m>(x+y)^n</m> using the same method as before, 
+        and use the induction hypothesis for expanding <m>(x+y)^{n-1}</m>:
+        <md>
+          <mrow>(x+y)^n \amp = (x+y)^{n-1} \cdot (x+y)</mrow>
+          <mrow>\amp = \left( x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{n-2} xy^{n-2} + y^{n-1} \right) \cdot \left( x + y \right)</mrow>
+          <mrow>\amp = \left( x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{n-2} xy^{n-2} + y^{n-1} \right) \cdot x</mrow>
+          <mrow>\amp + \left( x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{n-2} xy^{n-2} + y^{n-1} \right) \cdot y</mrow>
+          <mrow>\amp = x^{n} + \binom{n-1}{1} x^{n-1}y + \dots + \binom{n-1}{n-2} x^2y^{n-2} + xy^{n-1}</mrow>
+          <mrow>\amp + x^{n-1}y + \binom{n-1}{1} x^{n-2}y^2 + \dots + \binom{n-1}{n-2} xy^{n-1} + y^{n}</mrow>
+          <mrow>\amp = x^{n} + \binom{n-1}{1} x^{n-1}y + \dots + \binom{n-1}{n-2} x^2y^{n-2} + \binom{n-1}{n-1} xy^{n-1}</mrow>
+          <mrow>\amp + \binom{n-1}{0} x^{n-1}y + \binom{n-1}{1} x^{n-2}y^2 + \dots + \binom{n-1}{n-2} xy^{n-1} + y^{n}</mrow>
+          <mrow>\amp = x^n + \left( \binom{n-1}{1} + \binom{n-1}{0} \right) x^{n-1}y + \dots</mrow>
+          <mrow>\amp \dots + \left( \binom{n-1}{k} + \binom{n-1}{k-1} \right) x^{n-k}y^k + \dots</mrow>
+          <mrow>\amp \dots + \left( \binom{n-1}{n-1} + \binom{n-1}{n-2} \right) xy^{n-1} + y^n</mrow>
+          <mrow>\amp = x^n + \binom{n}{1} x^{n-1}y + \dots 
+          + \binom{n}{k} x^{n-k}y^k + \dots 
+          + \binom{n}{n-1}xy^{n-1} + y^n</mrow>
+        </md>.
+        Here, we have expanded <m>(x+y)^{n-1}</m> using the induction hypothesis, 
+        and multiplied it by <m>(x+y)</m> by expanding the brackets. 
+        Then we collected together the same terms
+        <m>x^{n-k}y^k</m> for every <m>k=0, 1, \dots , n-1, n</m>. 
+        Finally, in <xref ref="eq_binomsum2" /> we used the generating rule of Pascal's triangle (<xref ref="prop_binomsum">Proposition</xref>).
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_binomialnchoosek"></xref>
+        Consider <m>(x+y)^n</m>:
+        <me>
+          (x+y)^n = a_n x^n + a_{n-1}x^{n-1}y + a_{n-2}x^{n-2}y^2 + \dots + a_2x^2y^{n-2} + a_1xy^{n-1} + a_0y^n
+        </me>,
+        for some numbers <m>a_n, a_{n-1}, \dots, a_1, a_0</m>. 
+        How do we obtain the coefficient <m>a_k</m> for <m>x^{n-k}y^k</m>? 
+        Now, <m>(x+y)^n</m> is the <m>n</m>-fold product of <m>(x+y)</m> by itself:
+        <me>
+          (x+y)^n = \underbrace{(x+y) (x+y)  \dots (x+y) (x+y)}_{n\text{ times } }
+        </me>.
+        The multiplication of these <m>n</m> factors is carried out by choosing a term from each factor (<m>x</m> or <m>y</m>) in every possible way, 
+        multiplying these <m>n</m> terms,
+        and then adding the resulting products together. 
+        Thus the coefficient of <m>x^{n-k}y^k</m> is the number of possibilities to choose <m>(n-k)</m>-times the <m>x</m> and <m>k</m>-times the <m>y</m> out of the <m>n</m> factors. 
+        Altogether there are <m>n</m> many <m>y</m>'s to choose from, 
+        and we need to choose <m>k</m> of them (and the remaining <m>(n-k)</m> factors will be chosen as <m>x</m>). 
+        This can be done in <m>\binom{n}{k}</m>-many ways. 
+        Therefore the coefficient of
+        <m>x^{n-k}y^k</m> is <m>a_k=\binom{n}{k}</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_binomial1_1"></xref>
+        <md>
+          <mrow>2^n \amp = (1+1)^n = 1^n + n \cdot 1^{n-1}\cdot 1 + \binom{n}{2} \cdot 1^{n-2}\cdot 1^2 + \dots + n \cdot 1 \cdot 1^{n-1} + 1^n</mrow>
+          <mrow>\amp = 1 + n + \binom{n}{2} + \dots + \binom{n}{k} + \dots + \binom{n}{n-2} + n + 1 = \sum_{k=0}^n \binom{n}{k}</mrow>
+        </md>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_binomial1-1"></xref>
+        <md>
+          <mrow>0 \amp = 0^n = (1-1)^n</mrow>
+          <mrow>\amp = 1^n + n \cdot 1^{n-1}\cdot (-1) + \binom{n}{2} \cdot 1^{n-2}\cdot (-1)^2 + \dots + n \cdot 1 \cdot (-1)^{n-1} + (-1)^n</mrow>
+          <mrow>\amp = 1 - n  + \binom{n}{2}  - \dots + (-1)^{k} \binom{n}{k} + \dots + (-1)^{n-1} n + (-1)^n</mrow>
+          <mrow>\amp = \sum_{k=0}^n (-1)^k \binom{n}{k}</mrow>
+        </md>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_expandusingbinomialthm"></xref>
+        Using the Binomial theorem we obtain
+        <md>
+          <mrow>(x+y)^8\amp = \sum_{k=0}^8 \binom{8}{k} x^{8-k} y^k = x^8 + 8 x^7y + 28x^6y^2 + 56 x^5y^3</mrow>
+          <mrow>\amp + 70 x^4 y^4 + 56 x^3 y^5 + 28 x^2 y^6 + 8 x y^7 + y^8,</mrow>
+          <mrow>(x-y)^8\amp = \sum_{k=0}^8 \binom{8}{k} x^{8-k} \left( -y \right)^k = x^8 - 8 x^7y + 28x^6y^2 - 56 x^5y^3</mrow>
+          <mrow>\amp + 70 x^4 y^4 - 56 x^3 y^5 + 28 x^2 y^6 - 8 x y^7 + y^8,</mrow>
+          <mrow>(a+1)^{10} \amp = \sum_{k=0}^{10} \binom{10}{k} \cdot a^{10-k}\cdot 1^k = a^{10} + 10a^9 + 45a^8 + 120a^7</mrow>
+          <mrow>\amp + 210a^6 + 252a^5 + 210a^4 + 120 a^3 + 45 a^2 + 10a + 1,</mrow>
+          <mrow>(b-3)^5 \amp = \sum_{k=0}^5 \binom{5}{k} b^{5-k} \left( -3 \right)^k = b^5 -15 b^4 + 90 b^3</mrow>
+          <mrow>\amp -270 b^2 + 405 b - 243,</mrow>
+          <mrow>(1 + 2/x)^5 \amp = \sum_{k=0}^5 \binom{5}{k} \cdot 1^{5-k} \cdot \left( \frac{2}{x} \right)^k = 1 + \frac{10}{x} + \frac{40}{x^2} + \frac{80}{x^3} + \frac{80}{x^4} + \frac{32}{x^5},</mrow>
+          <mrow>\left( a + b \right)^6 \amp = \sum_{k=0}^6 \binom{6}{k} a^{6-k} b^k = a^6 + 6a^5b + 15 a^4 b^2 + 20 a^3 b^3</mrow>
+          <mrow>\amp + 15 a^2 b^4 + 6ab^5 + b^6,</mrow>
+          <mrow>\left( 1 + x \right)^5 \amp = \sum_{k=0}^5 \binom{5}{k} \cdot 1^{5-k} \cdot x^k = 1 + 5x + 10x^2</mrow>
+          <mrow>\amp + 10x^3 + 5x^4 + x^5,</mrow>
+          <mrow>\left(3a + 4b \right)^4 \amp = \sum_{k=0}^4 \binom{4}{k} \cdot \left(3a\right)^{4-k} \cdot \left(4b\right)^k = \left( 3a \right)^4 + 4 \cdot \left( 3a \right)^3 \cdot \left( 4b \right)</mrow>
+          <mrow>\amp + 6 \cdot \left( 3a \right)^2 \cdot \left( 4b \right)^2 + 4 \cdot \left( 3a \right) \cdot \left( 4b \right)^3 + \left( 4b \right)^4  = 81 a^4</mrow>
+          <mrow>\amp + 432 a^3b + 864 a^2b^2 + 768 ab^3 + 256 b^4,</mrow>
+          <mrow>\left( 3 - 2x \right)^4 \amp = \sum_{k=0}^4 \binom{4}{k} \cdot 3^{4-k} \cdot \left(-2x\right)^k = 3^4 - 4 \cdot 3^3 \cdot \left( 2x \right) + 6 \cdot 3^2 \cdot \left( 2x \right)^2</mrow>
+          <mrow>\amp - 4 \cdot 3 \cdot \left( 2x \right)^3 + \left( 2x \right)^4  = 81 - 216 x + 216 x^2 - 96 x^3 + 16 x^4</mrow>
+        </md>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_coefficientinbinomialthm"></xref>
+        By the Binomial theorem
+        <me>
+          \left( 1-\frac{x}{2} \right)^9 = \sum_{k=0}^9 \binom{9}{k} \cdot 1^{9-k} \cdot \left( - \frac{x}{2} \right)^k = \sum_{k=0}^9 \left( -1 \right)^k \cdot \frac{\binom{9}{k}}{2^k} \cdot x^k
+        </me>.
+        Here, the fourth term corresponds to <m>x^3</m>, that is,
+        <m>\left( -1 \right)^3 \cdot \binom{9}{3}/2^3 x^3 = - 84/8 x^3 = -21/2 x^3 = -10.5 x^3</m>. 
+        The coefficient of <m>x^5</m> is <m>\left( -1 \right)^5 \cdot \binom{9}{5}/2^5 = - 126/32  = -63/16 = -3.9375</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_alternatingsum"></xref> If <m>n</m> is odd,
+        then every binomial coefficient occurs twice in the sum:
+        once with positive sign, and once with negative sign.
+        Indeed, the sign of <m>\binom{n}{k}</m> is <m>(-1)^k</m> and the sign of
+        <m>\binom{n}{n-k}</m> is <m>(-1)^{n-k}</m>.
+        They cannot have the same sign,
+        because their product is <m>(-1)^k \cdot (-1)^{n-k} = (-1)^n = -1</m>,
+        as <m>n</m> is odd.
+        Thus every binomial coefficient occurs twice with different signs,
+        their sum is 0, and the whole sum is 0, as well.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_alternatingsum2"></xref>
+        Consider the alternating sum of the <m>n</m>th row
+        (for <m>n\geq 1</m>),
+        
+        and use the generating rule of Pascal's triangle: 
+        {
+        <md>
+          <mrow>\amp  \binom{n}{0} - \binom{n}{1} + \binom{n}{2} - \dots + (-1)^{n-1} \cdot \binom{n}{n-1} + (-1)^{n} \cdot \binom{n}{n}</mrow>
+          <mrow>\amp = \binom{n-1}{0} - \left( \binom{n-1}{0} + \binom{n-1}{1} \right) + \left( \binom{n-1}{1} + \binom{n-1}{2} \right)  - \dots</mrow>
+          <mrow>\amp + 
+          (-1)^{n-1} \cdot \left( \binom{n-1}{n-2} + \binom{n-1}{n-1} \right) + (-1)^{n} \cdot \binom{n-1}{n-1}</mrow>
+          <mrow>\amp = \left( \binom{n-1}{0} - \binom{n-1}{0} \right) + \left( - \binom{n-1}{1} + \binom{n-1}{1} \right) +</mrow>
+          <mrow>\amp +\left( \binom{n-1}{2} - \binom{n-1}{2} \right) + \dots 
+          + \left( \left( -1 \right)^{n-2} \cdot \binom{n-1}{n-2} + \left( -1 \right)^{n-1} \cdot \binom{n-1}{n-2} \right)</mrow>
+          <mrow>\amp + \left( \left( -1 \right)^{n-1} \cdot \binom{n-1}{n-1} + \left( -1 \right)^{n} \cdot \binom{n-1}{n-1} \right)</mrow>
+          <mrow>\amp = 0 + 0 + 0 + \dots + 0 + 0 = 0</mrow>
+        </md>.
+        }
+        First, we replaced <m>\binom{n}{0}=1</m> by <m>\binom{n-1}{0}=1</m>, 
+        and <m>\binom{n}{n} = 1</m> by <m>\binom{n-1}{n-1} = 1</m>,
+        then we used the generating rule of Pascal's triangle. 
+        Then we observed that every
+        <m>\binom{n-1}{k}</m> occurs twice in the sum:
+        first with a positive sign, then right after it with a negative sign 
+        (for <m>0\leq k\leq n-1</m>).
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_n_mchoosek"></xref>
+        Again, we give a combinatorial meaning to both sides of <xref ref="eq_n_mchoosek" />. 
+        The right hand side gives a clue: 
+        <m>\binom{n+m}{l}</m> is the number of ways to choose <m>l</m> elements out of an <m>(n+m)</m>-element set, 
+        say
+        <me>
+          S = \halmaz{1, 2, \dots , n, n+1, n+2, \dots , n+m}
+        </me>.
+        Our plan is to prove that the left hand side of <xref ref="eq_n_mchoosek" /> is the number of <m>l</m>-element subsets of <m>S</m>,
+        as well. 
+        Let <m>S_1 = \halmaz{1, 2, \dots , n}</m> and <m>S_2 = \halmaz{n+1, n+2, \dots , n+m}</m>. 
+        Now, try to count the number of ways to choose <m>l</m> elements of <m>S</m> by counting how many elements we choose from <m>S_1</m> and from <m>S_2</m>. 
+        If we choose 0 element from <m>S_1</m>,
+        then we must choose <m>l</m> elements from <m>S_2</m>. 
+        We can do this in <m>\binom{n}{0} \cdot \binom{m}{l}</m>-many ways. 
+        If we choose 1 element from <m>S_1</m>,
+        then we must choose <m>l-1</m> elements from <m>S_2</m>. 
+        We can do this in <m>\binom{n}{1} \cdot \binom{m}{l-1}</m>-many ways. 
+        If we choose 2 elements from <m>S_1</m>,
+        then we must choose <m>l-2</m> elements from <m>S_2</m>. 
+        We can do this in <m>\binom{n}{2} \cdot \binom{m}{l-2}</m>-many ways. 
+        In general, if we choose k elements from <m>S_1</m>,
+        then we must choose <m>l-k</m> elements from <m>S_2</m>. 
+        We can do this in <m>\binom{n}{k} \cdot \binom{m}{l-k}</m>-many ways. 
+        In the end, if we choose <m>l</m> elements from <m>S_1</m>,
+        then we must choose <m>0</m> element from <m>S_2</m>. 
+        We can do this in <m>\binom{n}{l} \cdot \binom{m}{0}</m>-many ways. 
+        Thus, choosing <m>l</m> elements out of <m>n+m</m> can be done in the following number of ways:
+        <me>
+          \binom{n}{0} \cdot \binom{m}{l} + \binom{n}{1} \cdot \binom{m}{l-1} + \dots 
+          + \binom{n}{l}\cdot \binom{m}{0} = \sum_{k=0}^l \binom{n}{k} \cdot \binom{m}{l-k}
+        </me>.
+        That is, both sides of <xref ref="eq_n_mchoosek" /> counts the number of ways of choosing <m>l</m> elements out of an <m>(n+m)</m>-element set, 
+        and therefore must be equal. 
+
+        If we choose <m>n=m=l</m>, 
+        and use the symmetry of Pascal's triangle <m>\binom{n}{k} = \binom{n}{n-k}</m>, 
+        then we obtain exactly equation <xref ref="eq_sumsquaresofrow" />.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_n_mchoosek2"></xref>
+        Consider <m>(x+y)^{n+m}</m>,
+        and expand it using the Binomial theorem:
+        <me>
+          (x+y)^{n+m} = \sum_{k=0}^{n+m} \binom{n+m}{k} x^{n+m-k} \cdot y^{k}
+        </me>.
+        Then the right hand side of <xref ref="eq_n_mchoosek" /> is the coefficient of the term <m>x^{n+m-l}y^l</m>. 
+        We prove that the left hand side is the coefficient of <m>x^{n+m-l}y^l</m>,
+        as well. 
+        For this, we compute <m>(x+y)^{n+m}</m> by multiplying
+        <m>(x+y)^n \cdot (x+y)^m</m> after expanding both factors using the Binomial theorem:
+        <me>
+          (x+y)^{n+m} = (x+y)^n \cdot (x+y)^m = \left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right) \cdot \left( \sum_{k=0}^m \binom{m}{k} x^{m-k}y^k \right)
+        </me>.
+        Now, let us compute the coefficient of <m>x^{n+m-l} y^l</m>. 
+        When do we obtain <m>x^{n+m-l} y^l</m> when we multiply
+        <m>\left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right)</m> by <m>\left( \sum_{k=0}^m \binom{m}{k} x^{m-k}y^k \right)</m>? 
+        For some <m>0\leq k\leq l</m> the term <m>x^{n-k}y^k</m> in the first factor must be multiplied by
+        <m>x^{m-l+k} y^{l-k}</m> from the second factor. 
+        The coefficient of <m>x^{n-k}y^k</m> in the first factor is <m>\binom{n}{k}</m>,
+        the coefficient of <m>x^{m-l+k}y^{l-k}</m> in the second factor is <m>\binom{m}{l-k}</m>, 
+        thus this multiplication contributes by
+        <m>\binom{n}{k} \cdot \binom{m}{l-k}</m> to the coefficient of
+        <m>x^{n+m-l} y^l</m> in <m>(x+y)^{n+m}</m>. 
+        That is, the coefficient of
+        <m>x^{n+m-l} y^l</m> in <m>(x+y)^{n+m}</m> is
+        <me>
+          \sum_{k=0}^l \binom{n}{k} \cdot \binom{m}{l-k}
+        </me>.
+        Moreover, the coefficient of <m>x^{n+m-l}y^l</m> in
+        <m>(x+y)^{n+m}</m> is <m>\binom{n+m}{l}</m>,
+        thus the two numbers must be equal, 
+        which proves <xref ref="eq_n_mchoosek" />:
+        <me>
+          \sum_{k=0}^n \binom{n}{k} \cdot \binom{m}{l-k} = \binom{n+m}{l}
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_diagonal"></xref>
+        We can try to prove the identity by induction on <m>m</m>. 
+        For <m>m=0</m> the identity holds,
+        as the left hand side is <m>\binom{n}{0} = 1</m>, 
+        the right hand side is <m>\binom{n+1}{0} = 1</m>, as well. 
+        Assume that the identity holds for <m>m-1</m>, that is,
+        <me>
+          \sum_{k=0}^{m-1} \binom{n+k}{k} = \binom{n}{0} + \binom{n+1}{1} + \dots + \binom{n+m-1}{m-1} = \binom{n+m}{m-1}
+        </me>.
+        This is the induction hypothesis. 
+        Now we prove the identity for <m>m</m>.
+        <md>
+          <mrow>\amp  \sum_{k=0}^{m} \binom{n+k}{k} = \underbrace{\binom{n}{0} + \binom{n+1}{1} + \dots + \binom{n+m-1}{m-1}}_{= \binom{n+m}{m-1}, \text{ by the induction hypothesis } } + \binom{n+m}{m}</mrow>
+          <mrow>\amp = \binom{n+m}{m-1} + \binom{n+m}{m} = \binom{n+m+1}{m}</mrow>
+        </md>.
+        Here, we first used the induction hypothesis, 
+        then the generating rule of Pascal's triangle
+        (<xref ref="prop_binomsum">Proposition</xref>).
+        
+
+        We can spare ourselves an induction proof if we use <m>\binom{n+k}{k} = \binom{n+k}{n}</m>. 
+        That is,
+        <md>
+          <mrow>\amp \sum_{k=0}^{m} \binom{n+k}{k} = \binom{n}{0} + \binom{n+1}{1} + \dots + \binom{n+m}{m}</mrow>
+          <mrow>\amp = \binom{n}{n} + \binom{n+1}{n} + \dots + \binom{n+m-1}{n} = \sum_{k=n}^{n+m} \binom{k}{n}</mrow>
+          <mrow>\amp = \binom{n+m+1}{n+1} = \binom{n+m+1}{m}</mrow>
+        </md>
+        by <xref ref="prop_sumkchoosem">Proposition</xref>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_rowp"></xref>
+        The <m>k</m>th element of row <m>p</m> is
+        <me>
+          \binom{p}{k} = \frac{p!}{k!\cdot (p-k)!}
+        </me>.
+        This number is an integer number,
+        the nominator is divisible by the prime <m>p</m>. 
+        However, for <m>1\leq k\leq p-1</m>,
+        the denominator only contains positive integers strictly less than <m>p</m>. 
+        Thus, when we simplify this fraction for obtaining the resulting integer, 
+        the factor <m>p</m> in the nominator will not cancel out with anything in the denominator, 
+        and thus <m>p</m> will divide the integer <m>\binom{p}{k}</m>. 
+
+        If <m>p</m> is not a prime, 
+        then this property does not necessarily hold.
+        For example if <m>n</m> is even then by <xref ref="ex_nmidnchoose2">Exercise</xref>
+        we have <m>n \nmid \binom{n}{2}</m>. 
+        Furthermore, in the first 12 rows we have
+        <md>
+          <mrow>6 \amp \nmid \binom{6}{3} = 20,</mrow>
+          <mrow>\amp \amp  8 \amp \nmid \binom{8}{4} = 70,</mrow>
+          <mrow>9 \amp \nmid \binom{9}{3} = 84,</mrow>
+          <mrow>\amp \amp  \amp \amp  10 \amp \nmid \binom{10}{5} = 252,</mrow>
+          <mrow>12 \amp \nmid \binom{12}{3} = 220, \amp  12 \amp \nmid \binom{12}{4} = 495</mrow>
+        </md>.
+      </p>
+    </li>
+  </ol>
+</section>
+

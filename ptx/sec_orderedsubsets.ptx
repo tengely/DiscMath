@@ -1,0 +1,202 @@
+
+
+<section xml:id="sec_orderedsubsets">
+  <title>The number of ordered subsets of a given size</title>
+  <p>
+    Now, we move to the world of Formula<nbsp />1.
+    During Formula<nbsp />1 racing some cars obtain points
+    (usually the cars finishing the race first),
+    and these points are accumulated during the whole season.
+    This is how the order in the Driver's Championship is based on.
+  </p>
+
+  <p>
+    Between 1960 and 2002 only the first six cars
+    (out of 22)
+    finishing the race obtained points.
+    The scoring system had changed a lot during these years,
+    but we concentrate on the fact that some of the drivers obtain points.
+    Moreover, depending on their place they obtain different points.
+    That is, the order of the first six cars matter,
+    but the order of all the other cars do not matter (for the Driver's Championship).
+  </p>
+
+  <p>
+    We are interested in how many possible outcomes exist for the Driver's Championship.
+    That is,
+    how many ways can we choose the first 6 cars out of 22 if their order counts?
+    We can try to count the number of possibilities similarly as in <xref ref="sec_permutations">Section</xref>,
+    when we counted the number of permutations of some elements.
+    For the first place 22 cars can arrive.
+    No matter which car finishes the race first,
+    there will be 21 possible cars to finish the race second.
+    Then, there will be 20 possible cars to finish the race as the third.
+    Then, there are 19 possibilities for the fourth place,
+    18 possibilities for the fifth place,
+    and finally,
+    there will remain 17 cars who can finish the race as sixth.
+    Since the order of all the remaining cars does not matter (for the Driver's Championship),
+    the number of possibilities for the first six cars is
+    <me>
+      22\cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 = 53~721~360
+    </me>.
+  </p>
+  <exercise xml:id="ex_22-6">
+    <statement>
+      <p>
+        Which number is bigger?
+        <md>
+          <mrow>\amp 22\cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 \amp \text{ or } \amp  \amp \frac{22!}{16!}</mrow>
+        </md>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    <xref ref="ex_22-6">Exercise</xref>
+    can help us to obtain the answer for our question in a different way.
+    Altogether there are <m>22!</m> possible orders for the 22 cars (this is the number of permutations of 22 cars).
+    But not all of these are considered to be different for the Driver's Championship.
+    In fact, those cases will be considered the same where the first six are the same (and in the same order).
+    Just as we did in <xref ref="sec_anagrams">Section</xref> for counting the anagrams,
+    we can group together those permutations of the 22 cars,
+    which are the same for the Driver's Championship,
+    that is, where the order of the first six cars is the same.
+    We can name every group with the order of the first six cars.
+    Thus, we are interested in the number of groups we have.
+    In one group there are those permutations,
+    where the order of the first six cars is the same,
+    thus they only differ in the last <m>22-6 = 16</m> cars.
+    There are <m>16!</m> possible permutations of the last 16 cars,
+    therefore every group contains <m>16!</m> orderings of the 22 cars.
+    Hence,
+    the number of possibilities
+    (for the Driver's Championship)
+    is
+    <me>
+      \frac{22!}{(22-6)!} = \frac{22!}{16!} = 22 \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 = 53~721~360
+    </me>.
+  </p>
+
+  <p>
+    Let us try to generalize the result.
+    We considered a set of 22 cars (the racing cars).
+    We were interested in the first six arriving.
+    That is, we were interested in the number of 6-element sets,
+    but the order of those 6 elements counted, as well.
+    Thus, we may generalize our results in the following way.
+  </p>
+
+  <theorem xml:id="thm_orderedsubsets">
+    <statement>
+      <p>
+        Let <m>S</m> be a set of <m>n</m> elements,
+        and let <m>0\leq k\leq n</m> be an integer.
+        The number of ordered <m>k</m>-element sets is
+        <me>
+          n \cdot (n-1) \cdot \dots \cdot (n-k+1) = \frac{n!}{(n-k)!}
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      For the first element we have <m>n</m> possibilities to choose from.
+      No matter which element we chose first,
+      there will be <m>(n-1)</m> possibilities to choose a second element.
+      Then, there will be <m>(n-2)</m> possibilities to choose a third element, etc.
+      Finally,
+      there will remain <m>(n-k+1)</m> possibilities to choose the <m>k</m>th element,
+      as we have already chosen <m>(k-1)</m> elements.
+      Thus the number of the ordered <m>k</m>-element subsets is
+      <md>
+        <mrow>n \cdot (n-1) \cdot \dots \cdot (n-k+1) \amp = \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1) \cdot (n-k)!}{(n-k)!}</mrow>
+        <mrow>\amp = \frac{n!}{(n-k)!}</mrow>
+      </md>.
+    </p>
+  </proof>
+
+  <exercise xml:id="ex_orderedsubsets">
+    <statement>
+      <p>
+        Prove <xref ref="thm_orderedsubsets">Theorem</xref> using the other method.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_forma1">
+    <statement>
+      <ol>
+        <li>
+          <title>(a)</title>
+          <p>
+            Between 2003 and 2009, the first eight cars finishing the race counts for the Driver's Championship.
+            How many possibilities are there for the first eight cars (out of 22)?
+          </p>
+        </li>
+
+        <li>
+          <title>(b)</title>
+          <p>
+            Nowadays, the first ten cars finishing the race counts for the Driver's Championship.
+            How many possibilities are there for the first ten cars (out of 22)?
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_competition">
+    <statement>
+      <p>
+        There are <m>n</m> people at a running competition.
+        In the end,
+        only the first <m>k</m> arrivals are recorded into a final list.
+        How many possible lists exist if
+
+        <ol>
+          <li>
+            <title>(a)</title>
+            <p>
+              <m>n = 10</m> and <m>k=3</m>,
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              <m>n = 12</m> and <m>k=3</m>,
+            </p>
+          </li>
+
+          <li>
+            <title>(c)</title>
+            <p>
+              <m>n = 10</m> and <m>k=4</m>,
+            </p>
+          </li>
+
+          <li>
+            <title>(d)</title>
+            <p>
+              <m>n = 12</m> and <m>k=4</m>,
+            </p>
+          </li>
+
+          <li>
+            <title>(e)</title>
+            <p>
+              <m>n = 8</m> and <m>k=5</m>,
+            </p>
+          </li>
+
+          <li>
+            <title>(f)</title>
+            <p>
+              <m>n = 10</m> and <m>k=5</m>?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+</section>
+

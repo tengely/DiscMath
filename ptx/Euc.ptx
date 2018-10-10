@@ -1,0 +1,259 @@
+
+
+<section xml:id="Euc">
+  <title>The Euclidean algorithm</title>
+  <p>
+    In this section we introduce the so-called Division algorithm,
+    we define the greatest common divisor of given integers and we consider the Euclidean algorithm,
+    which is one of the oldest mathematical algorithms.
+  </p>
+
+  <p>
+    <em>Division algorithm.</em>
+    Given two integers <m>a</m> and <m>b</m> such that <m>b>0</m>.
+    There exist unique integers <m>q</m> and <m>r</m> for which
+    <me>
+      a=qb+r, 0\leq r\lt b
+    </me>.
+  </p>
+
+  <p>
+    Here <m>q</m> is called <em>quotient</em>
+    and <m>r</m> is called <em>remainder.</em> There is a special case,
+    when the Division algorithm yields <m>r=0</m>.
+    In such a situation <m>a=qb</m> for some <m>q</m>.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        We say that <m>b</m> <term>divides</term>
+        <m>a</m> (<m>b</m> is a <term>divisor</term>
+        of <m>a</m> or <m>a</m> is a <term>multiple</term>
+        of <m>b</m>) if there exists <m>q</m> such that <m>a=qb</m>.
+        Notation: <m>b\mid a</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    How to find an appropriate <m>q</m> and <m>r</m>?
+    Let us assume that we have two positive integers <m>a</m> and <m>b</m>.
+    We start with <m>q=0</m> and <m>r=a</m>.
+    Clearly <m>a=0\cdot b+a</m>.
+    If <m>a\lt b</m>, then we are done,
+    otherwise <m>a-b\geq 0</m>.
+    So we write <m>a=1\cdot b+(a-b)</m>.
+    We check if <m>a-b\lt b</m>.
+    If this is the case then we have found <m>q</m> and <m>r</m>,
+    otherwise we have <m>a-2b\geq 0</m> and <m>a=2\cdot b+(a-2b)</m>.
+    We stop when we have <m>a-kb\lt b</m> for some <m>k</m>.
+    For example, let <m>a=76</m> and <m>b=7:</m>
+  </p>
+  <tabular>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>k</m></cell>
+      <cell><m>a-kb</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>0</cell>
+      <cell>76</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell>69</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell>62</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>3</cell>
+      <cell>55</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>4</cell>
+      <cell>48</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>5</cell>
+      <cell>41</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>6</cell>
+      <cell>34</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>7</cell>
+      <cell>27</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>8</cell>
+      <cell>20</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>9</cell>
+      <cell>13</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>10</cell>
+      <cell>6</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    that is, we obtain that <m>76=10\cdot 7+6</m> and <m>0\leq 6\lt 7</m>.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        Let <m>a,b\in\mathbb{Z}</m>.
+        A positive integer <m>d</m> is called a
+        <term>common divisor</term> of <m>a</m> and <m>b</m>,
+        if <m>d</m> divides <m>a</m> and <m>d</m> divides <m>b</m>.
+        The largest possible such integer is called the
+        <term>greatest common divisor</term> of <m>a</m> and <m>b</m>.
+        Notation: <m>\gcd(a,b)</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    <em>The Euclidean algorithm.</em>
+    Now we study a method to determine
+    <m>\gcd(a,b)</m> of given positive integers <m>a</m> and <m>b</m>.
+    The method also provides solution of the linear Diophantine equation
+    <me>
+      ax+by=\gcd(a,b)
+    </me>.
+  </p>
+
+  <p>
+    If we apply the Division algorithm to <m>a,b,a>b</m>,
+    then we have
+    <me>
+      a=qb+r, 0\leq r\lt b
+    </me>.
+  </p>
+
+  <p>
+    If <m>d</m> is a common divisor of <m>a</m> and <m>b</m>,
+    then <m>d</m> divides <m>r=a-qb</m> as well.
+    That is the basic idea of the algorithm.
+    The Euclidean algorithm works as follows.
+    First we apply the Division algorithm for <m>a</m> and <m>b</m> to obtain a quotient <m>q_1</m> and a remainder <m>r_1</m>.
+    Then we apply the Division algorithm for <m>b</m> and <m>r_1</m> to get a new quotient <m>q_2</m> and a new remainder <m>r_2</m>.
+    We continue,
+    we divide <m>r_1</m> by <m>r_2</m> to obtain <m>q_3</m> and <m>r_3</m>.
+    We stop if we obtain a zero remainder.
+    Since the procedure produces a decreasing sequence of non-negative integers so must eventually terminate by descent.
+    The last non-zero remainder is the greatest common divisor of <m>a</m> and <m>b</m>.
+  </p>
+
+  <p>
+    As an example we compute <m>\gcd(553,161)</m>.
+    We write the computations in the following way:
+    <md>
+      <mrow>553\amp =3\cdot 161+70 q_1=3, r_1=70</mrow>
+      <mrow>161\amp =2\cdot 70+21 q_2=2, r_2=21</mrow>
+      <mrow>70\amp =3\cdot 21+7 q_3=3, r_3=7</mrow>
+      <mrow>21\amp =3\cdot 7+0 q_4=3, r_4=0</mrow>
+    </md>.
+  </p>
+
+  <p>
+    That is, the last non-zero remainder is 7, so <m>\gcd(553,161)=7</m>.
+    If we would like to express 7 as
+    <m>553x+161y</m> for some <m>x,y\in\mathbb{Z}</m>,
+    we can do it by working backwards
+    <md>
+      <mrow>7\amp =70-3\cdot 21</mrow>
+      <mrow>\amp =70-3\cdot (161-2\cdot 70)=-3\cdot 161+7\cdot 70</mrow>
+      <mrow>\amp =-3\cdot 161+7 \cdot (553-3\cdot 161)=7\cdot 553-24\cdot 161</mrow>
+    </md>.
+  </p>
+
+  <p>
+    It follows that <m>x=7</m> and <m>y=-24</m>.
+  </p>
+  <exercise xml:id="intro-ex-13">
+    <statement>
+      <p>
+        Use the Euclidean algorithm to find
+        <m>\gcd(a,b)</m> and compute integers <m>x</m> and <m>y</m> for which
+        <me>
+          ax+by=\gcd(a,b):
+        </me>
+      </p>
+
+      <p>
+        (a) <m>a=678, b=567</m>,
+      </p>
+
+      <p>
+        (b) <m>a=803, b=319</m>,
+      </p>
+
+      <p>
+        (c) <m>a=2701, b=2257</m>,
+      </p>
+
+      <p>
+        (d) <m>a=3397, b=1849</m>.
+      </p>
+    </statement>
+  </exercise>
+</section>
+

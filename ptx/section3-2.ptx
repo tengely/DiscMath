@@ -1,0 +1,282 @@
+
+
+<section>
+  <title>Proofs by contradiction</title>
+  <p>
+    In this section we study an important tool to prove mathematical theorems.
+    This tool is called proof by contradiction or indirect proof.
+    There is a simple logic behind,
+    instead of proving that something must be true,
+    we prove it indirectly by showing that it cannot be false.
+    We assume that the opposite of our theorem is true.
+    From this assumption we try to obtain such a conclusion which is known to be false.
+    This contradiction then shows that our theorem must be true.
+  </p>
+
+  <p>
+    Let us consider a basic example.
+    We try to prove that <m>\sqrt{2}</m> is irrational.
+    We provide an indirect proof.
+    We assume the opposite
+    of our statement, that is, that <m>\sqrt{2}</m> is rational.
+    Rational numbers can be written as
+    <m>\frac{a}{b}</m> for some <m>a\in\mathbb{Z}</m>
+    and <m>b\in\mathbb{N}</m> such that the greatest common divisor of <m>a</m> and <m>b</m> is 1.
+    So we have
+    <me>
+      \sqrt{2}=\frac{a}{b}
+    </me>.
+  </p>
+
+  <p>
+    Hence <m>a^2=2b^2</m>.
+    It follows that 2 divides <m>a</m>,
+    so <m>a=2a_1</m> for some <m>a_1\in\mathbb{Z}</m>.
+    We substitute this into the equation
+    <m>a^2=2b^2</m> and we get <m>4a_1^2=2b^2</m>.
+    After dividing by 2 we get <m>2a_1^2=b^2</m>.
+    So we have that 2 divides <m>b</m>.
+    We have a contradiction since the greatest common divisor of <m>a</m> and <m>b</m> should be 1, but we obtained that 2 divides <m>a</m> and also divides <m>b</m>.
+    Hence 2 divides the greatest common divisor.
+    This contradiction shows that our statement must be true,
+    that is, <m>\sqrt{2}</m> is irrational.
+  </p>
+
+  <p>
+    In <xref ref="Euc">Section</xref>
+    there is a statement about the Division algorithm which says that given two integers <m>a</m> and <m>b</m> such that <m>b>0</m>,
+    there exist unique integers <m>q</m> and <m>r</m> for which
+    <me>
+      a=qb+r, 0\leq r\lt b
+    </me>.
+  </p>
+
+  <p>
+    Now we prove that <m>q</m> and <m>r</m> are unique.
+    We give a proof by contradiction.
+    Assume that there exist integers <m>q,q'</m> and <m>r,r'</m> such that
+    <m>q\neq q'</m> or <m>r\neq r'</m> and
+    <md>
+      <mrow>a\amp =qb+r, 0\leq r\lt b,</mrow>
+      <mrow>a\amp =q'b+r', 0\leq r'\lt b</mrow>
+    </md>.
+  </p>
+
+  <p>
+    The above equations imply that
+    <me>
+      b(q-q')=r'-r
+    </me>.
+  </p>
+
+  <p>
+    It follows that <m>b</m> divides <m>r'-r</m>.
+    We also have the inequalities
+    <md>
+      <mrow>0\leq \amp r\lt b,</mrow>
+      <mrow>0\leq \amp r'\lt b</mrow>
+    </md>.
+  </p>
+
+  <p>
+    So we have that
+    <me>
+      -b\lt r'-r\lt b
+    </me>.
+  </p>
+
+  <p>
+    There is only one integer in this interval which is a multiple of <m>b</m>,
+    namely 0.
+    We obtained that <m>r'-r=0</m>, that is, <m>r'=r</m>.
+    Also we have that <m>b(q-q')=r'-r=0</m>.
+    Since <m>b>0</m>,
+    it is clear that <m>q-q'=0</m> must hold, hence <m>q=q'</m>.
+    A contradiction, since we assumed that <m>q\neq q'</m> or <m>r\neq r'</m>.
+  </p>
+
+  <p>
+    Let us consider a proposition about prime numbers (a positive integer is prime if it is greater than 1 and has no positive divisors other than 1 and the number itself.)
+    If <m>p,q</m> and <m>r</m> are prime numbers, then
+    <me>
+      p^2+q^2\neq r^2
+    </me>.
+  </p>
+
+  <p>
+    Assume the opposite, that is,
+    there exist prime numbers <m>p,q</m> and <m>r</m> such that <m>p^2+q^2=r^2</m>.
+    There are three possibilities
+
+    <ol>
+      <li>
+        <title>(1)</title>
+        <p>
+          <m>p</m> and <m>q</m> are odd primes,
+        </p>
+      </li>
+
+      <li>
+        <title>(2)</title>
+        <p>
+          <m>p</m> and <m>q</m> are even primes,
+        </p>
+      </li>
+
+      <li>
+        <title>(3)</title>
+        <p>
+          one of the primes <m>p,q</m> is even the other is odd.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    (1) We have that <m>p</m> and <m>q</m> are odd primes,
+    hence <m>p^2+q^2=r^2</m> is even.
+    If <m>r^2</m> is even, then <m>r</m> is even.
+    The only even prime number is 2, so we have <m>r=2</m>.
+    That is, <m>p^2+q^2=4</m>.
+    Since <m>p</m> and <m>q</m> are odd primes we have <m>p,q\geq 3</m>.
+    Therefore <m>p^2+q^2\geq 18</m>, a contradiction.
+    We proved that if <m>p</m> and <m>q</m> are odd primes,
+    then the statement must be true.
+  </p>
+
+  <p>
+    (2) We have that <m>p</m> and <m>q</m> are even primes, that is,
+    <m>p=q=2</m>.
+    We obtain that <m>8=r^2</m>.
+    It implies that <m>r</m> is even, so <m>r=2</m>.
+    A contradiction since <m>r^2=4</m> while we concluded that <m>r^2</m> must be 8.
+    In this case our statement turns out to be true.
+  </p>
+
+  <p>
+    (3) We may suppose that <m>p</m> is even and <m>q</m> is odd.
+    That is, <m>p=2</m> and <m>q=2q_1+1</m> for some <m>q_1</m>.
+    It is clear that <m>r</m> is also odd,
+    since its square is a sum of an even number and an odd number, that is,
+    <m>r=2r_1+1</m>.
+    Our equation implies that
+    <m>4+(2q_1+1)^2=(2r_1+1)^2</m>, which can be written as
+    <me>
+      4+4q_1^2+4q_1+1=4r_1^2+4r_1+1
+    </me>.
+  </p>
+
+  <p>
+    One gets that
+    <me>
+      q_1(q_1+1)+1=r_1(r_1+1)
+    </me>.
+  </p>
+
+  <p>
+    The product of two consecutive integers is even,
+    so <m>q_1(q_1+1)</m> and <m>r_1(r_1+1)</m> are even.
+    Then we have that <m>r_1(r_1+1)-q_1(q_1+1)</m>
+    is an even integer, but the above equation implies that
+    <me>
+      r_1(r_1+1)-q_1(q_1+1)=1
+    </me>,
+    a contradiction since 1 is not an even integer.
+  </p>
+
+  <p>
+    Now we prove a result related to prime numbers.
+    The proof we provide is a nice indirect proof due to Euclid.
+  </p>
+
+  <proposition>
+    <statement>
+      <p>
+        There are infinitely many prime numbers.
+      </p>
+    </statement>
+  </proposition>
+
+  <proof>
+    <p>
+      Suppose that there are only finitely many primes,
+      let say <m>p_1\lt p_2\lt p_3\lt \ldots\lt p_n</m>.
+      Let us consider the integer
+      <me>
+        N=p_1p_2\cdots p_n+1
+      </me>.
+    </p>
+
+    <p>
+      Since <m>N</m> is not on the list of prime numbers it must have a prime divisor.
+      It means that for some <m>1\leq i\leq n</m>
+      the prime <m>p_i</m> divides <m>N</m>.
+      Applying the Division algorithm we obtain
+      <me>
+        N=\left(\prod_{1\leq k\leq n, k\neq i}p_k\right)\cdot p_i+1
+      </me>,
+      that is, the remainder is equal to 1.
+      Thus <m>N</m> is not divisible by <m>p_i</m>, a contradiction.
+      Thus we have proved
+      that there are infinitely many primes.
+    </p>
+  </proof>
+
+  <exercise xml:id="contra-0">
+    <statement>
+      <p>
+        Prove that if <m>x+y>10</m> for some <m>x,y\in\mathbb{Z}</m>,
+        then <m>x>5</m> or <m>y>5</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="contra-0a">
+    <statement>
+      <p>
+        Prove that there exists no integer <m>n</m> such that <m>n^2-2</m> is a multiple of 4.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="contra-1">
+    <statement>
+      <p>
+        Prove that <m>\sqrt{2}+\sqrt{3}</m> is irrational.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="contra-2">
+    <statement>
+      <p>
+        Prove that if <m>a,b</m> and <m>c</m> are odd integers,
+        then the equation
+        <me>
+          ax^2+bx+c=0
+        </me>
+        has no solution with <m>x\in\mathbb{Q}</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="contra-3">
+    <statement>
+      <p>
+        Given <m>n</m> integers <m>a_1,a_2,\ldots,a_n</m>,
+        prove that there exists <m>1\leq i\leq n</m>
+        such that
+        <me>
+          a_i\geq \frac{a_1+a_2+\ldots+a_n}{n}
+        </me>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="contra-4">
+    <statement>
+      <p>
+        Let <m>F_n</m> be a sequence defined by
+        <m>F_1=F_2=1</m> and <m>F_n=F_{n-1}+F_{n-2}, n\geq 3</m>,
+        that is, the Fibonacci sequence.
+        Prove that <m>\gcd(F_n,F_{n+1})=1</m> for all positive integer <m>n</m>.
+      </p>
+    </statement>
+  </exercise>
+</section>
+

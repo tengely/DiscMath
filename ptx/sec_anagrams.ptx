@@ -1,0 +1,235 @@
+
+
+<section xml:id="sec_anagrams">
+  <title>Anagrams</title>
+  <p>
+    An anagram of a word is another word
+    (or sometimes many words)
+    which is built up from the letters of the original,
+    using each letter exactly once.
+    For example an anagram of <sq>retinas</sq> can be <sq>nastier</sq>,
+    <sq>retains</sq>, or <sq>stainer</sq>.
+    Even <sq>sainter</sq> is a meaningful anagram (means trustworthy).
+    One can even form anagrams using multiple words,
+    like <sq>tin ears</sq> or <sq>in tears</sq>.
+  </p>
+
+  <p>
+    We are interested in the number of anagrams a word can have.
+    Of course, the number of all meaningful anagrams would be very hard to find,
+    because some expressions can be meaningful to some, and not to others.
+    For example, Oxford English Dictionary only contains the following anagrams of <sq>east</sq>:
+    <sq>a set</sq>, <sq>east</sq>, <sq>eats</sq>,
+    <sq>sate</sq> (i.e.<nbsp />satisfy),
+    <sq>seat</sq>, <sq>teas</sq>.
+    Nevertheless, there is meaning given to all possible anagrams of <sq>east</sq> in Ross Eckler's <em>Making the Alphabet Dance</em>.<fn>Ross Eckler, <em>Making the Alphabet Dance</em>, St Martins Pr (July 1997)</fn></p>
+
+  <p>
+    In any case,
+    how many possible anagrams are there for the word <sq>east</sq>?
+    Let us build them up: for the first letter we have 4 choices,
+    then we have only 3 choices for the second letter,
+    we are left only with two choices for the third letter,
+    and the not chosen letter will be the forth.
+    That is, altogether there are <m>4 \cdot 3 \cdot 2 \cdot 1 = 4! = 24</m>-many anagrams.
+    This is exactly the number of permutations of the four letter <sq>a</sq>,
+    <sq>e</sq>, <sq>s</sq> and <sq>t</sq>.
+  </p>
+
+  <p>
+    (Here we did not count the spaces and punctuations.
+    It is possible that by clever punctuations one can make more of these.
+    For example <sq>a set</sq> and <sq>as ET</sq> are both anagrams with the same order of letters,
+    but with different meaning.)
+  </p>
+
+  <p>
+    To make matters simple,
+    from now on we are only interested in the not necessarily meaningful anagrams,
+    without punctuations.
+    Thus, <sq>east</sq> has 24 anagrams.
+  </p>
+  <exercise xml:id="ex_retinas">
+    <statement>
+      <p>
+        How many anagrams does <sq>retinas</sq> have?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Now, let us count the number of anagrams of <sq>eye</sq>.
+    There are only three of them:
+    <sq>eye</sq>, <sq>eey</sq>, <sq>yee</sq>.
+    Unfortunately,
+    exactly the same argument as before does not work in this case.
+    The complications arise because of the two e's:
+    that is, those two letters are the same.
+    We could easily solve the problem if the two e's would be different.
+    Thus let us make them look different.
+    Let us colour one of the e's by blue,
+    the other e by red, and consider all
+    <em>coloured anagrams</em>.
+    Now, every letter is different,
+    and the former argument works:
+    there are <m>3\cdot 2 \cdot 1 = 6</m> coloured anagrams.
+    Nevertheless,
+    we are interested in the number of anagrams, no matter their colour.
+    Therefore we group together those anagrams,
+    which represent the same word,
+    only they are coloured differently (see <xref ref="fig_eye">Figure</xref>).
+  </p>
+
+  <figure xml:id="fig_eye">
+    <caption>Coloured anagrams of <sq>eye</sq></caption>
+    <image>
+      <latex-image>
+        <![CDATA[\begin{tikzpicture}\node[state,minimum size=5 cm]  (A) ;
+
+        \foreach \angle [evaluate=\angle as \langle using 180+\angle] in {0,120,240}
+        {
+        \draw (0,0) -- (A.\angle);
+        }
+
+        \foreach \angle/\label in {60/\textcolor{red}{e}y\textcolor{blue}{e},300/y\textcolor{blue}{e}\textcolor{red}{e}}
+        \node at ( \( (A) + (\angle:1cm) \) ) {\label};
+        \foreach \angle/\label in {75/\textcolor{blue}{e}y\textcolor{red}{e}, 285/y\textcolor{red}{e}\textcolor{blue}{e}}
+        \node at ( \( (A) + (\angle:2cm) \) ) {\label};
+        \foreach \angle/\label in {150/\textcolor{blue}{e}\textcolor{red}{e}y, 210/\textcolor{red}{e}\textcolor{blue}{e}y}
+        \node at ( \( (A) + (\angle:1.5cm) \) ) {\label};\end{tikzpicture}]]>
+      </latex-image>
+    </image>
+  </figure>
+
+  <p>
+    Now, we are interested in the number of groups.
+    For that, we need to know the number of anagrams in one group.
+    Take for example the group corresponding to the anagram <sq>eye</sq> (upper right part).
+    There are two different colourings depending on the e's:
+    we can colour the first <sq>e</sq> by two colours,
+    and the second <sq>e</sq> by one colour,
+    therefore there are <m>2 \cdot 1 = 2</m> coloured <sq>eye</sq>s in that group.
+    Similarly, every group contain exactly two coloured anagrams.
+    Thus the number of groups
+    (and the number of uncoloured anagrams)
+    is <m>\frac62 = 3</m>.
+  </p>
+  <exercise xml:id="ex_puppy">
+    <statement>
+      <p>
+        How many anagrams does the word <sq>puppy</sq> have?
+        Try to use the argument presented above.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    This argument can now be generalized when more letters can be the same:
+  </p>
+
+  <theorem xml:id="thm_permrepetition">
+    <statement>
+      <p>
+        Let us assume that a word consists of <m>k</m> different letters,
+        such that there are <m>n_1</m> of the first letter,
+        <m>n_2</m> of the second letter, etc.
+        Let <m>n = n_1 + n_2 + \dots + n_k</m> be the number of letters altogether in this word.
+        Then the number of anagrams this word has is exactly
+        <me>
+          \frac{n!}{n_1! \cdot n_2! \cdot \dots \cdot n_k!}
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Let us color all the letters with different colours,
+      and let us count first the number of coloured anagrams.
+      This is the number of permutations of <m>n</m> different letters,
+      that is, <m>n!</m> by <xref ref="thm_perm">Theorem</xref>.
+    </p>
+
+    <p>
+      Now, group together those anagrams which represent the same word,
+      and differ only in their colourings.
+      The number of uncoloured anagrams is the same as the number of groups.
+      To compute this number,
+      we count the number of coloured words in each group.
+    </p>
+
+    <p>
+      Take an arbitrary group representing an anagram.
+      The words listed in this group differ only by the colourings.
+      The first letter appears <m>n_1</m>-many times,
+      and these letters have <m>n_1!</m>-many different colourings by <xref ref="thm_perm">Theorem</xref>.
+      Similarly, the second letter appears <m>n_2</m>-many times,
+      and these letters have <m>n_2!</m>-many different colourings by <xref ref="thm_perm">Theorem</xref>, etc.
+      Finally, the <m>k</m>th letter appears <m>n_k</m>-many times,
+      and these letters have <m>n_k!</m>-many different colourings by <xref ref="thm_perm">Theorem</xref>.
+      Thus,
+      the number of words in a group is <m>n_1! \cdot n_2! \cdot \dots \cdot n_k!</m>.
+      Therefore the number of groups,
+      and hence the number of (uncoloured) anagrams is
+      <me>
+        \frac{n!}{n_1! \cdot n_2! \cdot \dots \cdot n_k!}
+      </me>.
+    </p>
+  </proof>
+
+  <exercise xml:id="ex_anagrams1">
+    <statement>
+      <p>
+        How many anagrams does the following expressions have?
+
+        <ol>
+          <li>
+            <title>(a)</title>
+            <p>
+              <sq>college</sq>,
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              <sq>discrete</sq>,
+            </p>
+          </li>
+
+          <li>
+            <title>(c)</title>
+            <p>
+              <sq>mathematics</sq>,
+            </p>
+          </li>
+
+          <li>
+            <title>(d)</title>
+            <p>
+              <sq>discrete mathematics</sq>,
+            </p>
+          </li>
+
+          <li>
+            <title>(e)</title>
+            <p>
+              <sq>college discrete mathematics</sq>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_anagrams2">
+    <statement>
+      <p>
+        Alice, Beth and Carrie are triplets.
+        For their birthdays, they receive 12 bouquets of flowers,
+        all of them are from different flowers.
+        They decide that Alice should choose 5 bouquets, Beth should choose 4 bouquets,
+        and Carrie takes the remaining 3 bouquets.
+        How many ways can they distribute these 12 bouquets?
+      </p>
+    </statement>
+  </exercise>
+</section>
+

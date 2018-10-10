@@ -1,0 +1,334 @@
+
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="cha_Pascal">
+  <title>Pascal's triangle</title>
+  <introduction>
+    <p>
+      Let us create a triangle from numbers in the following way.
+      Let us write 1 to the top.
+      This we call row zero of the triangle.
+      Then every row of the triangle contains one more numbers than the row before,
+      aligned in a way that every number is lower left and/or lower right from the numbers in the row above.
+      We start and end every row by 1, and in between we write numbers which are the sums of the two numbers above them, that is,
+      we write the sum of the upper left and upper right numbers.
+      Thus in the first row
+      (right below the top 1)
+      we write 1 to lower left and to lower right of this number.
+      Then in the second row we write 1, 2, 1, such that 2 is in between the two 1's of the first row.
+      In the third row,
+      we write 1, 3, 3, 1, etc. (see <xref ref="tab_PascalTriangle">Table</xref>).
+      This way, one can easily compute the numbers occurring in the triangle row after row.
+      This triangle is called Pascal's triangle,
+      named after the French polymath Blaise Pascal (1623<ndash />1662).
+    </p>
+
+    <table xml:id="tab_PascalTriangle">
+      <caption>Pascal's triangle.</caption>
+      <tabular>
+        <row>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell>1</cell>
+        </row>
+        <row>
+          <cell>\noalign</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell>1</cell>
+        </row>
+        <row>
+          <cell>\noalign</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell>2</cell>
+          <cell></cell>
+          <cell>1</cell>
+        </row>
+        <row>
+          <cell>\noalign</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell>3</cell>
+          <cell></cell>
+          <cell>3</cell>
+          <cell></cell>
+          <cell>1</cell>
+        </row>
+        <row>
+          <cell>\noalign</cell>
+          <cell></cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell>4</cell>
+          <cell></cell>
+          <cell>6</cell>
+          <cell></cell>
+          <cell>4</cell>
+          <cell></cell>
+          <cell>1</cell>
+        </row>
+        <row>
+          <cell>\noalign</cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell>5</cell>
+          <cell></cell>
+          <cell>10</cell>
+          <cell></cell>
+          <cell>10</cell>
+          <cell></cell>
+          <cell>5</cell>
+          <cell></cell>
+          <cell>1</cell>
+        </row>
+        <row>
+          <cell>\noalign 
+          1</cell>
+          <cell></cell>
+          <cell>6</cell>
+          <cell></cell>
+          <cell>15</cell>
+          <cell></cell>
+          <cell>20</cell>
+          <cell></cell>
+          <cell>15</cell>
+          <cell></cell>
+          <cell>6</cell>
+          <cell></cell>
+          <cell>1</cell>
+        </row>
+        <row>
+          <cell>\noalign</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      Let us now take a closer look to these numbers.
+      Consider for example the sixth row: 1, 6, 15, 20, 15, 6, 1.
+      They look like the binomial coefficients <m>\binom{6}{k}</m>.
+      Indeed, <m>1 = \binom{6}{0}</m>, <m>6 = \binom{6}{1}</m>,
+      <m>15 = \binom{6}{2}</m>, <m>20 = \binom{6}{3}</m>,
+      <m>15 = \binom{6}{4}</m>,
+      <m>6 = \binom{6}{5}</m>, <m>1 = \binom{6}{6}</m>.
+      It seems that
+      (at least for this small part of the triangle),
+      in the <m>n</m>th row the binomial coefficients
+      <m>\binom{n}{k}</m> occur for <m>k=0, 1, 2, \dots , n</m>.
+      This is true for the first row (<m>\binom{1}{0}=1</m>,
+      <m>\binom{1}{1}=1</m>), and even for the zero row: <m>\binom{0}{0}=1</m>.
+      That is, it looks like Pascal's triangle is the same as the triangle of the binomial coefficients,
+      where in the <m>n</m>th row we write the binomial coefficients
+      <m>\binom{n}{0}</m>, <m>\binom{n}{1}</m>,
+      <m>\binom{n}{2}</m>, <m>\dots</m>,
+      <m>\binom{n}{n}</m> such that we align the midpoints of the rows (<xref ref="tab_PascalTriangleBinomial">Table</xref>).
+    </p>
+
+    <table xml:id="tab_PascalTriangleBinomial">
+      <caption>Triangle of Binomial coefficients.</caption>
+      <tabular>
+        <row>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell><m>\binom{0}{0}</m></cell>
+        </row>
+        <row>
+          <cell>\noalign</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell><m>\binom{1}{0}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{1}{1}</m></cell>
+        </row>
+        <row>
+          <cell>\noalign</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell><m>\binom{2}{0}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{2}{1}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{2}{2}</m></cell>
+        </row>
+        <row>
+          <cell>\noalign</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell><m>\binom{3}{0}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{3}{1}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{3}{2}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{3}{3}</m></cell>
+        </row>
+        <row>
+          <cell>\noalign</cell>
+          <cell></cell>
+          <cell><m>\binom{4}{0}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{4}{1}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{4}{2}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{4}{3}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{4}{4}</m></cell>
+        </row>
+        <row>
+          <cell>\noalign</cell>
+          <cell><m>\binom{5}{0}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{5}{1}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{5}{2}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{5}{3}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{5}{4}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{5}{5}</m></cell>
+        </row>
+        <row>
+          <cell>\noalign 
+          <m>\binom{6}{0}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{6}{1}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{6}{2}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{6}{3}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{6}{4}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{6}{5}</m></cell>
+          <cell></cell>
+          <cell><m>\binom{6}{6}</m></cell>
+        </row>
+        <row>
+          <cell>\noalign</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      How can we prove that the two triangles are one and the same?
+      One way to do it would be to prove that they can be generated by the same rule.
+      Pascal's triangle was generated such that every row starts and ends with 1, and every other number is the sum of the two numbers right above it.
+      Considering the <m>n</m>th row in <xref ref="tab_PascalTriangleBinomial">Table</xref>,
+      it starts by <m>\binom{n}{0}=1</m>,
+      and it ends with <m>\binom{n}{n} = 1</m>.
+      Thus we only need to check whether every other number is the sum of the two numbers above it.
+      The <m>k</m>th number in the <m>n</m>th row is <m>\binom{n}{k}</m>
+      (every row starts with the zeroth number),
+      the two numbers above it are the <m>(k-1)</m>st and <m>k</m>th of row <m>n-1</m>,
+      that is, <m>\binom{n-1}{k-1}</m> and <m>\binom{n-1}{k}</m>.
+      Thus, if we prove that <m>\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}</m>,
+      then the two triangles are indeed the same.
+    </p>
+
+    <proposition xml:id="prop_binomsum">
+      <statement>
+        <p>
+          For positive integers <m>k\leq n</m> we have
+          <me>
+            \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}
+          </me>.
+        </p>
+      </statement>
+    </proposition>
+
+    <proof>
+      <p>
+        Let us substitute the formula <xref ref="eq_binom" /> into the right-hand side:
+        <md>
+          <mrow>\amp { } \binom{n-1}{k-1} + \binom{n-1}{k}</mrow>
+          <mrow>\amp = \frac{(n-1)!}{(k-1)! \cdot (n-1-(k-1))!} + \frac{(n-1)!}{k! \cdot (n-1-k)!}</mrow>
+          <mrow>\amp = \frac{(n-1)!}{(k-1)! \cdot (n-k)!} + \frac{(n-1)!}{k! \cdot (n-k-1)!}</mrow>
+          <mrow>\amp = \frac{(n-1)!\cdot k + (n-1)! \cdot (n-k)}{k! \cdot (n-k)!} = \frac{(n-1)!\cdot (k + n-k)}{k! \cdot (n-k)!}</mrow>
+          <mrow>\amp = \frac{(n-1)!\cdot n}{k! \cdot (n-k)!} = \frac{n!}{k! \cdot (n-k)!} = \binom{n}{k}</mrow>
+        </md>.
+      </p>
+    </proof>
+
+    <exercise xml:id="ex_pascalbinomialsame">
+      <statement>
+        <p>
+          Create a precise proof using induction that the two triangles are the same.
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      This proof is a correct one,
+      but not necessarily satisfying.
+      It contains calculations,
+      but does not show the reason <em>why</em>
+      the sum of the binomial coefficients <m>\binom{n-1}{k-1}</m> and
+      <m>\binom{n-1}{k}</m> is really <m>\binom{n}{k}</m>.
+      One might wonder if there is an <q>easier</q> proof,
+      which only uses the definition of <m>\binom{n}{k}</m>.
+      Indeed there is, as we show now.
+    </p>
+
+    <proof>
+      <p>
+        Let <m>A=\halmaz{1, 2, \dots , n}</m>,
+        and we count the number of <m>k</m>-element subsets of <m>A</m> in two different ways.
+        On the one hand,
+        we know that the number of <m>k</m>-element subsets of <m>A</m> is <m>\binom{n}{k}</m>.
+        On the other hand, we count the <m>k</m>-element subsets such that we first count those which contain the element <m>n</m>,
+        then we count those, which do not.
+      </p>
+
+      <p>
+        Count the number of <m>k</m>-element subsets of <m>A</m> containing <m>n</m> first.
+        If a <m>k</m>-element subset <m>S</m> of <m>A</m> contains <m>n</m>,
+        then it contains <m>k-1</m> more elements from <m>\halmaz{1, 2, \dots , n-1}</m>.
+        Such a subset can be chosen in <m>\binom{n-1}{k-1}</m>-many ways.
+        Thus, <m>A</m> has <m>\binom{n-1}{k-1}</m>-many <m>k</m>-element subsets containing the element <m>n</m>.
+      </p>
+
+      <p>
+        Now, count the number of <m>k</m>-element subsets of <m>A</m> not containing <m>n</m>.
+        If a <m>k</m>-element subset <m>S</m> of <m>A</m> does not contain <m>n</m>,
+        then it contains <m>k</m> elements from <m>\halmaz{1, 2, \dots , n-1}</m>.
+        Such a subset can be chosen in <m>\binom{n-1}{k}</m>-many ways.
+        Thus, <m>A</m> has <m>\binom{n-1}{k}</m>-many <m>k</m>-element subsets not containing the element <m>n</m>.
+        As a <m>k</m>-element subset either contains or does not contain the element <m>n</m>,
+        the number of <m>k</m>-element subsets of <m>A</m> is <m>\binom{n-1}{k-1} + \binom{n-1}{k}</m>,
+        which therefore must be the same number as <m>\binom{n}{k}</m>.
+      </p>
+    </proof>
+
+    <exercise xml:id="ex_pascal12">
+      <statement>
+        <p>
+          Compute the first twelve rows of Pascal's triangle.
+        </p>
+      </statement>
+    </exercise>
+  </introduction>
+  <xi:include  href="section4-1.ptx" />
+  <xi:include  href="section4-2.ptx" />
+</chapter>
+

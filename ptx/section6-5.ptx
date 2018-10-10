@@ -1,0 +1,464 @@
+
+
+<section>
+  <title>Recurrence sequences</title>
+  <ol>
+    <li>
+      <p>
+        <xref ref="seq-ex-1"></xref> We use the notation as follows 1:
+        the largest disk, 2: the second largest disk, 3:
+        the second smallest disk, 4: the smallest disk.
+        At the beginning there are 4 disks on peg <m>A</m>,
+        it is denoted as <m>\halmaz{1,2,3,4}</m>,
+        while peg <m>B</m> and peg <m>C</m> has no disks at all,
+        so we write <m>\halmaz{}</m>. <tabular> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell><hash /> move</cell> <cell>peg <m>A</m></cell> <cell>peg <m>B</m></cell> <cell>peg <m>C</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>0</cell> <cell><m>\halmaz{ 1, 2, 3, 4 }</m></cell> <cell><m>\halmaz{}</m></cell> <cell><m>\halmaz{}</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>1</cell> <cell><m>\halmaz{ 1, 2, 3 }</m></cell> <cell><m>\halmaz{ 4 }</m></cell> <cell><m>\halmaz{}</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>2</cell> <cell><m>\halmaz{ 1, 2 }</m></cell> <cell><m>\halmaz{ 4 }</m></cell> <cell><m>\halmaz{ 3 }</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>3</cell> <cell><m>\halmaz{ 1, 2 }</m></cell> <cell><m>\halmaz{}</m></cell> <cell><m>\halmaz{ 3, 4 }</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>4</cell> <cell><m>\halmaz{ 1 }</m></cell> <cell><m>\halmaz{ 2 }</m></cell> <cell><m>\halmaz{ 3, 4 }</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>5</cell> <cell><m>\halmaz{ 1, 4 }</m></cell> <cell><m>\halmaz{ 2 }</m></cell> <cell><m>\halmaz{ 3 }</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>6</cell> <cell><m>\halmaz{ 1, 4 }</m></cell> <cell><m>\halmaz{ 2, 3 }</m></cell> <cell><m>\halmaz{}</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>7</cell> <cell><m>\halmaz{ 1 }</m></cell> <cell><m>\halmaz{ 2, 3, 4 }</m></cell> <cell><m>\halmaz{}</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>8</cell> <cell><m>\halmaz{}</m></cell> <cell><m>\halmaz{ 2, 3, 4 }</m></cell> <cell><m>\halmaz{ 1 }</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>9</cell> <cell><m>\halmaz{}</m></cell> <cell><m>\halmaz{ 2, 3 }</m></cell> <cell><m>\halmaz{ 1, 4 }</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>10</cell> <cell><m>\halmaz{ 3 }</m></cell> <cell><m>\halmaz{ 2 }</m></cell> <cell><m>\halmaz{ 1, 4 }</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>11</cell> <cell><m>\halmaz{ 3, 4 }</m></cell> <cell><m>\halmaz{ 2 }</m></cell> <cell><m>\halmaz{ 1 }</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>12</cell> <cell><m>\halmaz{ 3, 4 }</m></cell> <cell><m>\halmaz{ }</m></cell> <cell><m>\halmaz{ 1, 2 }</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>13</cell> <cell><m>\halmaz{ 3 }</m></cell> <cell><m>\halmaz{ 4 }</m></cell> <cell><m>\halmaz{ 1, 2 }</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>14</cell> <cell><m>\halmaz{ }</m></cell> <cell><m>\halmaz{ 4 }</m></cell> <cell><m>\halmaz{ 1, 2, 3 }</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>15</cell> <cell><m>\halmaz{ }</m></cell> <cell><m>\halmaz{ }</m></cell> <cell><m>\halmaz{ 1, 2, 3, 4 }</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> </tabular>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="seq-ex-2"></xref>
+        The idea is to determine geometric progressions satisfying the same recurrence relation as <m>a_n</m>.
+        Let <m>g_n</m> be a geometric progression with the above mentioned property such that
+        <m>g_n=g_0r^n</m> for some <m>g_0</m> and <m>r</m>.
+        It follows that
+        <me>
+          r^2=7r-10\Rightarrow r^2-7r+10=0
+        </me>.
+        Solving the quadratic equation yields that <m>r=2</m> or 5.
+        We obtained two appropriate progressions and we know that linear combinations
+        of these progressions satisfy exactly the same recurrence.
+        Define <m>W_n</m> as follows
+        <me>
+          W_n=s\cdot 2^n+t\cdot 5^n
+        </me>.
+        We try to fix <m>s</m> and <m>t</m> such that <m>W_0=a_0</m> and <m>W_1=a_1</m>.
+        We get that
+        <md>
+          <mrow>\amp W_0=a_0=0,</mrow>
+          <mrow>\amp W_1=a_1=2</mrow>
+        </md>.
+        Therefore
+        <md>
+          <mrow>s+t\amp =0,</mrow>
+          <mrow>2s+5t\amp =2</mrow>
+        </md>.
+        The solution of the above system of equations is <m>s=-2/3, t=2/3</m>.
+        Hence
+        <me>
+          a_n=W_n=-\frac{2}{3}\cdot 2^n+\frac{2}{3}\cdot 5^n
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="seq-ex-3"></xref>
+        Let <m>g_n</m> be a geometric progression satisfying the same recurrence relation as <m>a_n</m> such that
+        <m>g_n=g_0r^n</m> for some <m>g_0</m> and <m>r</m>.
+        We have that
+        <me>
+          r^2=4r-3\Rightarrow r^2-4r+3=0
+        </me>.
+        That is, <m>r\in\halmaz{1,3}</m>.
+        The linear combination we consider now is
+        <me>
+          W_n=s\cdot 1^n+t\cdot 3^n=s+t\cdot 3^n
+        </me>.
+        The additional conditions imply that
+        <md>
+          <mrow>\amp W_0=a_0=1,</mrow>
+          <mrow>\amp W_1=a_1=13</mrow>
+        </md>.
+        Therefore
+        <md>
+          <mrow>s+t\amp =1,</mrow>
+          <mrow>s+3t\amp =13</mrow>
+        </md>.
+        We get the solution <m>s=-5,t=6</m>.
+        The explicit formula for <m>a_n</m> is
+        <me>
+          -5+6\cdot 3^n
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="seq-ex-4"></xref>
+        This is an example of an order 3 linear recurrence.
+        We define <m>g_n=g_0r^n</m> for some <m>g_0</m> and <m>r</m>,
+        which is a geometric
+        progression.
+        We assume that it satisfies the same recurrence relation as <m>a_n</m>, that is,
+        we obtain
+        <me>
+          r^3=-2r^2+r+2
+        </me>.
+        It is a cubic polynomial.
+        We look for integer solutions.
+        If there is an integral root, then it divides 2.
+        Hence the possible integral roots
+        are <m>\pm 2,\pm 1</m>.
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>r</m></cell>
+            <cell><m>r^3+2r^2-r-2</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>-2</cell>
+            <cell>0</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>-1</cell>
+            <cell>0</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>0</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>12</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        The cubic polynomial <m>r^3+2r^2-r-2</m> can be written as <m>\left(x-1\right) \cdot \left(x+1\right) \cdot \left(x+2\right)</m>, that is,
+        there are three integral roots.
+        In this case we have three geometric progressions satisfying the recurrence,
+        therefore the appropriate linear combination
+        is
+        <me>
+          W_n=s\cdot (-2)^n+t\cdot (-1)^n+u\cdot 1^n
+        </me>.
+        The corresponding system of linear equations is
+        <md>
+          <mrow>s+t+u\amp =0,</mrow>
+          <mrow>-2s-t+u\amp =1,</mrow>
+          <mrow>4s+t+u\amp =2</mrow>
+        </md>.
+        We subtract the first equation from the third one to get <m>3s=2</m>.
+        So we have that <m>s=2/3</m>.
+        We eliminate <m>s</m> from the first two equations
+        <md>
+          <mrow>t+u\amp =-\frac{2}{3},</mrow>
+          <mrow>-t+u\amp =\frac{7}{3}</mrow>
+        </md>.
+        It is easy to see that <m>u=5/6</m> and <m>t=-3/2</m>.
+        The explicit formula for <m>a_n</m> is
+        <me>
+          \frac23 \cdot (-2)^n-\frac32\cdot (-1)^n+\frac56
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="seq-ex-5"></xref>
+        The solution is similar to the previous one,
+        so we only provide some details of the computation.
+        The cubic polynomial in this case is
+        <me>
+          r^3-6r^2+11r-6
+        </me>.
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>r</m></cell>
+            <cell><m>r^3-6r^2+11r-6</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>-6</m></cell>
+            <cell><m>-504</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>-3</m></cell>
+            <cell><m>-120</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>-2</m></cell>
+            <cell><m>-60</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>-1</m></cell>
+            <cell><m>-24</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>1</m></cell>
+            <cell><m>0</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>2</m></cell>
+            <cell><m>0</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>3</m></cell>
+            <cell><m>0</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>6</m></cell>
+            <cell><m>60</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        The three roots of the equation are 1, 2 and 3.
+        Let <m>W_n=s\cdot 1^n+t\cdot 2^n+u\cdot 3^n</m>.
+        The initial values should be equal as well, hence
+        <md>
+          <mrow>s+t+u\amp =0,</mrow>
+          <mrow>s+2t+3u\amp =0,</mrow>
+          <mrow>s+4t+9u\amp =1</mrow>
+        </md>.
+        It is easy to eliminate <m>s</m> from the second and the third equation
+        <md>
+          <mrow>t+2u\amp =0,</mrow>
+          <mrow>3t+8u\amp =1</mrow>
+        </md>.
+        Therefore <m>u=1/2, t=-1</m> and <m>s=1/2</m>.
+        We obtain the following explicit formula
+        <me>
+          a_n=\frac{1}{2}-2^n+\frac{1}{2}\cdot 3^n
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="seq-ex-6"></xref>
+        In this exercise we have an order 2 recurrence sequence.
+        Following the method we described 
+        we get a quadratic polynomial
+        <me>
+          r^2-4r+4=(r-2)^2
+        </me>.
+        It has only a multiple root,
+        so we have to consider the linear combinations of <m>2^n</m> and <m>n\cdot 2^n</m>.
+        That is,
+        <me>
+          W_n=s\cdot 2^n+tn\cdot 2^n
+        </me>.
+        The initial values of <m>a_n</m> are <m>a_0=-1</m> and <m>a_1=0</m>,
+        hence the system of linear equations is
+        <md>
+          <mrow>s\amp =-1,</mrow>
+          <mrow>2s+2t\amp =0</mrow>
+        </md>.
+        It is clear that <m>s=-1</m> and <m>t=1</m>.
+        Thus the closed-form formula for <m>a_n</m> is
+        <me>
+          -2^n+n\cdot 2^n
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="seq-ex-7"></xref>
+        As before we reduce the problem to a polynomial equation, which is
+        <me>
+          r^3-5r^2+3r+9
+        </me>.
+        There are 6 possible integral roots,
+        the divisors of 9, that is, <m>\halmaz{\pm 9,\pm 3,\pm 1}</m>.
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>r</m></cell>
+            <cell><m>r^3-5r^2+3r+9</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>-9</m></cell>
+            <cell><m>-1152</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>-3</m></cell>
+            <cell><m>-72</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>-1</m></cell>
+            <cell><m>0</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>1</m></cell>
+            <cell><m>8</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>3</m></cell>
+            <cell><m>0</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>9</m></cell>
+            <cell><m>360</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        We obtained only 2 roots of the cubic polynomial.
+        Dividing the polynomial <m>r^3-5r^2+3r+9</m> by <m>(r+1)\cdot (r-3)</m>
+        we get <m>r-3</m> and the remainder is 0.
+        That means that
+        <me>
+          r^3-5r^2+3r+9=(r+1)\cdot (r-3)^2
+        </me>.
+        There is a double root, so <m>W_n</m> is defined as
+        <me>
+          s\cdot (-1)^n+t\cdot 3^n+un\cdot 3^n
+        </me>.
+        Substituting <m>n=0,1,2</m> yields
+        <md>
+          <mrow>s+t\amp =3,</mrow>
+          <mrow>-s+3t+3u\amp =4,</mrow>
+          <mrow>s+9t+18u\amp =29</mrow>
+        </md>.
+        Using that <m>s=3-t</m> we obtain
+        <md>
+          <mrow>4t+3u\amp =7,</mrow>
+          <mrow>8t+18u\amp =26</mrow>
+        </md>.
+        So we have the solution <m>s=2,t=1</m> and <m>u=1</m>.
+        The explicit formula for <m>a_n</m> is given by
+        <me>
+          2\cdot (-1)^n+3^n+n\cdot 3^n
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="seq-ex-8"></xref>
+        Consider the sequence
+        <me>
+          u_n=\left(\frac{5-3\sqrt{5}}{2}\right)^n+\left(\frac{5+3\sqrt{5}}{2}\right)^n, n\geq 0
+        </me>.
+        We have <m>u_0=2</m> and <m>u_1=5</m>.
+        We try to find a second order linear recurrence satisfied by <m>u_n</m>.
+        If there is such a recurrence,
+        then the corresponding quadratic polynomial is
+        <me>
+          \left(r-\frac{5-3\sqrt{5}}{2}\right)\cdot \left(r-\frac{5+3\sqrt{5}}{2}\right)=r^2-5r-5
+        </me>.
+        Therefore the possible recurrence relation is
+        <me>
+          u_n=5u_{n-1}+5u_{n-2}=5\cdot (u_{n-1}+u_{n-2})
+        </me>.
+        Now we have that <m>u_n</m> is an integer for all <m>n</m> and <m>u_n</m> is a multiple of 5 if <m>n\geq 1</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="seq-ex-9"></xref>
+        We have a sequence
+        <me>
+          u_n=(4-\sqrt{3})^n+(4+\sqrt{3})^n, n\geq 0
+        </me>.
+        One computes that <m>u_0=2</m> and <m>u_1=8</m>, that is,
+        the first two elements of the sequence is divisible by 2.
+        The quadratic polynomial
+        <me>
+          \left(r-4+\sqrt{2}\right)\cdot \left(r-4-\sqrt{2}\right)=r^2-8r+14
+        </me>
+        is the polynomial corresponding to the appropriate recurrence relation.
+        Hence the recurrence sequence is given by
+        <md>
+          <mrow>u_0\amp =2,</mrow>
+          <mrow>u_1\amp =8,</mrow>
+          <mrow>u_n\amp =8u_{n-1}-14u_{n-2} n\geq 2</mrow>
+        </md>.
+        The statement follows easily since
+        <m>u_0=2\cdot 1, u_1=2\cdot 4</m> and <m>u_n=2\cdot(4u_{n-1}-7u_{n-2})</m>.
+      </p>
+    </li>
+  </ol>
+</section>
+

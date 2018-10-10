@@ -1,0 +1,1071 @@
+
+
+<section>
+  <title>Constructive proofs</title>
+  <p>
+    In this section we deal with several problems for which a method can be provided to create a solution.
+    We consider the coin problem (known also as the Frobenius problem).
+    Let us be given a currency system with
+    <m>k\geq 2</m> distinct integer denominations <m>a_1\lt a_2\lt \ldots\lt a_k</m>.
+    Which amounts can be changed?
+    This question
+    yields the following linear Diophantine equation
+    <me>
+      a_1x_1+a_2x_2+\ldots+a_kx_k=n
+    </me>,
+    where <m>x_1,\ldots,x_k</m> are non-negative integers.
+    Now we study the case <m>k=2</m>, that is, our equation is
+    <me>
+      a_1x_1+a_2x_2=n
+    </me>.
+  </p>
+
+  <p>
+    There are some natural questions to pose:
+
+    <ul>
+      <li>
+        <p>
+          Does the equation possess integer solutions?
+        </p>
+      </li>
+
+      <li>
+        <p>
+          How many solutions does it have?
+        </p>
+      </li>
+
+      <li>
+        <p>
+          How to determine all solutions?
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    In what follows we consider the above problem but we allow integer solutions instead of non-negative integer solutions.
+    We will use these results to answer the original question.
+  </p>
+
+  <p>
+    Assume that <m>\gcd(a_1,a_2)=d</m>.
+    Since <m>d</m> divides <m>a_1x_1+a_2x_2</m> we easily get that <m>d</m> divides <m>n</m>,
+    if there is a solution in integers.
+    For example, if we consider the equation
+    <me>
+      6x_1+8x_2=5
+    </me>,
+    then 2 divides <m>6x_1+8x_2</m>, but 2 does not divide 5.
+    Therefore there is no solution in integers.
+  </p>
+
+  <p>
+    Now suppose that <m>(u_1,u_2)</m> is a solution,
+    that is, <m>a_1u_1+a_2u_2=n</m>.
+    Assume that there exists a
+    different solution, say <m>(v_1,v_2)</m>.
+    We have that
+    <md>
+      <mrow>a_1u_1+a_2u_2\amp =n,</mrow>
+      <mrow>a_1v_1+a_2v_2\amp =n</mrow>
+    </md>.
+  </p>
+
+  <p>
+    It implies that
+    <me>
+      a_1(u_1-v_1)=a_2(v_2-u_2)
+    </me>.
+  </p>
+
+  <p>
+    Let <m>b_1=a_1/d</m> and <m>b_2=a_2/d</m>.
+    Since <m>d</m> is the largest common divisor of <m>a_1</m> and <m>a_2</m>,
+    we obtain that <m>\gcd(b_1,b_2)=1</m>.
+    We simplify the above equation by <m>d</m> to get
+    <me>
+      b_1(u_1-v_1)=b_2(v_2-u_2)
+    </me>.
+  </p>
+
+  <p>
+    It is clear that <m>b_1</m> divides <m>v_2-u_2</m>,
+    since <m>\gcd(b_1,b_2)=1</m>.
+    So we have <m>v_2-u_2=b_1t</m>
+    for some <m>t\in\mathbb{Z}</m>.
+    Thus
+    <me>
+      v_2=u_2+b_1t
+    </me>,
+    and
+    <me>
+      v_1=u_1-b_2t
+    </me>.
+  </p>
+
+  <p>
+    It follows that there are infinitely many integer solutions.
+    We have proved that there is no solution if
+    <m>\gcd(a_1,a_2)</m> does not divide <m>n</m>,
+    and if there is a solution, then there are infinitely many integer solutions.
+    In <xref ref="Euc">Section</xref>
+    we showed that one can use the Euclidean algorithm to determine integers <m>x,y</m> for which
+    <m>a_1x+a_2y=\gcd(a_1,a_2)=d</m>.
+    Now assume that <m>d</m> divides <m>n</m>, that is,
+    <m>n=n_1d</m> for some <m>n_1</m>.
+    We obtain the following
+    equation
+    <me>
+      a_1xn_1+a_2yn_1=dn_1=n
+    </me>.
+  </p>
+
+  <p>
+    Therefore <m>(xn_1,yn_1)</m> is a solution of the equation <m>a_1x_1+a_2x_2=n</m>.
+    Let us summarize what we obtained.
+  </p>
+
+  <theorem xml:id="LinDioph">
+    <statement>
+      <p>
+        Let <m>a_1,a_2</m> and <m>n</m> be integers with <m>a_1</m> and <m>a_2</m> not both zero.
+        The linear Diophantine equation
+        <m>a_1x_1+a_2x_2=n</m> has a solution if and only if <m>\gcd(a_1,a_2)</m> divides <m>n</m>.
+      </p>
+
+      <p>
+        If <m>\gcd(a_1,a_2)</m> divides <m>n</m> and <m>(x,y)</m> is a solution of the equation <m>a_1x+a_2y=\gcd(a_1,a_2)</m> provided
+        by the Euclidean algorithm, then
+        <me>
+          \left(\frac{xn}{\gcd(a_1,a_2)},\frac{yn}{\gcd(a_1,a_2)}\right)
+        </me>
+        is a solution of the equation <m>a_1x_1+a_2x_2=n</m>.
+      </p>
+
+      <p>
+        If <m>(u_1,u_2)</m> is a solution of the equation <m>a_1x_1+a_2x_2=n</m>, then
+        <me>
+          \left(u_1-\frac{a_2}{\gcd(a_1,a_2)}t, u_2+\frac{a_1}{\gcd(a_1,a_2)}t\right),
+        t\in\mathbb{Z}
+        </me>
+        are solutions of the equation <m>a_1x_1+a_2x_2=n</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    We apply the previous method to determine all integer solutions of the equation
+    <me>
+      132x_1+187x_2=55
+    </me>.
+  </p>
+
+  <p>
+    First we find the greatest common divisor of 132 and 187.
+    We use the Euclidean algorithm:
+    <md>
+      <mrow>187 \amp = 1\cdot 132+55</mrow>
+      <mrow>132 \amp = 2\cdot 55+22</mrow>
+      <mrow>55 \amp = 2\cdot 22 + 11</mrow>
+      <mrow>22 \amp = 2\cdot 11 + 0</mrow>
+    </md>.
+  </p>
+
+  <p>
+    That is, <m>\gcd(132,187)=11</m>.
+    Since 11 divides 55 we know that there are infinitely many integer solutions.
+    The next step is to construct a solution to the equation <m>132x+187y=11:</m>
+    <md>
+      <mrow>11\amp = 55-2\cdot 22</mrow>
+      <mrow>\amp = 55-2\cdot (132-2\cdot 55)=-2\cdot 132+5\cdot 55</mrow>
+      <mrow>\amp = -2\cdot 132+5\cdot (187-132)=5\cdot 187-7\cdot 132</mrow>
+    </md>.
+  </p>
+
+  <p>
+    We obtained that <m>x=-7, y=5</m> is a solution to the equation <m>132x+187y=11</m>.
+    Hence we have
+    <me>
+      132\cdot (-7\cdot 5)+187\cdot (5\cdot 5)=55
+    </me>.
+  </p>
+
+  <p>
+    It implies that <m>x_1=-35,x_2=25</m> is a solution to the equation <m>132x_1+187x_2=55</m>.
+    Our theorem yields that
+    <me>
+      \left(-35-17t, 25+12t\right) t\in\mathbb{Z}
+    </me>
+    are solutions of the equation <m>132x_1+187x_2=55</m>.
+  </p>
+
+  <p>
+    We can handle equations of the form
+    <m>a_1x_1+a_2x_2=n</m> in <m>x_1,x_2\in\mathbb{Z}</m>.
+    If we have <m>\gcd(a_1,a_2)=1</m>,
+    then we can solve the equation for any <m>n</m> in integers.
+    What can we say about this equation if we allow only
+    non-negative integers?
+    Let us deal with the equation
+    <me>
+      7x_1+11x_2=n
+    </me>.
+  </p>
+
+  <p>
+    From the Euclidean algorithm we get that
+    <me>
+      7\cdot(-3)+11\cdot 2=1
+    </me>.
+  </p>
+
+  <p>
+    Thus we have that
+    <me>
+      (-3n,2n)
+    </me>
+    is a solution to the equation <m>7x_1+11x_2=n</m>.
+    From this particular solution we get infinitely many solutions:
+    <me>
+      (-3n-11t,2n+7t) t\in\mathbb{Z}
+    </me>.
+  </p>
+
+  <p>
+    We would like to have non-negative solutions, hence
+    <md>
+      <mrow>-3n-11t\amp \geq 0\Rightarrow t\leq \frac{-3n}{11}</mrow>
+      <mrow>2n+7t\amp \geq 0\Rightarrow t\geq \frac{-2n}{7}</mrow>
+    </md>.
+  </p>
+
+  <p>
+    So we have the following inequalities
+    <me>
+      \frac{-2n}{7}\leq t\leq \frac{-3n}{11}
+    </me>.
+  </p>
+
+  <p>
+    If there is an integer contained in the interval <m>[\frac{-2n}{7},\frac{-3n}{11}]</m>,
+    then <m>n</m> can be represented in the form <m>7x_1+11x_2</m>.
+    Denote by <m>I_n</m> the set <m>\halmazvonal{t}{ \frac{-2n}{7}\leq t\leq \frac{-3n}{11}, t\in\mathbb{Z}}</m>.
+  </p>
+  <tabular>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>n</m></cell>
+      <cell><m>I_n</m></cell>
+      <cell><m>n</m></cell>
+      <cell><m>I_n</m></cell>
+      <cell><m>n</m></cell>
+      <cell><m>I_n</m></cell>
+      <cell><m>n</m></cell>
+      <cell><m>I_n</m></cell>
+      <cell><m>n</m></cell>
+      <cell><m>I_n</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>16</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>31</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>46</cell>
+      <cell><m>\halmaz{-13}</m></cell>
+      <cell>61</cell>
+      <cell><m>\halmaz{-17}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>17</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>32</cell>
+      <cell><m>\halmaz{-9}</m></cell>
+      <cell>47</cell>
+      <cell><m>\halmaz{-13}</m></cell>
+      <cell>62</cell>
+      <cell><m>\halmaz{-17}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>3</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>18</cell>
+      <cell><m>\halmaz{-5}</m></cell>
+      <cell>33</cell>
+      <cell><m>\halmaz{-9}</m></cell>
+      <cell>48</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>63</cell>
+      <cell><m>\halmaz{-18}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>4</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>19</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>34</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>49</cell>
+      <cell><m>\halmaz{-14}</m></cell>
+      <cell>64</cell>
+      <cell><m>\halmaz{-18}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>5</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>20</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>35</cell>
+      <cell><m>\halmaz{-10}</m></cell>
+      <cell>50</cell>
+      <cell><m>\halmaz{-14}</m></cell>
+      <cell>65</cell>
+      <cell><m>\halmaz{-18}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>6</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>21</cell>
+      <cell><m>\halmaz{-6}</m></cell>
+      <cell>36</cell>
+      <cell><m>\halmaz{-10}</m></cell>
+      <cell>51</cell>
+      <cell><m>\halmaz{-14}</m></cell>
+      <cell>66</cell>
+      <cell><m>\halmaz{-18}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>7</cell>
+      <cell><m>\halmaz{-2}</m></cell>
+      <cell>22</cell>
+      <cell><m>\halmaz{-6}</m></cell>
+      <cell>37</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>52</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>67</cell>
+      <cell><m>\halmaz{-19}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>8</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>23</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>38</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>53</cell>
+      <cell><m>\halmaz{-15}</m></cell>
+      <cell>68</cell>
+      <cell><m>\halmaz{-19}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>9</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>24</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>39</cell>
+      <cell><m>\halmaz{-11}</m></cell>
+      <cell>54</cell>
+      <cell><m>\halmaz{-15}</m></cell>
+      <cell>69</cell>
+      <cell><m>\halmaz{-19}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>10</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>25</cell>
+      <cell><m>\halmaz{-7}</m></cell>
+      <cell>40</cell>
+      <cell><m>\halmaz{-11}</m></cell>
+      <cell>55</cell>
+      <cell><m>\halmaz{-15}</m></cell>
+      <cell>70</cell>
+      <cell><m>\halmaz{-20}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>11</cell>
+      <cell><m>\halmaz{-3}</m></cell>
+      <cell>26</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>41</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>56</cell>
+      <cell><m>\halmaz{-16}</m></cell>
+      <cell>71</cell>
+      <cell><m>\halmaz{-20}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>12</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>27</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>42</cell>
+      <cell><m>\halmaz{-12}</m></cell>
+      <cell>57</cell>
+      <cell><m>\halmaz{-16}</m></cell>
+      <cell>72</cell>
+      <cell><m>\halmaz{-20}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>13</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>28</cell>
+      <cell><m>\halmaz{-8}</m></cell>
+      <cell>43</cell>
+      <cell><m>\halmaz{-12}</m></cell>
+      <cell>58</cell>
+      <cell><m>\halmaz{-16}</m></cell>
+      <cell>73</cell>
+      <cell><m>\halmaz{-20}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>14</cell>
+      <cell><m>\halmaz{-4}</m></cell>
+      <cell>29</cell>
+      <cell><m>\halmaz{-8}</m></cell>
+      <cell>44</cell>
+      <cell><m>\halmaz{-12}</m></cell>
+      <cell>59</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>74</cell>
+      <cell><m>\halmaz{-21}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>15</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>30</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>45</cell>
+      <cell><m>\emptyset</m></cell>
+      <cell>60</cell>
+      <cell><m>\halmaz{-17}</m></cell>
+      <cell>75</cell>
+      <cell><m>\halmaz{-21}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    We can find 7 consecutive integers indicated in the table for which the set <m>I_n</m> is not empty,
+    that is, those integers can be represented in the form <m>7x_1+11x_2:</m>
+    <md>
+      <mrow>n\amp =60 \amp  x_1=(-3)\cdot 60-11\cdot(-17)=7, x_2=2\cdot 60+7\cdot(-17)=1,</mrow>
+      <mrow>n\amp =61 \amp  x_1=(-3)\cdot 61-11\cdot(-17)=4, x_2=2\cdot 61+7\cdot(-17)=3,</mrow>
+      <mrow>n\amp =62 \amp  x_1=(-3)\cdot 62-11\cdot(-17)=1, x_2=2\cdot 62+7\cdot(-17)=5,</mrow>
+      <mrow>n\amp =63 \amp  x_1=(-3)\cdot 63-11\cdot(-18)=9, x_2=2\cdot 63+7\cdot(-18)=0,</mrow>
+      <mrow>n\amp =64 \amp  x_1=(-3)\cdot 64-11\cdot(-18)=6, x_2=2\cdot 64+7\cdot(-18)=2,</mrow>
+      <mrow>n\amp =65 \amp  x_1=(-3)\cdot 65-11\cdot(-18)=3, x_2=2\cdot 65+7\cdot(-18)=4,</mrow>
+      <mrow>n\amp =66 \amp  x_1=(-3)\cdot 66-11\cdot(-18)=0, x_2=2\cdot 66+7\cdot(-18)=6</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Given a solution for <m>n=60</m> we can easily find a solution for <m>n=67</m> and <m>n=74</m> etc.
+    We use this idea to provide solutions for all <m>n>59</m>.
+    The Division algorithm says that if we divide an integer by 7, then the remainder is between 0 and 6.
+  </p>
+
+  <p>
+    If the remainder is 0, then from the equation <m>63=7\cdot 9+11\cdot 0</m> we get
+    <me>
+      7(k+9)=7(k+9)+11\cdot 0, k\geq 0
+    </me>.
+  </p>
+
+  <p>
+    That is, if we have an integer
+    <m>n\geq 63</m> divisible by 7, then it can be written in the form
+    <m>7x_1+11x_2</m> with <m>x_1,x_2\geq 0</m>.
+  </p>
+
+  <p>
+    If the remainder is 1, then we use the equation <m>64=7\cdot 6+11\cdot 2</m> to obtain
+    <me>
+      7(k+9)+1=7(k+6)+11\cdot 2, k\geq 0
+    </me>.
+  </p>
+
+  <p>
+    In a similar way one computes the general solutions for the remaining cases.
+  </p>
+
+  <p>
+    How to deal with equations with more than two variables?
+    We show how to reduce equations in three unknowns to
+    equations in two unknowns.
+    So the techniques applied previously can be used here.
+    Consider the equation
+    <me>
+      4x_1+5x_2+7x_3=n, x_1,x_2,x_3\in\mathbb{Z}
+    </me>.
+  </p>
+
+  <p>
+    Introduce a new variable <m>y_1=4x_1+5x_2</m>,
+    then the equation can be written as
+    <me>
+      y_1+7x_3=n
+    </me>.
+  </p>
+
+  <p>
+    A particular solution is <m>(n,0)</m>,
+    hence all the integer solutions can be parametrized as follows
+    <md>
+      <mrow>y_1\amp =n+7t,</mrow>
+      <mrow>x_3\amp =-t</mrow>
+    </md>,
+    for some <m>t\in\mathbb{Z}</m>.
+    It remains to determine the integer solutions of the equation <m>y_1=4x_1+5x_2=n+7t</m>.
+    The first thing to do is to find a particular solution.
+    It is easy to check that
+    <md>
+      <mrow>x_1\amp =-n+3t,</mrow>
+      <mrow>x_2\amp =n-t</mrow>
+    </md>
+    is a solution.
+    Applying the techniques used in case of two variables we get the following parametrization of
+    integral solution
+    <md>
+      <mrow>x_1\amp =-n+3t-5s,</mrow>
+      <mrow>x_2\amp =n-t+4s,</mrow>
+      <mrow>x_3\amp =-t</mrow>
+    </md>
+    for some <m>s,t\in\mathbb{Z}</m>.
+    As a concrete example consider the equation <m>4x_1+5x_2+7x_3=23</m>.
+    Then we obtain
+    integer solutions by substituting concrete integral values into the above formulas.
+    Some solutions are indicated
+    in the following table
+  </p>
+  <tabular>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>(s,t)</m></cell>
+      <cell><m>(x_1,x_2,x_3)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>(0,0)</m></cell>
+      <cell><m>(-23, 23, 0)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>(-1,0)</m></cell>
+      <cell><m>(-18, 19, 0)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>(0,-1)</m></cell>
+      <cell><m>(-26, 24, 1)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>(1,0)</m></cell>
+      <cell><m>(-28, 27, 0)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>(0,1)</m></cell>
+      <cell><m>(-20, 22, -1)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>(-1,-1)</m></cell>
+      <cell><m>(-21, 20, 1)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>(1,1)</m></cell>
+      <cell><m>(-25, 26, -1)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    What about non-negative integer solutions?
+    That is, if one asks for solutions such that <m>x_1,x_2,x_3\in\mathbb{N}\cup\halmaz{0}</m>.
+    In case of the equation <m>4x_1+5x_2+7x_3=n</m> we determined the parametrization of the integral solutions,
+    so we get the
+    following inequalities
+    <md>
+      <mrow>0\amp \leq -n+3t-5s,</mrow>
+      <mrow>0\amp \leq n-t+4s,</mrow>
+      <mrow>0\amp \leq -t</mrow>
+    </md>.
+  </p>
+
+  <p>
+    That is, we immediately see that <m>t\leq 0</m>.
+    We try to eliminate <m>s</m> from the first and the second equations.
+    So we multiply by 4 the first equation
+    and by 5 the second one and we get
+    <me>
+      5t-5n\leq 20s\leq -4n+12t
+    </me>.
+  </p>
+
+  <p>
+    That is, we obtain that
+    <me>
+      -\frac{n}{7}\leq t\leq 0
+    </me>.
+  </p>
+
+  <p>
+    It remains to determine a lower bound and an upper bound for <m>s</m>.
+    We have
+    <me>
+      20s\geq 5t-5n\geq -5\frac{n}{7}-5n
+    </me>,
+    hence <m>s\geq -\frac{2n}{7}</m>.
+    Similarly, we have
+    <me>
+      20s\leq -4n+12t\leq -4n
+    </me>,
+    therefore <m>s\leq -\frac{n}{5}</m>.
+    Let us denote the two intervals as
+    <m>I_s=[-\frac{2n}{7},-\frac{n}{5}]</m> and <m>I_t=[-\frac{n}{7},0]</m>.
+    To have a non-negative integer solution we need an integer contained in the interval <m>I_s</m> and another one contained in <m>I_t</m>.
+    If the length of the interval <m>I_s</m> is at least 1 and similarly for <m>I_t</m>,
+    then for sure there will be such integers.
+    The length of <m>I_s</m> is
+    <m>-\frac{n}{5}+\frac{2n}{7}=\frac{3n}{35}</m> and the length of <m>I_t</m> is <m>\frac{n}{7}</m>.
+    We have that the length
+    of <m>I_s</m> is at least 1 if
+    <m>n\geq 12</m> and the length of <m>I_t</m> is at least 1 if <m>n\geq 7</m>.
+    If <m>n\geq 12</m>, then an integer solution
+    is guaranteed.
+    It means that if <m>n\geq 12</m>,
+    then the equation <m>4x_1+5x_2+7x_3=n</m> has non-negative integer solution.
+    Now we deal with
+    the remaining cases <m>1\leq n\leq 11</m>.
+  </p>
+  <tabular>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>n</m></cell>
+      <cell>integer(s) in <m>I_s</m></cell>
+      <cell>integer(s) in <m>I_t</m></cell>
+      <cell>solution(s): <m>(x_1,x_2,x_3)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell>-</cell>
+      <cell>0</cell>
+      <cell>-</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell>-</cell>
+      <cell>0</cell>
+      <cell>-</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>3</cell>
+      <cell>-</cell>
+      <cell>0</cell>
+      <cell>-</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>4</cell>
+      <cell>-1</cell>
+      <cell>0</cell>
+      <cell><m>(1,0,0)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>5</cell>
+      <cell>-1</cell>
+      <cell>0</cell>
+      <cell><m>(0,1,0)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>6</cell>
+      <cell>-</cell>
+      <cell>0</cell>
+      <cell>-</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>7</cell>
+      <cell>-2</cell>
+      <cell>-1,0</cell>
+      <cell><m>(0,0,1)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>8</cell>
+      <cell>-2</cell>
+      <cell>-1,0</cell>
+      <cell><m>(2,0,0)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>9</cell>
+      <cell>-2</cell>
+      <cell>-1,0</cell>
+      <cell><m>(1,1,0)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>10</cell>
+      <cell>-2</cell>
+      <cell>-1,0</cell>
+      <cell><m>(0,2,0)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>11</cell>
+      <cell>-3</cell>
+      <cell>-1,0</cell>
+      <cell><m>(1,0,1)</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    We proved that if <m>n>6</m>,
+    then the equation <m>4x_1+5x_2+7x_3=n</m> has non-negative integer solution.
+  </p>
+  <exercise xml:id="proof-cons-1">
+    <statement>
+      <p>
+        Prove that all integers <m>n\geq 24</m> can be written as
+        <m>5x_1+7x_2</m> for some non-negative integers <m>x_1,x_2</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="proof-cons-2">
+    <statement>
+      <p>
+        Prove that all integers <m>n\geq 12</m> can be written as
+        <m>4x_1+5x_2</m> for some non-negative integers <m>x_1,x_2</m>.
+        Determine a formula for the solution in case of integers of the form <m>n=4K+1</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="proof-cons-3">
+    <statement>
+      <p>
+        Parametrize all integer solutions of the equation
+        <me>
+          4x_1+6x_2+9x_3=n
+        </me>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="proof-cons-4">
+    <statement>
+      <p>
+        Determine the largest positive integer <m>n</m> for which the equation
+        <me>
+          4x_1+6x_2+9x_3=n
+        </me>
+        has no non-negative integer solution.
+      </p>
+    </statement>
+  </exercise>
+</section>
+

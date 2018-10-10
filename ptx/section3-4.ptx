@@ -1,0 +1,311 @@
+
+
+<section>
+  <title>Pigeonhole principle</title>
+  <p>
+    In this section we study the so-called pigeonhole principle which is a simple tool to prove several interesting results.
+    First we prove the simplest form of the pigeonhole principle.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        If <m>n+1</m> pigeons are placed into <m>n</m> pigeonholes,
+        then there exists a pigeonhole containing at least 2 pigeons.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Assume that the statement is false.
+      That is, each pigeonhole contains at most one pigeon.
+      In this case the total number of pigeons is at most <m>n</m>,
+      a contradiction.
+    </p>
+  </proof>
+
+  <p>
+    One can easily generalize the above theorem.
+    We have the following.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        If <m>mn+1</m> pigeons are placed into <m>n</m> pigeonholes,
+        then there exists a pigeonhole containing at least <m>m+1</m> pigeons.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Again we prove the statement by contradiction.
+      Assume that the statement is false,
+      that is, each pigeonhole contains at most <m>m</m> pigeons.
+      We obtain that the total number of pigeons is at most <m>mn</m>,
+      a contradiction since there are <m>mn+1</m> pigeons.
+    </p>
+  </proof>
+
+  <p>
+    Finally we prove a version where the pigeonholes may contain different number of pigeons.
+  </p>
+
+  <theorem xml:id="pigeon-III">
+    <statement>
+      <p>
+        Let <m>m_1,m_2,\ldots,m_n</m> are positive integers.
+        If <m>m_1+m_2+\ldots+m_n-n+1</m> pigeons are placed into <m>n</m> pigeonholes,
+        then for some <m>1\leq i\leq n</m> one has that the <m>i</m>th pigeonhole contains at least <m>m_i</m> pigeons.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Suppose that the first pigeonhole contains at most <m>m_1-1</m> pigeons,
+      the second contains at most <m>m_2-1</m> pigeons etc., the
+      <m>n</m>th pigeonhole contains at most <m>m_n-1</m> pigeons.
+      The total number of pigeons contained in the <m>n</m> pigeonholes can be at most
+      <me>
+        (m_1-1)+(m_2-1)+\ldots+(m_n-1)=m_1+m_2+\ldots+m_n-n
+      </me>,
+      a contradiction since there are <m>m_1+m_2+\ldots+m_n-n+1</m> pigeons.
+    </p>
+  </proof>
+
+  <p>
+    To apply the pigeonhole principle one has to decide what the pigeons are.
+    Then one has to identify the pigeonholes in such a way that if two pigeons are in the same pigeonhole,
+    then they have some special property in common.
+    It is important that we need more pigeons than pigeonholes.
+    In what follows we solve several concrete problems by using the pigeonhole principle.
+  </p>
+
+  <proposition>
+    <statement>
+      <p>
+        There is a nonzero multiple of 6 whose digits are all zeroes and ones.
+      </p>
+    </statement>
+  </proposition>
+
+  <proof>
+    <p>
+      We apply the pigeonhole principle and the Division algorithm.
+      Consider the integers <m>a_n=\sum_{k=0}^n 10^k</m> for <m>n=0,1,2,3,4,5</m>.
+      We can write these numbers as <m>q_n\cdot 6+r_n</m>,
+      where <m>q_n</m> is the quotient and <m>r_n</m> is the remainder,
+      so <m>0\leq r_n\lt 6</m>.
+      There are six possibilities for <m>r_n</m> and there are six integers <m>a_0,a_1,\ldots,a_5</m>.
+      The numbers <m>a_0,a_1,\ldots,a_5</m> are odd integers while 6 is even,
+      hence <m>r_n\neq 0</m> for all <m>n</m>.
+      We have that <m>r_n\in\halmaz{1,2,3,4,5}</m> for all <m>n</m>.
+      There are only 5 pigeonholes
+      (possible remainders)
+      and 6 pigeons (integers <m>a_n</m>).
+      We obtain that there are at least two integers having the same remainder, say,
+      <m>a_{m_1}</m> and <m>a_{m_2}</m>, where <m>m_1\lt m_2</m>.
+      In this case <m>a_{m_2}-a_{m_1}</m> is divisible by 6 and all the digits are zeroes and ones.
+    </p>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><m>n</m></cell>
+        <cell><m>a_n</m></cell>
+        <cell><m>q_n\cdot 6+r_n</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>0</cell>
+        <cell>1</cell>
+        <cell><m>0\cdot 6+1</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>1</cell>
+        <cell>11</cell>
+        <cell><m>1\cdot 6+5</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>2</cell>
+        <cell>111</cell>
+        <cell><m>18\cdot 6+3</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>3</cell>
+        <cell>1111</cell>
+        <cell><m>185\cdot 6+1</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>4</cell>
+        <cell>11111</cell>
+        <cell><m>1851\cdot 6+5</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>5</cell>
+        <cell>111111</cell>
+        <cell><m>18518\cdot 6+3</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+    <p>
+      It is clear that <m>r_0=r_3=1</m>,
+      therefore <m>a_3-a_0=1111-1=1110</m> is a multiple of 6 (<m>1110=185\cdot 6</m>) and this integer is in a right form.
+    </p>
+  </proof>
+
+  <proposition>
+    <statement>
+      <p>
+        Let <m>A</m> be a set containing <m>n\geq 2</m> integers.
+        There is a subset of <m>A</m> such that the sum of its elements is a multiple of <m>n</m>.
+      </p>
+    </statement>
+  </proposition>
+
+  <proof>
+    <p>
+      We have a set containing <m>n</m> elements,
+      let us say these are <m>a_1,a_2,\ldots,a_n</m>.
+      We define <m>n</m> subsets as follows
+      <me>
+        S_k=\halmaz{a_1,\ldots,a_k}, k=1,2,\ldots,n
+      </me>,
+      that is, <m>S_1=\halmaz{a_1}, S_2=\halmaz{a_1,a_2},\ldots,S_n=A</m>.
+      Denote by <m>s_k</m> the sum of the elements of <m>S_k</m>.
+      We apply the
+      Division algorithm to write <m>s_k=q_k\cdot n+r_k</m>,
+      where <m>0\leq r_k\lt n</m>.
+      If for some <m>k</m> we have <m>r_k=0</m>, then
+      <me>
+        s_k=a_1+\ldots+a_k=q_k\cdot n
+      </me>,
+      that is, the sum of the elements of <m>S_k</m> is a multiple of <m>n</m>.
+      In this case the theorem is true.
+      If no such
+      <m>k</m> exists,
+      then we have only <m>n-1</m> possible values for <m>r_k</m> and we have <m>n</m> subsets.
+      The pigeonhole principle says
+      that there are at least two subsets
+      (say <m>S_k</m> and <m>S_l, k\lt l</m>)
+      for which <m>r_k=r_l</m>.
+      In this case we obtain that
+      <me>
+        s_l-s_k=(q_l-q_k)n=a_{k+1}+a_{k+2}+\ldots+a_l
+      </me>.
+    </p>
+
+    <p>
+      Thus the sum of the elements of the subset
+      <m>\halmaz{a_{k+1},a_{k+2},\ldots,a_l}</m> is a multiple of <m>n</m>.
+    </p>
+  </proof>
+
+  <exercise xml:id="pigeon-0a">
+    <statement>
+      <p>
+        Prove that among 367 people,
+        at least two were born on the same day of the year.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="pigeon-0b">
+    <statement>
+      <p>
+        Prove that among 1500 people,
+        at least four were born on the same day of the year.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="pigeon-1">
+    <statement>
+      <p>
+        Prove that if seven distinct integers are selected from the set
+        <me>
+          \halmaz{1,2,3,4,5,6,7,8,9,10,11,12}
+        </me>,
+        then two of these integers sum to 13.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="pigeon-2">
+    <statement>
+      <p>
+        We choose 11 integers from the set <m>\halmaz{1,2,\ldots,20}</m>.
+        Prove that 2 of the chosen integers are consecutive.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="pigeon-3">
+    <statement>
+      <p>
+        Prove that if five points are selected from the interior of a unit square,
+        then there are two points whose distance is less than <m>\sqrt{2}/2</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="pigeon-4">
+    <statement>
+      <p>
+        Let <m>A=\halmaz{1,2,\ldots,100}</m>.
+        Prove that if we choose 51 distinct integers from <m>A</m>,
+        then there are at least two integers such that one of them is divisible by the other.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="pigeon-5">
+    <statement>
+      <p>
+        How many students in a class must there be to ensure that 4 students get the same grade (one of 1, 2, 3, 4, or 5)?
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="pigeon-6">
+    <statement>
+      <p>
+        How many bishops can one place on an
+        <m>8\times 8</m> chessboard such that no two bishops can hit each other?
+      </p>
+    </statement>
+  </exercise>
+</section>
+

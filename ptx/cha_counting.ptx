@@ -1,0 +1,363 @@
+
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="cha_counting">
+  <title>Counting</title>
+  <introduction>
+    <p>
+      In this Chapter we will consider counting problems.
+      These will be problems,
+      where we need to count the number of possibilities of something happening.
+      Let us warm up to this first by solving some easy exercises.
+    </p>
+
+    <p>
+      At the <q>Freshmen's party</q> several people meet.
+      Five friends (Arnold, Bill, Carl, David, Edmund) greet each other at this party by shaking hands.
+      How many handshakes does this mean?
+      It is not too hard to count all possibilities: Arnold shakes hand with Bill, Carl, David, Edmund, Bill shakes hand with Carl, David, Edmund
+      (we have already counted the Arnold-Bill handshake),
+      Carl shakes hand with David and Edmund
+      (we have already counted the Arnold-Carl and Bill-Carl handshake),
+      David shakes hand with Edmund
+      (we have already counted all other handshakes with David),
+      and all handshakes with Edmund is already accounted for.
+      That is, there are <m>4 + 3 + 2 + 1 = 10</m> handshakes altogether.
+    </p>
+
+    <p>
+      Now, this was easy, but this party is very big,
+      and a lot of people attend it.
+      Say, there are 200 College freshmen greeting each other by shaking hands.
+      How many handshakes are there?
+      We can try to generalize our former argument.
+      Let us count the number of handshakes by ordering the people in some way
+      (say, by date of birth).
+      That is, first we count the handshakes by the oldest person,
+      then the handshakes by the second oldest person, etc.
+      The oldest person shakes hand with 199 other people,
+      this is 199 handshakes.
+      The second oldest person shakes hand with 199 people, as well,
+      but we have already counted 1 handshake with the oldest person.
+      That is, we count 198 more handshakes.
+      For the third oldest person,
+      out of 199 handshakes we have already counted 2:
+      one with the oldest person and one with the second oldest person.
+      That is, we count 197 more handshakes, etc.
+      Continuing this argument,
+      we count one less handshakes with each person.
+      For the second youngest people we count only one new handshake:
+      the handshake with the youngest person.
+      And finally,
+      for the youngest person we have already counted all handshakes.
+      That is, the number of handshakes is
+      <me>
+        199 + 198 + 197 + \dots + 1
+      </me>.
+    </p>
+
+    <p>
+      How much is this number?
+      Is there an easier way to calculate it,
+      rather than adding all these numbers together?
+      Those who are familiar with arithmetic progressions can calculate easily that the answer is <m>\frac{199 \cdot 200}{2} = 19~900</m>.
+      But even without that knowledge,
+      we can calculate this sum by observing that the sum of the first and last number is 200.
+      Then the sum of the second and one but last number is 200, again.
+      We can continue this argument,
+      and reach <m>99+101=200</m>,
+      and the number 100 is left alone.
+      That is,
+      <md>
+        <mrow>\amp  1 + 2 + \dots + 198 + 199 = (1 + 199) + (2 + 198) + \dots + (99 + 101) + 100</mrow>
+        <mrow>\amp  = 99\cdot 200 + 100 = (99 \cdot 2 + 1 ) \cdot 100 = 19~900</mrow>
+      </md>.
+    </p>
+
+    <p>
+      This summation argument works in general, as well:
+    </p>
+
+    <proposition xml:id="prop_sumk">
+      <statement>
+        <p>
+          For a positive integer <m>n</m> we have
+          <me>
+            1 + 2 + \dots + (n-1) + n = \frac{n \cdot (n+1)}{2}
+          </me>.
+        </p>
+      </statement>
+    </proposition>
+
+    <exercise xml:id="ex_sumk">
+      <statement>
+        <p>
+          Prove <xref ref="prop_sumk">Proposition</xref>
+          by using the argument described above.
+          Make two cases depending on whether <m>n</m> is even or odd.
+        </p>
+      </statement>
+    </exercise>
+
+    <proof>
+      <p>
+        We show another proof here,
+        which is usually attributed to Carl Friedrich Gauss.<fn>German mathematician and physicist, 1777<ndash />1855.</fn> Let <m>S</m> be the sum of the integers from 1 to <m>n</m>,
+        and write the same sum in reverse order below:
+        <md>
+          <mrow>S \amp = 1 + 2 + \dots + (n-1) + n,</mrow>
+          <mrow>S \amp = n + (n-1) + \dots + 2 + 1.</mrow>
+          <intertext>Adding the two equations together, we obtain</intertext>
+          <mrow>2S \amp = (1+n) + (2 + n-1) + \dots + (n-1 + 2) + (n+1),</mrow>
+          <mrow>2S \amp = (n+1) + (n+1) + \dots + (n+1) + (n+1),</mrow>
+          <mrow>2S \amp = n \cdot (n+1),</mrow>
+          <mrow>S \amp = \frac{n\cdot (n+1)}{2}</mrow>
+        </md>.
+      </p>
+    </proof>
+
+    <p>
+      Now, we are able to tell the number of handshakes between <m>n</m> people.
+      Using the same line of thought,
+      the first person shakes hand with <m>(n-1)</m> other people,
+      the next one with <m>(n-2)</m> other people
+      (we already counted the handshake with the first person),
+      etc.
+      That is, the number of handshakes between <m>n</m> people is
+      <me>
+        (n-1) + (n-2) + \dots + 1
+      </me>,
+      which is <m>\frac{(n-1)\cdot n}{2}</m> by <xref ref="prop_sumk">Proposition</xref>
+      (writing <m>(n-1)</m> instead of <m>n</m>).
+      Thus, we have proved
+    </p>
+
+    <corollary xml:id="cor_handshakes">
+      <statement>
+        <p>
+          The number of handshakes between <m>n</m> people is
+          <me>
+            1 + 2 + \dots + (n-1) = \frac{(n-1)\cdot n}{2}
+          </me>.
+        </p>
+      </statement>
+    </corollary>
+
+    <proof>
+      <p>
+        Even though we have already proved the statement above,
+        we give here an alternative proof.
+        The reason for this is that this proof method will be useful later on.
+      </p>
+
+      <p>
+        Every person shakes hand with <m>(n-1)</m> other people.
+        Altogether there are <m>n</m> people,
+        this would mean <m>(n-1) \cdot n</m> handshakes.
+        But this way every handshake is calculated twice:
+        a handshake between <m>A</m> and <m>B</m> is calculated once for <m>A</m> and once for <m>B</m>.
+        Thus, in reality,
+        <m>(n-1) \cdot n</m> is twice the number of handshakes.
+        That is, the number of handshakes is <m>\frac{(n-1) \cdot n}{2}</m>.
+      </p>
+    </proof>
+
+    <exercise xml:id="ex_5people3hanshake">
+      <statement>
+        <p>
+          Five friends meet at this party.
+          Some of them shake hands.
+          Is it possible that everyone shook hands exactly three times?
+          What is the answer if a person can shake hands with another more than once?
+          What are the answers if seven people meet?
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      Four girls (Alice, Beth, Carrie, Diane) and four boys (Ed, Frank, George, Hugo) meet at this party.
+      As a greeting any two boys shake hands with each other,
+      but with the girls the two parties kiss each other on the cheek.
+    </p>
+    <exercise xml:id="ex_kisses">
+      <statement>
+        <p>
+          How many handshakes and kisses are there?
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      After greeting each other, they want to dance.
+      In fact, every boy wants to dance with every girl,
+      and they are interested in how many rounds they need to achieve this.
+    </p>
+
+    <p>
+      First, let us count the number of ways they can form dancing couples (one boy and one girl).
+      There are four boys, and four girls,
+      every boy wants to dance with every girl, that is,
+      there are altogether <m>4 \cdot 4 = 16</m> possible couples.
+      We can even list these 16 possibilities:
+    </p>
+    <tabular>
+      <row>
+        <cell>Alice <mdash /> Ed</cell>
+        <cell>Beth <mdash /> Ed</cell>
+        <cell>Carrie <mdash /> Ed</cell>
+        <cell>Diane <mdash /> Ed</cell>
+      </row>
+      <row>
+        <cell>Alice <mdash /> Frank</cell>
+        <cell>Beth <mdash /> Frank</cell>
+        <cell>Carrie <mdash /> Frank</cell>
+        <cell>Diane <mdash /> Frank</cell>
+      </row>
+      <row>
+        <cell>Alice <mdash /> George</cell>
+        <cell>Beth <mdash /> George</cell>
+        <cell>Carrie <mdash /> George</cell>
+        <cell>Diane <mdash /> George</cell>
+      </row>
+      <row>
+        <cell>Alice <mdash /> Hugo</cell>
+        <cell>Beth <mdash /> Hugo</cell>
+        <cell>Carrie <mdash /> Hugo</cell>
+        <cell>Diane <mdash /> Hugo</cell>
+      </row>
+    </tabular>
+    <p>
+      In one round four couples can dance.
+      How many ways can they form four dancing couples for one round?
+      Assume that each girl chooses a partner in a certain order.
+      First Alice chooses a partner, then Beth,
+      then Carrie, and finally Diane dances with whoever is left.
+      Alice has four choices, because she can choose any of the boys.
+      Beth will only have three choices,
+      because Alice will have already chosen someone.
+      Carrie will have only two choices,
+      because Alice and Beth will have already chosen someone.
+      Finally, Diane has only one choice.
+      Altogether,
+      they have <m>4 \cdot 3 \cdot 2 \cdot 1 = 24</m> possibilities to form four dancing couples at the same time.
+    </p>
+
+    <p>
+      Now, in one round at most four couples can dance.
+      Therefore they will need at least
+      <m>\frac{16}{4} = 4</m> rounds for everyone dancing with everyone else.
+      But be careful!
+      We only proved that they need 4 rounds,
+      we have not proved that they can actually do it in 4 rounds.
+      The easiest is to just give a <q>schedule</q>
+      for the 16 couples in each rounds,
+      e.g.<nbsp />see <xref ref="tab_dancing">Table</xref>
+    </p>
+
+    <table xml:id="tab_dancing">
+      <caption>Four couples dancing in four rounds</caption>
+      <tabular>
+        <row>
+          <cell>1st round</cell>
+          <cell>2nd round</cell>
+          <cell>3rd round</cell>
+          <cell>4th round</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>Alice <mdash /> Ed</cell>
+          <cell>Beth <mdash /> Ed</cell>
+          <cell>Carrie <mdash /> Ed</cell>
+          <cell>Diane <mdash /> Ed</cell>
+        </row>
+        <row>
+          <cell>Beth <mdash /> Frank</cell>
+          <cell>Alice <mdash /> Frank</cell>
+          <cell>Diane <mdash /> Frank</cell>
+          <cell>Carrie <mdash /> Frank</cell>
+        </row>
+        <row>
+          <cell>Carrie <mdash /> George</cell>
+          <cell>Diane <mdash /> George</cell>
+          <cell>Alice <mdash /> George</cell>
+          <cell>Beth <mdash /> George</cell>
+        </row>
+        <row>
+          <cell>Diane <mdash /> Hugo</cell>
+          <cell>Carrie <mdash /> Hugo</cell>
+          <cell>Beth <mdash /> Hugo</cell>
+          <cell>Alice <mdash /> Hugo</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <exercise xml:id="ex_isitpossible1">
+      <statement>
+        <p>
+          Is it possible
+
+          <ol>
+            <li>
+              <title>(a)</title>
+              <p>
+                to distribute 100 rabbits into five packs such that each pack contains an odd number of rabbits?
+              </p>
+            </li>
+
+            <li>
+              <title>(b)</title>
+              <p>
+                that both the sum and the product of some integer numbers are 9?
+              </p>
+            </li>
+
+            <li>
+              <title>(c)</title>
+              <p>
+                that both the sum and the product of 9 integer numbers are 9?
+              </p>
+            </li>
+
+            <li>
+              <title>(d)</title>
+              <p>
+                that the sum of 9 integer numbers is 0 and the product of these numbers is 9?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="ex_sum24">
+      <statement>
+        <ol>
+          <li>
+            <title>(a)</title>
+            <p>
+              What is the sum of the first 24 positive integers,
+              i.e.<nbsp /><m>1 + 2 + 3 + \dots + 23 + 24 =</m>?
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              Compute <m>\frac{1 + 2 + 3 + 4 + \dots + 23 + 24}{1 - 2 + 3 - 4 + \dots + 23 - 24}</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </exercise>
+  </introduction>
+  <xi:include  href="sec_sequences.ptx" />
+  <xi:include  href="sec_subsets.ptx" />
+  <xi:include  href="sec_permutations.ptx" />
+  <xi:include  href="sec_anagrams.ptx" />
+  <xi:include  href="sec_orderedsubsets.ptx" />
+  <xi:include  href="sec_nchoosek.ptx" />
+  <xi:include  href="sec_money.ptx" />
+  <xi:include  href="sec_ballsurns.ptx" />
+</chapter>
+

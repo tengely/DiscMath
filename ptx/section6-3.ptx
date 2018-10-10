@@ -1,0 +1,2132 @@
+
+
+<section>
+  <title>Proof Techniques</title>
+  <ol>
+    <li>
+      <p>
+        <xref ref="induction-1"></xref> The statement <m>S(n)</m> is that 8 divides <m>9^n-1</m>.
+        Clearly we have
+        <md>
+          <mrow>9^1-1=8\amp =1\cdot 8,</mrow>
+          <mrow>9^2-1=80\amp =10\cdot 8</mrow>
+        </md>.
+        Hence <m>S(1)</m> is true and <m>S(2)</m> is true as well.
+        Assume that <m>S(k)</m> is true for some
+        <m>k\in\mathbb{N}</m>.
+        It remains to prove that <m>S(k+1)</m> is true.
+        We have that <m>S(k)</m> is true,
+        that is, 8 divides <m>9^k-1</m>.
+        Hence there exists
+        an integer <m>A</m> such that <m>9^k-1=8\cdot A</m>.
+        It remains to prove that <m>9^{k+1}-1</m> is a multiple of 8.
+        We have that
+        <me>
+          9(9^k-1)=8\cdot A\cdot 9
+        </me>.
+        Hence we get
+        <me>
+          9^{k+1}-1=8\cdot A\cdot 9+8=8(9A+1)
+        </me>.
+        That is, 8 divides <m>9^{k+1}-1</m>.
+        Thus <m>S(k+1)</m> is true,
+        so the statement is true for all positive integers.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="induction-2"></xref> The statement <m>S(n)</m> is that 6 divides <m>5^{2n-1}+1</m>.
+        We compute <m>5^{2n-1}+1</m> for some
+        small values:
+        <md>
+          <mrow>5^{2\cdot 1-1}+1=6\amp =1\cdot 6,</mrow>
+          <mrow>5^{2\cdot 2-1}+1=126\amp =21\cdot 6</mrow>
+        </md>.
+        It is now obvious that <m>S(1)</m> is true and <m>S(2)</m> is true, too.
+        Assume that <m>S(k)</m> is true for some
+        <m>k\in\mathbb{N}</m>.
+        That is, there exists <m>A</m> such that
+        <me>
+          5^{2k-1}+1=6\cdot A
+        </me>.
+        We multiply this latter 
+        equation by <m>5^2:</m>
+        <me>
+          5^2\cdot 5^{2k-1}+5^2=6\cdot A \cdot 5^2
+        </me>.
+        We would like to have the expression of <m>S(k+1)</m> on the left-hand side, that is,
+        <m>5^{2(k+1)-1}+1=5^{2k+1}+1</m>.
+        So we subtract 24 to obtain
+        <me>
+          5^{2k+1}+1=6\cdot A \cdot 5^2-24=6(25A-4)
+        </me>.
+        It follows that 6 divides <m>5^{2k+1}+1</m>,
+        hence <m>S(k+1)</m> is true.
+        We have proved that <m>S(n)</m> is true for
+        all positive integers.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="induction-3"></xref> Here we deal with the sum of the first <m>n</m> odd integers.
+        For <m>n\in\halmaz{1,2,3,4,5}</m>
+        we have
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>n</m></cell>
+            <cell><m>\sum_{i=1}^n (2i-1)</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell><m>1=1^2</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell><m>1+3=2^2</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell><m>1+3+5=3^2</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell><m>1+3+5+7=4^2</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell><m>1+3+5+7+9=5^2</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        Hence the given formula provides correct answers.
+        Let <m>S(n)</m> be the statement that the sum of the first <m>n</m>
+        odd integers is <m>n^2</m>.
+        We have already proved that <m>S(1)</m> is true.
+        Assume that <m>S(k)</m> is true for some
+        <m>k\geq 1</m>, that is,
+        <me>
+          \sum_{i=1}^k(2i-1)=k^2
+        </me>.
+        It remains to show that <m>S(k+1)</m> is true, that is,
+        <me>
+          \sum_{i=1}^{k+1}(2i-1)=(k+1)^2
+        </me>.
+        The left-hand side can be written as
+        <me>
+          \sum_{i=1}^{k+1}(2i-1)=\left(1+3+\ldots+(2k-1)\right)+(2k+1)
+        </me>.
+        By the induction hypotheses we have
+        <me>
+          \left(1+3+\ldots+(2k-1)\right)=k^2
+        </me>,
+        so we obtain
+        <me>
+          \left(1+3+\ldots+(2k-1)\right)+(2k+1)=k^2+2k+1=(k+1)^2
+        </me>.
+        Thus the statement <m>S(k+1)</m> is true and the result follows.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="induction-4"></xref> We consider here the sum of the first <m>n</m> squares, which is
+        <me>
+          1^2+2^2+\ldots+n^2
+        </me>.
+        The statement <m>S(n)</m> is that
+        <me>
+          \sum_{i=1}^n i^2=\frac{n(n+1)(2n+1)}{6}
+        </me>.
+        The statement is clearly true for <m>n=1</m>,
+        since <m>1^2=\frac{1\cdot 2\cdot 3}{6}</m>.
+        Assume that the statement is true
+        for certain <m>k\geq 1</m>, that is,
+        <me>
+          \sum_{i=1}^k i^2=\frac{k(k+1)(2k+1)}{6}
+        </me>.
+        Let us study <m>S(k+1)</m>.
+        The sum of the first <m>k+1</m> squares can be written as the sum of the first <m>k</m> squares increased by <m>(k+1)^2</m>,
+        that is, we have
+        <me>
+          \sum_{i=1}^{k+1} i^2=\left(\sum_{i=1}^k i^2\right)+(k+1)^2
+        </me>.
+        The induction hypotheses says that
+        <me>
+          \sum_{i=1}^k i^2=\frac{k(k+1)(2k+1)}{6}
+        </me>,
+        hence we obtain
+        <me>
+          \sum_{i=1}^{k+1} i^2=\frac{k(k+1)(2k+1)}{6}+(k+1)^2
+        </me>.
+        The right-hand side equals to
+        <md>
+          <mrow>\amp \frac{k(k+1)(2k+1)}{6}+\frac{6(k+1)^2}{6}=\frac{(k+1)\left(k(2k+1)+6(k+1)\right)}{6}=</mrow>
+          <mrow>\amp =\frac{(k+1)(2k^2+7k+6)}{6}=\frac{(k+1)(k+2)(2k+3)}{6}</mrow>
+        </md>.
+        Therefore <m>S(k+1)</m> is true and the problem has been solved.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="induction-4a"></xref>
+        We list the sum of the first <m>n</m> cubes in the following table for <m>n\in\halmaz{1,2,3,4}</m>.
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>n</m></cell>
+            <cell><m>\sum_{i=1}^n i^3</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell><m>1^3=1=\left(\frac{1\cdot 2}{2}\right)^2</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell><m>1^3+2^3=9=\left(\frac{2\cdot 3}{2}\right)^2</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell><m>1^3+2^3+3^3=36=\left(\frac{3\cdot 4}{2}\right)^2</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell><m>1^3+2^3+3^3+4^3=100=\left(\frac{4\cdot 5}{2}\right)^2</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        The statement <m>S(n)</m> to prove is that
+        <me>
+          \sum_{i=1}^n i^3=\left(\frac{n(n+1)}{2}\right)^2
+        </me>.
+        We showed that <m>S(1),S(2),S(3)</m> and <m>S(4)</m> are true.
+        Assume that for some <m>1\leq k\in\mathbb{N}</m> the statement <m>S(k)</m> is true.
+        We try to conclude that <m>S(k+1)</m> is true.
+        We have
+        <me>
+          \sum_{i=1}^{k+1} i^3= \left(\sum_{i=1}^{k} i^3\right)+(k+1)^3
+        </me>.
+        By the induction hypothesis we can write the right-hand side as
+        <md>
+          <mrow>\amp  \left(\frac{k(k+1)}{2}\right)^2+(k+1)^3=\frac{k^2(k+1)^2+4(k+1)^3}{4}=</mrow>
+          <mrow>\amp  \frac{(k+1)^2}{4}(k^2+4k+4)=\left(\frac{(k+1)(k+2)}{2}\right)^2</mrow>
+        </md>.
+        It follows that <m>S(k+1)</m> is true and therefore the identity is true for all positive integers <m>n</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_sumk_k_1_"></xref>
+        Let <m>S(n)</m> be the statement that
+        <me>
+          \sum_{i=1}^{n-1}{i(i+1)}=\frac{\left(n-1\right)n\left(n+1\right)}{3}
+        </me>.
+        If <m>n=2</m>, then the left-hand side is
+        <me>
+          \sum_{i=1}^1{i(i+1)}={2}
+        </me>,
+        and the right-hand side is <m>\frac{1\cdot 2 \cdot 3}{3}</m>,
+        hence <m>S(1)</m> is true.
+        Assume that <m>S(k)</m> is true for some <m>1\leq k\in\mathbb{N}</m>.
+        The statement <m>S(k+1)</m> says that
+        <me>
+          \sum_{i=1}^{k}{i(i+1)}=\frac{k\left(k+1\right)\left(k+2\right)}{3}
+        </me>.
+        On the other hand, by the induction hypothesis
+        <md>
+          <mrow>\amp  \sum_{i=1}^{k}{i(i+1)}=\left(\sum_{i=1}^{k-1}{i(i+1)}\right)+{k(k+1)}=</mrow>
+          <mrow>\amp  =\frac{\left(k-1\right)k\left(k+1\right)}{3}+{k(k+1)}=\frac{\left(k-1\right)k\left(k+1\right)+3k(k+1)}{3}=</mrow>
+          <mrow>\amp  =\frac{k\left(k+1\right)\left(k+2\right)}{3}</mrow>
+        </md>.
+        Therefore <m>S(k+1)</m> is true and the identity
+        <me>
+          \sum_{i=1}^{n-1} {i(i+1)}=\frac{\left(n-1\right)n\left(n+1\right)}{3}
+        </me>
+        is valid for all positive integers <m>n</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="induction-4b"></xref>
+        Let <m>S(n)</m> be the statement that
+        <me>
+          \sum_{i=1}^n\frac{1}{i(i+1)}=\frac{n}{n+1}
+        </me>.
+        If <m>n=1</m>, then the left-hand side is
+        <me>
+          \sum_{i=1}^1\frac{1}{i(i+1)}=\frac{1}{2}
+        </me>,
+        and the right-hand side is <m>\frac{1}{2}</m>,
+        hence <m>S(1)</m> is true.
+        Assume that <m>S(k)</m> is true for some <m>1\leq k\in\mathbb{N}</m>.
+        The statement <m>S(k+1)</m> says that
+        <me>
+          \sum_{i=1}^{k+1}\frac{1}{i(i+1)}=\frac{k+1}{k+2}
+        </me>.
+        On the other hand, by the induction hypothesis
+        <md>
+          <mrow>\amp  \sum_{i=1}^{k+1}\frac{1}{i(i+1)}=\left(\sum_{i=1}^{k}\frac{1}{i(i+1)}\right)+\frac{1}{(k+1)(k+2)}=</mrow>
+          <mrow>\amp  =\frac{k}{k+1}+\frac{1}{(k+1)(k+2)}=\frac{k(k+2)+1}{(k+1)(k+2)}=</mrow>
+          <mrow>\amp  =\frac{(k+1)^2}{(k+1)(k+2)}=\frac{k+1}{k+2}</mrow>
+        </md>.
+        Therefore <m>S(k+1)</m> is true and the identity
+        <me>
+          \sum_{i=1}^n\frac{1}{i(i+1)}=\frac{n}{n+1}
+        </me>
+        is valid for all positive integers <m>n</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="induction-5"></xref> Let us compute the first few elements of the sequence
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>n</m></cell>
+            <cell><m>a_n</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>1</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>8</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell><m>a_2+2a_1=10</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell><m>a_3+2a_2=26</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell><m>a_4+2a_3=46</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        Now we compute the values of the formula
+        <m>\frac{3}{2}\cdot 2^n+2\cdot (-1)^n</m> for <m>n\in\halmaz{1,2,3,4,5}</m>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>n</m></cell>
+            <cell><m>\frac{3}{2}2^n+2(-1)^n</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>1</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>8</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>10</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>26</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>46</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        We checked that <m>a_n=\frac{3}{2}\cdot 2^n+2\cdot (-1)^n</m> for <m>n\in\halmaz{1,2,3,4,5}</m>.
+        Assume that the statement is true
+        for <m>S(k-1)</m> and <m>S(k)</m> for some <m>2\leq k\in\mathbb{N}</m>, that is,
+        <md>
+          <mrow>a_{k-1}\amp =\frac{3}{2}\cdot 2^{k-1}+2\cdot (-1)^{k-1},</mrow>
+          <mrow>a_k\amp =\frac{3}{2}\cdot 2^k+2\cdot (-1)^k</mrow>
+        </md>.
+        The statement for <m>k+1</m> is that <m>a_{k+1}=\frac{3}{2}\cdot 2^{k+1}+2\cdot (-1)^{k+1}</m>.
+        By definition we have that
+        <me>
+          a_{k+1}=a_{k}+2a_{k-1}
+        </me>.
+        Hence by the induction hypotheses we obtain
+        <me>
+          a_{k+1}=\frac{3}{2}\cdot 2^k+2\cdot (-1)^k+2\left(\frac{3}{2}\cdot 2^{k-1}+2\cdot (-1)^{k-1}\right)
+        </me>.
+        A direct computation yields that
+        <me>
+          a_{k+1}=\frac{3}{2}\cdot 2^{k+1}+2\cdot (-1)^{k+1}
+        </me>,
+        which is the statement we wanted to prove.
+        We showed that the given formula is correct.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="induction-6"></xref> We note that there is a solution in <xref ref="Recurrence_sequences">Chapter</xref> which does not
+        use induction.
+        Here we will prove it by induction.
+        Our statement <m>S(n)</m> is that the number
+        <me>
+          f(n)=\left(\frac{3-\sqrt{33}}{2}\right)^n+\left(\frac{3+\sqrt{33}}{2}\right)^n
+        </me>
+        is an integer and it is a multiple of 3.
+        Let us consider the statement for <m>n=1</m> and 2.
+        If <m>n=1</m>, then we get that <m>f(1)=3</m>.
+        So it is an integer and it is a multiple of 3.
+        If <m>n=2</m>, then we have
+        <me>
+          f(2)=\frac{9-6\sqrt{33}+33}{4}+\frac{9+6\sqrt{33}+33}{4}=21
+        </me>.
+        Again we obtained an integer that is divisible by 3.
+        Assume that <m>S(k-1)</m> and <m>S(k)</m> are true for some <m>2\leq k\in\mathbb{N}</m>.
+        We will use the fact that the numbers <m>\frac{3-\sqrt{33}}{2}</m> and
+        <m>\frac{3+\sqrt{33}}{2}</m> are roots of the quadratic equation
+        <me>
+          x^2-3x-6
+        </me>,
+        that is, we have
+        <md>
+          <mrow>\left(\frac{3-\sqrt{33}}{2}\right)^2\amp = 3 \cdot \left(\frac{3-\sqrt{33}}{2}\right)+6,</mrow>
+          <mrow>\left(\frac{3+\sqrt{33}}{2}\right)^2\amp = 3 \cdot \left(\frac{3+\sqrt{33}}{2}\right)+6</mrow>
+        </md>.
+        The induction hypothesis says that <m>f(k-1)</m> and <m>f(k)</m> are integers which are multiples of 3.
+        What about the number <m>f(k+1)</m>?
+        We have
+        <md>
+          <mrow>\amp  f(k+1)=\left(\frac{3-\sqrt{33}}{2}\right)^{k+1}+\left(\frac{3+\sqrt{33}}{2}\right)^{k+1}=</mrow>
+          <mrow>\amp  \left(\frac{3-\sqrt{33}}{2}\right)^{k-1}\left(3\cdot \left(\frac{3-\sqrt{33}}{2}\right)+6\right)
+          +\left(\frac{3+\sqrt{33}}{2}\right)^{k-1}\left(3\cdot \left(\frac{3+\sqrt{33}}{2}\right)+6\right)=</mrow>
+          <mrow>\amp  3\cdot \left(\left(\frac{3-\sqrt{33}}{2}\right)^{k}+\left(\frac{3+\sqrt{33}}{2}\right)^{k}\right)+6\cdot \left(\left(\frac{3-\sqrt{33}}{2}\right)^{k-1}+\left(\frac{3+\sqrt{33}}{2}\right)^{k-1}\right)=</mrow>
+          <mrow>\amp  3f(k)+6f(k-1)</mrow>
+        </md>.
+        Since <m>f(k-1)</m> and <m>f(k)</m> are integers we see that <m>f(k+1)</m> is an integer and it is a multiple of 3.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="induction-7"></xref> We compute <m>a_n</m> for some <m>n:</m>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>n</m></cell>
+            <cell><m>a_n</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell><m>\approx 1.4142</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell><m>\approx 1.8477</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell><m>\approx 1.9615</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell><m>\approx 1.9903</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell><m>\approx 1.9975</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        Let <m>S(n)</m> be the statement that <m>a_n\leq 2</m>.
+        Our computations show that <m>S(1)</m> is true.
+        Assume that <m>S(k)</m> is true for some <m>k\geq 1</m>,
+        that is, <m>a_k\leq 2</m>.
+        We consider the statement <m>S(k+1)</m>.
+        By definition of the sequence we have
+        <me>
+          a_{k+1}=\sqrt{2+a_k}
+        </me>.
+        By the induction hypothesis <m>a_k\leq 2</m>, hence
+        <me>
+          a_{k+1}\leq \sqrt{2+2}=2
+        </me>.
+        The statement <m>S(k+1)</m> has been proved and thus we have that
+        <m>a_n\leq 2</m> for all <m>n\in\mathbb{N}</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="induction-8"></xref>
+        We prove the statement by induction.
+        If <m>n=1</m>,
+        then the 1-digit integer <m>a_1=2</m> is divisible by 2.
+        Therefore the statement is true
+        for <m>n=1</m>.
+        It is not difficult to deal with the case <m>n=2</m>.
+        There are only four possible integers
+        <me>
+          a_1a_2\in\halmaz{11,12,21,22}
+        </me>.
+        It is easy to see that <m>2^2</m> divides 12.
+        Assume that the statement is true for some
+        <m>1\leq k\in\mathbb{N}</m>, that is, there exists a
+        <m>k</m>-digit integer <m>a_1a_2\ldots a_k</m> which is a multiple of <m>2^k</m>.
+        Let us consider the statement for <m>k+1</m>.
+        By induction hypothesis
+        we have
+        <me>
+          a_1a_2\ldots a_k=2^k\cdot A
+        </me>.
+        We claim that either
+        <me>
+          10^{k}+a_1a_2\ldots a_k=1a_1a_2\ldots a_k
+        </me>
+        or
+        <me>
+          2\cdot 10^{k}+a_1a_2\ldots a_k=2a_1a_2\ldots a_k
+        </me>
+        is a multiple of <m>2^{k+1}</m>.
+        We can rewrite the above integers as follows
+        <md>
+          <mrow>\amp  10^{k}+a_1a_2\ldots a_k=10^k+2^k\cdot A=2^k(5^k+A),</mrow>
+          <mrow>\amp  2\cdot 10^{k}+a_1a_2\ldots a_k=2\cdot 10^{k}+2^k\cdot A=2^k(2\cdot 5^k+A)</mrow>
+        </md>.
+        If <m>A</m> is odd, then <m>5^k+A</m> is even.
+        In this case
+        <me>
+          1a_1a_2\ldots a_k
+        </me>
+        is an integer having <m>k+1</m> digits and it is divisible by <m>2^{k+1}</m>.
+        If <m>A</m> is even, then <m>2\cdot 5^k+A</m> is even.
+        That is,
+        <me>
+          2a_1a_2\ldots a_k
+        </me>
+        is a <m>(k+1)</m>-digit number which is a multiple of <m>2^{k+1}</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="induction-9"></xref>
+
+        (a) The first few elements of the Fibonacci sequence are
+        <me>
+          1,1,2,3,5,8,13,21,34,55,\ldots
+        </me>
+        Let us consider the sum of the first <m>n</m> elements for <m>n\in\halmaz{1,2,3,4,5}</m>
+        <md>
+          <mrow>n\amp =1: 1,</mrow>
+          <mrow>n\amp =2: 1+1=2,</mrow>
+          <mrow>n\amp =3: 1+1+2=4,</mrow>
+          <mrow>n\amp =4: 1+1+2+3=7,</mrow>
+          <mrow>n\amp =5: 1+1+2+3+5=12</mrow>
+        </md>.
+        It is easy to see that the identity holds for <m>n\in\halmaz{1,2,3,4,5}</m>.
+        Assume that the statement is true for some <m>1\leq k\in\mathbb{N}</m>,
+        that is,
+        <me>
+          F_1+F_2+\ldots+F_k=F_{k+2}-1
+        </me>.
+        Consider the sum of the first <m>k+1</m> Fibonacci numbers
+        <me>
+          F_1+F_2+\ldots+F_k+F_{k+1}
+        </me>.
+        By induction hypothesis we get
+        <me>
+          F_1+F_2+\ldots+F_k+F_{k+1}=F_{k+2}-1+F_{k+1}
+        </me>.
+        By definition <m>F_{k+1}+F_{k+2}=F_{k+3}</m>, hence
+        <me>
+          F_1+F_2+\ldots+F_k+F_{k+1}=F_{k+3}-1
+        </me>.
+        Therefore the identity holds for all positive integers.
+
+        (b) Compute <m>F_1^2+F_2^2+\ldots+F_n^2</m> for <m>n\in\halmaz{1,2,3,4,5}</m>
+        <md>
+          <mrow>n\amp =1: 1^2=1=F_1F_2,</mrow>
+          <mrow>n\amp =2: 1^2+1^2=2=F_2F_3,</mrow>
+          <mrow>n\amp =3: 1^2+1^2+2^2=6=F_3F_4,</mrow>
+          <mrow>n\amp =4: 1^2+1^2+2^2+3^2=15=F_4F_5,</mrow>
+          <mrow>n\amp =5: 1^2+1^2+2^2+3^2+5^2=40=F_5F_6</mrow>
+        </md>.
+        That is, the identity is valid for <m>n\in\halmaz{1,2,3,4,5}</m>.
+        Assume that the statement is true for some <m>1\leq k\in\mathbb{N}</m>,
+        that is,
+        <me>
+          F_1^2+F_2^2+\ldots+F_k^2=F_kF_{k+1}
+        </me>.
+        Let us deal with the sum
+        <me>
+          F_1^2+F_2^2+\ldots+F_k^2+F_{k+1}^2
+        </me>.
+        Applying the induction hypothesis we obtain
+        <me>
+          (F_1^2+F_2^2+\ldots+F_k^2)+F_{k+1}^2=F_kF_{k+1}+F_{k+1}^2=F_{k+1}(F_k+F_{k+1})
+        </me>,
+        and by definition <m>F_k+F_{k+1}=F_{k+2}</m>, so we have
+        <me>
+          (F_1^2+F_2^2+\ldots+F_k^2)+F_{k+1}^2=F_{k+1}F_{k+2}
+        </me>.
+        Thus the identity holds for all positive integers.
+
+        (c) Here we consider the identity
+        <me>
+          F_1+F_3+\ldots+F_{2n-1}=F_{2n}
+        </me>.
+        If <m>n=1</m>,
+        then the left-hand side is <m>F_1=1</m> and the right-hand side is <m>F_2=1</m>.
+        Hence the identity holds.
+        Assume that for some <m>1\leq k\in\mathbb{N}</m> the identity is valid, that is,
+        <me>
+          F_1+F_3+\ldots+F_{2k-1}=F_{2k}
+        </me>.
+        In case of <m>k+1</m> terms we have
+        <me>
+          F_1+F_3+\ldots+F_{2k-1}+F_{2k+1}
+        </me>.
+        By induction we get
+        <me>
+          (F_1+F_3+\ldots+F_{2k-1})+F_{2k+1}=F_{2k}+F_{2k+1}=F_{2k+2}=F_{2(k+1)}
+        </me>.
+        Thus the identity is valid for all positive integers.
+
+        (d) The identity to prove is as follows:
+        <me>
+          F_2+F_4+\ldots+F_{2n}=F_{2n+1}-1
+        </me>.
+        If <m>n=1</m>,
+        then the left-hand side is <m>F_2=1</m> and the right-hand side is <m>F_3-1=2-1=1</m>.
+        So the identity is valid.
+        Assume that for some <m>1\leq k\in\mathbb{N}</m> the identity holds, that is,
+        <me>
+          F_2+F_4+\ldots+F_{2k}=F_{2k+1}-1
+        </me>.
+        Let us handle the sum for <m>k+1</m> terms, that is, the sum
+        <me>
+          F_2+F_4+\ldots+F_{2k}+F_{2k+2}
+        </me>.
+        It can be written as
+        <me>
+          (F_2+F_4+\ldots+F_{2k})+F_{2k+2}=F_{2k+1}-1+F_{2k+2}=F_{2k+3}-1
+        </me>.
+        Thus the identity has been proved for all positive integers.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="induction-10"></xref>
+
+        (a) First compute <m>F_{3n}</m> for some <m>n</m>,
+        let say for <m>n=1,2,3</m>.
+        We have
+        <md>
+          <mrow>\amp  F_3=2,</mrow>
+          <mrow>\amp  F_6=8,</mrow>
+          <mrow>\amp  F_9=34</mrow>
+        </md>.
+        We checked that <m>F_{3n}</m> is even for <m>n=1,2,3</m>.
+        Assume that <m>F_{3k}</m> is even for some <m>1\leq k\in\mathbb{N}</m>.
+        For <m>k+1</m> we
+        have <m>F_{3(k+1)}=F_{3k+3}</m>.
+        By definition
+        <me>
+          F_{3k+3}=F_{3k+2}+F_{3k+1}=F_{3k+1}+F_{3k}+F_{3k+1}=2\cdot F_{3k+1}+F_{3k}
+        </me>.
+        By induction <m>F_{3k}</m> is even,
+        so <m>2\cdot F_{3k+1}+F_{3k}</m> is even.
+        The statement is true.
+
+        (b) If <m>n=1</m>, then <m>F_{5\cdot 1}=5</m>.
+        That is, the property holds for <m>n=1</m>.
+        Assume that <m>F_{5k}</m> is a multiple of 5 for 
+        some <m>1\leq k\in\mathbb{N}</m>.
+        For <m>k+1</m> we have
+        <md>
+          <mrow>\amp  F_{5(k+1)}=F_{5k+5}=F_{5k+4}+F_{5k+3}=F_{5k+3}+F_{5k+2}+F_{5k+2}+F_{5k+1}=</mrow>
+          <mrow>\amp  3F_{5k+2}+2F_{5k+1}=3(F_{5k+1}+F_{5k})+2F_{5k+1}=5F_{5k+1}+3F_{5k}</mrow>
+        </md>.
+        It is clear that 5 divides
+        <m>5F_{5k+1}</m> and induction hypothesis implies that <m>3F_{5k}</m> is a multiple of 5.
+        Therefore 5 divides <m>5F_{5k+1}+3F_{5k}</m>.
+        We proved the property for <m>k+1</m>.
+        It follows that <m>F_{5n}</m> is a multiple of 
+        5 for all <m>n \in \mathbb{N}</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="contra-0"></xref> We provide an indirect proof.
+        Assume that <m>x\leq 5</m> and <m>y\leq 5</m>.
+        We obtain that
+        <me>
+          x+y\leq 10
+        </me>,
+        a contradiction, since <m>x+y>10</m>, by assumption.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="contra-0a"></xref> Suppose the opposite of the statement, that is,
+        there exists an integer <m>n</m> for which <m>n^2-2</m> is divisible by 4.
+        Then for some <m>k\in\mathbb{Z}</m> we have <m>n^2-2=4k</m>.
+        Hence <m>n^2=2(2k+1)</m>.
+        It follows that <m>n</m> is even,
+        so <m>n=2n_1</m> for some integer <m>n_1</m>.
+        We obtain that
+        <me>
+          4n_1^2=2(2k+1)
+        </me>.
+        After dividing the equation by 2 we get
+        <me>
+          2(n_1^2-k)=1
+        </me>,
+        a contradiction since 2 does not divide 1.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="contra-1"></xref> Assume the opposite,
+        that is, the number <m>\sqrt{2}+\sqrt{3}</m> is rational.
+        Then there exist
+        <m>a</m> and <m>b</m> such that
+        <m>\sqrt{2}+\sqrt{3}=\frac{a}{b}</m> for some <m>a\in\mathbb{Z}</m> and
+        <m>b\in\mathbb{N}</m> and the greatest common divisor of <m>a</m> and <m>b</m> is 1.
+        Squaring both sides of the equation <m>\sqrt{2}+\sqrt{3}=\frac{a}{b}</m> we get
+        <me>
+          2+2\sqrt{6}+3=\frac{a^2}{b^2}
+        </me>.
+        That is,
+        <me>
+          \sqrt{6}=\frac{a^2-5b^2}{2b^2}
+        </me>.
+        On the right-hand side there is a rational number,
+        so to get a contradiction we have to prove that <m>\sqrt{6}</m> is irrational.
+        We prove it indirectly.
+        Assume that <m>\sqrt{6}</m> is rational.
+        Then there exist <m>c</m> and <m>d</m> such that <m>\sqrt{6}=\frac{c}{d}</m> for some
+        <m>c\in\mathbb{Z}</m> and <m>d\in\mathbb{N}</m> 
+        and the greatest common divisor of <m>c</m> and <m>d</m> is 1.
+        We obtain that
+        <me>
+          6d^2=c^2
+        </me>,
+        that is, <m>c</m> is even.
+        Therefore <m>c=2c_1</m> for some <m>c_1</m>.
+        It follows that
+        <me>
+          6d^2=4c_1^2\Rightarrow 3d^2=2c_1^2
+        </me>.
+        We have that 2 divides <m>3d^2</m>.
+        Since 2 does not divide 3 it must divide <m>d^2</m>.
+        It means that <m>d^2</m> is even,
+        so <m>d</m> is even, a contradiction.
+        We have proved that <m>\sqrt{6}</m> is irrational and thus we have that <m>\sqrt{2}+\sqrt{3}</m> is irrational.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="contra-2"></xref> Suppose the opposite of the statement, that is,
+        there exists <m>x=\frac{p}{q}</m> with <m>p\in\mathbb{Z},q\in\mathbb{N}</m>
+        and <m>\gcd(p,q)=1</m> such that
+        <me>
+          a\left(\frac{p}{q}\right)^2+b\frac{p}{q}+c=0
+        </me>.
+        Multiply the equation by <m>q^2</m> to obtain (we note that <m>q\neq 0</m>)
+        <me>
+          ap^2+bpq+cq^2=0
+        </me>.
+        Assume that <m>p</m> is even and <m>q</m> is odd.
+        In this case <m>ap^2</m> is even,
+        <m>bpq</m> is even and <m>cq^2</m> is odd.
+        Hence <m>ap^2+bpq+cq^2</m> is odd,
+        a contradiction.
+        Now assume that <m>p</m> is odd and <m>q</m> is even.
+        Here we obtain that <m>ap^2</m> is odd,
+        <m>bpq</m> is even and <m>cq^2</m> is even.
+        Again we get a contradiction.
+        Finally, assume that <m>p</m> is odd and <m>q</m> is odd.
+        We get that <m>ap^2</m> is odd,
+        <m>bpq</m> is odd and <m>cq^2</m> is odd,
+        so <m>ap^2+bpq+cq^2</m> is odd, a contradiction.
+        We remark that the case <m>p</m> is even,
+        <m>q</m> is even is not possible since <m>\gcd(p,q)=1</m>.
+        The statement follows.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="contra-3"></xref> Assume that the statement is false, that is,
+        <md>
+          <mrow>a_1\amp \lt \frac{a_1+a_2+\ldots+a_n}{n},</mrow>
+          <mrow>a_2\amp \lt \frac{a_1+a_2+\ldots+a_n}{n},</mrow>
+          <mrow>\amp \vdots</mrow>
+          <mrow>a_n\amp \lt \frac{a_1+a_2+\ldots+a_n}{n}</mrow>
+        </md>.
+        Take the sum of the above inequalities to get
+        <me>
+          a_1+a_2+\ldots+a_n\lt n\cdot\left(\frac{a_1+a_2+\ldots+a_n}{n}\right)=a_1+a_2+\ldots+a_n
+        </me>.
+        That is, we obtained a contradiction and the statement is proved.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="contra-4"></xref> We provide an indirect proof.
+        Assume that there exists a positive integer <m>n</m> for which
+        <me>
+          \gcd(F_n,F_{n+1})=d>1
+        </me>.
+        That is, <m>d</m> divides <m>F_n</m> and <m>d</m> divides <m>F_{n+1}</m>.
+        Then <m>d</m> divides the difference of these two Fibonacci
+        numbers.
+        The difference is equal to
+        <me>
+          F_{n+1}-F_n=F_{n-1}
+        </me>.
+        Since <m>d</m> divides the left-hand side we obtain that <m>d</m> divides the right-hand side,
+        that is, <m>d\mid F_{n-1}</m>.
+        We apply the previous argument again
+        <me>
+          d\mid F_n\mbox{ and } d\mid F_{n-1}\mbox{ hence } d\mid (F_n-F_{n-1})
+        </me>.
+        In this way we get that <m>d\mid F_{n-2}</m>.
+        Now we have that <m>d\mid F_{n-1}</m> and <m>d\mid F_{n-2}</m>,
+        so <m>d\mid (F_{n-1}-F_{n-2})</m>.
+        Since <m>F_{n-1}-F_{n-2}=F_{n-3}</m> we obtain that <m>d</m> divides <m>F_{n-3}</m>.
+        We continue this process to reach a 
+        contradiction, namely that
+        <m>d\mid F_2=1</m> and <m>d\mid F_1=1</m>.
+        Hence for consecutive Fibonacci numbers <m>F_n</m> and <m>F_{n+1}</m>
+        we have
+        <me>
+          \gcd(F_n,F_{n+1})=1
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="proof-cons-1"></xref>
+        First we solve the equation
+        <m>5x_1+7x_2=1</m> in integers <m>x_1,x_2</m> by applying
+        the Euclidean algorithm.
+        We get that
+        <me>
+          5\cdot 3+7\cdot(-2)=1
+        </me>,
+        therefore
+        <me>
+          (3n,-2n)
+        </me>
+        is a solution to the equation <m>5x_1+7x_2=n</m>.
+        By <xref ref="LinDioph">Theorem</xref>
+        we obtain a parametric formula
+        <me>
+          (3n-7t,-2n+5t) t\in\mathbb{Z}
+        </me>
+        for the integer solutions
+        <m>(x_1,x_2)</m> of the equation <m>5x_1+7x_2=n</m>.
+        To have non-negative solutions we need
+        <md>
+          <mrow>3n-7t\amp \geq 0\Rightarrow t\leq \frac{3n}{7}</mrow>
+          <mrow>-2n+5t\amp \geq 0\Rightarrow t\geq \frac{2n}{5}</mrow>
+        </md>.
+        So we have the following inequalities
+        <me>
+          \frac{2n}{5}\leq t\leq \frac{3n}{7}
+        </me>.
+        If there is a <m>t\in\mathbb{Z}</m> in the interval <m>[\frac{2n}{5},\frac{3n}{7}]</m>,
+        then <m>n</m> can be represented
+        in the form <m>5x_1+7x_2</m>.
+        Denote by <m>I_n</m> the set <m>\halmazvonal{t}{\frac{2n}{5}\leq t\leq \frac{3n}{7}, t\in\mathbb{Z}}</m>.
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>n</m></cell>
+            <cell><m>I_n</m></cell>
+            <cell><m>n</m></cell>
+            <cell><m>I_n</m></cell>
+            <cell><m>n</m></cell>
+            <cell><m>I_n</m></cell>
+            <cell><m>n</m></cell>
+            <cell><m>I_n</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>8</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>15</cell>
+            <cell><m>\halmaz{ 6 }</m></cell>
+            <cell>22</cell>
+            <cell><m>\halmaz{ 9 }</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>9</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>16</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>23</cell>
+            <cell><m>\emptyset</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>10</cell>
+            <cell><m>\halmaz{ 4 }</m></cell>
+            <cell>17</cell>
+            <cell><m>\halmaz{ 7 }</m></cell>
+            <cell>24</cell>
+            <cell><m>\halmaz{ 10 }</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>11</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>18</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>25</cell>
+            <cell><m>\halmaz{ 10 }</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell><m>\halmaz{ 2 }</m></cell>
+            <cell>12</cell>
+            <cell><m>\halmaz{ 5 }</m></cell>
+            <cell>19</cell>
+            <cell><m>\halmaz{ 8 }</m></cell>
+            <cell>26</cell>
+            <cell><m>\halmaz{ 11 }</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>13</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>20</cell>
+            <cell><m>\halmaz{ 8 }</m></cell>
+            <cell>27</cell>
+            <cell><m>\halmaz{ 11 }</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>7</cell>
+            <cell><m>\halmaz{ 3 }</m></cell>
+            <cell>14</cell>
+            <cell><m>\halmaz{ 6 }</m></cell>
+            <cell>21</cell>
+            <cell><m>\halmaz{ 9 }</m></cell>
+            <cell>28</cell>
+            <cell><m>\halmaz{ 12 }</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        Hence <m>n=23</m> cannot be represented.
+        However for all <m>n\in\halmaz{24,25,26,27,28}</m> we have 
+        solutions.
+        From these solutions we can easily obtain solutions for all <m>n\geq 24</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="proof-cons-2"></xref>
+        An integer solution to the equation <m>4x_1+5x_2=1</m> is
+        <me>
+          (x_1,x_2)=(-1,1)
+        </me>.
+        Hence we have a particular solution
+        <me>
+          (x_1,x_2)=(-n,n)
+        </me>
+        in case of the equation <m>4x_1+5x_2=n</m>.
+        It is now clear that all solutions can be obtained from the parametrization
+        <me>
+          (-n-5t,n+4t) t\in\mathbb{Z}
+        </me>.
+        To have non-negative solutions one needs
+        <md>
+          <mrow>-n-5t\amp \geq 0\Rightarrow t\leq \frac{-n}{5}</mrow>
+          <mrow>n+4t\amp \geq 0\Rightarrow t\geq \frac{-n}{4}</mrow>
+        </md>.
+        Thus we have
+        <me>
+          -\frac{n}{4}\leq t\leq -\frac{n}{5}
+        </me>.
+        Denote by <m>I_n</m> the set <m>\halmazvonal{t}{-\frac{n}{4}\leq t\leq -\frac{n}{5}, t\in\mathbb{Z}}</m>. 
+        We determine <m>I_n</m> for <m>1\leq n\leq 15</m>.
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>n</m></cell>
+            <cell><m>I_n</m></cell>
+            <cell><m>n</m></cell>
+            <cell><m>I_n</m></cell>
+            <cell><m>n</m></cell>
+            <cell><m>I_n</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>6</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>11</cell>
+            <cell><m>\emptyset</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>7</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>12</cell>
+            <cell><m>\halmaz{ -3 }</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell><m>\emptyset</m></cell>
+            <cell>8</cell>
+            <cell><m>\halmaz{ -2 }</m></cell>
+            <cell>13</cell>
+            <cell><m>\halmaz{ -3 }</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell><m>\halmaz{ -1 }</m></cell>
+            <cell>9</cell>
+            <cell><m>\halmaz{ -2 }</m></cell>
+            <cell>14</cell>
+            <cell><m>\halmaz{ -3 }</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell><m>\halmaz{ -1 }</m></cell>
+            <cell>10</cell>
+            <cell><m>\halmaz{ -2 }</m></cell>
+            <cell>15</cell>
+            <cell><m>\halmaz{ -3 }</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        So we get that <m>n=11</m> cannot be represented in the appropriate form. 
+        The solutions for <m>n\in\halmaz{12,13,14,15}</m> can be used to determine solutions for
+        <m>n\geq 12</m>.
+        In case of 13 we have
+        <me>
+          13=4\cdot 2+5\cdot 1
+        </me>.
+        It implies that
+        <me>
+          4(k+3)+1=4(k+2)+5\cdot 1 k\in\mathbb{N}\cup\halmaz{0}
+        </me>.
+        Thus, if <m>n=4K+1</m>, then <m>(x_1,x_2)=(K-1,1),K\geq 1</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="proof-cons-3"></xref>
+        We can rewrite the equation as
+        <me>
+          2(2x_1+3x_2)+9x_3=n
+        </me>
+        and another possibility is as follows
+        <me>
+          4x_1+3(2x_2+3x_3)=n
+        </me>.
+        We will use the second form because the largest coefficient is 4 while in case of the first form the largest
+        coefficient is 9.
+        So we have
+        <me>
+          4x_1+3y_1=n
+        </me>.
+        A particular solution is <m>(n,-n)</m>, therefore we get
+        <md>
+          <mrow>x_1\amp =n+3t,</mrow>
+          <mrow>y_1\amp =-n-4t</mrow>
+        </md>
+        for some <m>t\in\mathbb{Z}</m>.
+        We have that <m>y_1=2x_2+3x_3=-n-4t</m>.
+        This equation has a particular solution
+        <m>(n-2t,-n)</m>, therefore we obtain that
+        <md>
+          <mrow>x_2\amp =n-2t+3s,</mrow>
+          <mrow>x_3\amp =-n-2s</mrow>
+        </md>
+        for some <m>s,t\in\mathbb{Z}</m>.
+        That is, the parametrization of the integral solution of the equation is
+        given by
+        <md>
+          <mrow>x_1\amp =n+3t,</mrow>
+          <mrow>x_2\amp =n-2t+3s,</mrow>
+          <mrow>x_3\amp =-n-2s</mrow>
+        </md>
+        for some <m>s,t\in\mathbb{Z}</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="proof-cons-4"></xref>
+        In the previous exercise we determined the parametrization of the integer 
+        solutions of the equation.
+        It is as follows
+        <md>
+          <mrow>x_1\amp =n+3t,</mrow>
+          <mrow>x_2\amp =n-2t+3s,</mrow>
+          <mrow>x_3\amp =-n-2s</mrow>
+        </md>
+        for some <m>s,t\in\mathbb{Z}</m>.
+        We would like to have only non-negative integer solutions hence we
+        get the system of inequalities
+        <md>
+          <mrow>0\amp \leq n+3t,</mrow>
+          <mrow>0\amp \leq n-2t+3s,</mrow>
+          <mrow>0\amp \leq -n-2s</mrow>
+        </md>.
+        We easily obtain upper bound for <m>s</m> and lower bound for <m>t</m> as follows
+        <md>
+          <mrow>-\frac{n}{3}\amp \leq t,</mrow>
+          <mrow>-\frac{n}{2}\amp \geq s</mrow>
+        </md>.
+        Our system of inequalities implies that
+        <md>
+          <mrow>-2n\leq \amp 6t\leq 3n+9s,</mrow>
+          <mrow>-2n+4t\leq \amp 6s\leq -3n</mrow>
+        </md>.
+        That is,
+        <md>
+          <mrow>-5n \amp \leq 9s,</mrow>
+          <mrow>4t \amp \leq -n</mrow>
+        </md>.
+        Now we have lower bound for <m>s</m> and upper bound for <m>t</m>.
+        Define the intervals <m>I_s,I_t</m> as follows <m>I_s=[-\frac{5n}{9},-\frac{n}{2}]</m>
+        and <m>I_t=[-\frac{n}{3},-\frac{n}{4}]</m>.
+        The length of <m>I_s</m> is at least 1 if
+        <m>n\geq 18</m> and the length of <m>I_t</m> is at least 1 if <m>n\geq 12</m>.
+        Therefore the equation has a non-negative integer solution if <m>n\geq 18</m>.
+        It remains to handle the cases <m>1\leq n\leq 17</m>.
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>n</m></cell>
+            <cell>integer(s) in <m>I_s</m></cell>
+            <cell>integer(s) in <m>I_t</m></cell>
+            <cell>solution(s): <m>(x_1,x_2,x_3)</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>-</cell>
+            <cell>-</cell>
+            <cell>-</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>-1</cell>
+            <cell>-</cell>
+            <cell>-</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>-</cell>
+            <cell>-1</cell>
+            <cell>-</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>-2</cell>
+            <cell>-1</cell>
+            <cell><m>(1,0,0)</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>-</cell>
+            <cell>-</cell>
+            <cell>-</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>-3</cell>
+            <cell>-2</cell>
+            <cell><m>(0,1,0)</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>7</cell>
+            <cell>-</cell>
+            <cell>-2</cell>
+            <cell>-</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>8</cell>
+            <cell>-4</cell>
+            <cell>-2</cell>
+            <cell><m>(2,0,0)</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>9</cell>
+            <cell>-5</cell>
+            <cell>-3</cell>
+            <cell><m>(0,0,1)</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>10</cell>
+            <cell>-5</cell>
+            <cell>-3</cell>
+            <cell><m>(1,1,0)</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>11</cell>
+            <cell>-6</cell>
+            <cell>-3</cell>
+            <cell>-</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>12</cell>
+            <cell>-6</cell>
+            <cell>-4,-3</cell>
+            <cell><m>(0,2,0),(3,0,0)</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>13</cell>
+            <cell>-7</cell>
+            <cell>-4</cell>
+            <cell><m>(1,0,1)</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>14</cell>
+            <cell>-7</cell>
+            <cell>-4</cell>
+            <cell><m>(2,1,0)</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>15</cell>
+            <cell>-8</cell>
+            <cell>-5,-4</cell>
+            <cell><m>(0,1,1)</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>16</cell>
+            <cell>-8</cell>
+            <cell>-5,-4</cell>
+            <cell><m>(1,2,0),(4,0,0)</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>17</cell>
+            <cell>-9</cell>
+            <cell>-5</cell>
+            <cell><m>(2,0,1)</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        Thus the largest positive integer <m>n</m> for which the equation
+        <me>
+          4x_1+6x_2+9x_3=n
+        </me>
+        has no non-negative integer solution is 11.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="pigeon-0a"></xref> The pigeonholes are the possible birthdays,
+        there are 366 pigeonholes.
+        There are 367 people (playing the role of pigeons).
+        Therefore there is at least one pigeonhole containing at least two people.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="pigeon-0b"></xref> The pigeonholes are the possible birthdays,
+        so there are 366 pigeonholes.
+        There are 1500 people and <m>\frac{1500}{366}\approx 4.098</m>,
+        hence there is at least one pigeonhole containing at least 4 people.
+        That means that at least 4 people were born on the same day of the year.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="pigeon-1"></xref> We define the pigeonholes as disjoint subsets of the set
+        <me>
+          \halmaz{1,2,3,4,5,6,7,8,9,10,11,12}
+        </me>,
+        that is,
+        <me>
+          \halmaz{1,12},\halmaz{2,11},\halmaz{3,10},\halmaz{4,9},\halmaz{5,8},\halmaz{6,7}
+        </me>.
+        The pigeons are the selected integers.
+        We have six pigeonholes and seven pigeons, therefore there exists
+        a subset containing two selected integers.
+        The subsets are constructed in such a way that the sum of the elements
+        are 13, so the sum of the two integers belonging to the same subset is 13.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="pigeon-2"></xref> The pigeons are the 11 chosen integers.
+        We define the pigeonholes as follows:
+        <md>
+          <mrow>\amp  \halmaz{1,2},\halmaz{3,4},\halmaz{5,6},\halmaz{7,8},\halmaz{9,10},</mrow>
+          <mrow>\amp  \halmaz{11,12},\halmaz{13,14},\halmaz{15,16},\halmaz{17,18},\halmaz{19,20}</mrow>
+        </md>.
+        There are 10 pigeonholes and 11 pigeons,
+        so there exists a pigeonhole containing 2 pigeons.
+        Thus the statement is true.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="pigeon-3"></xref> We divide the unit square into four smaller squares:
+        <image source="images/f0131206b895acfe277b4d8f9ea6e8b8906fb076.png"/> The subsquares are the pigeonholes and the points are the pigeons.
+        Hence by the pigeonhole principle there are at least two points in the same subsquare.
+        The largest distance in a subsquare is the length of the diagonal which is <m>\sqrt{2}/2</m>.
+        The statement is proved.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="pigeon-4"></xref> We can write the elements of <m>A</m> in the form <m>2^a\cdot b</m>,
+        where <m>a\geq 0</m> and <m>b</m> is an odd integer between 1 and 99.
+        There are 50 odd integers in the interval
+        <m>[1,2,\ldots,100]</m> therefore the pigeonhole principle implies that among the 51 integers there are at least two with the same <m>b</m>.
+        That is, we have two integers
+        <m>2^{a_1}\cdot b</m> and <m>2^{a_2}\cdot b</m>.
+        If <m>a_1\lt a_2</m>, then
+        <m>2^{a_1}\cdot b</m> divides <m>2^{a_2}\cdot b</m>.
+        The statement is proved.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="pigeon-5"></xref> We apply <xref ref="pigeon-III">Theorem</xref>.
+        Here the pigeonholes are the grades, so <m>n=5</m>.
+        There are <m>m_1</m> students who get grade 1, <m>m_2</m> students who get grade 2 etc.
+        According to the theorem one needs
+        <m>m_1+m_2+m_3+m_4+m_5-5+1</m> students to ensure that for some <m>i</m> <m>m_i</m> students get the same grade.
+        Hence we take <m>m_1=m_2=m_3=m_4=m_5=4</m>.
+        Therefore there must be at least 16 students in the class.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="pigeon-6"></xref> We note that it is possible to place 14 bishops such that they cannot hit each other,
+        a solution is given by <tabular> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell><m>\circledast</m></cell> <cell><m>\circledast</m></cell> <cell><m>\circledast</m></cell> <cell><m>\circledast</m></cell> <cell><m>\circledast</m></cell> <cell><m>\circledast</m></cell> <cell><m>\circledast</m></cell> <cell><m>\circledast</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell></cell> <cell><m>\circledast</m></cell> <cell><m>\circledast</m></cell> <cell><m>\circledast</m></cell> <cell><m>\circledast</m></cell> <cell><m>\circledast</m></cell> <cell><m>\circledast</m></cell> <cell></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> </tabular> It remains to show that it is not possible to place more than 14 bishops in such a way that they can not hit each other.
+        A natural idea is to divide the 64 chess squares into 14 groups such that if two bishops are in the same group then they can hit each other.
+        We can produce 14 such groups <tabular> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>4</cell> <cell>8</cell> <cell>5</cell> <cell>9</cell> <cell>6</cell> <cell>10</cell> <cell>7</cell> <cell>11</cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>8</cell> <cell>4</cell> <cell>9</cell> <cell>5</cell> <cell>10</cell> <cell>6</cell> <cell>11</cell> <cell>7</cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>3</cell> <cell>9</cell> <cell>4</cell> <cell>10</cell> <cell>5</cell> <cell>11</cell> <cell>6</cell> <cell>12</cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>9</cell> <cell>3</cell> <cell>10</cell> <cell>4</cell> <cell>11</cell> <cell>5</cell> <cell>12</cell> <cell>6</cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>2</cell> <cell>10</cell> <cell>3</cell> <cell>11</cell> <cell>4</cell> <cell>12</cell> <cell>5</cell> <cell>13</cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>10</cell> <cell>2</cell> <cell>11</cell> <cell>3</cell> <cell>12</cell> <cell>4</cell> <cell>13</cell> <cell>5</cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>1</cell> <cell>11</cell> <cell>2</cell> <cell>12</cell> <cell>3</cell> <cell>13</cell> <cell>4</cell> <cell>14</cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>11</cell> <cell>1</cell> <cell>12</cell> <cell>2</cell> <cell>13</cell> <cell>3</cell> <cell>14</cell> <cell>4</cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> </tabular>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="card-1"></xref>
+
+        (a) The first card is <m>7\clubsuit</m>,
+        hence the suit of the hidden card is <m>\clubsuit</m>.
+        The distance can be obtained from the following table
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>distance</cell>
+            <cell>order of the 3 cards</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell><m>3\diamondsuit,J\diamondsuit,A\spadesuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell><m>3\diamondsuit,A\spadesuit,J\diamondsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell><m>J\diamondsuit,3\diamondsuit,A\spadesuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell><m>J\diamondsuit,A\spadesuit,3\diamondsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell><m>A\spadesuit,3\diamondsuit,J\diamondsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell><m>A\spadesuit,J\diamondsuit,3\diamondsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        That is, we have
+        <me>
+          d(7\clubsuit,\mbox{hidden card} )=1
+        </me>.
+        Thus the hidden card is <m>8\clubsuit</m>.
+
+        (b) The suit of the secret card is
+        <m>\diamondsuit</m> since the first card in the sequence is <m>J\diamondsuit</m>.
+        It remains to decode the distance of the secret card and <m>J\diamondsuit:</m>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>distance</cell>
+            <cell>order of the 3 cards</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell><m>9\clubsuit,8\heartsuit,Q\heartsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell><m>9\clubsuit,Q\heartsuit,8\heartsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell><m>8\heartsuit,9\clubsuit,Q\heartsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell><m>8\heartsuit,Q\heartsuit,9\clubsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell><m>Q\heartsuit,9\clubsuit,8\heartsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell><m>Q\heartsuit,8\heartsuit,9\clubsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        We get that the distance is 2, so the secret card is <m>K\diamondsuit</m>.
+
+        (c) It is clear that the suit of the hidden card is <m>\heartsuit</m>.
+        We can determine the distance using the following table
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>distance</cell>
+            <cell>order of the 3 cards</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell><m>6\diamondsuit,J\diamondsuit,10\heartsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell><m>6\diamondsuit,10\heartsuit,J\diamondsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell><m>J\diamondsuit,6\diamondsuit,10\heartsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell><m>J\diamondsuit,10\heartsuit,6\diamondsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell><m>10\heartsuit,6\diamondsuit,J\diamondsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell><m>10\heartsuit,J\diamondsuit,6\diamondsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        In this case the distance is 6, therefore the hidden card is <m>2\heartsuit</m>.
+
+        (d) The first card is <m>10\diamondsuit</m>,
+        so the suit of the hidden card is <m>\diamondsuit</m>.
+        It remains to figure out the distance.
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>distance</cell>
+            <cell>order of the 3 cards</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell><m>5\diamondsuit,2\spadesuit,4\spadesuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell><m>5\diamondsuit,4\spadesuit,2\spadesuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell><m>2\spadesuit,5\diamondsuit,4\spadesuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell><m>2\spadesuit,4\spadesuit,5\diamondsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell><m>4\spadesuit,5\diamondsuit,2\spadesuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell><m>4\spadesuit,2\spadesuit,5\diamondsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        The order of the remaining three cards is
+        <m>4\spadesuit,2\spadesuit,5\diamondsuit</m>, hence the distance is 6.
+        Thus the announced hidden card is <m>3\diamondsuit</m>.
+
+        (e) It is easy to see that the suit of the hidden card is <m>\spadesuit</m>.
+        We can determine the distance using the following table
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>distance</cell>
+            <cell>order of the 3 cards</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell><m>7\diamondsuit,3\heartsuit,7\heartsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell><m>7\diamondsuit,7\heartsuit,3\heartsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell><m>3\heartsuit,7\diamondsuit,7\heartsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell><m>3\heartsuit,7\heartsuit,7\diamondsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell><m>7\heartsuit,7\diamondsuit,3\heartsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell><m>7\heartsuit,3\heartsuit,7\diamondsuit</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        That is, the distance of the two cards is 2.
+        Therefore the hidden card is <m>10\spadesuit</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="card-2"></xref>
+
+        (a) We need two cards having the same suit.
+        In this example there are two possibilities
+        <md>
+          <mrow>\amp  3\clubsuit,7\clubsuit\Rightarrow\mbox{ the hidden card is } 7\clubsuit,\mbox{ the distance is 4,}</mrow>
+          <mrow>\amp  2\diamondsuit,5\diamondsuit\Rightarrow\mbox{ the hidden card is } 5\diamondsuit, \mbox{ the distance is 3.}</mrow>
+        </md>
+        If the hidden card is <m>7\clubsuit</m>,
+        then we have to encode 4 using the cards
+        <me>
+          2\diamondsuit\lt 5\diamondsuit\lt A\spadesuit
+        </me>.
+        We have that 4 corresponds to the ordering 2,3,1, therefore the order of the remaining four cards is
+        <me>
+          3\clubsuit,5\diamondsuit,A\spadesuit,2\diamondsuit
+        </me>.
+        If the secret card is <m>5\diamondsuit</m>,
+        then the distance to encode is 3, which is 2,1,3.
+        The correct order of the four
+        cards is
+        <me>
+          2\diamondsuit,7\clubsuit,3\clubsuit,A\spadesuit
+        </me>.
+        (b) The assistant chooses
+        <m>A\diamondsuit</m> as the card to announce.
+        We have that <m>d(J\diamondsuit,A\diamondsuit)=3</m>.
+        One encodes distance 3 as 2,1,3.
+        Thus the order of the four cards is
+        <me>
+          J\diamondsuit,8\heartsuit,10\clubsuit,4\spadesuit
+        </me>.
+        (c) The hidden card is <m>8\spadesuit</m>,
+        the distance is 1, therefore the assistant hands the four cards in the following order
+        to the magician
+        <me>
+          7\spadesuit,A\clubsuit,6\diamondsuit,K\heartsuit
+        </me>.
+        (d) Here the assistant may use the following pairs of cards
+        <md>
+          <mrow>(I). \amp \ 3\spadesuit,7\spadesuit\Rightarrow\mbox{ hidden card: } 7\spadesuit,\mbox{ distance: } 4,</mrow>
+          <mrow>(II). \amp \  3\spadesuit,9\spadesuit\Rightarrow\mbox{ hidden card: } 9\spadesuit,\mbox{ distance: } 6,</mrow>
+          <mrow>(III). \amp \  7\spadesuit,9\spadesuit\Rightarrow\mbox{ hidden card: } 9\spadesuit,\mbox{ distance: } 2</mrow>
+        </md>.
+        The corresponding sequences are
+        <md>
+          <mrow>(I). \amp \ 3\spadesuit,8\diamondsuit,9\spadesuit,7\clubsuit,</mrow>
+          <mrow>(II). \amp \ 3\spadesuit,7\spadesuit,8\diamondsuit,7\clubsuit,</mrow>
+          <mrow>(III). \amp \ 7\spadesuit,7\clubsuit,3\spadesuit,8\diamondsuit</mrow>
+        </md>.
+        (e) In this case the assistant has two choices
+        <md>
+          <mrow>(I). \amp \ J\diamondsuit,Q\diamondsuit\Rightarrow\mbox{ hidden card: } Q\diamondsuit,\mbox{ distance: } 1,</mrow>
+          <mrow>(II). \amp \ 7\heartsuit,10\heartsuit\Rightarrow\mbox{ hidden card: } 10\heartsuit,\mbox{ distance: } 3</mrow>
+        </md>.
+        The corresponding sequences of cards are
+        <md>
+          <mrow>(I). \amp \ J\diamondsuit,7\heartsuit,10\heartsuit,3\spadesuit,</mrow>
+          <mrow>(II). \amp \ 7\heartsuit,Q\diamondsuit,J\diamondsuit,3\spadesuit</mrow>
+        </md>.
+      </p>
+    </li>
+  </ol>
+</section>
+

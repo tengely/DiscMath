@@ -1,0 +1,394 @@
+
+
+<section xml:id="sec_subsets">
+  <title>Number of subsets</title>
+  <p>
+    In <xref ref="sec_sets">Section</xref>
+    we have learned what a set is, and what its subsets are.
+    Now, we want to count these subsets.
+    Let us begin with some exercises.
+  </p>
+  <exercise xml:id="ex_subsetsof3elemetset">
+    <statement>
+      <p>
+        List all subsets of <m>\halmaz{1, 2, 3}</m>, <m>\halmaz{a, b, c}</m>,
+        <m>\halmaz{\text{ Alice, Beth, Carrie } }</m>,
+        <m>\halmaz{\text{ apple, banana, cherry } }</m>.
+        How many subsets do these sets have?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    After solving <xref ref="ex_subsetsof3elemetset">Exercise</xref>,
+    one suspects that the number of subsets depend only on the cardinality of the set,
+    and not on the actual elements of the set.
+    This is true in general: for example if a set has three elements,
+    then we might as well name the elements <m>a</m>, <m>b</m> and <m>c</m>,
+    and then its subsets will be exactly the same as we determined in <xref ref="ex_subsetsof3elemetset">Exercise</xref>.
+  </p>
+
+  <p>
+    Let us try to determine the number of subsets of a set with given cardinality.
+    Let <m>S</m> be a set of cardinality 0, i.e.<nbsp /><m>S = \emptyset</m>.
+    Then <m>S</m> has only one subset: <m>\emptyset</m>.
+    If <m>S</m> is a set of cardinality 1, e.g.<nbsp /><m>S = \halmaz{a}</m>,
+    then it has two subsets:
+    <m>\halmaz{} = \emptyset</m>, <m>\halmaz{a} = S</m>.
+    If <m>S</m> is a set of cardinality 2, e.g.<nbsp /><m>S = \halmaz{a, b}</m>,
+    then it has four subsets:
+    <m>\halmaz{} = \emptyset</m>,
+    <m>\halmaz{a}</m>, <m>\halmaz{b}</m>, <m>\halmaz{a, b} = S</m>.
+    If <m>S</m> is a set of cardinality 3, e.g.<nbsp /><m>S = \halmaz{a, b, c}</m>,
+    then it has eight subsets:
+    <m>\halmaz{} = \emptyset</m>, <m>\halmaz{a}</m>,
+    <m>\halmaz{b}</m>, <m>\halmaz{c}</m>, <m>\halmaz{a, b}</m>,
+    <m>\halmaz{a, c}</m>, <m>\halmaz{b, c}</m>,
+    <m>\halmaz{a, b, c} = S</m>.
+    <xref ref="fig_subsetsabc">Figure</xref>
+    shows all subsets of <m>\halmaz{a, b, c}</m>.
+    In this figure,
+    two sets are connected if the lower one is a subset of the upper one.
+    <xref ref="tab_noofsubsets">Table</xref>
+    summarizes our findings on the number of subsets so far.
+  </p>
+
+  <figure xml:id="fig_subsetsabc">
+    <caption>Subsets of <m>\halmaz{a, b, c}</m>.</caption>
+    <image>
+      <latex-image>
+        <![CDATA[\begin{tikzpicture}\node (max) at (0,4) {\(\halmaz{a, b, c}\)};
+        \node (a) at (-2,2) {\(\halmaz{a, b}\)};
+        \node (b) at (0,2) {\(\halmaz{a, c}\)};
+        \node (c) at (2,2) {\(\halmaz{b, c}\)};
+        \node (d) at (-2,0) {\(\halmaz{a}\)};
+        \node (e) at (0,0) {\(\halmaz{b}\)};
+        \node (f) at (2,0) {\(\halmaz{c}\)};
+        \node (min) at (0,-2) {\(\halmaz\)};
+        \draw (min) -- (d) -- (a) -- (max) -- (b) -- (f)
+        (e) -- (min) -- (f) -- (c) -- (max)
+        (d) -- (b);
+        \draw[preaction={draw=white, -,line width=6pt}] (a) -- (e) -- (c);\end{tikzpicture}]]>
+      </latex-image>
+    </image>
+  </figure>
+
+  <table xml:id="tab_noofsubsets">
+    <caption>Number of subsets</caption>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Cardinality of <m>S</m></cell>
+        <cell>Number of subsets of <m>S</m></cell>
+      </row>
+      <row bottom="medium">
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell  ><m>0</m></cell>
+        <cell><m>1</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><m>1</m></cell>
+        <cell><m>2</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><m>2</m></cell>
+        <cell><m>4</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><m>3</m></cell>
+        <cell><m>8</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+  </table>
+
+  <exercise xml:id="ex_abcde">
+    <statement>
+      <p>
+        Guess what the rule is by looking at <xref ref="tab_noofsubsets">Table</xref>
+        and listing all subsets of
+        <m>\halmaz{a, b, c, d}</m> and <m>\halmaz{a, b, c, d, e}</m>,
+        if necessary.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    It seems that if <m>S</m> has <m>n</m> elements,
+    then it has <m>2^n</m> subsets.
+    This is reinforced by <xref ref="fig_subsetsabc">Figure</xref>,
+    where we represented the subsets of a three-element set by the eight vertices of a cube.
+    This conjecture is true in general:
+  </p>
+
+  <theorem xml:id="thm_noofsubsets">
+    <statement>
+      <p>
+        Let <m>S</m> be a set of cardinality <m>n</m> for some <m>n\geq 0</m> integer.
+        Then <m>S</m> has <m>2^n</m>-many subsets.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Let us denote the elements of <m>S</m> by <m>a_1, a_2, \dots , a_n</m>,
+      that is,
+      <me>
+        S = \halmaz{a_1, a_2, \dots , a_n}
+      </me>.
+    </p>
+
+    <p>
+      Let us try to build a subset <m>T</m> of <m>S</m>,
+      and we count the number of possibilities to create different subsets <m>T</m>.
+      First we decide whether or not <m>a_1 \in T</m>,
+      that is, whether or not we put <m>a_1</m> into <m>T</m>.
+      This gives us two choices.
+      Now, independent of how we decided on <m>a_1</m>,
+      we decide whether or not we want to put <m>a_2</m> into <m>T</m>, that is,
+      whether or not <m>a_2 \in T</m>.
+      This, again, gives us two choices.
+      Third (independently on how we decided on the earlier elements) we decide whether or not we put <m>a_3</m> into <m>T</m>, that is,
+      whether or not <m>a_3 \in T</m>.
+      This, again, gives us two choices, etc.
+    </p>
+
+    <p>
+      This way we decide after each other for every element whether or not we want to put the element into <m>T</m>.
+      On the one hand, if at some point we choose differently,
+      then we obtain different subsets in the end.
+      For example, if for <m>a_k</m> we decide differently,
+      then in one case <m>a_k</m> will be an element of the subset,
+      in the other case it will not be an element.
+      Thus the two subsets will differ in <m>a_k</m>.
+      On the other hand, all subsets can be obtained this way:
+      for a subset <m>A</m> we decide to put the elements of <m>A</m> into <m>T</m>,
+      and not put other elements in.
+      This way, <m>T=A</m> will be built.
+    </p>
+
+    <p>
+      That is, by deciding for every element whether or not it should be in <m>T</m> we obtain all subsets exactly once.
+      For each element we have two choices:
+      either we put them into the subset or we do not put them into the subset.
+      These choices on the elements are independent from each other,
+      thus for all <m>n</m> elements we have
+      <me>
+        \underbrace{2 \cdot 2 \cdot \dots \cdot 2}_{n} = 2^n
+      </me>
+      choices.
+      This is the same as the number of subsets of <m>S</m>.
+      Thus an <m>n</m> element set has <m>2^n</m>-many subsets.
+    </p>
+  </proof>
+
+  <exercise xml:id="ex_subsettrytheproof">
+    <statement>
+      <p>
+        For <m>S= \halmaz{a, b, c}</m> obtain all subsets using this decision algorithm.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    There are different ways to obtain the same result.
+    Another argument can be the following:
+  </p>
+
+  <proof>
+    <p>
+      We give a draft of the proof,
+      which can be made precise after reading about mathematical induction.
+      Again, let us denote the elements of <m>S</m> by <m>a_1, a_2, \dots , a_n</m>,
+      that is,
+      <me>
+        S = \halmaz{a_1, a_2, \dots , a_n}
+      </me>.
+    </p>
+
+    <p>
+      Here, every subset either contains <m>a_n</m> or does not contain <m>a_n</m>.
+    </p>
+
+    <p>
+      First, consider those subsets,
+      which do not contain <m>a_n</m>,
+      and let <m>S' = \halmaz{a_1, a_2, \dots, a_{n-1}}</m>.
+      Observe that a subset of <m>S</m> not containing <m>a_n</m> is in fact a subset of <m>S'</m>.
+      Moreover, every subset of <m>S'</m> is a subset of <m>S</m> not containing <m>a_n</m>.
+      That is, there is a one-to-one correspondence between the subsets of <m>S</m> not containing <m>a_n</m> and the subsets of <m>S'</m>.
+    </p>
+
+    <p>
+      Now, consider the subsets of <m>S</m> containing <m>a_n</m>.
+      Observe that a subset of <m>S</m> containing <m>a_n</m> is in fact a union of a subset of <m>S'</m> and <m>\halmaz{a_n}</m>.
+      That is, it is <m>a_n</m> added to a subset of <m>S'</m>.
+      Moreover, if we add <m>a_n</m> to every subset of <m>S'</m> we obtain a subset of <m>S</m> containing <m>a_n</m>.
+      That is, there is a one-to-one correspondence between the subsets of <m>S</m> containing <m>a_n</m> and the subsets of <m>S'</m>.
+    </p>
+
+    <p>
+      Thus, the number of subsets of <m>S</m> is twice as the number of subsets of <m>S'</m>.
+      Continuing this argument,
+      we obtain that the number of subsets of <m>S</m> is 4 times the number of subsets of <m>\halmaz{a_1, \dots , a_{n-2}}</m>, etc.
+      That is, the number of subsets of <m>S</m> is <m>2^n</m> times the number of subsets of <m>\halmaz{} = \emptyset</m>.
+      As the latter has only 1 subset,
+      <m>S</m> has exactly <m>2^n</m>-many subsets.
+    </p>
+  </proof>
+
+  <p>
+    Note, that this argument would not have been necessary,
+    as we have already proved the statement of <xref ref="thm_noofsubsets">Theorem</xref>.
+    Therefore this new proof does not make the statement any more true (in any case,
+    a mathematical statement is either true or not true,
+    there are no degrees to how true it is).
+    What it provides is a different insight into how we can build subsets of a set.
+    For example,
+    this argument can be useful if we need certain types of subsets:
+  </p>
+  <exercise xml:id="ex_subsetabcd">
+    <statement>
+      <p>
+        List all subsets of <m>S = \halmaz{a, b, c, d}</m> not containing <m>d</m>,
+        and note that they are exactly the subsets of <m>\halmaz{a, b, c}</m>.
+        Then list all subsets of <m>S = \halmaz{a, b, c, d}</m> containing <m>d</m>,
+        and note that they are exactly the subsets of
+        <m>\halmaz{a, b, c}</m> with <m>d</m> added to them.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    It is an interesting coincidence that there are <m>2^n</m> subsets of an <m>n</m>-element set,
+    and that exactly <m>2^n</m>-many at most <m>n</m>-digit binary numbers exist.
+    Such a coincidence always makes a mathematician suspicious that there might be more to it than just accidental equality.
+  </p>
+  <exercise xml:id="ex_subsetabcd01">
+    <statement>
+      <p>
+        Encode all subsets of <m>S = \halmaz{a, b, c, d}</m> in the following way:
+        for every subset <m>T</m> we assign an at most four digit binary number.
+        The first digit is 0 if <m>d \notin T</m>, and 1 if <m>d \in T</m>.
+        Similarly, the second digit is 0 if
+        <m>c \notin T</m>, and 1 if <m>c \in T</m>.
+        The third digit is 0 if <m>b \notin T</m>, and 1 if <m>b \in T</m>.
+        Finally, the fourth digit is 0 if
+        <m>a \notin T</m>, and 1 if <m>a \in T</m>.
+        Note that this is a one-to-one correspondence between the subsets and the at most four digit binary numbers.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    The idea of <xref ref="ex_subsetabcd01">Exercise</xref> works in general, as well:
+  </p>
+
+  <proof>
+    <p>
+      This time it is probably more helpful to denote the elements of <m>S</m> by <m>a_0, a_1, \dots , a_{n-1}</m>,
+      that is,
+      <me>
+        S = \halmaz{a_0, a_1, \dots , a_{n-1}}
+      </me>.
+    </p>
+
+    <p>
+      Now, we assign an at most <m>n</m>-digit binary number to every subset of <m>S</m>.
+      Let <m>T</m> be an arbitrary subset of <m>S</m>,
+      and we assign a binary number to it in the following way.
+      Its last digit
+      (corresponding to <m>2^0</m>)
+      is 0 if <m>a_0 \notin T</m> and 1 if <m>a_0 \in T</m>.
+      Similarly, the one but last digit
+      (corresponding to <m>2^1</m>)
+      is 0 if <m>a_1 \notin T</m> and 1 if <m>a_1 \in T</m>.
+      In general, the <m>(k+1)</m>st digit from the back
+      (corresponding to <m>2^k</m>, <m>0\leq k\leq n-2</m>)
+      is 0 if <m>a_k \notin T</m> and 1 if <m>a_k \in T</m>.
+      Finally, the first digit
+      (corresponding to <m>2^{n-1}</m>)
+      is 0 if <m>a_{n-1} \notin T</m> and 1 if <m>a_{n-1} \in T</m>.
+      This way we assigned an at most <m>n</m>-digit binary number to every subset.
+      For different subsets we assigned different binary numbers,
+      and for every number we can easily generate the subset corresponding to it (we just need to add those elements into the subset where the digit is 1).
+      That is, this encoding is a one-to-one correspondence between subsets of <m>S</m> and the at most <m>n</m>-digit binary numbers.
+      By <xref ref="prop_numberofnatmostdigitbasek">Proposition</xref>
+      we know that there are <m>2^n</m>-many at most <m>n</m>-digit binary numbers.
+      Thus, <m>S</m> has <m>2^n</m>-many subsets, as well.
+    </p>
+  </proof>
+
+  <p>
+    This third proof, again, gives something extra to our knowledge.
+    Now, we have enumerated all the subsets of <m>S</m>,
+    and if we are interested in the <m>k</m>th subset, we can easily compute it.
+  </p>
+  <exercise xml:id="ex_encode1">
+    <statement>
+      <p>
+        Let <m>S = \halmaz{a_0, a_1, a_2, a_3}</m>.
+        Let us encode the subsets of <m>S</m> as in the third proof of <xref ref="thm_noofsubsets">Theorem</xref>.
+        Compute the subsets corresponding to the binary representation of <m>11</m>, <m>7</m>,
+        <m>15</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_encode2">
+    <statement>
+      <p>
+        Let <m>S = \halmaz{a_0, a_1, a_2, a_3, a_4}</m>.
+        Let us encode the subsets of <m>S</m> as in the third proof of <xref ref="thm_noofsubsets">Theorem</xref>.
+        Compute the subsets corresponding to the binary representation of <m>11</m>,
+        <m>7</m>,
+        <m>15</m>, <m>16</m>, <m>31</m>.
+        Compare the results to those of <xref ref="ex_encode1">Exercise</xref>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_encode3">
+    <statement>
+      <p>
+        Let <m>S = \halmaz{a_0, a_1, a_2, a_3, a_4, a_5}</m>.
+        Let us encode the subsets of <m>S</m> as in the third proof of <xref ref="thm_noofsubsets">Theorem</xref>.
+        Compute the subset corresponding to the binary representation of <m>49</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_encode4">
+    <statement>
+      <p>
+        Let <m>S = \halmaz{a_0, a_1, a_2, a_3, a_4, a_5, a_6}</m>.
+        Let us encode the subsets of <m>S</m> as in the third proof of <xref ref="thm_noofsubsets">Theorem</xref>.
+        Compute the subset corresponding to the binary representation of <m>101</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_encode5">
+    <statement>
+      <p>
+        Let <m>S = \halmaz{a_0, a_1, a_2, a_3, a_4, a_5, a_6, a_7}</m>.
+        Let us encode the subsets of <m>S</m> as in the third proof of <xref ref="thm_noofsubsets">Theorem</xref>.
+        Compute the subset corresponding to the binary representation of <m>199</m>.
+      </p>
+    </statement>
+  </exercise>
+</section>
+

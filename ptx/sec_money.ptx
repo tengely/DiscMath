@@ -1,0 +1,1137 @@
+
+
+<section xml:id="sec_money">
+  <title>Distributing money</title>
+  <p>
+    Three pirates (Anne Bonney, Black Bellamy and Calico Jack) raid a small ship.
+    They take all the treasure they can find,
+    which is seven gold pieces altogether.
+    Afterwards,
+    they would like to distribute the loot among themselves.
+    They only have one rule:
+    since everybody was useful during the raid,
+    everyone should receive at least 1 gold piece.
+    How many ways can they distribute the seven gold pieces?
+    Gold pieces are identical, it does not matter who gets which gold piece.
+    It only matters how many gold pieces each pirate gets.
+  </p>
+
+  <p>
+    One way to solve this problem is of course to write down all possible distributions.
+    Let us list the possibilities by considering the amount of gold pieces received by the highest rewarded pirate.
+    If everyone needs to get at least one gold piece,
+    then nobody can have more than five gold pieces.
+    In fact, if somebody gets five gold pieces,
+    then the other two will have two gold pieces to distribute,
+    which they can only do by giving one gold piece to each of them.
+    This is three possibilities (depending on who receives the five gold pieces).
+    If the pirate in the highest regard gets four gold pieces,
+    then the other two pirates will have three gold pieces to distribute.
+    They can only distribute it as two-one.
+    This altogether amounts to 6 possibilities: 3 possibilities on who gets four gold pieces,
+    then in each case 2 possibilities on who gets two gold pieces, that is,
+    <m>3 \cdot 2</m> possibilities. (Note that this is the number of permutations of the three pirates.) Finally,
+    if the highest reward is three gold pieces,
+    then the other two pirates can distribute the remaining four gold pieces in two different ways:
+    either one of them gets three gold pieces,
+    and the other gets one, or both get two gold pieces.
+    Both distributions amount to 3 possibilities altogether.
+    In the first case there are 3 possibilities to choose who gets one gold piece (and the other two gets three gold pieces each).
+    In the second case there are 3 possibilities to choose who gets three gold pieces (and the other two gets two gold pieces each).
+    <xref ref="tab_7gp3p">Table</xref>
+    summarizes the 15 possible distributions.
+  </p>
+
+  <table xml:id="tab_7gp3p">
+    <caption>Possibilities to distribute 7 gold pieces among three pirates so that everyone gets at least one gold piece.</caption>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Anne Bonney</cell>
+        <cell>Black Bellamy</cell>
+        <cell>Calico Jack</cell>
+      </row>
+      <row bottom="medium">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell  >5</cell>
+        <cell>1</cell>
+        <cell>1</cell>
+      </row>
+      <row>
+        <cell>1</cell>
+        <cell>5</cell>
+        <cell>1</cell>
+      </row>
+      <row>
+        <cell>1</cell>
+        <cell>1</cell>
+        <cell>5</cell>
+      </row>
+      <row>
+        <cell>4</cell>
+        <cell>2</cell>
+        <cell>1</cell>
+      </row>
+      <row>
+        <cell>4</cell>
+        <cell>1</cell>
+        <cell>2</cell>
+      </row>
+      <row>
+        <cell>2</cell>
+        <cell>4</cell>
+        <cell>1</cell>
+      </row>
+      <row>
+        <cell>1</cell>
+        <cell>4</cell>
+        <cell>2</cell>
+      </row>
+      <row>
+        <cell>2</cell>
+        <cell>1</cell>
+        <cell>4</cell>
+      </row>
+      <row>
+        <cell>1</cell>
+        <cell>2</cell>
+        <cell>4</cell>
+      </row>
+      <row>
+        <cell>3</cell>
+        <cell>3</cell>
+        <cell>1</cell>
+      </row>
+      <row>
+        <cell>3</cell>
+        <cell>1</cell>
+        <cell>3</cell>
+      </row>
+      <row>
+        <cell>1</cell>
+        <cell>3</cell>
+        <cell>3</cell>
+      </row>
+      <row>
+        <cell>3</cell>
+        <cell>2</cell>
+        <cell>2</cell>
+      </row>
+      <row>
+        <cell>2</cell>
+        <cell>3</cell>
+        <cell>2</cell>
+      </row>
+      <row>
+        <cell>2</cell>
+        <cell>2</cell>
+        <cell>3</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+  </table>
+
+  <p>
+    This is all well and good,
+    but if next time the pirates raid a much bigger ship and find a treasure chest full of gold on board,
+    we will have a much harder time counting the possibilities for them to distribute the gold.
+    It would be nice to obtain the final answer by some combinatorial reasoning,
+    which we can apply for different number of gold pieces (or different number of pirates).
+    We give such a method in the following.
+  </p>
+
+  <p>
+    Imagine that the pirates put the gold pieces in a line,
+    like this:
+    <img src="MISSINGFILE" width="400" /> Now,
+    they want to divide it into three parts:
+    a leftmost part, a middle part and a rightmost part.
+    The leftmost part will go to Anne Bonney,
+    the middle part is for Black Bellamy,
+    and Calico Jack takes the rightmost part.
+    For example if Anne Bonney gets one gold piece, Black Bellamy gets two gold pieces,
+    and Calico Jack takes four, then they divide the seven gold pieces like this:
+    <img src="MISSINGFILE" width="400" /> That is,
+    they use two sticks to divide the seven gold pieces into three parts.
+    What is left from the first stick is for Anne Bonney,
+    what is between the two sticks is for Black Bellamy,
+    and everything right from the second stick is taken by Calico Jack.
+    Where can they put the sticks?
+    They can put the sticks between gold pieces.
+    They cannot put a stick before the first gold piece,
+    because then Anne Bonney would not get any gold pieces.
+    Similarly, they cannot put a stick after the last gold piece,
+    because Calico Jack needs to receive at least one gold piece.
+    Finally, they cannot put the two sticks between the same two gold pieces,
+    because Black Bellamy needs to get at least one gold piece.
+    Thus, they need to put the two sticks somewhere in the spaces between the gold pieces,
+    but they cannot put the two sticks between the same two gold pieces.
+    That is, they need to find which two places they put sticks to.
+    There are 6 places between the seven gold pieces,
+    and they need to find two, where they put the two sticks.
+    This can be done in <m>\binom{6}{2}=\frac{6\cdot 5}{2}=15</m>-many ways.
+    This combinatorial argument works in general,
+    when we need to distribute <m>k</m> gold pieces among <m>n</m> pirates.
+    In general,
+    <m>n</m> pirates would need <m>n-1</m> sticks to divide the gold pieces to <m>n</m> parts,
+    and there will be <m>k-1</m> places between <m>k</m> gold pieces.
+    Thus we obtain
+  </p>
+
+  <theorem xml:id="thm_piratesgeq1">
+    <statement>
+      <p>
+        Assume <m>n</m> pirates want to distribute <m>k</m> gold pieces among themselves
+        (for some <m>k\geq n</m>)
+        such that everybody gets at least one gold piece.
+        They can do this in <m>\binom{k-1}{n-1}</m>-many ways.
+      </p>
+    </statement>
+  </theorem>
+
+  <exercise xml:id="ex_piratesgeq1">
+    <statement>
+      <p>
+        Prove <xref ref="thm_piratesgeq1">Theorem</xref> precisely.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    After having found that they have 15 possible ways to distribute seven gold pieces among themselves,
+    the three pirates divide the gold pieces in some way and continue sailing the oceans.
+    Next, they encounter a somewhat bigger ship than last time,
+    and they find a treasure chest with 10 gold pieces in it.
+    All of them needed to do quite a bit of work for getting the treasure chest
+    (lot of sword-fighting for all three of them),
+    therefore this time they want to distribute the money so that everyone receives at least two gold pieces.
+    How many ways can they distribute the money now?
+  </p>
+
+  <p>
+    Again, we can solve this problem by writing down all possible distributions,
+    like before.
+    As before, let us list the possibilities by considering the amount of gold pieces received by the highest rewarded pirate.
+    If everyone needs to get at least two gold pieces,
+    then nobody can have more than six gold pieces.
+    In fact, if somebody gets six gold pieces,
+    then the other two will have four gold pieces to distribute,
+    which they can only do by giving two gold pieces to each of them.
+    This is three possibilities (depending on who receives the six gold pieces).
+    If the pirate in the highest regard gets five gold pieces,
+    then the other two pirates will have five gold pieces to distribute.
+    They can only distribute it as three-two.
+    This altogether amounts to 6 possibilities: 3 possibilities on who gets five gold pieces,
+    then in each case 2 possibilities on who gets three gold pieces, that is,
+    <m>3 \cdot 2</m> possibilities.
+    Finally, if the highest reward is four gold pieces,
+    then the other two pirates can distribute the remaining six gold pieces in two different ways:
+    either one of them gets four gold pieces,
+    and the other gets two, or both get three gold pieces.
+    Both distributions amounts to 3 possibilities altogether.
+    In the first case there are 3 possibilities to choose who gets two gold pieces (and the other two gets four gold pieces each).
+    In the second case there are 3 possibilities to choose who gets four gold pieces (and the other two gets three gold pieces each).
+    <xref ref="tab_10gp3p">Table</xref>
+    summarizes the 15 possible distributions.
+  </p>
+
+  <table xml:id="tab_10gp3p">
+    <caption>Possibilities to distribute 10 gold pieces among three pirates so that everyone gets at least two gold pieces.</caption>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Anne Bonney</cell>
+        <cell>6</cell>
+        <cell>2</cell>
+        <cell>2</cell>
+        <cell>5</cell>
+        <cell>5</cell>
+        <cell>3</cell>
+        <cell>2</cell>
+        <cell>3</cell>
+        <cell>2</cell>
+        <cell>4</cell>
+        <cell>4</cell>
+        <cell>2</cell>
+        <cell>4</cell>
+        <cell>3</cell>
+        <cell>3</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Black Bellamy</cell>
+        <cell>2</cell>
+        <cell>6</cell>
+        <cell>2</cell>
+        <cell>3</cell>
+        <cell>2</cell>
+        <cell>5</cell>
+        <cell>5</cell>
+        <cell>2</cell>
+        <cell>3</cell>
+        <cell>4</cell>
+        <cell>2</cell>
+        <cell>4</cell>
+        <cell>3</cell>
+        <cell>4</cell>
+        <cell>3</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Calico Jack</cell>
+        <cell>2</cell>
+        <cell>2</cell>
+        <cell>6</cell>
+        <cell>2</cell>
+        <cell>3</cell>
+        <cell>2</cell>
+        <cell>3</cell>
+        <cell>5</cell>
+        <cell>5</cell>
+        <cell>2</cell>
+        <cell>4</cell>
+        <cell>4</cell>
+        <cell>3</cell>
+        <cell>3</cell>
+        <cell>4</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+  </table>
+
+  <p>
+    Here, we received exactly the same number of distributions as for the earlier case,
+    when the three pirates needed to distribute 7 gold pieces,
+    and everybody needed to get at least one.
+    This can hardly be a coincidence.
+    Somehow, we should be able to reduce the new problem to the earlier problem.
+    The main difference is that now every pirate needs to get at least two gold pieces instead of one.
+    This can be easily remedied:
+    everyone takes one gold piece at the very beginning.
+    Then seven gold pieces remain (<m>10-3</m>),
+    and everyone needs to get at least one more.
+    And this is now exactly the same problem as before.
+    Again, the argument works in general:
+    if there are <m>n</m> pirates and <m>k</m> gold pieces,
+    and everybody needs to get at least two gold pieces,
+    then first every pirate takes one gold piece.
+    This way, everyone needs to get one more gold piece,
+    and they will have <m>k-n</m> gold pieces to distribute further.
+    Applying <xref ref="thm_piratesgeq1">Theorem</xref> we can prove
+  </p>
+
+  <proposition xml:id="prop_piratesgeq2">
+    <statement>
+      <p>
+        Assume <m>n</m> pirates want to distribute <m>k</m> gold pieces among themselves
+        (for some <m>k\geq 2n</m>)
+        such that everybody gets at least two gold pieces.
+        They can do this in <m>\binom{k-n-1}{n-1}</m>-many ways.
+      </p>
+    </statement>
+  </proposition>
+
+  <exercise xml:id="ex_piratesgeq2">
+    <statement>
+      <p>
+        Prove <xref ref="prop_piratesgeq2">Proposition</xref> precisely.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    The three pirates continued to raid ships.
+    Next time they found a small boat with a fisherman and only four gold pieces.
+    They, again,
+    want to distribute these gold pieces among themselves.
+    But this time they do not want to impose any conditions on the distributions.
+    It may be possible that somebody does not receive any gold pieces,
+    even that somebody takes all the gold.
+    How many ways can they distribute the four gold pieces among themselves?
+  </p>
+
+  <p>
+    After the previous two exercises,
+    it is not too difficult to find all the possibilities.
+    There are three possibilities corresponding to the distribution where one of them gets all four gold pieces (three possibilities depending on who gets all the gold).
+    If one of them gets three gold pieces,
+    then the remaining one gold piece goes to one of the remaining pirates.
+    There are 6 such possibilities: 3 choices on who gets three gold pieces,
+    and for each choice there are 2 choices on who of the remaining two pirates gets 1 gold piece (and the last pirate does not get any gold pieces).
+    If the highest rewarded pirate gets two gold pieces,
+    then the remaining two gold pieces can be distributed among the two remaining pirates in two different ways:
+    in the first case one of them gets both gold pieces, and the other gets none,
+    in the second case both of the remaining pirates gets one gold piece each.
+    In the first case they have 3 choices on who gets no gold pieces
+    (and the other two pirates get two gold pieces each),
+    in the second case they have 3 choices on who gets two gold pieces (and the other two pirates get one gold piece each).
+    <xref ref="tab_4gp3p">Table</xref>
+    summarizes all 15 possibilities for distributing four gold pieces among the three pirates.
+  </p>
+
+  <table xml:id="tab_4gp3p">
+    <caption>Possibilities to distribute 4 gold pieces among three pirates.</caption>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Anne Bonney</cell>
+        <cell>4</cell>
+        <cell>0</cell>
+        <cell>0</cell>
+        <cell>3</cell>
+        <cell>3</cell>
+        <cell>1</cell>
+        <cell>0</cell>
+        <cell>1</cell>
+        <cell>0</cell>
+        <cell>2</cell>
+        <cell>2</cell>
+        <cell>0</cell>
+        <cell>2</cell>
+        <cell>1</cell>
+        <cell>1</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Black Bellamy</cell>
+        <cell>0</cell>
+        <cell>4</cell>
+        <cell>0</cell>
+        <cell>1</cell>
+        <cell>0</cell>
+        <cell>3</cell>
+        <cell>3</cell>
+        <cell>0</cell>
+        <cell>1</cell>
+        <cell>2</cell>
+        <cell>0</cell>
+        <cell>2</cell>
+        <cell>1</cell>
+        <cell>2</cell>
+        <cell>1</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Calico Jack</cell>
+        <cell>0</cell>
+        <cell>0</cell>
+        <cell>4</cell>
+        <cell>0</cell>
+        <cell>1</cell>
+        <cell>0</cell>
+        <cell>1</cell>
+        <cell>3</cell>
+        <cell>3</cell>
+        <cell>0</cell>
+        <cell>2</cell>
+        <cell>2</cell>
+        <cell>1</cell>
+        <cell>1</cell>
+        <cell>2</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+  </table>
+
+  <p>
+    Again, by applying some easy trick we can find the connection between this distribution problem and the first one (where each pirate wanted to get at least one gold piece from the loot).
+    Let us try to reduce this problem to the other one.
+    The only difference is that with the first distribution problem every pirate needed to get at least one gold piece,
+    and now there is no such condition.
+    Let us create a situation where this condition arises naturally!
+    For example,
+    if every pirate puts one gold piece from their own pocket to the treasure chest.
+    Then there would be 7 gold pieces in the treasure chest,
+    but every pirate would want to get at least one gold piece (they would want to get back at least what they put in).
+    This is exactly the same distribution problem as the first was,
+    and thus they must have the same answer, as well.
+  </p>
+
+  <p>
+    This argument can be applied in general:
+  </p>
+
+  <theorem xml:id="thm_piratesgeq0">
+    <statement>
+      <p>
+        There are <m>\binom{n+k-1}{n-1} = \binom{n+k-1}{k}</m>-many ways for <m>n</m> pirates to distribute <m>k</m> gold pieces among themselves.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Let every pirate put one gold piece into the pile of <m>k</m> gold pieces.
+      This way there will be <m>n+k</m> gold pieces to distribute among themselves,
+      but now each pirate would need to get at least one gold piece (because they want to get back at least the one gold piece they put into the pile).
+      They can distribute <m>n+k</m> gold pieces among themselves with that condition in
+      <m>\binom{n+k-1}{n-1}</m>-many ways by <xref ref="thm_piratesgeq1">Theorem</xref>.
+      Finally, by the symmetric property of the binomial coefficients
+      (<xref ref="prop_symmetryofbinomial">Proposition</xref>)
+      we have <m>\binom{n+k-1}{n-1} = \binom{n+k-1}{k}</m>.
+    </p>
+  </proof>
+
+  <p>
+    Finally, our three pirates (Anne Bonney, Black Bellamy and Calico Jack) raid yet another ship.
+    This time, they find a treasure chest containing seven gold pieces.
+    But this time,
+    they did not contribute to obtaining the chest equally.
+    Say, Anne Bonney did not fight with anyone on the ship,
+    while Black Bellamy fought with one person,
+    and Calico Jack fought with two!
+    Therefore, they feel it just that from the seven gold pieces Black Bellamy gets at least one,
+    and Calico Jack gets at least two (they do not impose any condition on how much Anne Bonney needs to get).
+    How many ways can they distribute the gold pieces with these conditions?
+  </p>
+
+  <p>
+    Once again,
+    we could try to reduce this new problem to one which we solved already.
+    But this time, we will reduce it to <xref ref="thm_piratesgeq0">Theorem</xref>
+    rather than to <xref ref="thm_piratesgeq1">Theorem</xref>.
+    Just think about it:
+    it makes more sense to the pirates to just give first the conditional money to the people that deserve it.
+    That is, first they pay the one gold piece to Black Bellamy,
+    and two gold pieces to Calico Jack.
+    Then they will have four gold pieces to distribute among the three of them,
+    which can be done in <m>\binom{4+3-1}{3-1} = \binom{6}{2} = 15</m>-many ways by <xref ref="thm_piratesgeq0">Theorem</xref>.
+  </p>
+  <exercise xml:id="ex_piratesgeq012">
+    <statement>
+      <p>
+        Write all possibilities where the three pirates distribute seven gold pieces such that Black Bellamy gets at least one gold piece and Calico Jack gets at least two gold pieces.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Applying the same argument,
+    we can now phrase the most general theorem of this topic.
+  </p>
+
+  <theorem xml:id="thm_pirates">
+    <statement>
+      <p>
+        Assume <m>n</m> pirates want to distribute <m>k</m> gold pieces among themselves such that
+        the first pirate gets at least <m>k_1</m> gold pieces,
+        the second pirate gets at least <m>k_2</m> gold pieces, etc.,
+        the <m>k</m>th pirate gets at least <m>k_n</m> gold pieces
+        (where <m>k\geq k_1 + k_2 + \dots + k_n</m>).
+        The number of ways they can do this is
+        <me>
+          \binom{k-k_1-k_2 - \dots - k_n + n-1}{n-1}
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      First, the pirates pay off all the conditional amounts.
+      That is, the first pirate immediately gets <m>k_1</m> gold pieces,
+      the second pirate gets <m>k_2</m> gold pieces,
+      etc., the <m>k</m>th pirate gets <m>k_n</m> gold pieces.
+      Then they will have <m>k-k_1-k_2 - \dots -k_n</m> gold pieces left to distribute,
+      on which they have no more conditions.
+      By <xref ref="thm_piratesgeq0">Theorem</xref>
+      they have <m>\binom{k-k_1-k_2 - \dots - k_n + n-1}{n-1}</m>-many ways to do the distribution.
+    </p>
+  </proof>
+
+  <p>
+    We make two remarks here.
+    First, rather than reducing the problem again for the first pirate situation
+    (where everybody gets at least one gold piece),
+    we reduced it to one, which is easier to use.
+    This is quite customary in Mathematics,
+    that when we have proved a hard result,
+    we simply use it for similar situations,
+    rather than trying to figure out a similar proof for each similar case.
+    Second, that the proof works even in the case where some of the <m>k_i</m>s are negative.
+    That would represent to a situation where the <m>i</m>th pirate was so lazy,
+    that he actually hindered the raid,
+    and therefore he should pay some amount into the loot they obtained.
+  </p>
+  <exercise xml:id="ex_pirates1">
+    <statement>
+      <p>
+        How many ways can <m>n</m> pirates distribute <m>k</m> gold pieces,
+        if
+
+        <ol>
+          <li>
+            <title>(a)</title>
+            <p>
+              <m>k = 9</m>,
+              <m>n=3</m>, and everybody gets at least one gold piece;
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              <m>k = 8</m>, <m>n=3</m>;
+            </p>
+          </li>
+
+          <li>
+            <title>(c)</title>
+            <p>
+              <m>k = 7</m>, <m>n=3</m>;
+            </p>
+          </li>
+
+          <li>
+            <title>(d)</title>
+            <p>
+              <m>k = 11</m>,
+              <m>n=3</m>, and everybody gets at least two gold pieces;
+            </p>
+          </li>
+
+          <li>
+            <title>(e)</title>
+            <p>
+              <m>k = 9</m>,
+              <m>n=4</m>, and everybody gets at least one gold piece;
+            </p>
+          </li>
+
+          <li>
+            <title>(f)</title>
+            <p>
+              <m>k = 7</m>, <m>n=4</m>;
+            </p>
+          </li>
+
+          <li>
+            <title>(g)</title>
+            <p>
+              <m>k = 12</m>,
+              <m>n=4</m>, and everybody gets at least two gold pieces;
+            </p>
+          </li>
+
+          <li>
+            <title>(h)</title>
+            <p>
+              <m>k = 10</m>, <m>n=4</m>,
+              and the second pirate gets at least one gold piece,
+              the third pirate gets at least two gold pieces,
+              and the fourth pirate gets at least three gold pieces;
+            </p>
+          </li>
+
+          <li>
+            <title>(i)</title>
+            <p>
+              <m>k = 15</m>,
+              <m>n=4</m>, and the first pirate gets at least one gold piece,
+              the second pirate gets at least two gold pieces,
+              the third pirate gets at least three gold pieces,
+              and the fourth pirate gets at least four gold pieces;
+            </p>
+          </li>
+
+          <li>
+            <title>(j)</title>
+            <p>
+              <m>k = 15</m>, <m>n=5</m>,
+              and the first and third pirates get at least one-one gold piece,
+              and the fourth and fifth pirates get at least three-three gold pieces?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    In the last part of this section,
+    we consider equations with integer solutions.
+    Take for example the equation
+    <men xml:id="eq_pirate">
+      x+y+z = 7
+    </men>.
+  </p>
+
+  <p>
+    We are not interested in all the solutions,
+    we are only interested in the number of
+    <em>positive integer</em> solutions.
+    We can of course list them without any problems.
+    First, we look for solutions <m>x \geq y \geq z</m>,
+    then we find all the solutions.
+    Now, <m>z</m> cannot be bigger than 2,
+    because that would mean <m>7 = x+ y + z \geq 3z \geq 3\cdot 3 = 9</m> a contradiction.
+    Thus <m>z=1</m> or <m>z=2</m>.
+    If <m>z = 2</m>, then <m>x\geq y \geq 2</m>, as well.
+    Now, if <m>y \geq 3</m>, then <m>x \geq 3</m>,
+    and <m>7 = x + y + z \geq 2y + z \geq 2\cdot 3 + 2 = 8</m> is a contradiction.
+    Thus if <m>z=2</m> then <m>y=2</m>,
+    and then <m>x= 3</m> from <xref ref="eq_pirate" />.
+    If <m>z=1</m>, then <m>y</m> cannot be bigger than 3
+    (then <m>x\geq y \geq 4</m>,
+    and thus <m>7 = x+y+z \geq 2y + z \geq 2 \cdot 4 + 1 = 9</m> a contradiction).
+    If <m>y = 3</m> then <m>x=3</m>,
+    if <m>y = 2</m> then <m>x=4</m>,
+    and if <m>y = 1</m> then <m>x=5</m>.
+    That is, the positive integer solutions of <xref ref="eq_pirate" /> are
+    <me>
+      (5, 1, 1), (4, 2, 1), 
+      (3, 3, 1) \mbox{ and }  (3, 2, 2)
+    </me>.
+  </p>
+
+  <p>
+    There are three solutions of type
+    <m>(5, 1, 1)</m> depending on which variable equals to 5.
+    There are six solutions of type <m>(4, 2, 1)</m>:
+    three choices to determine which variable equals to 4 and then two choices for which of the remaining two variables is 2.
+    There are three solutions of type
+    <m>(3, 3, 1)</m> depending on which variable equals to 1, and there are three solutions of type
+    <m>(3, 2, 2)</m> depending on which variable equals to 3.
+    That is, there are 15 positive integer solutions to <xref ref="eq_pirate" />.
+    <xref ref="tab_x_y_z_7">Table</xref> collects all 15 solutions.
+  </p>
+
+  <table xml:id="tab_x_y_z_7">
+    <caption>Positive integer solutions of <m>x+y+z = 7</m>.</caption>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><m>x</m></cell>
+        <cell>5</cell>
+        <cell>1</cell>
+        <cell>1</cell>
+        <cell>4</cell>
+        <cell>4</cell>
+        <cell>2</cell>
+        <cell>1</cell>
+        <cell>2</cell>
+        <cell>1</cell>
+        <cell>3</cell>
+        <cell>3</cell>
+        <cell>1</cell>
+        <cell>3</cell>
+        <cell>2</cell>
+        <cell>2</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><m>y</m></cell>
+        <cell>1</cell>
+        <cell>5</cell>
+        <cell>1</cell>
+        <cell>2</cell>
+        <cell>1</cell>
+        <cell>4</cell>
+        <cell>4</cell>
+        <cell>1</cell>
+        <cell>2</cell>
+        <cell>3</cell>
+        <cell>1</cell>
+        <cell>3</cell>
+        <cell>2</cell>
+        <cell>3</cell>
+        <cell>2</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><m>z</m></cell>
+        <cell>1</cell>
+        <cell>1</cell>
+        <cell>5</cell>
+        <cell>1</cell>
+        <cell>2</cell>
+        <cell>1</cell>
+        <cell>2</cell>
+        <cell>4</cell>
+        <cell>4</cell>
+        <cell>1</cell>
+        <cell>3</cell>
+        <cell>3</cell>
+        <cell>2</cell>
+        <cell>2</cell>
+        <cell>3</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+  </table>
+
+  <p>
+    Now, these solutions in <xref ref="tab_x_y_z_7">Table</xref>
+    look exactly the same as the distributions of 7 gold pieces among three pirates such that each of them gets at least one gold piece (see <xref ref="tab_7gp3p">Table</xref>).
+    This is not a coincidence.
+    Say, Anne Bonney gets <m>x</m> gold pieces, Black Bellamy gets <m>y</m> gold pieces,
+    and Calico Jack gets <m>z</m> gold pieces.
+    Then altogether they take all 7 gold pieces,
+    that is, <m>x+y+z = 7</m>.
+    Moreover, each of them needs to get at least one gold piece,
+    that is, <m>x \geq 1</m>, <m>y \geq 1</m>, <m>z \geq 1</m>.
+    Thus the positive integer solutions of the equation
+    <m>x+y+z =7</m> correspond to the distributions of 7 gold pieces among three pirates such that each of them gets at least one gold piece.
+    This argument works in the general case, as well.
+  </p>
+
+  <corollary xml:id="cor_pirates">
+    <statement>
+      <p>
+        Consider the equation
+        <men xml:id="eq_pirates">
+          x_1 + x_2 + \dots + x_n = k
+        </men>.
+      </p>
+
+      <p>
+        The number of integer solutions of <xref ref="eq_pirates" /> for which <m>x_1 \geq k_1</m>,
+        <m>x_2 \geq k_2</m>, <m>\dots</m>, <m>x_n \geq k_n</m> is
+        <me>
+          \binom{k-k_1-k_2 - \dots - k_n +n-1}{n-1}
+        </me>.
+      </p>
+    </statement>
+  </corollary>
+
+  <proof>
+    <p>
+      The integer solutions of <xref ref="eq_pirates" /> correspond to gold distribution.
+      Assume there are <m>n</m> pirates distributing <m>k</m> gold pieces among themselves such that the first pirate gets at least <m>k_1</m> gold pieces,
+      the second pirate gets at least <m>k_2</m> gold pieces, etc.
+      Assume that the first pirate gets <m>x_1</m> gold pieces,
+      the second pirate gets <m>x_2</m> gold pieces, etc.
+      Then each distribution of the gold pieces corresponds to an integer solution of <xref ref="eq_pirates" />,
+      and each integer solution of <xref ref="eq_pirates" /> corresponds to a distribution.
+      By <xref ref="thm_pirates">Theorem</xref>
+      the number of distributions is
+      <me>
+        \binom{k-k_1-k_2 - \dots - k_n +n-1}{n-1}
+      </me>.
+      and so is the number of integer solutions of <xref ref="eq_pirates" />.
+    </p>
+  </proof>
+
+  <exercise xml:id="ex_equations1">
+    <statement>
+      <p>
+        How many integer solutions do the following equations have?
+
+        <ol>
+          <li>
+            <title>(a)</title>
+            <p>
+              <m>x + y + z = 9</m>, where <m>x\geq 1</m>,
+              <m>y\geq 1</m>, <m>z \geq 1</m>;
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              <m>x + y + z = 8</m>, where <m>x\geq 0</m>,
+              <m>y\geq 0</m>, <m>z \geq 0</m>;
+            </p>
+          </li>
+
+          <li>
+            <title>(c)</title>
+            <p>
+              <m>x + y + z = 7</m>, where <m>x\geq 0</m>,
+              <m>y\geq 0</m>, <m>z \geq 0</m>;
+            </p>
+          </li>
+
+          <li>
+            <title>(d)</title>
+            <p>
+              <m>x + y + z = 11</m>, where <m>x\geq 2</m>,
+              <m>y\geq 2</m>, <m>z \geq 2</m>;
+            </p>
+          </li>
+
+          <li>
+            <title>(e)</title>
+            <p>
+              <m>w + x + y + z = 9</m>,
+              where <m>w \geq 1</m>, <m>x\geq 1</m>,
+              <m>y\geq 1</m>, <m>z \geq 1</m>;
+            </p>
+          </li>
+
+          <li>
+            <title>(f)</title>
+            <p>
+              <m>w + x + y + z = 7</m>,
+              where <m>w \geq 0</m>, <m>x\geq 0</m>,
+              <m>y\geq 0</m>, <m>z \geq 0</m>;
+            </p>
+          </li>
+
+          <li>
+            <title>(g)</title>
+            <p>
+              <m>w + x + y + z = 12</m>,
+              where <m>w \geq 2</m>, <m>x\geq 2</m>,
+              <m>y\geq 2</m>, <m>z \geq 2</m>;
+            </p>
+          </li>
+
+          <li>
+            <title>(h)</title>
+            <p>
+              <m>w + x + y + z = 10</m>,
+              where <m>w \geq 0</m>, <m>x\geq 1</m>,
+              <m>y\geq 2</m>, <m>z \geq 3</m>;
+            </p>
+          </li>
+
+          <li>
+            <title>(i)</title>
+            <p>
+              <m>w + x + y + z = 15</m>,
+              where <m>w \geq 1</m>, <m>x\geq 2</m>,
+              <m>y\geq 3</m>, <m>z \geq 4</m>;
+            </p>
+          </li>
+
+          <li>
+            <title>(j)</title>
+            <p>
+              <m>v + w + x + y + z = 15</m>, where <m>v \geq 1</m>,
+              <m>w \geq 0</m>, <m>x\geq 1</m>,
+              <m>y\geq 3</m>, <m>z \geq 3</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_TuroRudi">
+    <statement>
+      <p>
+        Rudolf and her two sisters (&#xc1;gnes and Bea) like the famous Hungarian T&#xfa;r&#xf3; Rudi dessert very much.
+        Their mother gives Rudolf money and tells him to buy 10 pieces of T&#xfa;r&#xf3; Rudi.
+        She has only one condition:
+        since &#xc1;gnes likes the <em>Danone</em>
+        brand, Bea likes the <em>Milli</em> brand,
+        and Rudolf likes the <em>P&#xf6;tty&#xf6;s</em> brand,
+        he is supposed to buy at least one from each brand.
+        How many ways can Rudolf buy 10 T&#xfa;r&#xf3; Rudi desserts this way?
+      </p>
+    </statement>
+  </exercise>
+</section>
+
