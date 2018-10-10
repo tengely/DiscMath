@@ -1,0 +1,377 @@
+
+
+<section xml:id="sec_numeralsystem">
+  <title>Numeral systems</title>
+  <p>
+    In this Section we learn about the different numeral systems.
+    In everyday life we use base 10.
+    That is, when we talk about numbers,
+    we use the base 10 notation.
+  </p>
+
+  <p>
+    Let us consider counting.
+    Imagine Robinson Crusoe spending his days on an uninhabited island,
+    and he counts all the days by carving a vertical line every day into a rock.
+    He was raised using the base 10 numbers,
+    thus after reaching 9 lines,
+    he crosses them on the tenth day (thus marking them as ten).
+    That way he groups together every ten days.
+    Then, when he reaches ten of such groups,
+    then he carves a big box around them.
+    That is how he indicates hundreds.
+    Then he circles around every ten boxes,
+    indicating thousands, etc.
+    Then, reaching ten circles on one rock he would look for a new rock to carve days into.
+  </p>
+
+  <p>
+    Assume Robinson had arrived at the island 1st May 1817,
+    and was rescued on 30th April 1850.
+    How would his stones look like, after so much time?
+    He spent 33 years on the island, that is,
+    <m>33 \cdot 365 = 12045</m> days, not counting leap years.
+    The leap years are 1820, 1824, 1828, 1832, 1836, 1840, 1844, 1848, that is,
+    he spent <m>12053</m> days altogether on the island.
+    That means one of the ten thousands,
+    two of the thousands, zero of hundreds,
+    five of tens and three of ones.
+    That is, he would have one rock completely full with ten circles,
+    ten boxes in each circle, and ten of the ten lines crossed in each box.
+    Then on his second rock he would have two full circles,
+    and next to them he would have five of the ten crossed lines and three separate lines.
+  </p>
+
+  <p>
+    Robinson is basically writing the numbers in base 10 by grouping every ten together.
+    This is what we do, as well,
+    except maybe in a bit more abstract and automatic way.
+    When we think about the number 12053,
+    we automatically give the meaning to the positions with the appropriate powers of 10:
+    <md>
+      <mrow>12053 \amp = 1 \cdot 10~000 + 2 \cdot 1~000 + 0 \cdot 100 + 5 \cdot 10 + 3 \cdot 1 =</mrow>
+      <mrow>\amp = 1 \cdot 10^4 + 2 \cdot 10^3 + 0 \cdot 10^2 + 5 \cdot 10^1 + 3 \cdot 10^0</mrow>
+    </md>.
+  </p>
+
+  <p>
+    By writing the digits next to each other we indicate their value by their positioning.
+    The value of the rightmost digit is <m>1 = 10^0</m>,
+    then going from right to left the value increases by a factor of 10.
+    That is, the value of the second rightmost digit is <m>10^1</m>,
+    the digit left from it is <m>10^2</m>, etc.
+    We have ten digits altogether (0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
+    because every tens will be grouped together by this positioning.
+  </p>
+
+  <p>
+    All other numeral systems are based on the same idea.
+    Considering for example base 2 (the
+    <em>binary system</em>),
+    we will only need two digits: 0 and 1,
+    because every twos will be grouped together.
+    The values of the digits from right to left will be the two powers in increasing order,
+    that is, 1, 2, 4, 8, 16, 32, 64, etc.
+    We indicate by the number 2 in the lower right corner of the number that the base is 2.
+    For example
+    <me>
+      101011_{2} = 1 \cdot 2^5 + 0 \cdot 2^4 + 1 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0 = 32 + 8 + 2 + 1 = 43_{10}
+    </me>.
+  </p>
+
+  <p>
+    Numbers are almost exclusively represented in their binary form in Computer Science.
+  </p>
+
+  <p>
+    Another typical example from Computer Science could be the <em>octal system,</em>
+    i.e.<nbsp />base 8 (1 byte equals to 8 bits).
+    Then there are eight digits (0, 1, 2, 3, 4, 5, 6, 7),
+    and the values of the digits from right to left are the increasing powers of 8.
+    Similarly, in Computer Science,
+    base 16 <em>(hexadecimal number system)</em> is used.
+    Here, the values of the digits from right to left are the increasing powers of 16,
+    and we need 16 digits.
+    That is, we need separate digits for the digits corresponding to 10, 11, 12, 13, 14 and 15.
+    By convention,
+    we denote these digits by the first six letters of the alphabet:
+    <md>
+      <mrow>A_{16} \amp = 10_{10}, \amp  B_{16} \amp = 11_{10} \amp  C_{16} = 12_{10},</mrow>
+      <mrow>D_{16} \amp = 13_{10}, \amp  E_{14} \amp = 14_{10} \amp  F_{16} = 15_{10}</mrow>
+    </md>.
+  </p>
+
+  <p>
+    At first, it might look strange to use digits for the number ten,
+    eleven or twelve.
+    This is actually not so surprising if we think about some historical number systems.
+    Counting months,
+    or looking at the clock we use base 12 numeral system.
+    Until 1971 British people used base 12 for money exchange (12 pennies were worth 1 shilling).
+    Moreover, in the English language eleven and twelve have different names,
+    they are not generated as all the others between 10 and 20,
+    indicating that they may have been distinguished as extra digits.
+  </p>
+
+  <p>
+    Generally,
+    in base <m>n</m> we need <m>n</m> digits,
+    running from 0 to <m>(n-1)</m>.
+    We will write numbers in positional system, as above.
+    The values of the digits are the powers of <m>n</m> going from right to left.
+    That is, the rightmost digit has value <m>n^0 = 1</m>,
+    the second rightmost digit has value <m>n^1 = n</m>,
+    the digit left to it has value <m>n^2</m>, etc.
+    Thus, the number <m>a_ta_{t-1} \dots a_2a_1a_0</m> in base <m>n</m>
+    (where <m>0\leq a_k \leq n-1</m> for every <m>0\leq k\leq t</m>)
+    represents the number
+    <me>
+      (a_ta_{t-1} \dots a_2a_1a_0)_{n} = \sum_{k=0}^t a_k \cdot n^k = a_t \cdot n^t + a_{t-1} \cdot n^{t-1} + \dots + a_2 \cdot n^2 + a_1 \cdot n^1 + a_0 \cdot n^0
+    </me>.
+  </p>
+
+  <p>
+    Now, the question is how to write numbers into different numeral systems.
+    First of all,
+    to write numbers from a numeral system into base 10
+    we basically calculate the values of the digits using the positional systems,
+    and sum the results:
+    <md>
+      <mrow>10101_2 \amp = 1 \cdot 2^4 + 0 \cdot 2^3 +1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 16 + 4 + 1 = 21_{10}</mrow>
+      <mrow>1212_3 \amp = 1 \cdot 3^3 + 2 \cdot 3^2 + 1 \cdot 3^1 + 2 \cdot 3^0 = 27 + 18 + 3 + 2 = 50_{10}</mrow>
+      <mrow>372_8 \amp = 3 \cdot 8^2 + 7 \cdot 8^1 + 2 \cdot 8^0 = 192 + 56 + 2 = 250_{10}</mrow>
+      <mrow>AFE_{16} \amp = 10 \cdot 16^2 + 15 \cdot 16^1 + 14 \cdot 16^0 = 2560 + 240 + 14 = 2814_{10}</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Another method is to repeatedly multiply by the base and add the next digit.
+    For example:
+    <md>
+      <mrow>10101_2 \amp = (((1 \cdot 2 + 0 ) \cdot 2 + 1)\cdot 2 + 0) \cdot 2 + 1</mrow>
+      <mrow>\amp  ((2 \cdot 2 + 1)\cdot 2 + 0) \cdot 2 + 1 = (5 \cdot 2 + 0) \cdot 2 + 1=  21_{10}</mrow>
+      <mrow>1212_3 \amp = ((1 \cdot 3 + 2) \cdot 3 + 1) \cdot 3 + 2</mrow>
+      <mrow>\amp = (5 \cdot 3 + 1)\cdot 3 + 2 = 16 \cdot 3 + 2 = 50_{10}</mrow>
+      <mrow>372_8 \amp = (3 \cdot 8 + 7) \cdot 8 + 2 = 31 \cdot 8 + 2 = 250_{10}</mrow>
+      <mrow>AFE_{16} \amp = (10 \cdot 16 + 15) \cdot 16 + 14 = 175 \cdot 16 + 14 = 2814_{10}</mrow>
+    </md>.
+  </p>
+
+  <p>
+    The other direction is to find a base <m>n</m> representation of a decimal number.
+    Again, it can be done in two different ways.
+    The first is that we check the highest <m>n</m>-power which is not greater than our number,
+    execute division algorithm with this <m>n</m>-power,
+    and repeat the process for the remainder,
+    until the remainder is 0.
+    For example, write <m>250_{10}</m> in base 8.
+    The 8-powers are
+    (in increasing order)
+    1, 8, 64, 512,
+    the last one is already greater than 250.
+    Thus we execute the division algorithm with 64:
+    <m>250 = 3 \cdot 64 + 58</m>.
+    Now, 8 is not greater than 58,
+    thus we execute the division algorithm by 8:
+    <m>58 = 7 \cdot 8 + 2</m>.
+    Finally,
+    1 is the highest 8-power not greater than 2,
+    and after the division algorithm we obtain <m>2 = 2 \cdot 1 +0</m>.
+    Thus
+    <me>
+      250_{10} = 3 \cdot 64 + 7 \cdot 8 + 2 \cdot 1 = 3 \cdot 8^2 + 7 \cdot 8^1 + 2 \cdot 8^0 = 372_8
+    </me>.
+  </p>
+  <exercise xml:id="ex_numsyst1">
+    <statement>
+      <p>
+        Write <m>21_{10}</m> in base 2, <m>50_{10}</m> in base 3,
+        <m>2814_{10}</m> in base 16 using the method explained above.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    The other method is to execute the division algorithm repeatedly on the quotients until the quotient is not 0,
+    and then the number will consist of the remainders <em>backwards</em>.
+    For example,
+    if we want to rewrite <m>2814_{10}</m> into base 16, then
+    <md>
+      <mrow>2814 \amp = 175 \cdot 16 + 14,</mrow>
+      <mrow>175 \amp = 10 \cdot 16 + 15,</mrow>
+      <mrow>10 \amp = 0 \cdot 16 + 10</mrow>
+    </md>.
+  </p>
+
+  <p>
+    The remainders backwards are <m>10=A</m>,
+    <m>15=F</m>, <m>14=E</m>, thus
+    <me>
+      2814_{10} = AFE_{16}
+    </me>.
+  </p>
+  <exercise xml:id="ex_numsyst2">
+    <statement>
+      <p>
+        Write <m>21_{10}</m> in base 2, <m>50_{10}</m> in base 3,
+        <m>250_{10}</m> in base 8 using the division algorithm.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    How would we write a number of an arbitrary base into another (arbitrary) base?
+    One method could be that we simply rewrite it first into base 10,
+    then write it into the other system.
+    For example,
+    if we need to write <m>372_8</m> into base 3, we can do the following.
+    Rewrite <m>372_8</m> first into base 10:
+    <me>
+      372_8 = 3 \cdot 8^2 + 7 \cdot 8^1 + 2 \cdot 8^0 = 192 + 56 + 2 = 250_{10}
+    </me>.
+  </p>
+
+  <p>
+    Now, rewrite <m>250_{10}</m> into base 3:
+    <md>
+      <mrow>250 \amp = 83 \cdot 3 + 1,</mrow>
+      <mrow>83 \amp = 27 \cdot 3 + 2,</mrow>
+      <mrow>27 \amp = 9 \cdot 3 + 0,</mrow>
+      <mrow>9 \amp = 3 \cdot 3 + 0,</mrow>
+      <mrow>3 \amp = 1 \cdot 3 + 0,</mrow>
+      <mrow>1 \amp = 0 \cdot 3 + 1</mrow>
+    </md>.
+  </p>
+
+  <p>
+    The remainders backwards are 1, 0, 0, 0, 2, 1, thus
+    <me>
+      372_8 = 250_{10} = 100021_{3}
+    </me>.
+  </p>
+
+  <p>
+    Finally, we mention that some rewriting can be done much quicker if one base is a full power of another.
+    For example, <m>8=2^3</m>,
+    and then every base 8 digit can be rewritten easily to three base 2 digits:
+    <md>
+      <mrow>0_8 \amp = 000_2, \amp  1_8 \amp = 001_2,</mrow>
+      <mrow>2_8 \amp = 010_2, \amp  3_8 \amp = 011_2,</mrow>
+      <mrow>4_8 \amp = 100_2, \amp  5_8 \amp = 101_2,</mrow>
+      <mrow>6_8 \amp = 110_2, \amp  7_8 \amp = 111_2</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Going from right to left,
+    every three base 2 digits can be easily rewritten into base 8, as well.
+    Thus, it is easy to rewrite <m>372_8</m> into base 2 or <m>10101_2</m> into base 8:
+    <md>
+      <mrow>372_8 \amp = 011~111~010_2 = 11111010_2,</mrow>
+      <mrow>10101_2 \amp = 010~101_2 = 25_8</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Similarly,
+    as <m>16 = 2^4</m>,
+    every base 16 digit can be rewritten easily to four base 2 digits:
+    <md>
+      <mrow>0_{16} \amp = 0000_2, \amp  1_{16} \amp = 0001_2,</mrow>
+      <mrow>2_{16} \amp = 0010_2, \amp  3_{16} \amp = 0011_2,</mrow>
+      <mrow>4_{16} \amp = 0100_2, \amp  5_{16} \amp = 0101_2,</mrow>
+      <mrow>6_{16} \amp = 0110_2, \amp  7_{16} \amp = 0111_2,</mrow>
+      <mrow>8_{16} \amp = 1000_2, \amp  9_{16} \amp = 1001_2,</mrow>
+      <mrow>A_{16} \amp = 1010_2, \amp  B_{16} \amp = 1011_2,</mrow>
+      <mrow>C_{16} \amp = 1100_2, \amp  D_{16} \amp = 1101_2,</mrow>
+      <mrow>E_{16} \amp = 1110_2, \amp  F_{16} \amp = 1111_2</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Going from right to left,
+    every four base 2 digits can be easily rewritten into base 16, as well.
+    Thus, it is easy to rewrite
+    <m>AFE_{16}</m> into base 2 or <m>10101_2</m> into base 16:
+    <md>
+      <mrow>AFE_{16} \amp = 1010~1111~1110_2 = 101011111110_2,</mrow>
+      <mrow>10101_2 \amp = 0001~0101_2 = 15_{16}</mrow>
+    </md>.
+  </p>
+
+  <p>
+    We have to stress, though,
+    that this method only works <em>if one base is a full power of the other</em>.
+    Finally, base 8 numbers can be easily changed to base 16
+    (and vice versa)
+    by first changing them to base 2,
+    and then into the other base:
+    <md>
+      <mrow>372_8 \amp = 011~111~010_2 = 11111010_2 = 1111~1010_2 = FA_{16},</mrow>
+      <mrow>AFE_{16} \amp = 1010~1111~1110_2 = 101011111110_2 = 101~011~111~110_2 = 5376_8</mrow>
+    </md>.
+  </p>
+  <exercise xml:id="ex_numsyst3">
+    <statement>
+      <ol>
+        <li>
+          <title>(a)</title>
+          <p>
+            Write the following numbers into base 10:
+            <m>111001101_2</m>, <m>1010101_2</m>, <m>11111_2</m>,
+            <m>10110_2</m>, <m>101010101_2</m>,
+            <m>10001000_2</m>, <m>1010111_2</m>,
+            <m>111101_2</m>, <m>21102_3</m>,
+            <m>1234_5</m>, <m>1234_7</m>,
+            <m>1234_8</m>, <m>777_8</m>, <m>345_8</m>,
+            <m>2012_8</m>, <m>4565_8</m>, <m>1123_8</m>,
+            <m>666_8</m>, <m>741_8</m>,
+            <m>CAB_{16}</m>, <m>BEE_{16}</m>,
+            <m>EEE_{16}</m>, <m>4D4_{16}</m>,
+            <m>ABC_{16}</m>, <m>9B5_{16}</m>,
+            <m>DDD_{16}</m>, <m>3F2_{16}</m>.
+          </p>
+        </li>
+
+        <li>
+          <title>(b)</title>
+          <p>
+            Write the following decimal numbers into base 2, 3, 5, 7, 8, 9, 16:
+            <m>64_{10}</m>, <m>50_{10}</m>, <m>16_{10}</m>,
+            <m>100_{10}</m>, <m>2012_{10}</m>, <m>200_{10}</m>,
+            <m>151_{10}</m>, <m>48_{10}</m>,
+            <m>99_{10}</m>, <m>999_{10}</m>.
+          </p>
+        </li>
+
+        <li>
+          <title>(c)</title>
+          <p>
+            Rewrite the given numbers into the particular numeral system:
+            <md>
+              <mrow>1121_3 \amp = \dots \dots \, _2,</mrow>
+              <mrow>4312_5 \amp = \dots \dots \, _7,</mrow>
+              <mrow>654_8 \amp = \dots \dots \, _9,</mrow>
+              <mrow>AD2_{16} \amp = \dots \dots \, _7,</mrow>
+              <mrow>543_8 \amp = \dots \dots \, _3,</mrow>
+              <mrow>543_9 \amp = \dots \dots \, _3</mrow>
+            </md>.
+          </p>
+        </li>
+
+        <li>
+          <title>(d)</title>
+          <p>
+            Write the following numbers into base 2 and base 16:
+            <m>777_8</m>, <m>345_8</m>,
+            <m>2012_8</m>, <m>456_8</m>,
+            <m>235_8</m>, <m>147_8</m>, <m>741_8</m>,
+            <m>CAB_{16}</m>, <m>BEE_{16}</m>,
+            <m>EEE_{16}</m>, <m>4D3_{16}</m>,
+            <m>ABC_{16}</m>, <m>FEE_{16}</m>,
+            <m>9B5_{16}</m>, <m>3F2_{16}</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+</section>
+

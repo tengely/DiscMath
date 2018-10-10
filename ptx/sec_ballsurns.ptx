@@ -1,0 +1,307 @@
+
+
+<section xml:id="sec_ballsurns">
+  <title>Balls from urns</title>
+  <p>
+    In this Section we apply our knowledge on counting to solve the problem of pulling balls out of a urn.
+    In the usual Hungarian lottery, 5 numbers are chosen randomly from 90.
+    That is, there are 90 balls numbered from 1 to 90,
+    and 5 balls are chosen such that none of them will be put back after pulling them out,
+    and in the end the order they have been chosen is not interesting,
+    only what the five numbers are.
+    This problem can have four different versions,
+    depending on whether or not the order of the chosen balls counts,
+    and whether or not we put back a ball into the urn after pulling it out.
+  </p>
+
+  <p>
+    Let us see the four different cases.
+    If the order counts and we allow repetition,
+    then the answer is clearly <m>90^5</m>:
+    for each of the five choices we have 90 balls to choose from.
+    (This is the same problem as with the sequences in <xref ref="sec_sequences">Section</xref>.)
+    If we do not allow repetition (but the order counts),
+    then this is the same problem as with the Formula 1 competition (<xref ref="sec_orderedsubsets">Section</xref>):
+    for first choice we have 90 balls to choose from,
+    for second choice we have 89 balls to choose from (because we cannot choose what we chose first),
+    for third choice we have 88 balls to choose from (because we cannot choose what we chose first or second),
+    for fourth choice we have 87 balls to choose from (because we cannot choose what we chose first,
+    second or third),
+    finally, for fifth choice we have 86 balls to choose from (because we cannot choose what we chose before).
+    That is, the number of choices we have is
+    <me>
+      90 \cdot 89 \cdot 88 \cdot 87 \cdot 86 = \frac{90!}{85!} = \frac{90!}{(90-5)!}
+    </me>.
+  </p>
+
+  <p>
+    Now, consider the case where the order does not count and we do not allow repetition.
+    Then, each of those cases are considered to be the same,
+    where we chose exactly the same 5 balls, only in different orders.
+    Five balls have <m>5!</m>-many orders,
+    thus the number of choices for choosing 5 balls out of 90 without any repetition such that the order does not count is
+    <me>
+      \frac{90!}{85! \cdot 5!} = \binom{90}{5}
+    </me>.
+  </p>
+
+  <p>
+    This is the same problem we discussed in <xref ref="sec_nchoosek">Section</xref>.
+    Finally, consider the last case:
+    choose 5 balls out of 90 such that repetition is allowed,
+    and the order does not count.
+    We claim that this is the same problem as 90 pirates distributing 5 gold pieces among themselves (<xref ref="sec_money">Section</xref>).
+    Indeed,
+    for every gold distribution we can consider to choose those balls which have the same number as the pirates who received gold pieces,
+    exactly as many times as the number of gold pieces they received.
+    For example,
+    if the first pirate received 3 gold pieces and the tenth pirate received two,
+    this corresponds to choosing the numbers <m>1, 1, 1, 10, 10</m>.
+    Similarly,
+    for every choice of numbers we have a distribution:
+    a pirate gets as many gold pieces as the number of times its corresponding ball has been chosen.
+    Thus, by <xref ref="thm_pirates">Theorem</xref>
+    the number of possibilities to choose 5 numbers out of 90 if repetition is allowed and the order does not count is
+    <me>
+      \binom{90+5-1}{90-1} = \binom{90+5-1}{5}
+    </me>.
+  </p>
+
+  <p>
+    <xref ref="tab_90choose5">Table</xref> collects these results.
+  </p>
+
+  <table xml:id="tab_90choose5">
+    <caption>Choosing 5 balls out of 90</caption>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell>order counts</cell>
+        <cell>order does not count</cell>
+      </row>
+      <row bottom="medium">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell  >no repetition</cell>
+        <cell><m>90 \cdot 89 \cdot 88 \cdot 87 \cdot 86</m></cell>
+        <cell><m>\binom{90}{5}</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>with repetition</cell>
+        <cell><m>90^5</m></cell>
+        <cell><m>\binom{90+5-1}{90-1} = \binom{90+5-1}{5}</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+  </table>
+
+  <p>
+    These ideas can of course be generalized.
+    Say, we have <m>n</m> numbered balls in a urn,
+    and we want to choose <m>k</m> out of them,
+    and we are interested in the number of possible ways to do this.
+    There are four different problems according to whether or not the order of the chosen balls counts,
+    and whether or not we put back a ball into the urn after pulling it out.
+    Let us consider the four problems one by one.
+  </p>
+
+  <p>
+    If the order counts and we allow repetition,
+    then the answer is clearly <m>n^k</m>:
+    for each of the <m>k</m> choices we have <m>n</m> balls to choose from,
+    as in <xref ref="sec_sequences">Section</xref>.
+    If we do not allow repetition (but the order counts),
+    then this is the same problem as with the Formula 1 competition (<xref ref="sec_orderedsubsets">Section</xref>):
+    for first choice we have <m>n</m> balls to choose from,
+    for second choice we have <m>(n-1)</m> balls to choose from (because we cannot choose what we chose first),
+    etc.
+    For the final (e.g.<nbsp /><m>k</m>th) choice we have <m>(n-k+1)</m> balls to choose from (because we cannot choose those <m>(k-1)</m> balls what we chose before).
+    That is, the number of choices we have is
+    <me>
+      n \cdot (n-1) \cdot \dots \cdot (n-k+1) = \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1) \cdot (n-k)!}{(n-k)!} = \frac{n!}{(n-k)!}
+    </me>.
+  </p>
+
+  <p>
+    Note, here that the first formula gives a correct answer if <m>k>n</m>,
+    that is, when there is no way we can choose <m>k</m> balls out of <m>n</m>.
+    Now, consider the case where the order does not count and we do not allow repetition.
+    Then, each of those cases are considered to be the same,
+    where we chose exactly the same <m>k</m> balls, only in different orders.
+    So <m>k</m> balls have <m>k!</m>-many orders,
+    thus the number of choices for choosing <m>k</m> balls out of <m>n</m> without any repetition such that the order does not count is
+    <me>
+      \frac{n!}{(n-k)! \cdot k!} = \binom{n}{k}
+    </me>.
+  </p>
+
+  <p>
+    Again, this answer is correct if <m>k\leq n</m>,
+    otherwise the answer is 0.
+    This is the same problem we discussed in <xref ref="sec_nchoosek">Section</xref>.
+    Finally, consider the last case:
+    choose <m>k</m> balls out of <m>n</m> such that repetition is allowed,
+    and the order does not count.
+    This is the same problem as <m>n</m> pirates distributing <m>k</m> gold pieces among themselves (<xref ref="sec_money">Section</xref>).
+    Indeed,
+    for every gold distribution we can consider to choose those balls which have the same number as the pirates who received gold pieces,
+    and exactly as many times as the number of gold pieces they received.
+    Similarly,
+    for every choice of balls we have a distribution:
+    a pirate gets as many gold pieces as the number of times its corresponding ball has been chosen.
+    Thus, by <xref ref="thm_pirates">Theorem</xref>
+    the number of possibilities to choose <m>k</m> numbers out of <m>n</m> if repetition is allowed and the order does not count is
+    <me>
+      \binom{n+k-1}{n-1} = \binom{n+k-1}{k}
+    </me>.
+  </p>
+
+  <p>
+    <xref ref="tab_nchoosek">Table</xref>
+    collects these results in a condensed form.
+  </p>
+
+  <table xml:id="tab_nchoosek">
+    <caption>Choosing <m>k</m> balls out of <m>n</m></caption>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell>order counts</cell>
+        <cell>order does not count</cell>
+      </row>
+      <row bottom="medium">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell  >no repetition (<m>n\lt  k</m>)</cell>
+        <cell><m>0</m></cell>
+        <cell><m>0</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>no repetition (<m>n\geq k</m>)</cell>
+        <cell><m>\frac{n!}{(n-k)!}</m></cell>
+        <cell><m>\binom{n}{k}</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>with repetition</cell>
+        <cell><m>n^k</m></cell>
+        <cell><m>\binom{n+k-1}{k}</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+  </table>
+
+  <exercise xml:id="ex_ballsinurn1">
+    <statement>
+      <p>
+        An urn contains <m>n</m> numbered balls.
+        How many ways can we choose <m>k</m> balls out of the urn if
+
+        <ol>
+          <li>
+            <title>(a)</title>
+            <p>
+              <m>n = 9</m>,
+              <m>k=3</m>, with repetition, the order does not count;
+            </p>
+          </li>
+
+          <li>
+            <title>(b)</title>
+            <p>
+              <m>n = 3</m>,
+              <m>k=9</m>, with repetition, the order does not count;
+            </p>
+          </li>
+
+          <li>
+            <title>(c)</title>
+            <p>
+              <m>n = 10</m>, <m>k=5</m>,
+        without repetition, the order counts;
+            </p>
+          </li>
+
+          <li>
+            <title>(d)</title>
+            <p>
+              <m>n = 5</m>, <m>k=10</m>,
+        without repetition, the order counts;
+            </p>
+          </li>
+
+          <li>
+            <title>(e)</title>
+            <p>
+              <m>n = 45</m>,
+              <m>k=6</m>, without repetition, the order does not count;
+            </p>
+          </li>
+
+          <li>
+            <title>(f)</title>
+            <p>
+              <m>n = 6</m>,
+              <m>k=45</m>, without repetition, the order does not count;
+            </p>
+          </li>
+
+          <li>
+            <title>(g)</title>
+            <p>
+              <m>n = 100</m>, <m>k=10</m>,
+              with repetition, the order counts;
+            </p>
+          </li>
+
+          <li>
+            <title>(h)</title>
+            <p>
+              <m>n = 10</m>, <m>k=100</m>,
+              with repetition, the order counts.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+</section>
+

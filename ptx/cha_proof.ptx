@@ -1,0 +1,11 @@
+
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="cha_proof">
+  <title>Proof techniques</title>
+  <xi:include  href="section3-1.ptx" />
+  <xi:include  href="section3-2.ptx" />
+  <xi:include  href="section3-3.ptx" />
+  <xi:include  href="section3-4.ptx" />
+  <xi:include  href="section3-5.ptx" />
+</chapter>
+

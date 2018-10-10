@@ -1,0 +1,1130 @@
+
+
+<section>
+  <title>Counting</title>
+  <ol>
+    <li>
+      <p>
+        <xref ref="ex_sumk"></xref>
+        Let <m>n</m> be odd first, 
+        like it was with <m>n=199</m>. 
+        Then if we rearrange the summands
+        (first with last, second with one but last, etc.).
+        
+        then the middle term will remain, 
+        which is <m>\frac{n+1}{2}</m>:
+        <md>
+          <mrow>\amp  1 + 2 + \dots + \left(n-1\right) + n = \left(1 + n\right) + \left(2 + n-1\right) + \dots</mrow>
+          <mrow>\amp + \left(\frac{n-1}{2} + \frac{n+3}{2} \right) + \frac{n+1}{2} = (n+1) + (n+1) + \dots</mrow>
+          <mrow>\amp + (n+1) +  \frac{n+1}{2} = \left( n+1 \right) \cdot \frac{n-1}{2} + \frac{n+1}{2}</mrow>
+          <mrow>\amp = \left( n+1 \right) \cdot \left( \frac{n-1}{2} + \frac{1}{2} \right) = \frac{(n+1) \cdot n}{2}</mrow>
+        </md>.
+        If <m>n</m> is even, 
+        then after rearranging the summands, no term will remain:
+        <md>
+          <mrow>\amp  1 + 2 + \dots + \left(n-1\right) + n = \left(1 + n\right) + \left(2 + n-1\right) + \dots</mrow>
+          <mrow>\amp + \left(\frac{n}{2} + \frac{n+2}{2} \right) = (n+1) + (n+1) + \dots</mrow>
+          <mrow>\amp + (n+1) = \left( n+1 \right) \cdot \frac{n}{2} = \frac{(n+1) \cdot n}{2}</mrow>
+        </md>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_5people3hanshake"></xref>
+        If everyone shakes hands with three other,
+        then they do not shake hand with exactly one person.
+        It is easier to consider who does not shake hand with whom.
+        The first person does not shake hand with someone.
+        Then of the remaining three people the first does not shake hand with someone from these three.
+        That leaves one person, who does not shake hand with someone else,
+        but everybody else has already been accounted for about not shaking hands with somebody.
+        Thus, it is not possible that each of the five people shake hands with three others.
+        This argument does not work if someone is allowed to shake hands with someone else more than once.
+        Nevertheless, the answer is still <em>no</em>.
+        Use the same argument we used for proving <xref ref="cor_handshakes">Corollary</xref>.
+        If we sum up all the handshakes for everyone,
+        we obtain <m>5 \cdot 3 = 15</m>,
+        as each of the 5 people shakes hand with 3 others.
+        This way, we counted every handshake twice,
+        thus to obtain the number of handshakes we need to divide it by 2.
+        But <m>15/2</m> is not an integer,
+        while the number of handshakes should be an integer.
+        This contradiction proves that it is not possible that each of 5 people shakes hand with 3 others.
+        For 7 people we can use this argument, again.
+        If we sum up all the handshakes for everyone,
+        we obtain <m>7 \cdot 3 = 21</m>,
+        as each of the 7 people shakes hand with 3 others.
+        This way, we counted every handshake twice,
+        thus to obtain the number of handshakes we need to divide it by 2.
+        But <m>21/2</m> is not an integer,
+        while the number of handshakes should be an integer.
+        This contradiction proves that it is not possible that each of 7 people shakes hand with 3 others.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_kisses"></xref> The four boys shake hands with each other,
+        that is, <m>\frac{4 \cdot 3}{2} = 6</m> handshakes.
+        The four girls kisses each other,
+        those are <m>\frac{4 \cdot 3}{2} = 6</m> kisses by the same formula we use for handshakes.
+        Finally, a boy and a girl kisses, as well.
+        All four boys kiss all four girls on the cheek,
+        which is <m>4 \cdot 4 = 16</m> more kisses.
+        Ultimately, there are 6 handshakes and 22 kisses.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_isitpossible1"></xref>
+
+        <ol>
+          <li>
+            <p>
+              Not possible.
+              If there are five packs,
+        each of them containing odd many rabbits,
+              then altogether in the five packs there are odd many rabbits (odd<m>+</m>odd<m>+</m>odd<m>+</m>odd<m>+</m>odd is odd).
+              As 100 is not an odd number,
+              it is not possible to do the required distribution.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              It is possible,
+              e.g.<nbsp /><m>3 \cdot 3 \cdot 1 \cdot 1\cdot 1</m>.
+              Another possibility could be <m>9 \cdot 1 \cdot (-1) \cdot 1 \cdot (-1)</m>,
+              or simply <m>9</m> (as only one integer).
+            </p>
+          </li>
+
+          <li>
+            <p>
+              It is possible,
+              e.g.<nbsp /> <m>3 \cdot 3 \cdot 1 \cdot 1\cdot 1\cdot 1 \cdot (-1) \cdot 1 \cdot (-1)</m>,
+              or another possibility is <m>9 \cdot 1 \cdot (-1) \cdot 1 \cdot (-1) \cdot 1 \cdot (-1) \cdot 1 \cdot (-1)</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Not possible.
+              If the product of integer numbers is 9, then all of them are odd.
+              But then the sum of 9 odd integer numbers is odd again,
+              and hence cannot be 0.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_sum24"></xref>
+
+        <ol>
+          <li>
+            <p>
+              We can apply <xref ref="prop_sumk">Proposition</xref> and obtain
+              <me>
+                1 + 2 + 3 + \dots + 23 + 24 = \frac{24\cdot 25}{2} = 300
+              </me>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              This is a bit more tricky, 
+              but not much. 
+              One needs to calculate the denominator,
+              as we just calculated the numerator. 
+              Now,
+              <md>
+                <mrow>1-2+3-4+ \dots + 23-24 \amp = (1-2) + (3-4) + \dots + (23-24)</mrow>
+                <mrow>(-1) + (-1) + \dots + (-1) \amp = -12</mrow>
+              </md>.
+              Thus the fraction we needed to compute is <m>\frac{300}{-12} = -25</m>. 
+
+              Another way to calculate the denominator could have been the following:
+              <md>
+                <mrow>\amp 1-2+3-4+ \dots + 23-24 = 1+2 + 3+4 + \dots + 23+24</mrow>
+                <mrow>\amp - 2 \cdot (2 + 4 + \dots + 24) = 300 - 2 \cdot 2 \cdot (1 + 2 + \dots + 12)</mrow>
+                <mrow>\amp = 300 - 4 \cdot \frac{12\cdot 13}{2} = 300- 312 = -12</mrow>
+              </md>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_noofbase2numbers"></xref>
+        There is only one possibility for the first digit
+        (it cannot be 0, only 1),
+        
+        and there are two possibilities for every other digit. 
+        Thus, the number of <m>n</m>-digit positive integers in base 2 is
+        <me>
+          1 \cdot \underbrace{2 \cdot \dots \cdot 2}_{n-1} = 2^{n-1}
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_palindrome"></xref>
+        If <m>abc_{10}</m> is a base 10 three-digit palindrome number, 
+        then <m>a = c</m>, and <m>a \neq 0</m>. 
+        Thus we can choose <m>a</m> in 9-many ways and <m>b</m> in 10-many ways, 
+        and hence the number of three-digit palindrome numbers is <m>9 \cdot 10 = 90</m>. 
+
+        For determining the at most three-digit palindrome numbers, 
+        we need to find the one-digit long and two-digit long palindrome numbers. 
+        Every one-digit number is a palindrome number. 
+        There are exactly 9 two-digit palindrome numbers: 
+        the <m>aa_{10}</m> numbers for <m>a\neq 0</m>. 
+        That is, 
+        there are <m>9+9+90=108</m> at most three-digit palindrome numbers. 
+
+        Now, consider the number of <m>n</m>-digit palindrome numbers in base <m>k</m>.
+        One thing to note is that the first half of the number determines the back half completely. 
+        Thus we need to count how many ways can we choose the first half. 
+        Let <m>n</m> be even first. 
+        Then the first digit is the same as the last digit and differs from 0: 
+        there are <m>(k-1)</m>-many possibilities to choose for the first digit. 
+        The second digit is the same as the one but last: 
+        there are <m>k</m>-possibilities to choose this digit, etc. 
+        Finally, the digit at the <m>n/2</m> position is the same as the digit at the <m>n/2+1</m> position:
+        there are <m>k</m> possibilities to choose this digit. 
+        Thus, altogether the number of <m>n</m>-digit base <m>k</m> palindrome numbers
+        (for even <m>n</m>)
+        is
+        <me>
+          (k-1) \cdot \underbrace{k \cdot \dots \cdot k}_{n/2-1} = (k-1) \cdot k^{n/2-1}
+        </me>.
+        If <m>n</m> is odd, 
+        then the same argument works,
+        except that the middle digit will not have a pair. 
+        Thus, altogether the number of <m>n</m>-digit base <m>k</m> palindrome numbers
+        (for odd <m>n</m>)
+        is
+        <me>
+          (k-1) \cdot \underbrace{k \cdot \dots \cdot k}_{(n-1)/2} = (k-1) \cdot k^{(n-1)/2}
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_Hungarianwords"></xref>
+        There are 44 letters in the Hungarian alphabet,
+        therefore there are <m>44^{n}</m>-many <m>n</m> letter long words in Hungarian by <xref ref="thm_sequence">Theorem</xref>.
+        That is, <m>44^5 , 44^7, 44^{10}</m>-many
+        <m>5, 7, 10</m> letter long words can be created, respectively.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_toto"></xref>
+        There are three possibilities for every game, 
+        there are 14 games, 
+        thus the number of required tickets is
+        <me>
+          \underbrace{3 \cdot 3 \cdot \dots \cdot 3}_{14} = 3^{14} = 4~782~969
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_company"></xref>
+        We apply <xref ref="thm_sequence">Theorem</xref>. 
+        Now, we allow spaces, 
+        thus the alphabet contains 27 letters. 
+        There are <m>27^{20}</m> possibilities for a 20 letter long string (name), 
+        2 possibilities for the gender, 
+        <m>27^{10}</m> possibilities for a 10 letter long string
+        (job title),
+        
+        and <m>10^8</m> possibilities for an at most 8 digit long base 10 number (payment). 
+        Thus, the number of possibilities is
+        <me>
+          27^{20} \cdot 2 \cdot 27^{10} \cdot 10^{8}
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_subsetsof3elemetset"></xref>
+        The subsets of <m>\halmaz{1, 2, 3}</m> are <m>\halmaz{} = \emptyset</m>,
+        <m>\halmaz{1}</m>,
+        <m>\halmaz{2}</m>, <m>\halmaz{3}</m>, <m>\halmaz{1, 2}</m>,
+        <m>\halmaz{1, 3}</m>, <m>\halmaz{2, 3}</m>, <m>\halmaz{1, 2, 3}</m>.
+        The subsets of <m>\halmaz{a, b, c}</m> are <m>\halmaz{} = \emptyset</m>,
+        <m>\halmaz{a}</m>, <m>\halmaz{b}</m>,
+        <m>\halmaz{c}</m>, <m>\halmaz{a, b}</m>,
+        <m>\halmaz{a, c}</m>, <m>\halmaz{b, c}</m>, <m>\halmaz{a, b, c}</m>.
+        The subsets of <m>\halmaz{\text{ Alice, Beth, Carrie } }</m> are <m>\halmaz{} = \emptyset</m>,
+        <m>\halmaz{\text{ Alice } }</m>,
+        <m>\halmaz{\text{ Beth } }</m>,
+        <m>\halmaz{\text{ Carrie } }</m>,
+        <m>\halmaz{\text{ Alice, Beth } }</m>,
+        <m>\halmaz{\text{ Alice, Carrie } }</m>,
+        <m>\halmaz{\text{ Beth, Carrie } }</m>,
+        and finally <m>\halmaz{\text{ Alice, Beth, Carrie } }</m>.
+        The subsets of <m>\halmaz{apple, banana,
+        cherry}</m> are <m>\halmaz{} = \emptyset</m>,
+        <m>\halmaz{\text{ apple } }</m>,
+        <m>\halmaz{\text{ banana } }</m>,
+        <m>\halmaz{\text{ cherry } }</m>,
+        <m>\halmaz{\text{ apple, banana } }</m>,
+        <m>\halmaz{\text{ apple, cherry } }</m>,
+        <m>\halmaz{\text{ banana, cherry } }</m>,
+        and <m>\halmaz{\text{ apple, banana, cherry } }</m>.
+        All sets have 8 subsets.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_abcde"></xref> The set <m>\halmaz{a, b, c, d}</m> has 16 subsets:
+        <m>\halmaz{} = \emptyset</m>, <m>\halmaz{a}</m>,
+        <m>\halmaz{b}</m>, <m>\halmaz{c}</m>,
+        <m>\halmaz{d}</m>, <m>\halmaz{a, b}</m>,
+        <m>\halmaz{a, c}</m>, <m>\halmaz{a, d}</m>,
+        <m>\halmaz{b, c}</m>, <m>\halmaz{b, d}</m>, <m>\halmaz{c, d}</m>,
+        <m>\halmaz{a, b, c}</m>, <m>\halmaz{a, b, d}</m>, <m>\halmaz{a, c, d}</m>,
+        <m>\halmaz{b, c, d}</m>, <m>\halmaz{a, b, c, d}</m>.
+        The set <m>\halmaz{a, b, c, d, e}</m> has 32 subsets:
+        <m>\halmaz{} = \emptyset</m>, <m>\halmaz{a}</m>, <m>\halmaz{b}</m>, <m>\halmaz{c}</m>, <m>\halmaz{d}</m>, <m>\halmaz{e}</m>, <m>\halmaz{a, b}</m>,
+        <m>\halmaz{a, c}</m>,
+        <m>\halmaz{a, d}</m>, <m>\halmaz{a, e}</m>, <m>\halmaz{b, c}</m>,
+        <m>\halmaz{b, d}</m>, <m>\halmaz{b, e}</m>,
+        <m>\halmaz{c, d}</m>, <m>\halmaz{c, e}</m>,
+        <m>\halmaz{d, e}</m>, <m>\halmaz{a, b, c}</m>,
+        <m>\halmaz{a, b, d}</m>, <m>\halmaz{a, b, e}</m>,
+        <m>\halmaz{a, c, d}</m>, <m>\halmaz{a, c, e}</m>,
+        <m>\halmaz{a, d, e}</m>, <m>\halmaz{b, c, d}</m>,
+        <m>\halmaz{b, c, e}</m>, <m>\halmaz{b, d, e}</m>,
+        <m>\halmaz{c, d, e}</m>, <m>\halmaz{a, b, c, d}</m>,
+        <m>\halmaz{a, b, c, e}</m>,
+        <m>\halmaz{a, b, d, e}</m>, <m>\halmaz{a, c, d, e}</m>,
+        <m>\halmaz{b, c, d, e}</m>, <m>\halmaz{a, b, c, d, e}</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_subsettrytheproof"></xref>
+        The decision algorithm is collected in the following table (<m>T</m> is the subset of <m>S = \halmaz{a, b, c}</m>):
+        <tabular> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell><m>a \in T</m></cell> <cell><m>a \notin T</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell><m>b \in T</m></cell> <cell><m>b \notin T</m></cell> <cell><m>b \in T</m></cell> <cell><m>b \notin T</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell><m>c \in T</m></cell> <cell><m>c \notin T</m></cell> <cell><m>c \in T</m></cell> <cell><m>c \notin T</m></cell> <cell><m>c \in T</m></cell> <cell><m>c \notin T</m></cell> <cell><m>c \in T</m></cell> <cell><m>c \notin T</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell><m>\halmaz{a, b, c}</m></cell> <cell><m>\halmaz{a, b}</m></cell> <cell><m>\halmaz{a, c}</m></cell> <cell><m>\halmaz{a}</m></cell> <cell><m>\halmaz{b, c}</m></cell> <cell><m>\halmaz{b}</m></cell> <cell><m>\halmaz{c}</m></cell> <cell><m>\halmaz{} = \emptyset</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> </tabular> First we decide whether or not <m>a \in T</m>, then
+        (independently on our first choice)
+        we decide whether or not <m>b \in T</m>, then
+        (independently on our earlier choices)
+        we decide whether or not <m>c \in T</m>.
+        That way, we obtain <m>2 \cdot 2 \cdot 2 = 8</m> subsets.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_subsetabcd"></xref>
+        There are 8 subsets of <m>\halmaz{a, b, c, d}</m> not containing <m>d</m>:
+        <m>\halmaz{} = \emptyset</m>, <m>\halmaz{a}</m>,
+        <m>\halmaz{b}</m>, <m>\halmaz{c}</m>, <m>\halmaz{a, b}</m>,
+        <m>\halmaz{a, c}</m>, <m>\halmaz{b, c}</m>, <m>\halmaz{a, b, c}</m>.
+        These are the subsets of <m>\halmaz{a, b, c}</m>.
+        There are 8 subsets of <m>\halmaz{a, b, c, d}</m> containing <m>d</m>:
+        <m>\halmaz{d}</m>, <m>\halmaz{a, d}</m>, <m>\halmaz{b, d}</m>,
+        <m>\halmaz{c, d}</m>, <m>\halmaz{a, b, d}</m>, <m>\halmaz{a, c, d}</m>,
+        <m>\halmaz{b, c, d}</m>, <m>\halmaz{a, b, c, d}</m>.
+        These are the subsets of <m>\halmaz{a, b, c}</m> with the element <m>d</m> added to them.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_subsetabcd01"></xref>
+        The binary representation of the subsets of
+        <m>\halmaz{a, b, c, d}</m> can be seen in <xref ref="tab_abcdbinary">Table</xref>
+        on <xref ref="tab_abcdbinary">page</xref>. <table xml:id="tab_abcdbinary"> <caption>Subsets of <m>\halmaz{a, b, c, d}</m> represented as binary numbers</caption> <tabular> <row> <cell>subset of
+        <m>\halmaz{a, b, c, d}</m></cell> <cell>binary number</cell> <cell>decimal number</cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell><m>\halmaz{}</m></cell> <cell><m>0000_2</m></cell> <cell>0</cell> </row> <row> <cell><m>\halmaz{a}</m></cell> <cell><m>0001_2</m></cell> <cell>1</cell> </row> <row> <cell><m>\halmaz{b}</m></cell> <cell><m>0010_2</m></cell> <cell>2</cell> </row> <row> <cell><m>\halmaz{a, b}</m></cell> <cell><m>0011_2</m></cell> <cell>3</cell> </row> <row> <cell><m>\halmaz{c}</m></cell> <cell><m>0100_2</m></cell> <cell>4</cell> </row> <row> <cell><m>\halmaz{a, c}</m></cell> <cell><m>0101_2</m></cell> <cell>5</cell> </row> <row> <cell><m>\halmaz{b, c}</m></cell> <cell><m>0110_2</m></cell> <cell>6</cell> </row> <row> <cell><m>\halmaz{a, b,c }</m></cell> <cell><m>0111_2</m></cell> <cell>7</cell> </row> <row> <cell><m>\halmaz{d}</m></cell> <cell><m>1000_2</m></cell> <cell>8</cell> </row> <row> <cell><m>\halmaz{a, d}</m></cell> <cell><m>1001_2</m></cell> <cell>9</cell> </row> <row> <cell><m>\halmaz{b, d}</m></cell> <cell><m>1010_2</m></cell> <cell>10</cell> </row> <row> <cell><m>\halmaz{a, b, d}</m></cell> <cell><m>1011_2</m></cell> <cell>11</cell> </row> <row> <cell><m>\halmaz{c, d}</m></cell> <cell><m>1100_2</m></cell> <cell>12</cell> </row> <row> <cell><m>\halmaz{a, c, d}</m></cell> <cell><m>1101_2</m></cell> <cell>13</cell> </row> <row> <cell><m>\halmaz{b, c, d}</m></cell> <cell><m>1110_2</m></cell> <cell>14</cell> </row> <row> <cell><m>\halmaz{a, b, c, d}</m></cell> <cell><m>1111_2</m></cell> <cell>15</cell> </row> </tabular> </table>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_encode1"></xref> After computing the binary representation,
+        we just add the elements corresponding to the places where the digits are 1. <tabular> <row> <cell>decimal number</cell> <cell>binary number</cell> <cell>subset of <m>S</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>11</cell> <cell><m>1011_2</m></cell> <cell><m>\halmaz{a_0, a_1, a_3}</m></cell> </row> <row> <cell>7</cell> <cell><m>0111_2</m></cell> <cell><m>\halmaz{a_0, a_1, a_2}</m></cell> </row> <row> <cell>15</cell> <cell><m>1111_2</m></cell> <cell><m>\halmaz{a_0, a_1, a_2, a_3}</m></cell> </row> </tabular>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_encode2"></xref> After computing the binary representation,
+        we just add the elements corresponding to the places where the digits are 1. <tabular> <row> <cell>decimal number</cell> <cell>binary number</cell> <cell>subset of <m>S</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>11</cell> <cell><m>01011_2</m></cell> <cell><m>\halmaz{a_0, a_1, a_3}</m></cell> </row> <row> <cell>7</cell> <cell><m>00111_2</m></cell> <cell><m>\halmaz{a_0, a_1, a_2}</m></cell> </row> <row> <cell>15</cell> <cell><m>01111_2</m></cell> <cell><m>\halmaz{a_0, a_1, a_2, a_3}</m></cell> </row> <row> <cell>16</cell> <cell><m>10000_2</m></cell> <cell><m>\halmaz{a_4}</m></cell> </row> <row> <cell>31</cell> <cell><m>11111_2</m></cell> <cell><m>\halmaz{a_0, a_1, a_2, a_3, a_4}</m></cell> </row> </tabular> Note,
+        that the encoding was defined in such a way,
+        that the subset of <m>\halmaz{a_0, a_1, a_2, a_3}</m> corresponding to <m>k</m> is the same as the subset of
+        <m>\halmaz{a_0, a_1, a_2, a_3, a_4}</m> corresponding to <m>k</m> (for arbitrary <m>0\leq k\leq 15</m>).
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_encode3"></xref> After computing the binary representation,
+        we just add the elements corresponding to the places where the digits are 1. <tabular> <row> <cell>decimal number</cell> <cell>binary number</cell> <cell>subset of <m>S</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>49</cell> <cell><m>110001_2</m></cell> <cell><m>\halmaz{a_0, a_4, a_5}</m></cell> </row> </tabular>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_encode4"></xref> After computing the binary representation,
+        we just add the elements corresponding to the places where the digits are 1. <tabular> <row> <cell>decimal number</cell> <cell>binary number</cell> <cell>subset of <m>S</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>101</cell> <cell><m>1100101_2</m></cell> <cell><m>\halmaz{a_0, a_2, a_5, a_6}</m></cell> </row> </tabular>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_encode5"></xref> After computing the binary representation,
+        we just add the elements corresponding to the places where the digits are 1. <tabular> <row> <cell>decimal number</cell> <cell>binary number</cell> <cell>subset of <m>S</m></cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>199</cell> <cell><m>11000111_2</m></cell> <cell><m>\halmaz{a_0, a_1, a_2, a_6, a_7}</m></cell> </row> </tabular>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_ExamEFGH"></xref> All possibilities are listed in <xref ref="tab_ExamEFGH">Table</xref>
+        on <xref ref="tab_ExamEFGH">page</xref>. <table xml:id="tab_ExamEFGH"> <caption>The orders in which Ed, Frank, George and Hugo can take the exam</caption> <tabular> <row> <cell>first</cell> <cell>second</cell> <cell>third</cell> <cell>fourth</cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>Ed</cell> <cell>Frank</cell> <cell>George</cell> <cell>Hugo</cell> </row> <row> <cell>Ed</cell> <cell>Frank</cell> <cell>Hugo</cell> <cell>George</cell> </row> <row> <cell>Ed</cell> <cell>George</cell> <cell>Frank</cell> <cell>Hugo</cell> </row> <row> <cell>Ed</cell> <cell>George</cell> <cell>Hugo</cell> <cell>Frank</cell> </row> <row> <cell>Ed</cell> <cell>Hugo</cell> <cell>Frank</cell> <cell>George</cell> </row> <row> <cell>Ed</cell> <cell>Hugo</cell> <cell>George</cell> <cell>Frank</cell> </row> <row> <cell>Frank</cell> <cell>Ed</cell> <cell>George</cell> <cell>Hugo</cell> </row> <row> <cell>Frank</cell> <cell>Ed</cell> <cell>Hugo</cell> <cell>George</cell> </row> <row> <cell>Frank</cell> <cell>George</cell> <cell>Ed</cell> <cell>Hugo</cell> </row> <row> <cell>Frank</cell> <cell>George</cell> <cell>Hugo</cell> <cell>Ed</cell> </row> <row> <cell>Frank</cell> <cell>Hugo</cell> <cell>Ed</cell> <cell>George</cell> </row> <row> <cell>Frank</cell> <cell>Hugo</cell> <cell>George</cell> <cell>Ed</cell> </row> <row> <cell>George</cell> <cell>Ed</cell> <cell>Frank</cell> <cell>Hugo</cell> </row> <row> <cell>George</cell> <cell>Ed</cell> <cell>Hugo</cell> <cell>Frank</cell> </row> <row> <cell>George</cell> <cell>Frank</cell> <cell>Ed</cell> <cell>Hugo</cell> </row> <row> <cell>George</cell> <cell>Frank</cell> <cell>Hugo</cell> <cell>Ed</cell> </row> <row> <cell>George</cell> <cell>Hugo</cell> <cell>Ed</cell> <cell>Frank</cell> </row> <row> <cell>George</cell> <cell>Hugo</cell> <cell>Frank</cell> <cell>Ed</cell> </row> <row> <cell>Hugo</cell> <cell>Ed</cell> <cell>Frank</cell> <cell>George</cell> </row> <row> <cell>Hugo</cell> <cell>Ed</cell> <cell>George</cell> <cell>Frank</cell> </row> <row> <cell>Hugo</cell> <cell>Frank</cell> <cell>Ed</cell> <cell>George</cell> </row> <row> <cell>Hugo</cell> <cell>Frank</cell> <cell>George</cell> <cell>Ed</cell> </row> <row> <cell>Hugo</cell> <cell>George</cell> <cell>Ed</cell> <cell>Frank</cell> </row> <row> <cell>Hugo</cell> <cell>George</cell> <cell>Frank</cell> <cell>Ed</cell> </row> </tabular> </table>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_perm1"></xref> The number of permutations of <m>\halmaz{1, 2, 3, 4}</m> is <m>4! =24</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_perm2"></xref> The number of permutations of <m>\halmaz{a, b, c, d}</m> is <m>4! =24</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_perm3"></xref> The number of permutations of 8 people is <m>8! = 40~320</m>.
+        If the boys sit on seats from 1 to 5, and girls sit on seats from 6 to 8, then we need to count the number of permutations of the boys and girls separately.
+        The boys can sit on their seats in <m>5! = 120</m>-many ways.
+        The girls (independently on how the boys sit) can sit on their seats in <m>3! = 6</m>-many ways.
+        Altogether,
+        they can sit in <m>6 \cdot 120 = 720</m>-many ways.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_retinas"></xref> The number of anagrams of <sq>retinas</sq> is the same as the number of permutations of the letters <sq>r</sq>,
+        <sq>e</sq>,
+        <sq>t</sq>, <sq>i</sq>, <sq>n</sq>,
+        <sq>a</sq> and <sq>s</sq>.
+        There are 7 different letters,
+        hence the number of permutations is <m>7! = 5~040</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_puppy"></xref> Again,
+        let us color the <sq>p</sq>s in the anagrams by three colors: red,
+        green, blue.
+        This way, there will be <m>5!=120</m>-many coloured anagrams of puppy,
+        the same as the number of permutations of five different elements.
+        Now, group together those anagrams,
+        which only differ by their colouring.
+        For example the group <sq>puppy</sq> would contain <sq>puppy</sq>,
+        <sq>puppy</sq>,
+        <sq>puppy</sq>, <sq>puppy</sq>,
+        <sq>puppy</sq>, <sq>puppy</sq>.
+        How do we know that there are six coloured <sq>puppy</sq>s?
+        The coloured <sq>puppy</sq>s only differ in the colourings of the <sq>p</sq>s.
+        The first <sq>p</sq> can be coloured by 3 different colours,
+        the next <sq>p</sq>
+        (right after the <sq>u</sq>)
+        can be coloured by two different colours
+        (it cannot be coloured by the same colour as the first <sq>p</sq>),
+        then the last <sq>p</sq> should be coloured by the remaining colour.
+        Thus, there are <m>3 \cdot 2 \cdot 1 = 6</m>-many coloured <sq>puppy</sq>s.
+        Similarly, there are 6 coloured versions of every anagram.
+        Therefore there are <m>\frac{120}{6} = 20</m> (uncoloured) anagrams of <sq>puppy</sq>.
+        These are <sq>pppuy</sq>, <sq>pppyu</sq>,
+        <sq>ppupy</sq>, <sq>ppypu</sq>,
+        <sq>ppuyp</sq>, <sq>ppyup</sq>,
+        <sq>puppy</sq>, <sq>pyppu</sq>,
+        <sq>pupyp</sq>, <sq>pypup</sq>,
+        <sq>puypp</sq>, <sq>pyupp</sq>,
+        <sq>upppy</sq>, <sq>ypppu</sq>,
+        <sq>uppyp</sq>, <sq>yppup</sq>,
+        <sq>upypp</sq>, <sq>ypupp</sq>,
+        <sq>uyppp</sq>, <sq>yuppp</sq>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_anagrams1"></xref>
+
+        <ol>
+          <li>
+            <p>
+              The word <sq>college</sq> contains 7 letters,
+              two of them are <sq>e</sq>s and two of them are <sq>l</sq>s, 
+              thus the number of anagrams is
+              <me>
+                \frac{7!}{2! \cdot 2!} = \frac{5~040}{2 \cdot 2} = 1~260
+              </me>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The word <sq>discrete</sq> contains 8 letters,
+              two of them are <sq>e</sq>s, 
+              thus the number of anagrams is
+              <me>
+                \frac{8!}{2!} = \frac{40~320}{2} = 20~160
+              </me>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The word <sq>mathematics</sq> contains 11 letters,
+              two of them are <sq>a</sq>s,
+              two of them are <sq>m</sq>s  and two of them are <sq>t</sq>s, 
+              thus the number of anagrams is
+              <me>
+                \frac{11!}{2! \cdot 2! \cdot 2!} = \frac{39~916~800}{2 \cdot 2 \cdot 2} = 4~989~600
+              </me>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The expression <sq>discrete mathematics</sq> contains 19 letters, 
+              two of them are <sq>i</sq>s, 
+              two of them are <sq>s</sq>s, 
+              two of them are <sq>c</sq>s, 
+              three of them are <sq>e</sq>s, 
+              three of them are <sq>t</sq>s, 
+              two of them are <sq>m</sq>s  and 
+              two of them are <sq>a</sq>s,  
+              thus the number of anagrams is
+              <md>
+                <mrow>\frac{19!}{2! \cdot 2! \cdot 2! \cdot 3! \cdot 3! \cdot 2! \cdot 2!} \amp = \frac{121~645~100~408~832~000}{2 \cdot 2 \cdot 2 \cdot 6 \cdot 6 \cdot 2 \cdot 2}</mrow>
+                <mrow>\amp = 105~594~705~216~000</mrow>
+              </md>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The expression <sq>college discrete mathematics</sq> contains 26 letters, 
+              three of them are <sq>c</sq>s, 
+              two of them are <sq>l</sq>s, 
+              five of them are <sq>e</sq>s, 
+              two of them are <sq>i</sq>s, 
+              two of them are <sq>s</sq>s, 
+              three of them are <sq>t</sq>s, 
+              two of them are <sq>m</sq>s  and 
+              two of them are <sq>a</sq>s,  
+              thus the number of anagrams is
+              <md>
+                <mrow>\frac{26!}{3! \cdot 2! \cdot 5! \cdot 2! \cdot 2! \cdot 3! \cdot 2! \cdot 2!} \amp = \frac{403~291~461~126~605~635~584~000~000}{6 \cdot 2 \cdot 120 \cdot 2 \cdot 2 \cdot 6 \cdot 2 \cdot 2}</mrow>
+                <mrow>\amp = 2~917~328~277~825~561~600~000</mrow>
+              </md>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_anagrams2"></xref>
+        <em>First solution.</em>
+        Let us create the
+        (not meaningful)
+        word <sq>aaaaabbbbccc</sq>, 
+        and consider its anagrams. 
+        Put the bouquets into one particular order, 
+        and consider an anagram. 
+        This anagram represents a distribution of the bouquets among the triplets: 
+        if a letter is <sq>a</sq> in the anagram,
+        the corresponding bouquet will be taken by Alice, 
+        if a letter is <sq>b</sq> in the anagram,
+        the corresponding bouquet will be taken by Beth, 
+        if a letter is <sq>c</sq> in the anagram,
+        the corresponding bouquet will be taken by Carrie. 
+        For example,
+        the distribution for the anagram <sq>abcbbaaaccba</sq> is that 
+        Alice takes the first, sixth,
+        seventh, eighth and twelfth bouquets, 
+        Beth takes the second, fourth,
+        fifth and eleventh bouquets, 
+        and Carrie takes the third, ninth and tenth bouquets. 
+        This gives a one-to-one correspondence between the possible distributions of the bouquets and the anagrams of <sq>aaaaabbbbccc</sq>. 
+        Therefore by <xref ref="thm_permrepetition">Theorem</xref>
+        the number of distributions is
+        <me>
+          \frac{12!}{5! \cdot 4! \cdot 3!} = \frac{479~001~600}{120 \cdot 24 \cdot 6} = 27~720
+        </me>.
+        <em>Second solution.</em>
+        Imagine that the triplets put the 12 bouquets in some order, 
+        and then Alice takes the first 5, 
+        Beth takes the next four, 
+        and Carrie takes the last three. 
+        Thus, the original order of the bouquets determine who gets which bouquet. 
+        Of course, 
+        some of these orders give the same result: 
+        if we only permute the first five elements or the next four elements, 
+        or the final three elements, 
+        then clearly everyone obtains exactly the same bouquets. 
+        Thus, the number of possible distributions is the number of permutations of the 12 bouquets, 
+        divided by the number of permutations of the first five elements, 
+        the number of permutations of the next four elements, 
+        the number of permutations of the last three elements. 
+        That is, 
+        the number of possible distributions is
+        <me>
+          \frac{12!}{5! \cdot 4! \cdot 3!} = \frac{479~001~600}{120 \cdot 24 \cdot 6} = 27~720
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_22-6"></xref>
+        The two numbers are equal, as the following calculation shows
+        <me>
+          \frac{22!}{16!} = \frac{22 \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 \cdot 16!}{16!} 
+          = 22 \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_orderedsubsets"></xref>
+        Altogether there are <m>n!</m> possible orders for the <m>n</m> elements
+        (this is the number of permutations of <m>n</m> elements).
+        
+        But not all of these are considered to be different,
+        because we are only interested in the first <m>k</m> elements. 
+        Those cases will be considered the same where the first <m>k</m> elements are the same
+        (and in the same order).
+        
+        That is, we group together those permutations of the <m>n</m> elements, 
+        where the order of the first <m>k</m> elements is the same. 
+        We can name every group with the order of the first <m>k</m> elements. 
+        Thus, we are interested in the number of groups we have. 
+        In one group there are those permutations, 
+        where the order of the first <m>k</m> elements is the same, 
+        thus they only differ in the last <m>(n-k)</m> elements. 
+        There are <m>(n-k)!</m> possible permutations of the last <m>(n-k)</m> elements, 
+        therefore every group contains <m>(n-k)!</m> orderings of the <m>n</m> elements. 
+        Hence, 
+        the number of ordered <m>k</m>-element subsets is
+        <md>
+          <mrow>\frac{n!}{(n-k)!} \amp = \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1) \cdot (n-k)!}{(n-k)!}</mrow>
+          <mrow>\amp = n \cdot (n-1) \cdot \dots \cdot (n-k+1)</mrow>
+        </md>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_forma1"></xref>
+        By <xref ref="thm_orderedsubsets">Theorem</xref> the number of possibilities
+
+        <ol>
+          <li>
+            <p>
+              for the first eight cars is
+              <me>
+                22 \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 \cdot 16 \cdot 15 = 12~893~126~400
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              for the first ten cars is
+              <me>
+                22 \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 \cdot 16 \cdot 15 \cdot 14 \cdot 13 = 2~346~549~004~800
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_competition"></xref>
+        By <xref ref="thm_orderedsubsets">Theorem</xref>
+        the number of ordered subsets is
+
+        <ol>
+          <li>
+            <p>
+              <me>
+                10 \cdot 9 \cdot 8 = 720
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                12 \cdot 11 \cdot 10 = 1~320
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                10 \cdot 9 \cdot 8 \cdot 7 = 5~040
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                12 \cdot 11 \cdot 10 \cdot 9 = 11~880
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 = 6~720
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                10 \cdot 9 \cdot 8 \cdot 7 \cdot 6= 30~240
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_90choose5"></xref>
+        The two numbers are equal, as the following calculation shows
+        <me>
+          \frac{90!}{5! \cdot 85!} = \frac{90 \cdot 89 \cdot 88 \cdot 87 \cdot 86 \cdot 85!}{5! \cdot 85!} = \frac{90 \cdot 89 \cdot 88 \cdot 87 \cdot 86}{5!}
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_smallnchoosek"></xref>
+        The required binomial coefficients are computed and arranged into a triangle in <xref ref="tab_pascal6">Table</xref>
+        on <xref ref="tab_pascal6">page</xref>. <table xml:id="tab_pascal6"> <caption>Small binomial coefficients.</caption> <tabular> <row> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell><m>\binom{0}{0} = 1</m></cell> </row> <row> <cell>\noalign</cell> <cell></cell> <cell></cell> <cell></cell> <cell></cell> <cell><m>\binom{1}{0} = 1</m></cell> <cell></cell> <cell><m>\binom{1}{1} = 1</m></cell> </row> <row> <cell>\noalign</cell> <cell></cell> <cell></cell> <cell></cell> <cell><m>\binom{2}{0} = 1</m></cell> <cell></cell> <cell><m>\binom{2}{1} = 2</m></cell> <cell></cell> <cell><m>\binom{2}{2} = 1</m></cell> </row> <row> <cell>\noalign</cell> <cell></cell> <cell></cell> <cell><m>\binom{3}{0} = 1</m></cell> <cell></cell> <cell><m>\binom{3}{1} = 3</m></cell> <cell></cell> <cell><m>\binom{3}{2} = 3</m></cell> <cell></cell> <cell><m>\binom{3}{3} = 1</m></cell> </row> <row> <cell>\noalign</cell> <cell></cell> <cell><m>\binom{4}{0} = 1</m></cell> <cell></cell> <cell><m>\binom{4}{1} = 4</m></cell> <cell></cell> <cell><m>\binom{4}{2} = 6</m></cell> <cell></cell> <cell><m>\binom{4}{3} = 4</m></cell> <cell></cell> <cell><m>\binom{4}{4} = 1</m></cell> </row> <row> <cell>\noalign</cell> <cell><m>\binom{5}{0} = 1</m></cell> <cell></cell> <cell><m>\binom{5}{1} = 5</m></cell> <cell></cell> <cell><m>\binom{5}{2} = 10</m></cell> <cell></cell> <cell><m>\binom{5}{3} = 10</m></cell> <cell></cell> <cell><m>\binom{5}{4} = 5</m></cell> <cell></cell> <cell><m>\binom{5}{5} = 1</m></cell> </row> <row> <cell>\noalign
+        <m>\binom{6}{0} = 1</m></cell> <cell></cell> <cell><m>\binom{6}{1} = 6</m></cell> <cell></cell> <cell><m>\binom{6}{2} = 15</m></cell> <cell></cell> <cell><m>\binom{6}{3} = 20</m></cell> <cell></cell> <cell><m>\binom{6}{4} = 15</m></cell> <cell></cell> <cell><m>\binom{6}{5} = 6</m></cell> <cell></cell> <cell><m>\binom{6}{6} = 1</m></cell> </row> <row> <cell>\noalign</cell> </row> </tabular> </table>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_nicenchoosek"></xref>
+        By the definition
+        <md>
+          <mrow>\binom{n}{0} \amp = \frac{n!}{0! \cdot (n-0)!} = \frac{n!}{0! \cdot n!} = \frac{1}{0!} = \frac{1}{1} = 1,</mrow>
+          <mrow>\binom{n}{1} \amp = \frac{n!}{1! \cdot (n-1)!} = \frac{n \cdot (n-1)!}{1! \cdot (n-1)!} = \frac{n}{1!} = \frac{n}{1} = n,</mrow>
+          <mrow>\binom{n}{2} \amp = \frac{n!}{2! \cdot (n-2)!} = \frac{n \cdot (n-1) \cdot (n-2)!}{2! \cdot (n-2)!} = \frac{n \cdot (n-1)}{2!} = \frac{n \cdot (n-1)}{2},</mrow>
+          <mrow>\binom{n}{n-2} \amp = \frac{n!}{(n-2)! \cdot (n-(n-2))!} = \frac{n \cdot (n-1) \cdot (n-2)!}{(n-2)! \cdot 2!} = \frac{n \cdot (n-1)}{2!}</mrow>
+          <mrow>\amp = \frac{n \cdot (n-1)}{2},</mrow>
+          <mrow>\binom{n}{n-1} \amp = \frac{n!}{(n-1)! \cdot (n-(n-1))!} = \frac{n \cdot (n-1)!}{(n-1)! \cdot 1!} = \frac{n}{1!} = \frac{n}{1} = n,</mrow>
+          <mrow>\binom{n}{n} \amp = \frac{n!}{n! \cdot (n-n)!} = \frac{n!}{n! \cdot 0!} = \frac{1}{0!} = \frac{1}{1} = 1</mrow>
+        </md>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_sumsmallnchoosek"></xref>
+        Using <xref ref="tab_pascal6">Table</xref>
+        from <xref ref="ex_smallnchoosek">Exercise</xref>, 
+        it is not hard to determine the required sums:
+        <md>
+          <mrow>\sum_{k=0}^0 \binom{0}{k} \amp = \binom{0}{0} = 1,</mrow>
+          <mrow>\sum_{k=0}^1 \binom{1}{k} \amp = \binom{1}{0} + \binom{1}{1} = 1 + 1 = 2,</mrow>
+          <mrow>\sum_{k=0}^2 \binom{2}{k} \amp = \binom{2}{0} + \binom{2}{1} + \binom{2}{2} = 1 + 2 + 1 = 4,</mrow>
+          <mrow>\sum_{k=0}^3 \binom{3}{k} \amp = \binom{3}{0} + \binom{3}{1} + \binom{3}{2} + \binom{3}{3} = 1 + 3 + 3 + 1 = 8,</mrow>
+          <mrow>\sum_{k=0}^4 \binom{4}{k} \amp = \binom{4}{0} + \binom{4}{1} + \binom{4}{2} + \binom{4}{3} + \binom{4}{4}</mrow>
+          <mrow>\amp = 1 + 4 + 6 + 4 + 1 = 16,</mrow>
+          <mrow>\sum_{k=0}^5 \binom{5}{k} \amp = \binom{5}{0} + \binom{5}{1} + \binom{5}{2} + \binom{5}{3} + \binom{5}{4} + \binom{5}{5}</mrow>
+          <mrow>\amp = 1 + 5 + 10 + 10 + 5 + 1 = 32,</mrow>
+          <mrow>\sum_{k=0}^6 \binom{6}{k} \amp = \binom{6}{0} + \binom{6}{1} + \binom{6}{2} + \binom{6}{3} + \binom{6}{4} + \binom{6}{5} + \binom{6}{6}</mrow>
+          <mrow>\amp = 1 + 6 + 15 + 20 + 15 + 6 + 1 = 64</mrow>
+        </md>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_nmidnchoose2"></xref>
+        Now, <m>n</m> divides <m>\binom{n}{2}</m> if and only if the quotient <m>\binom{n}{2} / n</m> is an integer. 
+        Here
+        <me>
+          \frac{\binom{n}{2}}{n} = \frac{\frac{n\cdot (n-1)}{2}}{n} = \frac{n-1}{2}
+        </me>,
+        and this is an integer number if and only if <m>2 \nmid n</m>, that is,
+        if and only if <m>n</m> is odd.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_n_2binom"></xref>
+        Using the formula for <m>\binom{n+1}{2}</m> and <m>\binom{n}{2}</m> we have
+        <md>
+          <mrow>\binom{n+1}{2} + \binom{n}{2} \amp = \frac{(n+1) \cdot n}{2} + \frac{n \cdot (n-1)}{2} = \frac{n^2+n}{2} + \frac{n^2-n}{2}</mrow>
+          <mrow>\amp = \frac{n^2 + n + n^2 -n }{2} = \frac{2n^2}{2} = n^2</mrow>
+        </md>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_piratesgeq1"></xref>
+        Let the pirates be <m>P_1, \dots , P_n</m>.
+        They put the gold pieces in a line.
+        Then they want to divide it into <m>n</m> parts by putting sticks between gold pieces.
+        The leftmost part will go to <m>P_1</m>,
+        the next part from left goes to <m>P_2</m>, etc.
+        The rightmost part will go to <m>P_n</m>.
+        To this end,
+        they use <m>n-1</m> sticks to divide the <m>k</m> gold pieces into <m>n</m> parts.
+        What is left from the first stick is for <m>P_1</m>,
+        what is between the first and second sticks is for <m>P_2</m>,
+        etc., and everything right from the last stick is taken by <m>P_n</m>.
+        They can put the sticks between gold pieces.
+        They cannot put a stick before the first gold piece,
+        because then <m>P_1</m> would not get any pieces.
+        Similarly, they cannot put a stick after the last gold piece,
+        because <m>P_n</m> needs to receive at least one gold piece.
+        Finally, they cannot put two sticks between the same two gold pieces,
+        because then one of the pirates would not get any gold piece.
+        Thus, they need to put <m>n-1</m> sticks somewhere in the spaces between the gold pieces,
+        but they cannot put two sticks between the same two gold pieces.
+        That is, they need to find which <m>n-1</m> places they put sticks to.
+        There are <m>k-1</m> places between <m>k</m> gold pieces,
+        and they need to find <m>n-1</m>,
+        where they put the <m>n-1</m> sticks.
+        This can be done in <m>\binom{k-1}{n-1}</m>-many ways.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_piratesgeq2"></xref>
+        Let every pirate take one gold piece right at the very beginning.
+        Then there remains <m>k-n</m> gold pieces to further distribute.
+        Moreover, now every pirate needs one more gold piece.
+        Thus we reduced the problem to the one solved in <xref ref="thm_piratesgeq1">Theorem</xref>:
+        <m>n</m> pirates want to distribute <m>k-n</m> gold pieces such that everyone gets at least one gold piece.
+        By <xref ref="thm_piratesgeq1">Theorem</xref>
+        this can be done in <m>\binom{k-n-1}{n-1}</m>-many ways.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_piratesgeq012"></xref>
+        All 15 possibilities are written in <xref ref="tab_piratesgeq012">Table</xref>
+        on <xref ref="tab_piratesgeq012">page</xref>. <table xml:id="tab_piratesgeq012"> <caption>Possibilities to distribute seven gold pieces among three pirates such that Black Bellamy gets at least one gold piece and Calico Jack gets at least two gold pieces.</caption> <tabular> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell>Anne Bonney</cell> <cell>Black Bellamy</cell> <cell>Calico Jack</cell> </row> <row bottom="medium"> <cell></cell> <cell></cell> <cell></cell> </row> <row> <cell >4</cell> <cell>1</cell> <cell>2</cell> </row> <row> <cell>0</cell> <cell>5</cell> <cell>2</cell> </row> <row> <cell>0</cell> <cell>1</cell> <cell>6</cell> </row> <row> <cell>3</cell> <cell>2</cell> <cell>2</cell> </row> <row> <cell>3</cell> <cell>1</cell> <cell>3</cell> </row> <row> <cell>1</cell> <cell>4</cell> <cell>2</cell> </row> <row> <cell>0</cell> <cell>4</cell> <cell>3</cell> </row> <row> <cell>1</cell> <cell>1</cell> <cell>5</cell> </row> <row> <cell>0</cell> <cell>2</cell> <cell>5</cell> </row> <row> <cell>2</cell> <cell>3</cell> <cell>2</cell> </row> <row> <cell>2</cell> <cell>1</cell> <cell>4</cell> </row> <row> <cell>0</cell> <cell>3</cell> <cell>4</cell> </row> <row> <cell>2</cell> <cell>2</cell> <cell>3</cell> </row> <row> <cell>1</cell> <cell>3</cell> <cell>3</cell> </row> <row> <cell>1</cell> <cell>2</cell> <cell>4</cell> </row> <row bottom="minor"> <cell></cell> <cell></cell> <cell></cell> </row> </tabular> </table>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_pirates1"></xref>
+        By applying <xref ref="thm_pirates">Theorem</xref>, 
+        we obtain
+
+        <ol>
+          <li>
+            <p>
+              <me>
+                \binom{9 - 1}{3 - 1} = \binom{8}{2} = 28
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{8+3 - 1}{3 - 1} = \binom{10}{2} = 45
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{7+3 - 1}{3 - 1} = \binom{9}{2} = 36
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{11-3 - 1}{3 - 1} = \binom{7}{2} = 21
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{9 - 1}{4 - 1} = \binom{8}{3} = 56
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{7+4 - 1}{4 - 1} = \binom{10}{3} = 120
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{12-4 - 1}{4 - 1} = \binom{7}{3} = 35
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{10 -1 -2 -3 +4 - 1}{4 - 1} = \binom{7}{3} = 35
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{15 -1 -2 -3 -4+4 - 1}{4 - 1} = \binom{8}{3} = 56
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{15 -1 -1 -3 -3+5 - 1}{5 - 1} = \binom{11}{4} = 330
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_equations1"></xref>
+        By applying <xref ref="cor_pirates">Corollary</xref>, 
+        we obtain that the number of solutions is
+
+        <ol>
+          <li>
+            <p>
+              <me>
+                \binom{9 - 1}{3 - 1} = \binom{8}{2} = 28
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{8+3 - 1}{3 - 1} = \binom{10}{2} = 45
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{7+3 - 1}{3 - 1} = \binom{9}{2} = 36
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{11-3 - 1}{3 - 1} = \binom{7}{2} = 21
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{9 - 1}{4 - 1} = \binom{8}{3} = 56
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{7+4 - 1}{4 - 1} = \binom{10}{3} = 120
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{12-4 - 1}{4 - 1} = \binom{7}{3} = 35
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{10 -1 -2 -3 +4 - 1}{4 - 1} = \binom{7}{3} = 35
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{15 -1 -2 -3 -4+4 - 1}{4 - 1} = \binom{8}{3} = 56
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{15 -1 -1 -3 -3+5 - 1}{5 - 1} = \binom{11}{4} = 330
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_TuroRudi"></xref> It is the same problem as the gold distribution:
+        imagine that everybody of the three siblings gets the brand they like.
+        Then the problem is equivalent to distributing 10 desserts among the three children such that everyone gets at least one.
+        There are <m>\binom{10-1}{3-1} = \binom{9}{2} = 45</m>-many ways to do this by <xref ref="thm_pirates">Theorem</xref>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_ballsinurn1"></xref>
+        Applying <xref ref="tab_nchoosek">Table</xref>
+        we obtain that the number of choices is
+
+        <ol>
+          <li>
+            <p>
+              <me>
+                \binom{9 + 3 -1}{3} = \binom{11}{3} = 165
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{9 + 3 -1}{9} = \binom{11}{9} = 55
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \frac{10!}{5!} = 30~240
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                0
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                \binom{45}{6} = 8~145~060
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                0
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                100^{10} = 10^{20}
+              </me>,
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <me>
+                10^{100}
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </li>
+  </ol>
+</section>
+

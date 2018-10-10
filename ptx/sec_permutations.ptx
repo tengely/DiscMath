@@ -1,0 +1,180 @@
+
+
+<section xml:id="sec_permutations">
+  <title>Permutations</title>
+  <p>
+    Three students are taking an oral exam in Mathematics.
+    After the usual half hour preparation time,
+    one by one they tell the examiner about the theorem the examiner gave them.
+    In how many different order can they do the exam?
+    Let the three students be Alice, Beth and Claire.
+  </p>
+
+  <p>
+    It is not hard to list all possibilities.
+    For example, Alice can start the exam,
+    and then Beth follows and Claire finishes,
+    or Claire follows and Beth finishes.
+    Similarly, Beth can start with the exam,
+    then Alice can follow and then Claire, or Claire and then Alice.
+    Finally, Claire may start,
+    and Alice continues and then Beth,
+    or Beth continues and Alice finishes.
+    <xref ref="tab_perm1">Table</xref> lists all six possibilities.
+  </p>
+
+  <table xml:id="tab_perm1">
+    <caption>The orders in which Alice, Beth and Claire can take the exam</caption>
+    <tabular>
+      <row>
+        <cell>first</cell>
+        <cell>second</cell>
+        <cell>third</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Alice</cell>
+        <cell>Beth</cell>
+        <cell>Claire</cell>
+      </row>
+      <row>
+        <cell>Alice</cell>
+        <cell>Claire</cell>
+        <cell>Beth</cell>
+      </row>
+      <row>
+        <cell>Beth</cell>
+        <cell>Alice</cell>
+        <cell>Claire</cell>
+      </row>
+      <row>
+        <cell>Beth</cell>
+        <cell>Claire</cell>
+        <cell>Alice</cell>
+      </row>
+      <row>
+        <cell>Claire</cell>
+        <cell>Alice</cell>
+        <cell>Beth</cell>
+      </row>
+      <row>
+        <cell>Claire</cell>
+        <cell>Beth</cell>
+        <cell>Alice</cell>
+      </row>
+    </tabular>
+  </table>
+
+  <p>
+    Looking at <xref ref="tab_perm1">Table</xref>,
+    one can think of a general argument, as well.
+    There are three ways to choose who the first person will be (Alice, Beth or Carrie).
+    Then no matter what that choice was,
+    there will be two possibilities left for choosing who the second person will be (the second person cannot be whoever was the first one).
+    Then the person left will take the exam as the third.
+    Altogether,
+    this is <m>3 \cdot 2 \cdot 1 = 6</m> possibilities.
+  </p>
+
+  <p>
+    At the next exam, there are four students: Ed, Frank, George, Hugo.
+    This time they decide in advance in what order they want to do the exam.
+    In how many different orders can they do the exam?
+  </p>
+  <exercise xml:id="ex_ExamEFGH">
+    <statement>
+      <p>
+        List all possibilities for Ed, Frank, George and Hugo to find an order for themselves.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Let us try to use our new argument.
+    There are four possibilities for choosing the person who starts the exam.
+    Then, no matter who starts,
+    there are three possibilities for choosing the second person (as the first person has already been chosen).
+    Then there are only two possibilities for the third person,
+    and whoever remains will be the fourth.
+    That is, altogether they have
+    <m>4 \cdot 3 \cdot 2 \cdot 1 = 24</m> possibilities to choose the order to do the exam.
+  </p>
+
+  <p>
+    What was the common in these two exercises (apart from the exam)?
+    The fact that in both cases we needed to count the number of different orders of the people.
+    In general, if there are <m>n</m> elements,
+    then we call an ordering of these elements a <em>permutation</em>.
+    Now, what happens if we need to count the number of permutations of <m>n</m> elements?
+    It can be calculated similarly,
+    e.g.<nbsp />the result would be <m>n \cdot (n-1) \cdot \dots \cdot 2 \cdot 1</m>.
+    This is the number we denoted by <m>n!</m> in <xref ref="sec_sumsproducts">Section</xref>.
+  </p>
+
+  <theorem xml:id="thm_perm">
+    <statement>
+      <p>
+        The number of permutations of <m>n</m> elements is <m>n!</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      A permutation is an ordering of the <m>n</m> elements.
+      We have <m>n</m>-many ways to choose the first element,
+      then <m>(n-1)</m>-many ways to choose the second element (we cannot choose the first anymore),
+      then <m>(n-2)</m>-many ways to choose the third element, etc.
+      Thus the number of different ways we can put these <m>n</m> elements into an order is
+      <me>
+        n \cdot (n-1) \cdot (n-2) \cdot \dots \cdot 2 \cdot 1 = n!
+      </me>.
+    </p>
+  </proof>
+
+  <p>
+    Note, that permutations may arise in many situation.
+    Recall that at the beginning of <xref ref="cha_counting">Chapter</xref>, Alice, Beth, Claire, Diane, Ed, Frank, George and Hugo wanted to form four dancing couples.
+    Then Alice chose a partner first, then Beth,
+    then Claire, and finally Diane.
+    That is, their choosing put an order on the four boys,
+    and therefore determined a permutation of them.
+    And indeed,
+    there are <m>4!=24</m> permutations of the four boys,
+    and they can form four dancing couples in <m>4!=24</m>-many ways, as well.
+  </p>
+  <exercise xml:id="ex_perm1">
+    <statement>
+      <p>
+        How many four digit numbers exist,
+        where all of the digits <m>1</m>, <m>2</m>,
+        <m>3</m>, <m>4</m> appear exactly once?
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_perm2">
+    <statement>
+      <p>
+        How many four letter long
+        (not necessarily meaningful words)
+        can be built from the letters <m>a</m>, <m>b</m>, <m>c</m>,
+        <m>d</m>, if all letters must be used exactly once?
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_perm3">
+    <statement>
+      <p>
+        Five boys and three girls buy cinema tickets.
+        They receive the tickets in the same row,
+        their seats are numbered from 1 to 8.
+        How many different ways can they sit on the seats?
+        How many different ways can they sit on the seats if boys sit on seats from 1 to 5, and girls sit on seats from 6 to 8?
+      </p>
+    </statement>
+  </exercise>
+</section>
+

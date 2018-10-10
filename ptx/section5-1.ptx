@@ -1,0 +1,415 @@
+
+
+<section>
+  <title>Examples of recurrence relations</title>
+  <p>
+    To compute <m>n!</m> by using recurrence we rewrite it as follows
+    <me>
+      n!=\prod_{k=1}^n k=n\cdot\prod_{k=1}^{n-1} k=n\cdot (n-1)!
+    </me>.
+  </p>
+
+  <p>
+    That is, we have the definition
+    <me>
+      n!=
+      \begin{cases}
+      1 \amp  \mbox{ if } n=1,\\
+      n\cdot(n-1)! \amp  \mbox{ if } n>1.
+      \end{cases}
+    </me>
+  </p>
+
+  <p>
+    To compute 4! one has to evaluate <m>4\cdot(4-1)!</m>,
+    so it remains to compute 3!, applying the recurrence relation again it follows that <m>4!=4\cdot 3\cdot(3-1)!</m>.
+    At the end we get that <m>4!=4\cdot 3\cdot 2\cdot 1</m>.
+    Of course it is not an efficient way to compute <m>n!</m>,
+    but recurrence helps to understand and to analyze problems.
+  </p>
+
+  <p>
+    Binomial coefficients can be defined via recurrence.
+    The main idea is to use the
+    well-known identity
+    <me>
+      \binom{n}{k}=\binom{n-1}{k}+\binom{n-1}{k-1}
+    </me>.
+  </p>
+
+  <p>
+    The recursive definition goes as follows
+    <me>
+      \binom{n}{k}=
+      \begin{cases}
+      1 \amp  \mbox{ if } k=0\mbox{ or } k=n\\
+      \binom{n-1}{k}+\binom{n-1}{k-1} \amp  \mbox{ if } n>k>0.
+      \end{cases}
+    </me>
+  </p>
+
+  <p>
+    We apply the above definition to compute <m>\binom{5}{3}:</m>
+    <me>
+      \binom{5}{3}=\binom{4}{3}+\binom{4}{2}
+    </me>.
+  </p>
+
+  <p>
+    We only need to determine
+    <m>\binom{4}{3}</m> and <m>\binom{4}{2}</m>.
+    <md>
+      <mrow>\binom{4}{3}\amp =\binom{3}{3}+\binom{3}{2}</mrow>
+      <mrow>\binom{4}{2}\amp =\binom{3}{2}+\binom{3}{1}</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Since by definition <m>\binom{3}{3}=1</m>,
+    it remains to compute <m>\binom{3}{2}</m> and <m>\binom{3}{1}</m>.
+    <md>
+      <mrow>\binom{3}{2}\amp =\binom{2}{2}+\binom{2}{1}</mrow>
+      <mrow>\binom{3}{1}\amp =\binom{2}{1}+\binom{2}{0}</mrow>
+    </md>.
+  </p>
+
+  <p>
+    We have that <m>\binom{2}{2}=\binom{2}{0}=1</m> and <m>\binom{2}{1}=\binom{1}{1}+\binom{1}{0}=2</m>.
+    Therefore
+    <md>
+      <mrow>\binom{4}{3}\amp =1+1+2</mrow>
+      <mrow>\binom{4}{2}\amp =1+2+2+1</mrow>
+    </md>.
+  </p>
+
+  <p>
+    This implies that <m>\binom{5}{3}=1+1+2+1+2+2+1=10</m>.
+  </p>
+
+  <p>
+    Geometric progressions can be defined using recurrence.
+    Let <m>g_n</m> be a sequence with
+    initial value <m>a</m>, that is, <m>g_0=a</m>.
+    A generic term of the sequence is given by
+    the formula
+    <me>
+      g_n=rg_{n-1}
+    </me>,
+    where <m>r</m> is the common ratio of the sequence.
+    By using this recurrence relation
+    we obtain the following results
+  </p>
+  <tabular>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>n</m></cell>
+      <cell><m>g_n</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>0</cell>
+      <cell><m>a</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell><m>rg_0=ra</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell><m>rg_1=r(ra)=r^2a</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>3</cell>
+      <cell><m>rg_2=r(r^2a)=r^3a</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    It is easy to see the pattern, <m>g_n=r^na</m>.
+    Now one may try to prove it by induction.
+  </p>
+
+  <p>
+    Tower of Hanoi is a nice mathematical puzzle invented by Edouard Lucas in 1883.
+    There are given three pegs (<m>A,B</m> and <m>C</m>) and a tower of <m>n</m> disks,
+    initially stacked in decreasing size on
+    peg <m>A</m>.
+    The objective of the puzzle is to transfer the <m>n</m> disks to peg <m>C</m>.
+    There are only a few rules
+
+    <ul>
+      <li>
+        <p>
+          one can only move one disk per move,
+        </p>
+      </li>
+
+      <li>
+        <p>
+          one can only move the top disk of a stack,
+        </p>
+      </li>
+
+      <li>
+        <p>
+          one can not move a larger disk on top of a smaller disk.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    If <m>n=1</m>,
+    then there is only one disk on peg <m>A</m> and moving it to peg <m>C</m> solves the problem.
+    Let us deal with the case of 2 disks.
+    First we move the smallest disk from peg <m>A</m> to peg <m>B</m>.
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="73%" source="images/H21.png" /></cell>
+      <cell><image width="73%" source="images/H22.png" /></cell>
+    </row>
+  </tabular>
+  <p>
+    Now we move the disk from peg <m>A</m> to peg <m>C</m>.
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="73%" source="images/H22.png" /></cell>
+      <cell><image width="73%" source="images/H23.png" /></cell>
+    </row>
+  </tabular>
+  <p>
+    Finally, we move the disk from peg <m>B</m> to peg <m>C</m>.
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="73%" source="images/H23.png" /></cell>
+      <cell><image width="73%" source="images/H24.png" /></cell>
+    </row>
+  </tabular>
+  <p>
+    Let us denote by <m>T_n</m> the minimum number of moves
+    that will transfer <m>n</m> disks from peg <m>A</m> to peg <m>C</m>.
+    Since no moves are needed to transfer <m>n=0</m> disks,
+    we have that <m>T_0=0</m>,
+    and the previous two examples show that <m>T_1=1</m> and <m>T_2=3</m>.
+    Let us prove that <m>T_n\leq 2T_{n-1}+1</m>,
+    that is, there is a solution with <m>2T_{n-1}+1</m> moves.
+    In <m>T_{n-1}</m> moves we can transfer the <m>n-1</m> smaller disks from peg <m>A</m> to peg <m>B</m>.
+    We move the largest
+    one from peg <m>A</m> to peg <m>C</m> and it remains to move the <m>n-1</m> smallest disks from peg <m>B</m> to peg <m>C</m> and
+    it can be done in <m>T_{n-1}</m> moves.
+    In total this strategy requires <m>2T_{n-1}+1</m> moves.
+    We only have to show
+    that <m>2T_{n-1}+1</m> moves are necessary.
+    If we follow another strategy, then we must move the
+    largest disk at some point and the <m>n-1</m> smallest disks must be on a single peg (requiring <m>T_{n-1}</m> moves).
+    After moving the largest disk we must transfer the <m>n-1</m> smallest disks to peg <m>C</m> (requiring another <m>T_{n-1}</m> moves).
+    It means that <m>T_n\geq 2T_{n-1}+1</m>, therefore
+    <me>
+      T_n=2T_{n-1}+1
+    </me>.
+  </p>
+
+  <p>
+    We apply the above strategy to present a minimal solution in case of 3 disks.
+    First we move the 2 smallest disks from peg <m>A</m> to peg <m>B</m>.
+    It can be done in <m>T_2=3</m> steps.
+  </p>
+
+  <p>
+    STEP 1:
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="73%" source="images/H31-1.png" /></cell>
+      <cell><image width="73%" source="images/H32-1.png" /></cell>
+    </row>
+  </tabular>
+  <p>
+    STEP 2:
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="73%" source="images/H32-1.png" /></cell>
+      <cell><image width="73%" source="images/H33-1.png" /></cell>
+    </row>
+  </tabular>
+  <p>
+    STEP 3:
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="73%" source="images/H33-1.png" /></cell>
+      <cell><image width="73%" source="images/H34-1.png" /></cell>
+    </row>
+  </tabular>
+  <p>
+    Now we can transfer the largest disk to peg <m>C</m>.
+  </p>
+
+  <p>
+    STEP 4:
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="73%" source="images/H34-1.png" /></cell>
+      <cell><image width="73%" source="images/H35-1.png" /></cell>
+    </row>
+  </tabular>
+  <p>
+    It remainst to transfer the 2 smallest disks from peg <m>B</m> to peg <m>C</m>,
+    it requires again <m>T_2=3</m> moves.
+  </p>
+
+  <p>
+    STEP 5:
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="73%" source="images/H35-1.png" /></cell>
+      <cell><image width="73%" source="images/H36-1.png" /></cell>
+    </row>
+  </tabular>
+  <p>
+    STEP 6:
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="73%" source="images/H36-1.png" /></cell>
+      <cell><image width="73%" source="images/H37-1.png" /></cell>
+    </row>
+  </tabular>
+  <p>
+    STEP 7:
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="73%" source="images/H37-1.png" /></cell>
+      <cell><image width="73%" source="images/H38-1.png" /></cell>
+    </row>
+  </tabular>
+  <p>
+    Since <m>T_3=7</m> we have found a solution with minimal number of moves.
+    Having a recurrence relation for the minimal number of moves may help to find a nice formula for <m>T_n</m>.
+    The following table contains the first few values of <m>T_n</m>.
+  </p>
+  <tabular>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>n</m></cell>
+      <cell><m>T_n</m></cell>
+      <cell><m>n</m></cell>
+      <cell><m>T_n</m></cell>
+      <cell><m>n</m></cell>
+      <cell><m>T_n</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>0</cell>
+      <cell>0</cell>
+      <cell>4</cell>
+      <cell>15</cell>
+      <cell>8</cell>
+      <cell>255</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell>1</cell>
+      <cell>5</cell>
+      <cell>31</cell>
+      <cell>9</cell>
+      <cell>511</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell>3</cell>
+      <cell>6</cell>
+      <cell>63</cell>
+      <cell>10</cell>
+      <cell>1023</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>3</cell>
+      <cell>7</cell>
+      <cell>7</cell>
+      <cell>127</cell>
+      <cell>11</cell>
+      <cell>2047</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    One can easily observe that these values are 1 less than a power of 2, that is,
+    we expect that <m>T_n=2^n-1</m>.
+    It can be proved by induction.
+  </p>
+</section>
+

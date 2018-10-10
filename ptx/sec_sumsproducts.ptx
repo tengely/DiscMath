@@ -1,0 +1,286 @@
+
+
+<section xml:id="sec_sumsproducts">
+  <title>Sums and products</title>
+  <p>
+    In this section we introduce summation notation and product notation which we will use later on.
+    The special symbol <m>\sum</m> is used to denote sums.
+    Let us consider an example
+    <me>
+      \sum_{k=1}^5 k=1+2+3+4+5
+    </me>.
+  </p>
+
+  <p>
+    In a more general form
+    <me>
+      \sum_{k=m}^n k=m+(m+1)+\ldots+(n-1)+n
+    </me>.
+  </p>
+
+  <p>
+    Here <m>m</m> is the lower bound of summation and <m>n</m> is the upper bound of summation.
+    There are some other possibilities to express the above sum, e.g.
+    <md>
+      <mrow>\amp \sum_{m\leq k\leq n}k,</mrow>
+      <mrow>\amp \sum_{k\in S}k, \mbox{ where } S=\halmaz{m,m+1,\ldots,n}</mrow>
+    </md>.
+  </p>
+
+  <p>
+    It is important to note that the variable used in the summation is arbitrary.
+    That is,
+    the values of the following summations are equal:
+    <me>
+      \sum_{k=1}^3 k^2=1^2+2^2+3^2=14
+    </me>
+    and
+    <me>
+      \sum_{m=1}^3 m^2=1^2+2^2+3^2=14
+    </me>.
+  </p>
+
+  <p>
+    Now we write out explicitly some other summations:
+  </p>
+
+  <p>
+    (a)
+    <me>
+      \sum_{i=2}^6 (2-i)=(2-2)+(3-2)+(4-2)+(5-2)+(6-2)=10
+    </me>,
+  </p>
+
+  <p>
+    (b)
+    <me>
+      \sum_{j=3}^5 2^{j-2}=2^{3-2}+2^{4-2}+2^{5-2}=14
+    </me>,
+  </p>
+
+  <p>
+    (c)
+    <me>
+      \sum_{1\leq i,j\leq 2} ij= (1\cdot 1)+(1\cdot 2)+(2\cdot 1)+(2\cdot 2)=9
+    </me>.
+  </p>
+
+  <p>
+    Now we deal with products of mathematical expressions.
+    The symbol used in this case is <m>\prod</m>.
+    Product notation is very similar to summation notation so it is straightforward to learn to use.
+    The first example in case of summation notation was
+    <me>
+      \sum_{k=1}^5 k=1+2+3+4+5
+    </me>.
+  </p>
+
+  <p>
+    If we change the <m>\sum</m> symbol to <m>\prod</m>, then we obtain
+    <me>
+      \prod_{k=1}^5 k=1\cdot 2\cdot 3\cdot 4\cdot 5
+    </me>.
+  </p>
+
+  <p>
+    Let us consider the product of integers between <m>m</m> and <m>n</m>,
+    where <m>m\lt n</m>.
+    We can write it in
+    product notation in different forms:
+    <md>
+      <mrow>\amp \prod_{k=m}^n k,</mrow>
+      <mrow>\amp \prod_{m\leq k\leq n}k,</mrow>
+      <mrow>\amp \prod_{k\in S}k, \mbox{ where } S=\halmaz{m,m+1,\ldots,n}</mrow>
+    </md>.
+  </p>
+
+  <p>
+    It may happen that the sum or product should be evaluated on the empty set.
+    By definition,
+    in such situations the sum is always 0 and the product is always 1,
+    e.g.
+    <md>
+      <mrow>\sum_{k \in \emptyset} k \amp = 0,</mrow>
+      <mrow>\prod_{k \in \emptyset} k \amp = 1</mrow>
+    </md>.
+  </p>
+
+  <p>
+    If <m>S</m> and <m>T</m> be two disjoint sets, then
+    <md>
+      <mrow>\sum_{k \in S} k + \sum_{k \in T} k = \sum_{k \in S \cup T} k,</mrow>
+      <mrow>\prod_{k \in S} k \cdot \prod_{k \in T} k = \prod_{k \in S \cup T} k</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Note, that this is true even if <m>S</m> or <m>T</m> is the empty set. (This is the main reason we define the empty sum to be 0 and the empty product to be 1.)
+  </p>
+
+  <p>
+    There is a special notation for the product of positive integers up to <m>n</m>,
+    that is, when we multiply the elements of
+    <me>
+      S_n = \halmazvonal{k}{k \text{ is a positive integer } , k\leq n} = \halmaz{1, 2, \dots , n}
+    </me>.
+  </p>
+
+  <p>
+    The product of the elements of <m>S_n</m> is called
+    <em><m>n</m> factorial</em> and denoted by <m>n!</m>,
+    that is,
+    <me>
+      n! = \prod_{k \in S_n} k = \prod_{k=1}^n k = 1 \cdot 2 \cdot \dots \cdot (n-1) \cdot n
+    </me>.
+  </p>
+
+  <p>
+    We even define <m>0!</m>,
+    that is, the products of elements of <m>S_0</m>:
+    <me>
+      0! = \prod_{k \in S_0} k = \prod_{k \in \emptyset} k = 1
+    </me>.
+  </p>
+
+  <p>
+    Factorials are always computed before any other operation.
+    For example
+    <md>
+      <mrow>2+3! \amp = 2 + 1\cdot 2 \cdot 3 = 2 + 6 = 8,</mrow>
+      <mrow>(2+3)! \amp = 5! = 1\cdot 2 \cdot 3 \cdot 4 \cdot 5 = 120</mrow>
+    </md>.
+  </p>
+  <exercise xml:id="intro-ex-9">
+    <statement>
+      <p>
+        Expand the following sums.
+      </p>
+
+      <p>
+        (a) <m>\sum_{i=4}^7 i</m>,
+      </p>
+
+      <p>
+        (b) <m>\sum_{i=1}^5 (i^2-i)</m>,
+      </p>
+
+      <p>
+        (c) <m>\sum_{i=1}^4 10^i</m>,
+      </p>
+
+      <p>
+        (d) <m>\sum_{2\leq i\leq 5} \frac{1}{2^i}</m>,
+      </p>
+
+      <p>
+        (e) <m>\sum_{i\in S} (-1)^i</m>,
+        where <m>S=\halmaz{2,3,5,8}</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="intro-ex-10">
+    <statement>
+      <p>
+        Write the following expressions in summation notation.
+      </p>
+
+      <p>
+        (a) <m>2+4+6+8+10</m>,
+      </p>
+
+      <p>
+        (b) <m>1+4+7+10</m>,
+      </p>
+
+      <p>
+        (c) <m>\frac{1}{4}+\frac{1}{2}+1+2+4</m>,
+      </p>
+
+      <p>
+        (d) <m>\frac{1}{4}-\frac{1}{2}+1-2+4</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="intro-ex-11">
+    <statement>
+      <p>
+        Expand the following products.
+      </p>
+
+      <p>
+        (a) <m>\prod_{i=-4}^{-1} i</m>,
+      </p>
+
+      <p>
+        (b) <m>\prod_{i=1}^4 (i^2)</m>,
+      </p>
+
+      <p>
+        (c) <m>\prod_{i=1}^3 2^i</m>,
+      </p>
+
+      <p>
+        (d) <m>\prod_{-2\leq i\leq 3} \frac{1}{2^i}</m>,
+      </p>
+
+      <p>
+        (e) <m>\prod_{i\in S} (-1)^i</m>,
+        where <m>S=\halmaz{2,4,6,7}</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="intro-ex-12">
+    <statement>
+      <p>
+        Write the following expressions in product notation.
+      </p>
+
+      <p>
+        (a) <m>1\cdot 3\cdot 5\cdot 7</m>,
+      </p>
+
+      <p>
+        (b) <m>(-1)\cdot 2\cdot 5\cdot 8</m>,
+      </p>
+
+      <p>
+        (c) <m>\frac{1}{9}\cdot\frac{1}{3}\cdot 1\cdot 3\cdot 9</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_factorial1">
+    <statement>
+      <p>
+        Compute the values of <m>n!</m> for every <m>n \in \halmaz{0, 1, 2, 3, 4, 5, 6, 7, 8}</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_factorial2">
+    <statement>
+      <p>
+        Compute the values of
+        <md>
+          <mrow>\amp  5+3!</mrow>
+          <mrow>\amp  (5+3)!</mrow>
+          <mrow>\amp  4-2\cdot 3!</mrow>
+          <mrow>\amp  (4-2)\cdot 3!</mrow>
+          <mrow>\amp  4 - (2 \cdot 3)!</mrow>
+          <mrow>\amp  3 \cdot 2!</mrow>
+          <mrow>\amp  (3 \cdot 2)!</mrow>
+          <mrow>\amp  4 \cdot 3!</mrow>
+          <mrow>\amp  4! \cdot 5</mrow>
+        </md>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_factorial3">
+    <statement>
+      <p>
+        Prove that <m>n! = n \cdot (n-1)!</m> for every positive integer <m>n</m>.
+        Note, that it is even true for <m>n=1</m>,
+        which is one of the reasons we define <m>0!</m> to be equal to 1.
+      </p>
+    </statement>
+  </exercise>
+</section>
+

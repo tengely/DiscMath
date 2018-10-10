@@ -1,0 +1,213 @@
+
+
+<section xml:id="sec_sequences">
+  <title>Sequences</title>
+  <p>
+    In <xref ref="sec_numeralsystem">Section</xref>
+    we have learned how to write a number in different numeral systems.
+    We are now interested in how many <m>n</m>-digit numbers exist in a certain numeral system.
+    Let us start with base 10.
+    We know that there are 9 one-digit positive integers: 1, 2, 3, 4, 5, 6, 7, 8, 9.
+    How many two digit positive integers exist?
+    One way to count them is that we know that there are 99 positive integers which are one-digit or two-digit long.
+    We have already counted that there are 9 one-digit positive integers.
+    Therefore there are <m>99-9=90</m> two-digit positive integers.
+  </p>
+
+  <p>
+    We could have calculated this differently:
+    there are 9 possibilities for a first digit of a two-digit number,
+    and there are 10 possibilities
+    (independently from the first digit)
+    for the second digit.
+    That is, there are <m>9 \cdot 10</m> two-digit positive integers.
+  </p>
+
+  <p>
+    Now, what about three-digit positive integers?
+    There are 999 <sq>at most three-digit numbers</sq>,
+    and 99 are <sq>at most two-digit numbers</sq>.
+    Thus there are <m>999-99=900</m> three-digit positive integers.
+    But we can obtain this result by using the other idea, as well.
+    There are 9 possibilities for the first digit of a three-digit number, 10 possibilities for the second digit and 10 possibilities for the third digit,
+    that makes <m>9 \cdot 10 \cdot 10 = 900</m> possibilities for three digit positive integers.
+  </p>
+
+  <p>
+    Let us generalize this argument for <m>n</m>-digit positive integers.
+    There are 9 possibilities for the first digit,
+    and 10 possibilities for every other digit.
+    Altogether, the number of <m>n</m>-digit positive integers
+    (in base 10)
+    is
+    <me>
+      9 \cdot \underbrace{10 \cdot \dots \cdot 10}_{n-1} = 9\cdot 10^{n-1}
+    </me>.
+  </p>
+  <exercise xml:id="ex_noofbase2numbers">
+    <statement>
+      <p>
+        How many <m>n</m>-digit base 2 positive integers exist?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    We could generalize this idea for arbitrary bases.
+  </p>
+
+  <proposition xml:id="prop_numberofndigitbasek">
+    <statement>
+      <p>
+        The number of <m>n</m>-digit base <m>k</m> positive integers is
+        <me>
+          (k-1) \cdot k^{n-1}
+        </me>.
+      </p>
+    </statement>
+  </proposition>
+
+  <proof>
+    <p>
+      There are <m>(k-1)</m>-many possibilities for the first digit (it cannot be 0, only <m>1, 2, \dots,
+      k-1</m>),
+      and there are <m>k</m> possibilities for every other digit.
+      Thus, the number of <m>n</m>-digit positive integers in base <m>k</m> is
+      <me>
+        (k-1) \cdot \underbrace{k \cdot \dots \cdot k}_{n-1} = (k-1) \cdot k^{n-1}
+      </me>.
+    </p>
+  </proof>
+
+  <p>
+    And what about the <q>at most</q>
+    <m>n</m>-digit non-negative integers in base <m>k</m> (including 0)?
+    In this case, we can consider them as <m>n</m>-digit numbers,
+    where the first digit can be 0, as well.
+    Thus, there are <m>k</m> possibilities for the first digit,
+    <m>k</m> possibilities for the second digit, etc.
+    Thus,
+  </p>
+
+  <proposition xml:id="prop_numberofnatmostdigitbasek">
+    <statement>
+      <p>
+        The number of <q>at most</q>
+        <m>n</m>-digit non-negative integers in base <m>k</m> is
+        <me>
+          \underbrace{k \cdot k \cdot \dots \cdot k}_{n} = k^n
+        </me>.
+      </p>
+    </statement>
+  </proposition>
+
+  <p>
+    In a very similar way we can count the number of possible 5 letter long words.
+    (Here, we count the not necessarily meaningful words,
+    as well.)
+    Indeed,
+    as the English alphabet consists of 26 letters,
+    we have 26 possibilities for the first letter,
+    26 possibilities for the second letter, etc.
+    That is,
+    the number of 5 letter long words is
+    <me>
+      26 \cdot 26 \cdot 26 \cdot 26 \cdot 26 = 26^5
+    </me>.
+  </p>
+
+  <p>
+    It seems, that it is easy to calculate sequences of letters (i.e.<nbsp />possible words),
+    as long as we know how long they should be and how many letters the alphabet has.
+    Indeed, we can formulate our main theorem.
+  </p>
+
+  <theorem xml:id="thm_sequence">
+    <statement>
+      <p>
+        Let the alphabet consist of <m>k</m> letters.
+        Then the number of <m>n</m> letter long sequences
+        (possible words)
+        is <m>k^n</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      There are <m>k</m> possibilities to choose the first letter.
+      Then, there are <m>k</m> possibilities to choose the second letter
+      (no matter how we have chosen the first letter),
+      etc.
+      Altogether there are <m>n</m> letters to choose (with possible repetitions),
+      thus the number of <m>n</m> letter long sequences is
+      <me>
+        \underbrace{k \cdot k \cdot \dots \cdot k}_{n} = k^n
+      </me>.
+    </p>
+  </proof>
+
+  <p>
+    Sometimes this theorem needs to be combined for different alphabets for each letter.
+    We already saw an example:
+    for calculating the number of <m>n</m>-digit long base 10 numbers,
+    the first digit is an element of an alphabet of size 9, and every other <m>(n-1)</m> digit can be an element of size 10.
+    As the choice of the digits is independent to each other,
+    the number of <m>n</m>-digit base 10 numbers is <m>9 \cdot 10^{n-1}</m>.
+  </p>
+
+  <p>
+    Another possible example is the mobile phone number of a person.
+    In Hungary, there are three mobile providers,
+    and each provider issues 7 digit long numbers.
+    Thus altogether there are
+    <m>3 \cdot 10^7</m> possibilities for a mobile phone number in Hungary.
+  </p>
+  <exercise xml:id="ex_palindrome">
+    <statement>
+      <p>
+        How many 3 digit palindrome numbers exist
+        (in base 10)?
+        (Palindrome numbers are numbers which are the same if read backwards.
+        How many at most 3 digit palindrome numbers exist (in base 10)?
+        Generalize the result to <m>n</m>-digit base <m>k</m> palindrome numbers.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_Hungarianwords">
+    <statement>
+      <p>
+        The Hungarian alphabet contains 44 letters.
+        How many 5, 7, 10 letter long
+        (not necessarily meaningful)
+        words can be created using Hungarian letters?
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_toto">
+    <statement>
+      <p>
+        In Hungary there is a game called <q>TOT&#211;</q>,
+        where one bets on the outcome of certain football games.
+        There are <m>13+1</m> games one can bet on,
+        and there are 3 choices for each of them:
+        one writes <sq>1</sq> if they think that the first team wins,
+        one writes <sq>2</sq> if they think that the second team wins,
+        and <sq>X</sq> means that the result is a draw.
+        How many TOT&#211; tickets should be filled out to make sure that one of them will be correct for all <m>13+1</m> games?
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_company">
+    <statement>
+      <p>
+        In a company the following system is used to record the people working there:
+        in the first record the name of the person is written as a 20 long string with possible spaces.
+        Then the gender of the person is put into the next record (male/female).
+        Then follows the person's job title in a 10 letter long string,
+        and finally comes the payment of the person as an at most 8 digit non-negative integer in base 10.
+        How many people records can be stored in this system if we allow empty names/job titles, as well?
+      </p>
+    </statement>
+  </exercise>
+</section>
+

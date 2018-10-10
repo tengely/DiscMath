@@ -1,0 +1,548 @@
+
+
+<section>
+  <title>Identities</title>
+  <p>
+    In this Section we investigate several properties of Pascal's triangle.
+    Throughout this Section,
+    we will first conjecture what identities hold by looking at the first 12 rows of Pascal's triangle.
+    Therefore solving <xref ref="ex_pascal12">Exercise</xref>
+    is essential before continuing.
+  </p>
+
+  <p>
+    Let us start by the sum of the numbers in a row:
+    <md>
+      <mrow>1 \amp  = 1,</mrow>
+      <mrow>1 + 1 \amp = 2,</mrow>
+      <mrow>1 + 2 + 1 \amp = 4,</mrow>
+      <mrow>1 + 3 + 3 + 1 \amp = 8,</mrow>
+      <mrow>1 + 4 + 6 + 4 + 1 \amp = 16,</mrow>
+      <mrow>1 + 5 + 10 + 10 + 5 + 1 \amp = 32,</mrow>
+      <mrow>1 + 6 + 15 + 20 + 15 + 6 + 1 \amp = 64</mrow>
+    </md>.
+  </p>
+
+  <p>
+    It seems from these equations that the sum of the numbers in the <m>n</m>th row is <m>2^n</m>.
+    This stetement is equivalent to the equality
+    <men>
+      \binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \dots + \binom{n}{n-2} + \binom{n}{n-1} + \binom{n}{n} = 2^n
+    </men>.
+  </p>
+
+  <p>
+    Note, that we have already proved this,
+    first in <xref ref="prop_sumofbinomial">Proposition</xref>,
+    then later in <xref ref="ex_binomial1_1">Exercise</xref>.
+    Now, we prove it a third way,
+    using the generating rule of Pascal's triangle.
+  </p>
+
+  <p>
+    Let us consider first the 7th row,
+    and try to compute the sum using the generating rule of Pascal's triangle,
+    rather than adding the numbers:
+    <md>
+      <mrow>\amp  1 + 7 + 21 + 35 + 35 + 21 + 7 + 1</mrow>
+      <mrow>\amp = 1 + (1 + 6) + (6 + 15) + (15 + 20) + (20 + 15) + (15 + 6) + (6 + 1) + 1</mrow>
+      <mrow>\amp = 2 \cdot (1 + 6 + 15 + 20 + 15 + 6 + 1 ) = 2 \cdot 2^6 = 2^7 = 128</mrow>
+    </md>.
+  </p>
+
+  <p>
+    This idea can be used in the general case, as well.
+  </p>
+
+  <p>
+    Now, we prove that the sum of the numbers in the <m>n</m>th row of Pascal's triangle is <m>2^n</m> by induction on <m>n</m>.
+    The statement holds for <m>n=0</m> and <m>n=1</m> (in fact,
+    we just calculated that it holds for <m>n\leq 7</m>).
+    Assume now that the statement holds for <m>n</m>, as well.
+    That is, the sum of the numbers in the <m>n</m>th row is <m>2^{n}</m>.
+    Consider the sum of the <m>(n+1)</m>st row,
+    and let us use the generating rule of Pascal's triangle:
+    <md>
+      <mrow>\amp  \binom{n+1}{0} + \binom{n+1}{1} + \binom{n+1}{2} + \dots + \binom{n+1}{n-1} + \binom{n+1}{n} + \binom{n+1}{n+1}</mrow>
+      <mrow>\amp = \binom{n}{0} + \left( \binom{n}{0} + \binom{n}{1} \right) + \left( \binom{n}{1} + \binom{n}{2} \right)  + \left( \binom{n}{2} + \binom{n}{3} \right) 
+      + \dots</mrow>
+      <mrow>\amp + 
+      \left( \binom{n}{n-2} + \binom{n}{n-1} \right)  + \left( \binom{n}{n-1} + \binom{n}{n} \right) + \binom{n}{n}</mrow>
+      <mrow>\amp = 2 \cdot \left[ \binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \dots + \binom{n}{n-2} + \binom{n}{n-1} + \binom{n}{n} \right]</mrow>
+      <mrow>\amp = 2 \cdot 2^{n} = 2^{n+1}</mrow>
+    </md>.
+  </p>
+
+  <p>
+    First, we replaced <m>\binom{n+1}{0}=1</m> by <m>\binom{n}{0}=1</m>,
+    and <m>\binom{n+1}{n+1} = 1</m> by <m>\binom{n}{n} = 1</m>,
+    then we used the generating rule of Pascal's triangle.
+    Then we observed that every
+    <m>\binom{n}{k}</m> occurs twice in the sum (for <m>0\leq k\leq n</m>).
+    Finally, we used the induction hypothesis on the sum of the numbers for the <m>n</m>th row.
+  </p>
+
+  <p>
+    Let us use a similar reasoning to calculate the sum of the numbers in a row,
+    <em>with alternating signs</em>.
+    That is, compute the sum
+    <me>
+      \sum_{k=0}^n \left( -1 \right)^k \cdot \binom{n}{k} = \binom{n}{0} - \binom{n}{1} + \binom{n}{2} - \dots + \left( -1 \right)^{n-1} \cdot \binom{n}{n-1} + \left( -1 \right)^{n} \cdot \binom{n}{n}
+    </me>.
+  </p>
+
+  <p>
+    It is easy to compute this sum for the first couple rows:
+    <md>
+      <mrow>1 \amp  = 1,</mrow>
+      <mrow>1 - 1 \amp = 0,</mrow>
+      <mrow>1 - 2 + 1 \amp = 0,</mrow>
+      <mrow>1 - 3 + 3 - 1 \amp = 0,</mrow>
+      <mrow>1 - 4 + 6 - 4 + 1 \amp = 0,</mrow>
+      <mrow>1 - 5 + 10 - 10 + 5 - 1 \amp = 0,</mrow>
+      <mrow>1 - 6 + 15 - 20 + 15 - 6 + 1 \amp = 0,</mrow>
+      <mrow>1 - 7 + 21 - 35 + 35 - 21 + 7 - 1 \amp = 0</mrow>
+    </md>.
+  </p>
+
+  <p>
+    It seems likely that for <m>n\geq 1</m> the alternating sum of the numbers in the <m>n</m>th row of Pascal's triangle is 0.
+  </p>
+  <exercise xml:id="ex_alternatingsum">
+    <statement>
+      <p>
+        The alternating sum of the <m>n</m>th row is clearly 0 if <m>n</m> is odd.
+        Why?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Let us try to use the former argument to compute the alternating sum of the numbers in the 8th row:
+    <md>
+      <mrow>\amp  1 - 8 + 28 - 56 + 70 - 56 + 28 - 8 + 1 = 1 - (1 + 7) + (7 + 21) - (21 + 35)</mrow>
+      <mrow>\amp + (35 + 35) - (35 + 21) + (21+7) - (7 + 1) + 1 = (1-1) + (-7+7)</mrow>
+      <mrow>\amp + (21-21) + (-35 + 35) + (35-35) + (-21 + 21) + (7-7) + (-1+1) = 0</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Using the very same proof technique,
+    we can prove that the alternating sum is 0 in the <m>n</m>th row, as well.
+  </p>
+  <exercise xml:id="ex_alternatingsum2">
+    <statement>
+      <p>
+        Prove that the alternating sum of the <m>n</m>th row is 0,
+        that is,
+        <me>
+          \sum_{k=0}^n \left( -1 \right)^k \cdot \binom{n}{k} = \binom{n}{0} - \binom{n}{1} + \dots + \left( -1 \right)^{n-1} \cdot \binom{n}{n-1} + \left( -1 \right)^{n} \cdot \binom{n}{n} = 0
+        </me>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    In fact, the technique can be used to prove an even more general statement,
+    namely we can determine the alternating sum if we stop at the <m>k</m>th term (for some <m>k\leq n-1</m>):
+  </p>
+
+  <proposition xml:id="prop_alternatingsum">
+    <statement>
+      <me>
+        \binom{n}{0} - \binom{n}{1} + \dots + \left( -1 \right)^{k-1} \cdot \binom{n}{k-1} + \left( -1 \right)^{k} \cdot \binom{n}{k} = \left( - 1 \right)^k \cdot \binom{n-1}{k}
+      </me>.
+    </statement>
+  </proposition>
+
+  <proof>
+    <p>
+      Consider the alternating sum of the <m>n</m>th row (for <m>n\geq 1</m>),
+      and use the generating rule of Pascal's triangle:
+      <md>
+        <mrow>\amp  \binom{n}{0} - \binom{n}{1} + \binom{n}{2} - \dots + \left( -1 \right)^{k-1} \cdot \binom{n}{k-1} + \left( -1 \right)^{k} \cdot \binom{n}{k}</mrow>
+        <mrow>\amp = \binom{n-1}{0} - \left( \binom{n-1}{0} + \binom{n-1}{1} \right) + \left( \binom{n-1}{1} + \binom{n-1}{2} \right)  - \dots</mrow>
+        <mrow>\amp + 
+        (-1)^{k-1} \cdot \left( \binom{n-1}{k-2} + \binom{n-1}{k-1} \right) + (-1)^{k} \cdot \left( \binom{n-1}{k-1} + \binom{n-1}{k} \right)</mrow>
+        <mrow>\amp = \left( \binom{n-1}{0} - \binom{n-1}{0} \right) + \left( - \binom{n-1}{1} + \binom{n-1}{1} \right) + \left( \binom{n-1}{2} - \binom{n-1}{2} \right) + \dots</mrow>
+        <mrow>\amp + \left( \left( -1 \right)^{k-2} \cdot \binom{n-1}{k-2} + \left( -1 \right)^{k-1} \cdot \binom{n-1}{k-2} \right)</mrow>
+        <mrow>\amp + \left( \left( -1 \right)^{k-1} \cdot \binom{n-1}{k-1} + \left( -1 \right)^{k} \cdot \binom{n-1}{k-1} \right) + \left( -1 \right)^k \cdot \binom{n-1}{k}</mrow>
+        <mrow>\amp = 0 + 0 + 0 + \dots + 0 + 0 + \left( -1 \right)^k \cdot \binom{n-1}{k} = \left( -1 \right)^k \cdot \binom{n-1}{k}</mrow>
+      </md>.
+    </p>
+
+    <p>
+      First, we replaced <m>\binom{n}{0}=1</m> by <m>\binom{n-1}{0}=1</m>,
+      and <m>\binom{n}{n} = 1</m> by <m>\binom{n-1}{n-1} = 1</m>,
+      then we used the generating rule of Pascal's triangle.
+      Then we observed that every
+      <m>\binom{n-1}{j}</m> occurs twice in the sum:
+      first with a positive sign,
+      then right after it with a negative sign (for <m>0\leq j\leq k-1</m>).
+      The only term remaining is <m>\left( -1 \right)^k \cdot \binom{n-1}{k}</m>.
+    </p>
+  </proof>
+
+  <p>
+    If we define <m>\binom{n-1}{n}</m> to be 0 (considering there are no <m>n</m>-element subsets of an <m>(n-1)</m>-element set),
+    then our statement on the alternating sums follows from <xref ref="prop_alternatingsum">Proposition</xref>.
+  </p>
+
+  <p>
+    Now, consider the sum of the squares of the numbers in a row.
+    We can find a pattern here, as well:
+    <md>
+      <mrow>1^2 \amp  = 1,</mrow>
+      <mrow>1^2 + 1^2 \amp = 2,</mrow>
+      <mrow>1^2 + 2^2 + 1^2 \amp = 6,</mrow>
+      <mrow>1^2 + 3^2 + 3^2 + 1^2 \amp = 20,</mrow>
+      <mrow>1^2 + 4^2 + 6^2 + 4^2 + 1^2 \amp = 70,</mrow>
+      <mrow>1^2 + 5^2 + 10^2 + 10^2 + 5^2 + 1^2 \amp = 252,</mrow>
+      <mrow>1^2 + 6^2 + 15^2 + 20^2 + 15^2 + 6^2 + 1^2 \amp = 924</mrow>
+    </md>.
+  </p>
+
+  <p>
+    After computing the first twelve rows of Pascal's triangle in <xref ref="ex_pascal12">Exercise</xref>,
+    we can observe that the results are the numbers occurring in the middle column.
+    That is, we can conjecture that the sum of the square of the numbers in row <m>n</m> is <m>\binom{2n}{n}</m>, that is,
+  </p>
+
+  <proposition xml:id="prop_sumsquaresofrow">
+    <statement>
+      <men xml:id="eq_sumsquaresofrow">
+        \sum_{k=0}^{n} \binom{n}{k}^2 = \binom{n}{0}^2 + \binom{n}{1}^2 + \dots + \binom{n}{n-1}^2 + \binom{n}{n}^2 = \binom{2n}{n}
+      </men>.
+    </statement>
+  </proposition>
+
+  <proof>
+    <p>
+      As earlier,
+      we try to understand why this equation holds by giving a combinatorial meaning to both sides.
+      The right hand side gives away a clue:
+      <m>\binom{2n}{n}</m> is the number of ways to choose <m>n</m> elements out of a <m>2n</m>-element set
+      (say <m>S = \halmaz{1, 2, \dots , 2n}</m>).
+      Our plan is to prove that the left hand side of <xref ref="eq_sumsquaresofrow" /> is the number of <m>n</m>-element subsets of <m>S</m>, as well.
+      Let <m>S_1 = \halmaz{1, 2, \dots , n}</m> and <m>S_2 = \halmaz{n+1, n+2, \dots , 2n}</m>.
+      Now, try to count the number of ways to choose <m>n</m>-element of <m>S</m> by counting how many elements we choose from <m>S_1</m> and from <m>S_2</m>.
+      If we choose 0 element from <m>S_1</m>,
+      then we must choose <m>n</m> elements from <m>S_2</m>.
+      We can do this in <m>\binom{n}{0} \cdot \binom{n}{n}</m>-many ways.
+      If we choose 1 element from <m>S_1</m>,
+      then we must choose <m>n-1</m> elements from <m>S_2</m>.
+      We can do this in <m>\binom{n}{1} \cdot \binom{n}{n-1}</m>-many ways.
+      If we choose 2 elements from <m>S_1</m>,
+      then we must choose <m>n-2</m> elements from <m>S_2</m>.
+      We can do this in <m>\binom{n}{2} \cdot \binom{n}{n-2}</m>-many ways.
+      In general, if we choose k elements from <m>S_1</m>,
+      then we must choose <m>n-k</m> elements from <m>S_2</m>.
+      We can do this in <m>\binom{n}{k} \cdot \binom{n}{n-k}</m>-many ways.
+      In the end, if we choose <m>n</m> elements from <m>S_1</m>,
+      then we must choose <m>0</m> element from <m>S_2</m>.
+      We can do this in <m>\binom{n}{n} \cdot \binom{n}{0}</m>-many ways.
+      Thus, choosing <m>n</m> elements out of <m>2n</m> can be done in the following number of ways:
+      <me>
+        \binom{n}{0} \cdot \binom{n}{n} + \binom{n}{1} \cdot \binom{n}{n-1} + \dots 
+        + \binom{n}{n}\cdot \binom{n}{0} = \sum_{k=0}^n \binom{n}{k} \cdot \binom{n}{n-k}
+      </me>.
+    </p>
+
+    <p>
+      Finally,
+      let us rewrite the left hand side by using the symmetry of Pascal's triangle,
+      that is, <m>\binom{n}{n-k} = \binom{n}{k}</m> to obtain the left hand side of <xref ref="eq_sumsquaresofrow" />:
+      <md>
+        <mrow>\amp  \binom{n}{0} \cdot \binom{n}{n} + \binom{n}{1} \cdot \binom{n}{n-1} + \dots 
+        + \binom{n}{n}\cdot \binom{n}{0} = \sum_{k=0}^n \binom{n}{k} \cdot \binom{n}{n-k}</mrow>
+        <mrow>\amp = \sum_{k=0}^{n} \binom{n}{k}^2 = \binom{n}{0}^2 + \binom{n}{1}^2 + \dots + \binom{n}{n-1}^2 + \binom{n}{n}^2</mrow>
+      </md>.
+    </p>
+
+    <p>
+      That is, both sides of <xref ref="eq_sumsquaresofrow" /> counts the number of ways of choosing <m>n</m> elements out of a <m>2n</m>-element set
+      (or alternatively,
+      the number of <m>n</m>-element subsets of a <m>2n</m>-element set),
+      and therefore must be equal.
+    </p>
+  </proof>
+
+  <p>
+    This idea can be used in a more general setting.
+  </p>
+  <exercise xml:id="ex_n_mchoosek">
+    <statement>
+      <p>
+        Prove that
+        <md>
+          <mrow>\amp  \sum_{k=0}^l \binom{n}{k} \cdot \binom{m}{l-k} = \binom{n+m}{l}, \text{ that is, }</mrow>
+          <mrow>\amp  \binom{n}{0} \cdot \binom{m}{l} + \binom{n}{1} \cdot \binom{m}{l-1} + \dots + \binom{n}{l} \cdot \binom{m}{0}= \binom{n+m}{l}</mrow>
+        </md>.
+      </p>
+
+      <p>
+        How do we need to choose <m>m</m> and <m>l</m> so that <xref ref="eq_n_mchoosek" /> gives us the equality <xref ref="eq_sumsquaresofrow" />?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    We could have used the Binomial theorem to prove <xref ref="eq_sumsquaresofrow" />:
+  </p>
+
+  <proof>
+    <p>
+      Consider <m>(x+y)^{2n}</m>, and expand it using the Binomial theorem:
+      <me>
+        (x+y)^{2n} = \sum_{k=0}^{2n} \binom{2n}{k} x^{2n-k} \cdot y^{k}
+      </me>.
+    </p>
+
+    <p>
+      Then the right hand side of <xref ref="eq_sumsquaresofrow" /> is the coefficient of the term <m>x^ny^n</m>.
+      We prove that the left hand side is the coefficient of <m>x^ny^n</m>, as well.
+      For this, we compute <m>(x+y)^{2n}</m> by multiplying
+      <m>(x+y)^n \cdot (x+y)^n</m> after expanding both factors using the Binomial theorem:
+      <me>
+        (x+y)^{2n} = (x+y)^n \cdot (x+y)^n = \left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right) \cdot \left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right)
+      </me>.
+    </p>
+
+    <p>
+      Now, let us compute the coefficient of <m>x^n y^n</m>.
+      When do we obtain <m>x^n y^n</m> when we multiply <m>\left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right)</m> by itself?
+      Take for example <m>x^n</m> from the first factor,
+      this must be multiplied by <m>y^n</m> from the second factor to obtain <m>x^n y^n</m>.
+      The coefficient of <m>x^n</m> in the first factor is <m>\binom{n}{0}</m>,
+      the coefficient of <m>y^n</m> in the second factor is <m>\binom{n}{n}</m>,
+      thus this multiplication contributes by
+      <m>\binom{n}{0} \cdot \binom{n}{n}</m> to the coefficient of <m>x^n y^n</m> in <m>(x+y)^{2n}</m>.
+      Similarly, take the term <m>x^{n-1}y</m> from the first factor,
+      this must be multiplied by
+      <m>xy^{n-1}</m> from the second factor to obtain <m>x^n y^n</m>.
+      The coefficient of <m>x^{n-1}y</m> in the first factor is <m>\binom{n}{1}</m>,
+      the coefficient of <m>xy^{n-1}</m> in the second factor is <m>\binom{n}{n-1}</m>,
+      thus this multiplication contributes by
+      <m>\binom{n}{1} \cdot \binom{n}{n-1}</m> to the coefficient of <m>x^n y^n</m> in <m>(x+y)^{2n}</m>.
+      In general,
+      for some <m>k</m> the term <m>x^{n-k}y^k</m> in the first factor must be multiplied by
+      <m>x^k y^{n-k}</m> from the second factor.
+      The coefficient of <m>x^{n-k}y^k</m> in the first factor is <m>\binom{n}{k}</m>,
+      the coefficient of <m>x^ky^{n-k}</m> in the second factor is <m>\binom{n}{n-k}</m>,
+      thus this multiplication contributes by
+      <m>\binom{n}{k} \cdot \binom{n}{n-k}</m> to the coefficient of <m>x^n y^n</m> in <m>(x+y)^{2n}</m>.
+      That is, the coefficient of <m>x^n y^n</m> in <m>(x+y)^{2n}</m> is
+      <me>
+        \sum_{k=0}^n \binom{n}{k} \cdot \binom{n}{n-k}
+      </me>.
+    </p>
+
+    <p>
+      Moreover, the coefficient of <m>x^ny^n</m> in
+      <m>(x+y)^{2n}</m> is <m>\binom{2n}{n}</m>,
+      thus the two numbers must be equal.
+      Applying the symmetry of Pascal's triangle (that is,
+      <m>\binom{n}{k} = \binom{n}{n-k}</m>),
+      we obtain <xref ref="eq_sumsquaresofrow" />:
+      <me>
+        \sum_{k=0}^n \binom{n}{k}^2 = \sum_{k=0}^n \binom{n}{k} \cdot \binom{n}{n-k} = \binom{2n}{n}
+      </me>.
+    </p>
+  </proof>
+
+  <exercise xml:id="ex_n_mchoosek2">
+    <statement>
+      <p>
+        Solve <xref ref="ex_n_mchoosek">Exercise</xref> using the Binomial theorem.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    After dealing with sums of rows,
+    consider sums where we move diagonally upwards.
+    That is, when we sum up the <m>m</m>th elements of every row.
+    For <m>m=0</m> it is pretty easy:
+    <me>
+      \binom{n}{0} + \binom{n-1}{0} + \dots + \binom{1}{0} + \binom{0}{0} = n+1
+    </me>.
+  </p>
+
+  <p>
+    For <m>m=1</m> we have
+    <me>
+      \binom{n}{1} + \binom{n-1}{1} + \dots + \binom{2}{1} + \binom{1}{1} = n + (n-1) + \dots + 2 + 1 = \frac{n\cdot (n+1)}{2}
+    </me>,
+    by <xref ref="prop_sumk">Proposition</xref>.
+  </p>
+
+  <p>
+    For <m>m=2</m> it is a bit harder to do the calculations,
+    but still manageable:
+    <md>
+      <mrow>\amp \binom{n}{2} + \binom{n-1}{2} + \dots + \binom{3}{2} + \binom{2}{2}</mrow>
+      <mrow>\amp = \frac{n \cdot (n-1)}{2} + \frac{(n-1) \cdot (n-2)}{2} + \dots + \frac{3 \cdot 2}{2} + \frac{2 \cdot 1}{2}</mrow>
+      <mrow>\amp = \frac12 \cdot \left( n \cdot (n-1) + (n-1) \cdot (n-2) + \dots + 3 \cdot 2 + 2 \cdot 1 \right)</mrow>
+      <mrow>\amp = \frac12 \cdot \frac{(n+1) \cdot n \cdot (n-1)}{3} = \frac{(n+1) \cdot n \cdot (n-1)}{3 \cdot 2 \cdot 1}</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Here, we used <xref ref="ex_sumk_k_1_">Exercise</xref>
+    to calculate the sum <m>\sum_{i=1}^{n-1} i \cdot (i+1)</m>.
+  </p>
+
+  <p>
+    It is quite clear that by increasing <m>m</m>,
+    we would have harder and harder time to calculate the obtained sums.
+    Nevertheless,
+    only by computing the first couple sums we can make a guess at the general answer:
+    <md>
+      <mrow>\amp  \text{ for \(m=0\) }  \amp  \sum_{k=0}^n \binom{k}{0} \amp = n+1,</mrow>
+      <mrow>\amp  \text{ for \(m=1\) }  \amp  \sum_{k=1}^n \binom{k}{1} \amp = \frac{(n+1) \cdot n}{2},</mrow>
+      <mrow>\amp  \text{ for \(m=2\) }  \amp  \sum_{k=2}^n \binom{k}{2} \amp = \frac{(n+1) \cdot n \cdot (n-1)}{3 \cdot 2}</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Now, hold on for a second!
+    The right hand sides here are <m>\binom{n+1}{1}</m>,
+    <m>\binom{n+1}{2}</m>, <m>\binom{n+1}{3}</m>, respectively.
+    From this, we may conjecture that in general the sum
+    <m>\sum_{k=m}^n \binom{k}{m}</m> will be <m>\binom{n+1}{m+1}</m>.
+    This is indeed the case.
+  </p>
+
+  <proposition xml:id="prop_sumkchoosem">
+    <statement>
+      <p>
+        The sum of <m>m</m>th elements of Pascal's triangle is <m>\binom{n+1}{m+1}</m>, that is,
+        <men xml:id="eq_sumkchoosem">
+          \sum_{k=m}^n \binom{k}{m} = \binom{m}{m} + \binom{m+1}{m} + \dots + \binom{n}{m} = \binom{n+1}{m+1}
+        </men>.
+      </p>
+    </statement>
+  </proposition>
+
+  <proof>
+    <p>
+      We prove the proposition by induction on <m>n</m>.
+      Fix <m>m</m> first,
+      then the induction starts by checking if the statement holds for the smallest possible <m>n</m>,
+      that is, for <m>n = m</m>.
+      For <m>n=m</m> the left hand side is simply <m>\binom{m}{m} = 1</m>,
+      the right hand side is <m>\binom{m+1}{m+1} = 1</m>,
+      and the statement holds.
+      Let us assume now that the statement holds for <m>n-1</m>,
+      that is,
+      <me>
+        \sum_{k=m}^{n-1} \binom{k}{m} = \binom{m}{m} + \binom{m+1}{m} + \dots + \binom{n-1}{m} = \binom{n}{m+1}
+      </me>.
+    </p>
+
+    <p>
+      This is the induction hypothesis.
+      Now we prove that the statement holds for <m>n</m>, as well.
+      Consider the sum <m>\sum_{k=m}^{n} \binom{k}{m}</m>:
+      <md>
+        <mrow>\amp  \sum_{k=m}^{n} \binom{k}{m} = \underbrace{\binom{m}{m} + \binom{m+1}{m} + \dots + \binom{n-1}{m}}_{= \binom{n}{m+1}, \text{ by the induction hypothesis } } + \binom{n}{m}</mrow>
+        <mrow>\amp = \binom{n}{m+1} + \binom{n}{m} = \binom{n+1}{m+1}</mrow>
+      </md>.
+    </p>
+
+    <p>
+      Here, we first used the induction hypothesis,
+      then the generating rule of Pascal's triangle (<xref ref="prop_binomsum">Proposition</xref>).
+    </p>
+  </proof>
+
+  <p>
+    Again, the induction proof clearly settles that our conjecture was true,
+    but it does not clarify the reason why this identity holds.
+    By finding combinatorial meaning to both sides of <xref ref="eq_sumkchoosem" />, we can understand what is
+    <q>behind the curtain</q>.
+  </p>
+
+  <proof>
+    <p>
+      Again, the right hand side gives a clue on what we need to find.
+      Since <m>\binom{n+1}{m+1}</m> is the number of ways choosing <m>m+1</m> elements out of an <m>n</m>-element set,
+      this is what we will try to find on the left hand side, as well.
+      Let <m>S= \halmaz{1, 2, \dots , n, n+1}</m>.
+      Try to choose <m>m+1</m> elements in the following way:
+      first choose the <em>largest</em> one,
+      then choose the remaining <m>m</m> elements.
+      Clearly the largest is at least <m>m+1</m>.
+      If we choose <m>m+1</m> as the largest chosen number,
+      then we need to choose <m>m</m> elements out of the <m>m</m>-element set <m>\halmaz{1, 2, \dots , m}</m>,
+      this can be done in <m>\binom{m}{m}</m>-many ways.
+      If we choose <m>m+2</m> as the largest chosen number,
+      then we need to choose <m>m</m> elements out of the <m>(m+1)</m>-element set <m>\halmaz{1, 2, \dots , m+1}</m>,
+      this can be done in <m>\binom{m+1}{m}</m>-many ways.
+      If we choose <m>m+3</m> as the largest chosen number,
+      then we need to choose <m>m</m> elements out of the <m>(m+2)</m>-element set <m>\halmaz{1, 2, \dots , m+2}</m>,
+      this can be done in <m>\binom{m+2}{m}</m>-many ways.
+      In general,
+      if we choose <m>k+1</m> as the largest chosen number (for some <m>m \leq k\leq n</m>),
+      then we need to choose <m>m</m> elements out of the <m>k</m>-element set <m>\halmaz{1, 2, \dots , k}</m>,
+      this can be done in <m>\binom{k}{m}</m>-many ways.
+      If we choose <m>n</m> as the largest chosen number,
+      then we need to choose <m>m</m> elements out of the <m>(n-1)</m>-element set <m>\halmaz{1, 2, \dots , n-1}</m>,
+      this can be done in <m>\binom{n-1}{m}</m>-many ways.
+      Finally, if we choose <m>n+1</m> as the largest chosen number,
+      then we need to choose <m>m</m> elements out of the <m>n</m>-element set <m>\halmaz{1, 2, \dots , n}</m>,
+      this can be done in <m>\binom{n}{m}</m>-many ways.
+      That is, the number of ways we can choose <m>(m+1)</m> elements out of an <m>(n+1)</m>-element set is
+      <me>
+        \sum_{k=m}^n \binom{k}{m} = \binom{m}{m} + \binom{m+1}{m} + \dots + \binom{n}{m}
+      </me>
+      on the one hand, and <m>\binom{n+1}{m+1}</m> on the other hand.
+      Thus the two numbers must be equal,
+      as they count the same thing.
+      Hence,
+      <me>
+        \sum_{k=m}^n \binom{k}{m} = \binom{m}{m} + \binom{m+1}{m} + \dots + \binom{n}{m} = \binom{n+1}{m+1}
+      </me>.
+    </p>
+  </proof>
+
+  <p>
+    Note, that from this identity we immediately obtain a formula for the sum of integer numbers and for the sum of squares.
+    Indeed,
+    <me>
+      1 + 2 + \dots + n = \sum_{k=1}^n {k} = \sum_{k=1}^n \binom{k}{1} = \binom{n+1}{2} = \frac{(n+1) \cdot n}{2}
+    </me>,
+    because <m>k</m> in <m>\sum_{k=1}^n k</m> can be expressed as <m>\binom{k}{1}</m>.
+    Similarly, <m>k^2 = \binom{k+1}{2} + \binom{k}{2}</m> by <xref ref="ex_n_2binom">Exercise</xref> (for <m>k\geq 2</m>).
+    Thus
+    <md>
+      <mrow>1^2 + 2^2 + \dots + n^2 \amp = \sum_{k=1}^n k^2 = 1 + \sum_{k=2}^n \left(\binom{k+1}{2} + \binom{k}{2}\right)</mrow>
+      <mrow>\amp = 1 + \sum_{k=2}^n \binom{k+1}{2} + \sum_{k=2}^n \binom{k}{2}</mrow>
+      <mrow>\amp = \binom{2}{2} + \sum_{k=2}^n \binom{k+1}{2} + \sum_{k=2}^n \binom{k}{2}</mrow>
+      <mrow>\amp = \sum_{k=1}^{n} \binom{k+1}{2} + \sum_{k=2}^n \binom{k}{2} = \sum_{k=2}^{n+1} \binom{k}{2} + \sum_{k=2}^n \binom{k}{2}</mrow>
+      <mrow>\amp = \binom{n+2}{3} + \binom{n+1}{3}</mrow>
+      <mrow>\amp = \frac{(n+2) \cdot (n+1) \cdot n}{3 \cdot 2} + \frac{(n+1) \cdot n \cdot (n-1)}{3 \cdot 2}</mrow>
+      <mrow>\amp = \frac{n \cdot (n+1)}{3 \cdot 2} \cdot \left( (n+2)+ (n-1) \right)</mrow>
+      <mrow>\amp = \frac{n \cdot (n+1) \cdot (2n+1)}{6}</mrow>
+    </md>.
+  </p>
+  <exercise xml:id="ex_diagonal">
+    <statement>
+      <p>
+        Prove a similar identity for summing up numbers diagonally in the other direction:
+        <men>
+          \sum_{k=0}^m \binom{n+k}{k} = \binom{n}{0} + \binom{n+1}{1} + \dots + \binom{n+m}{m} = \binom{n+m+1}{m}
+        </men>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_rowp">
+    <statement>
+      <p>
+        Let <m>p</m> be a prime.
+        Prove that every number in row <m>p</m>
+        (except for the first and last)
+        is divisible by <m>p</m>.
+        By observing the first 12 rows of Pascal's triangle,
+        confirm that this property does not necessarily hold if <m>p</m> is not a prime.
+      </p>
+    </statement>
+  </exercise>
+</section>
+

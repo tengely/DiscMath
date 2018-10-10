@@ -1,0 +1,15 @@
+
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="Recurrence_sequences">
+  <title>Recurrence sequences</title>
+  <introduction>
+    <p>
+      In this chapter we consider an important mathematical tool,
+      the so-called recurrence.
+      It is a very useful problem solving strategy that solves a problem by reducing it to smaller instances of the same problem.
+    </p>
+  </introduction>
+  <xi:include  href="section5-1.ptx" />
+  <xi:include  href="section5-2.ptx" />
+</chapter>
+

@@ -1,0 +1,339 @@
+
+
+<section xml:id="sec_nchoosek">
+  <title>The number of subsets of a given size</title>
+  <p>
+    In the Hungarian lottery there are 90 balls in a urn (numbered from 1 to 90).
+    Five numbers of them are chosen in an arbitrary way (usually a celebrity blindly pulls out five balls without putting them back).
+    The order in which the numbers are chosen does not matter,
+    only the chosen numbers themselves (in fact, at the end of the show,
+    the numbers are repeated in their increasing order).
+    People can guess in advance what the five chosen numbers will be,
+    and they can win money depending on how many numbers they managed to guess correctly.
+    The jackpot goes to those, who manage to guess all five numbers properly.
+  </p>
+
+  <p>
+    Let us imagine the situation that we want to win the jackpot.
+    How many lottery tickets should we buy for that?
+    Or, in other words,
+    how many ways can the celebrity choose five numbers out of 90?
+    Let us consider first the case,
+    if the order of the five chosen numbers mattered.
+    We have already solved this problem in <xref ref="thm_orderedsubsets">Theorem</xref>
+    of <xref ref="sec_orderedsubsets">Section</xref>.
+    There are 90 possibilities to choose the first number,
+    then there are 89 possibilities to choose the second number,
+    88 possibilities to choose the third number,
+    87 possibilities to choose the fourth number,
+    and finally,
+    there are 86 possibilities to choose the fifth number.
+    Thus the number of possibilities to choose five numbers such that
+    <em>their order counts</em> is
+    <me>
+      90 \cdot 89 \cdot 88 \cdot 87 \cdot 86 = 5~273~912~160
+    </me>.
+  </p>
+
+  <p>
+    Now, to count the number of unordered possibilities we can try the same trick we successfully implemented in <xref ref="sec_anagrams">Section</xref><nbsp />and <xref ref="sec_orderedsubsets"></xref>.
+    That is,
+    let us group together those chosen five numbers,
+    where the five numbers are the same,
+    they only differ in the order they were chosen.
+    Let us name these groups with the chosen five numbers.
+    For example,
+    there will be a group called <sq>1, 2, 3, 4, 5</sq>,
+    which contains all possible choosing of 1, 2, 3, 4, 5, in any order.
+    Similarly,
+    there will be a group called <sq>13, 42, 51, 66, 90</sq> containing all possible choosing of these five numbers.
+    For example, if the numbers chosen were
+    (in order)
+    <sq>42, 13, 90, 66, 51</sq>,
+    then they are put into the group <sq>13, 42, 51, 66, 90</sq>.
+    Similarly, the numbers <sq>51, 66, 90, 13, 42</sq> are put into the group <sq>13, 42, 51, 66, 90</sq>, as well.
+    We are interested in the number of groups.
+    To count the number of groups,
+    we first count the number of ordered five numbers in one group.
+    How many elements does the group <sq>13, 42, 51, 66, 90</sq> have?
+    This group contains all possible orders in which one can choose these five numbers.
+    This is the number of permutations of these five numbers.
+    That is, there are <m>5! = 120</m>-many orders in the group <sq>13, 42, 51, 66, 90</sq>.
+    Similarly, there are <m>5! = 120</m>-many orders in every other group.
+    Therefore the number of groups
+    (and the number of possible ways to choose five numbers out of 90)
+    is
+    <me>
+      \frac{90 \cdot 89 \cdot 88 \cdot 87 \cdot 86}{5!} = \frac{5~273~912~160}{120} = 43~949~268
+    </me>.
+  </p>
+  <exercise xml:id="ex_90choose5">
+    <statement>
+      <p>
+        Which number is bigger?
+        <md>
+          <mrow>\amp \frac{90 \cdot 89 \cdot 88 \cdot 87 \cdot 86}{5!} \amp \text{ or } \amp  \amp \frac{90!}{5! \cdot 85!}</mrow>
+        </md>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    The number occurring in <xref ref="ex_90choose5">Exercise</xref> is so important,
+    that it has its own name.
+    We denote it by <m>\binom{90}{5}</m> (read as <sq>90 choose 5</sq>),
+    and it equals
+    <me>
+      \binom{90}{5} = \frac{90!}{5! \cdot 85!}
+    </me>.
+  </p>
+
+  <p>
+    In general, we can define <m>\binom{n}{k}</m> similarly.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        Let <m>\binom{n}{k}</m>
+        (read <sq><m>n</m> choose <m>k</m></sq>)
+        be
+        <me>
+          \binom{n}{k} = \frac{n!}{k! \cdot (n-k)!}
+        </me>.
+      </p>
+
+      <p>
+        These numbers are called <term>binomial coefficients</term>.
+      </p>
+    </statement>
+  </definition>
+
+  <exercise xml:id="ex_smallnchoosek">
+    <statement>
+      <p>
+        Calculate the numbers <m>\binom{n}{k}</m> for
+        <m>n = 0, 1, 2, 3, 4, 5, 6</m> and <m>k = 0, 1, \dots, n</m>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Usually, it is easier to calculate
+    <m>\binom{n}{k}</m> as in the left hand side of <xref ref="ex_90choose5">Exercise</xref>.
+  </p>
+
+  <proposition xml:id="prop_nchoosek">
+    <statement>
+      <p>
+        For <m>n\geq k\geq 1</m> we have
+        <me>
+          \binom{n}{k} = \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1)}{k!}
+        </me>.
+      </p>
+    </statement>
+  </proposition>
+
+  <proof>
+    <p>
+      The following calculation shows that the two sides are equal:
+      <md>
+        <mrow>\binom{n}{k} \amp = \frac{n!}{k! \cdot (n-k)!} = \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1) \cdot (n-k)!}{k! \cdot (n-k)!}</mrow>
+        <mrow>\amp = \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1)}{k!}</mrow>
+      </md>.
+    </p>
+  </proof>
+
+  <p>
+    Now, we are ready to generalize our results on the lottery.
+    With that argument we proved that the number of possibilities to choose 5 numbers out of 90 is <m>\binom{90}{5}</m>.
+    This is the same as to say that the number of 5-element subsets of a 90-element set is <m>\binom{90}{5}</m>.
+  </p>
+
+  <theorem xml:id="thm_nchoosek">
+    <statement>
+      <p>
+        The number of <m>k</m>-element subsets of an <m>n</m>-element set is
+        <men xml:id="eq_binom">
+          \binom{n}{k} = \frac{n!}{k! \cdot (n-k)!} = \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1)}{k!}
+        </men>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      The number of <m>k</m>-element <em>ordered</em>
+      subsets is <m>\frac{n!}{(n-k)!}</m> by <xref ref="thm_orderedsubsets">Theorem</xref>.
+      To count the number of unordered <m>k</m>-element subsets we group together those <m>k</m>-element subsets,
+      which differ only in their order.
+      That is,
+      every group contains different orderings of the same <m>k</m> elements.
+      Every group contains <m>k!</m>-many orderings,
+      since <m>k!</m> is the number of possible permutations of those <m>k</m> elements.
+      Therefore the number of groups
+      (and the number of <m>k</m>-element subsets)
+      is
+      <me>
+        \frac{\frac{n!}{(n-k)!}}{k!} = \frac{n!}{k! \cdot (n-k)!} = \binom{n}{k}
+      </me>.
+    </p>
+
+    <p>
+      By <xref ref="prop_nchoosek">Proposition</xref> this is the same number as
+      <me>
+        \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1)}{k!}
+      </me>.
+    </p>
+  </proof>
+
+  <p>
+    In light of <xref ref="thm_nchoosek">Theorem</xref>,
+    the binomial coefficients are important numbers.
+    Therefore, we spend some time to know them a little bit better.
+    It is easy to calculate
+    (and remember)
+    some particular binomial coefficients.
+  </p>
+  <exercise xml:id="ex_nicenchoosek">
+    <statement>
+      <p>
+        What is <m>\binom{n}{0}</m>,
+        <m>\binom{n}{1}</m>, <m>\binom{n}{2}</m>, <m>\binom{n}{n-2}</m>,
+        <m>\binom{n}{n-1}</m> and <m>\binom{n}{n}</m> in general?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Moreover, it is pretty straightforward from formula <xref ref="eq_binom" /> that
+  </p>
+
+  <proposition xml:id="prop_symmetryofbinomial">
+    <statement>
+      <p>
+        For non-negative integers <m>n\geq k</m> we have
+        <me>
+          \binom{n}{k} = \binom{n}{n-k}
+        </me>.
+      </p>
+    </statement>
+  </proposition>
+
+  <proof>
+    <p>
+      Rather than simply substituting into <xref ref="eq_binom" />, we give a combinatorial argument.
+      That is, we give a combinatorial meaning to both sides of the equation, that is,
+      they both will count the same thing.
+      Naturally, if they count the same thing, they must be equal.
+    </p>
+
+    <p>
+      The left hand side counts the number of <m>k</m>-element subsets of an <m>n</m>-element set.
+      The right hand side counts the number of <m>(n-k)</m>-element subsets of an <m>n</m>-element set.
+      We prove that there are the same number of <m>k</m>-element subsets as <m>(n-k)</m>-element subsets.
+      Let <m>S</m> be an <m>n</m>-element set,
+      and let us map every <m>k</m>-element subset into its complementer.
+      This way, we map every <m>k</m>-element subset to an <m>(n-k)</m>-element subset.
+      Moreover, different <m>k</m>-element subsets are mapped to different <m>(n-k)</m>-element subsets.
+      Finally, every <m>(n-k)</m>-element subsets is mapped from a <m>k</m>-element subset (in fact,
+      it is mapped from its complementer).
+      Therefore this map is a one-to-one correspondence between the <m>k</m>-element subsets and the <m>(n-k)</m>-element subsets.
+    </p>
+
+    <p>
+      We can think about this proof in the following way.
+      Choosing <m>k</m> elements out of <m>n</m> elements is the same as
+      <em>not choosing</em> <m>(n-k)</m>-elements.
+      That is, deciding which <m>(n-k)</m> elements will not be chosen is the same as deciding which <m>k</m> elements will be chosen.
+      We can <sq>not choose</sq> <m>(n-k)</m> elements in <m>\binom{n}{n-k}</m>-many ways,
+      which therefore must be the same as the number of choices to choose <m>k</m> elements,
+      which is <m>\binom{n}{k}</m>.
+    </p>
+  </proof>
+
+  <p>
+    Finally, let us conclude this Section by calculating the sum of the binomial coefficients.
+  </p>
+  <exercise xml:id="ex_sumsmallnchoosek">
+    <statement>
+      <p>
+        Calculate the sum
+        <me>
+          \sum_{k=0}^n \binom{n}{k} = \binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \dots + \binom{n}{n-1} + \binom{n}{n}
+        </me>
+        for <m>n=0, 1, 2, 3, 4, 5, 6</m>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    After solving <xref ref="ex_sumsmallnchoosek">Exercise</xref>,
+    one can conjecture on the general case:
+  </p>
+
+  <proposition xml:id="prop_sumofbinomial">
+    <statement>
+      <p>
+        For every positive integer <m>n</m> we have
+        <me>
+          \sum_{k=0}^n \binom{n}{k} = \binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \dots + \binom{n}{n-1} + \binom{n}{n} = 2^n
+        </me>.
+      </p>
+    </statement>
+  </proposition>
+
+  <proof>
+    <p>
+      Again, we give a combinatorial argument.
+      The right hand side counts the number of subsets of an <m>n</m>-element set.
+      We prove that the left hand side counts the same,
+      only in a different manner.
+      It counts the number of subsets in a way that first we choose how many elements the subset will have,
+      and then we count the number of subsets with that many elements.
+    </p>
+
+    <p>
+      That is,
+      a subset of an <m>n</m>-element set can have <m>0</m>,
+      <m>1</m>,
+      <m>2</m>, <m>\dots</m>, <m>(n-1)</m> or <m>n</m> elements.
+      An <m>n</m>-element set has
+      <m>\binom{n}{0}</m>-many <m>0</m>-element subsets,
+      <m>\binom{n}{1}</m>-many <m>1</m>-element subsets,
+      <m>\binom{n}{2}</m>-many <m>2</m>-element subsets, etc.,
+      <m>\binom{n}{n-1}</m>-many <m>(n-1)</m>-element subsets,
+      and <m>\binom{n}{n}</m>-many <m>n</m>-element subsets.
+      That is, the number of subsets the <m>n</m>-element set has is
+      <me>
+        \binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \dots + \binom{n}{n-1} + \binom{n}{n}
+      </me>.
+    </p>
+
+    <p>
+      Alternatively,
+      we can say that an <m>n</m>-element set can have <m>k</m>-element subsets for <m>0 \leq k\leq n</m>.
+      An <m>n</m>-element set has exactly
+      <m>\binom{n}{k}</m>-many <m>k</m>-element subsets,
+      hence it has <m>\sum_{k=0}^n \binom{n}{k}</m>-many subsets altogether.
+    </p>
+
+    <p>
+      As the left hand side and the right hand side count the same thing
+      (the number of subsets of an <m>n</m>-element set),
+      they must be equal.
+    </p>
+  </proof>
+
+  <exercise xml:id="ex_nmidnchoose2">
+    <statement>
+      <p>
+        For what <m>n</m> does <m>n</m> divide <m>\binom{n}{2}</m>?
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_n_2binom">
+    <statement>
+      <p>
+        Prove that <m>n^2 = \binom{n+1}{2} + \binom{n}{2}</m> for <m>n\geq 2</m>.
+      </p>
+    </statement>
+  </exercise>
+</section>
+

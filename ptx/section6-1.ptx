@@ -1,0 +1,463 @@
+
+
+<section>
+  <title>Introduction</title>
+  <ol>
+    <li>
+      <p>
+        <xref ref="intro-ex-1"></xref>
+        There are three given sets
+        <m>A=\halmaz{3,4,6,7,8},B=\halmaz{2,4,5,6,8}</m> and <m>C=\halmaz{1,2,4,5,8}</m>. 
+        We have that
+        <md>
+          <mrow>A\setminus B\amp =\halmaz{3,7}</mrow>
+          <mrow>C\cap B\amp =\halmaz{2,4,5,8}</mrow>
+        </md>.
+        Thus
+        <me>
+          (A\setminus B)\cup(C\cap B)=\halmaz{2,3,4,5,7,8}
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="intro-ex-2"></xref>
+        We have three sets <m>A=\halmaz{1,3,4,6,7},B=\halmaz{2,4,5,6,8}</m> and <m>C=\halmaz{1,3,4,5,8}</m>.
+        <md>
+          <mrow>(A\cap B)\amp =\halmaz{4,6}</mrow>
+          <mrow>(C\cap B)\amp =\halmaz{4,5,8}</mrow>
+        </md>.
+        Therefore
+        <me>
+          (A\cap B)\setminus(C\cap B)=\halmaz{6}
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="intro-ex-3"></xref>
+        Now the three given sets are
+        <m>A=\halmaz{1,3,4,6,7},B=\halmaz{2,4,6,8}</m> and <m>C=\halmaz{1,3,4,8}</m>.
+        <md>
+          <mrow>(A\setminus B)\amp =\halmaz{1,3,7}</mrow>
+          <mrow>(C\setminus B)\amp =\halmaz{1,3}</mrow>
+        </md>.
+        So we obtain
+        <me>
+          (A\setminus B)\cup(C\setminus B)=\halmaz{1,3,7}
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="intro-ex-4"></xref> (a) The elements of the set are 7, 10 and 13. (b) The elements of the set are 0, 1 and 4. (c) The possible differences are <m>3-1, 3-2, 4-1, 4-2, 5-1</m> and <m>5-2</m>,
+        thus the elements of the set are 1, 2, 3 and 4.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="intro-ex-5"></xref> (a)
+        <m>\halmazvonal{2k}{ k\in\halmaz{1,2,3,4,5}}</m>, (b) <m>\halmazvonal{k^2}{k\in\halmaz{1,2,3,4,5}}</m>, (c)
+        <m>\halmazvonal{2^{-k}}{ k\in\mathbb{N}\cup\halmaz{0}}</m>, (d) <m>\halmazvonal{a/b }{a,b\in\mathbb{N}, b\leq a\leq 2b}</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="intro-ex-6"></xref> (a) \begin{venndiagram3sets} \fillACapB\fillC \end{venndiagram3sets} (b) \begin{venndiagram3sets} \fillANotB\fillANotC \end{venndiagram3sets} (c) \begin{venndiagram3sets} \fillACapC\fillBCapC \end{venndiagram3sets} (d) \begin{venndiagram3sets} \fillACapC\fillBCapC\fillACapB \end{venndiagram3sets} (e) \begin{venndiagram3sets} \fillACapBNotC\fillBCapCNotA\fillACapCNotB \end{venndiagram3sets} (f) \begin{venndiagram3sets} \fillANotB\fillBNotC\fillCNotA \end{venndiagram3sets}
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="intro-ex-7"></xref>
+        The set <m>A\cap B\cap C</m> is a subset of all other sets for which we have certain cardinality conditions,
+        so we may set
+        <me>
+          A\cap B\cap C=\halmaz{1,2}
+        </me>.
+        The conditions for <m>|A\cap B|, |A\cap C|</m> and <m>|B\cap C|</m> are satisfied.
+        We have that <m>|A|=4</m>, that means that two elements
+        are missing from <m>A\setminus(B\cup C)</m>.
+        We let <m>A\setminus(B\cup C)=\halmaz{3,4}</m>.
+        Similarly for <m>B\setminus(A\cup C)</m> and <m>C\setminus(A\cup B)</m>.
+        We obtain that
+        \begin{venndiagram3sets}[labelABC={{1,2}},labelOnlyA={{3,4}},labelOnlyB={{5,6}},labelOnlyC={{7,8}}]
+        \end{venndiagram3sets}
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="intro-ex-8"></xref> Following the solution of <xref ref="intro-ex-7">Exercise</xref>
+        we get: \begin{venndiagram3sets}[labelABC={{1,2}},labelOnlyBC={{3}},labelOnlyA={{4,5}},labelOnlyB={{6,7}},labelOnlyC={{8,9,10}}] \end{venndiagram3sets}
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="intro-ex-9"></xref> (a) <m>\sum_{i=4}^7 i=4+5+6+7</m>, (b)
+        <m>\sum_{i=1}^5 (i^2-i)=0+2+6+12+20</m>, (c) <m>\sum_{i=1}^4 10^i=10+100+1000+10000</m>, (d)
+        <m>\sum_{2\leq i\leq 5} \frac{1}{2^i}=\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}</m>, (e) <m>\sum_{i\in S} (-1)^i</m>,
+        where <m>S=\halmaz{2,3,5,8}</m> is <m>1+(-1)+(-1)+1</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="intro-ex-10"></xref> (a)
+        <m>2+4+6+8+10=\sum_{i=1}^5 2i</m>, (b) <m>1+4+7+10=\sum_{i=0}^3 (3i+1)</m>, (c)
+        <m>\frac{1}{4}+\frac{1}{2}+1+2+4=\sum_{i=-2}^2 2^i</m>, (d) <m>\frac{1}{4}-\frac{1}{2}+1-2+4=\sum_{i=-2}^2 (-2)^i</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="intro-ex-11"></xref> (a) <m>\prod_{i=-4}^{-1} i=(-4)\cdot(-3)\cdot(-2)\cdot(-1)</m>, (b)
+        <m>\prod_{i=1}^4 (i^2)=1\cdot 4\cdot 9\cdot 16</m>, (c) <m>\prod_{i=1}^3 2^i=2\cdot 4\cdot 8</m>, (d)
+        <m>\prod_{-2\leq i\leq 3} \frac{1}{2^i}=4\cdot 2\cdot 1\cdot \frac{1}{2}\cdot \frac{1}{4}\cdot \frac{1}{8}</m>, (e) <m>\prod_{i\in S} (-1)^i</m>,
+        where <m>S=\halmaz{2,4,6,7}</m> is <m>(-1)^2\cdot(-1)^4\cdot(-1)^6\cdot(-1)^7</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="intro-ex-12"></xref> (a) <m>1\cdot 3\cdot 5\cdot 7=\prod_{i=0}^3 (2i+1)</m>, (b)
+        <m>(-1)\cdot 2\cdot 5\cdot 8=\prod_{i=0}^3 (3i-1)</m>, (c) <m>\frac{1}{9}\cdot\frac{1}{3}\cdot 1\cdot 3\cdot 9=\prod_{i=-2}^2 3^{i}</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_factorial1"></xref>
+        The values are
+        <md>
+          <mrow>0! \amp = 1,</mrow>
+          <mrow>1! \amp = 1,</mrow>
+          <mrow>2! \amp = 2,</mrow>
+          <mrow>3! \amp = 6,</mrow>
+          <mrow>4! \amp = 24,</mrow>
+          <mrow>5! \amp = 120,</mrow>
+          <mrow>6! \amp = 720,</mrow>
+          <mrow>7! \amp = 5~040,</mrow>
+          <mrow>8! \amp = 40~320</mrow>
+        </md>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_factorial2"></xref>
+        The values are
+        <md>
+          <mrow>5+3! \amp = 5+6 = 11,</mrow>
+          <mrow>(5+3)! = 8! \amp = 40~320,</mrow>
+          <mrow>4-2\cdot 3! \amp = 4-2\cdot 6 = 4-12=-8,</mrow>
+          <mrow>(4-2)\cdot 3! \amp = (4-2) \cdot 6 = 2 \cdot 6 = 12,</mrow>
+          <mrow>4 - (2 \cdot 3)! \amp = 4 - 6! = 4 - 720 = -716,</mrow>
+          <mrow>3 \cdot 2! \amp = 3 \cdot 2 = 6,</mrow>
+          <mrow>(3 \cdot 2)! \amp = 6! = 720,</mrow>
+          <mrow>4 \cdot 3! \amp = 4 \cdot 6 = 24,</mrow>
+          <mrow>4! \cdot 5 \amp = 24 \cdot 5 = 120</mrow>
+        </md>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_factorial3"></xref>
+        Let
+        <me>
+          S_n = \halmazvonal{k}{k \text{ is a positive integer } , k\leq n} = \halmaz{1, 2, \dots , n}
+        </me>.
+        Then it is easy to see that <m>S_n = S_{n-1} \cup \halmaz{n}</m>, 
+        that is, <m>S_n</m> is the disjoint union of <m>S_{n-1}</m> and <m>\halmaz{n}</m>. 
+        Then by the definition of the factorial, 
+        we have
+        <me>
+          n! = \prod_{k \in S_n} k = \left( \prod_{k \in \halmaz{n}} k \right) \cdot \left( \prod_{k \in S_{n-1}} k \right) = n \cdot (n-1)!
+        </me>.
+        If <m>n \geq 2</m>, then another proof could be
+        <me>
+          n! = n \cdot \underbrace{(n-1) \cdot (n-2) \cdot \dots \cdot 2 \cdot 1 }_{(n-1)!}= n \cdot (n-1)!
+        </me>.
+        Nevertheless, the claim is true for <m>n=1</m>, as well:
+        <me>
+          1! = 1 = 1 \cdot 1 = 1 \cdot 0!
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="intro-ex-13"></xref>
+
+        (a) We obtain that
+        <md>
+          <mrow>678 \amp = 1\cdot 567+111</mrow>
+          <mrow>567 \amp = 5\cdot 111+12</mrow>
+          <mrow>111 \amp = 9\cdot 12+3</mrow>
+          <mrow>12 \amp = 4\cdot 3+0</mrow>
+        </md>.
+        Thus <m>\gcd(678,567)=3</m>.
+        We work backwards to compute <m>x</m> and <m>y:</m>
+        <md>
+          <mrow>3\amp =111-9\cdot 12</mrow>
+          <mrow>\amp =111-9\cdot (567-5\cdot 111)=-9\cdot 567+46\cdot 111</mrow>
+          <mrow>\amp =-9\cdot 567+46 \cdot (678-567)=46\cdot 678-55\cdot 567</mrow>
+        </md>.
+        Hence we have
+        <me>
+          46\cdot 678-55\cdot 567=\gcd(678,567)=3
+        </me>.
+        (b) We get that
+        <md>
+          <mrow>803 \amp = 2\cdot 319+165</mrow>
+          <mrow>319 \amp = 1\cdot 165+154</mrow>
+          <mrow>165 \amp = 1\cdot 154+11</mrow>
+          <mrow>154 \amp = 14\cdot 11+0</mrow>
+        </md>.
+        It follows that <m>\gcd(803,319)=11</m>.
+        Now we find <m>x</m> and <m>y:</m>
+        <md>
+          <mrow>11\amp = 165-154</mrow>
+          <mrow>\amp = 165-(319-165)=-319+2\cdot 165</mrow>
+          <mrow>\amp = -319+2 \cdot (803-2\cdot 319)=2\cdot 803-5\cdot 319</mrow>
+        </md>.
+        So we get the equation
+        <me>
+          2\cdot 803-5\cdot 319=\gcd(803,319)=11
+        </me>.
+        (c) In this case the computations go as follows
+        <md>
+          <mrow>2701 \amp = 1\cdot 2257+444</mrow>
+          <mrow>2257 \amp = 5\cdot 444+37</mrow>
+          <mrow>444 \amp = 12\cdot 37+0</mrow>
+        </md>.
+        Therefore <m>\gcd(2701,2257)=37</m>.
+        We determine <m>x</m> and <m>y:</m>
+        <md>
+          <mrow>37\amp = 2257-5\cdot 444</mrow>
+          <mrow>\amp = 2257-5(2701-2257)=-5\cdot 2701+6\cdot 2257</mrow>
+        </md>.
+        We have that
+        <me>
+          -5\cdot 2701+6\cdot 2257=\gcd(2701,2257)=37
+        </me>.
+        (d) The summary of the computations:
+        <md>
+          <mrow>3397 \amp = 1\cdot 1849+1548</mrow>
+          <mrow>1849 \amp = 1\cdot 1548+301</mrow>
+          <mrow>1548 \amp = 5\cdot 301+43</mrow>
+          <mrow>301 \amp = 7\cdot 43+0</mrow>
+        </md>.
+        That is, <m>\gcd(3397,1849)=43</m>.
+        It remains to compute <m>x</m> and <m>y:</m>
+        <md>
+          <mrow>43\amp =1548-5\cdot 301</mrow>
+          <mrow>\amp =1548-5(1849-1548)=-5\cdot 1849+6\cdot 1548</mrow>
+          <mrow>\amp = -5\cdot 1849+6(3397-1849)=6\cdot 3397-11\cdot 1849</mrow>
+        </md>.
+        Thus we obtain the equation
+        <me>
+          6\cdot 3397-11\cdot 1849=\gcd(3397,1849)=43
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_numsyst1"></xref>
+
+        Write 21 in base 2 first. 
+        Now, 16 is the highest 2-power not greater than 21, 
+        <m>21 = 1 \cdot 16 +5</m>, 
+        and we continue with the remainder 5. 
+        Now, 4 is the highest 2-power not greater than 5, 
+        <m>5 = 1\cdot 4 + 1</m>, 
+        and we continue with the remainder 1. 
+        Finally, 1 is the highest 2-power not greater than 1, 
+        <m>1 = 1 \cdot 1 + 0</m>. 
+        Thus
+        <me>
+          21_{10} = 1 \cdot 16 + 1 \cdot 4 + 1\cdot 1 = 1 \cdot 2^4 + 1 \cdot 2^2 + 1 \cdot 2^0 = 10101_2
+        </me>.
+        Now, write 50 in base 3. 
+        Here, 27 is the highest 3-power not greater than 50, 
+        <m>50 = 1 \cdot 27 + 23</m>, 
+        and we continue with the remainder 23. 
+        Now, 9 is the highest 3-power not greater than 23, 
+        <m>23 = 2\cdot 9 + 5</m>, 
+        and we continue with the remainder 5. 
+        Now, 3 is the highest 3-power not greater than 5, 
+        <m>5 = 1\cdot 3 + 2</m>, 
+        and we continue with the remainder 2. 
+        Finally, 1 is the highest 3-power not greater than 2, 
+        <m>2 = 2 \cdot 1 + 0</m>. 
+        Thus
+        <me>
+          50_{10} = 1 \cdot 27 + 2 \cdot 9 + 1 \cdot 3 + 2\cdot 1 = 1 \cdot 3^3 + 2 \cdot 3^2 + 1 \cdot 3^1 + 2 \cdot 3^0  = 1212_3
+        </me>.
+        Finally, write 2814 in base 16. 
+        Now, 256 is the highest 16-power not greater than 2814 
+        (the next 16-power is 4096), 
+        <m>2814 = 10 \cdot 256 + 254</m>, 
+        and we continue with the remainder 254. 
+        Now, 16 is the highest 16-power not greater than 254, 
+        <m>254 = 15\cdot 16 + 14</m>, 
+        and we continue with the remainder 14. 
+        Finally, 1 is the highest 16-power not greater than 14, 
+        <m>14 = 14 \cdot 1 + 0</m>. 
+        Thus
+        <me>
+          2814_{10} = 10 \cdot 256 + 15 \cdot 16 + 14 \cdot 1 = 10 \cdot 16^2 + 15 \cdot 16^1 + 14 \cdot 16^0   = AFE_{16}
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_numsyst2"></xref>
+
+        Rewrite <m>21_{10}</m> into base 2 first.
+        <md>
+          <mrow>21 \amp = 10 \cdot 2 + 1,</mrow>
+          <mrow>10 \amp = 5 \cdot 2 + 0,</mrow>
+          <mrow>5 \amp = 2 \cdot 2 + 1,</mrow>
+          <mrow>2 \amp = 1 \cdot 2 + 0,</mrow>
+          <mrow>1 \amp = 0 \cdot 2 + 1</mrow>
+        </md>.
+        The remainders backwards are 1, 0, 1, 0, 1, thus
+        <me>
+          21_{10} = 10101_{2}
+        </me>.
+        Now, rewrite <m>50_{10}</m> into base 3.
+        <md>
+          <mrow>50 \amp = 16 \cdot 3 + 2,</mrow>
+          <mrow>16 \amp = 5 \cdot 3 + 1,</mrow>
+          <mrow>5 \amp = 1 \cdot 3 + 2,</mrow>
+          <mrow>1 \amp = 0 \cdot 3 + 1</mrow>
+        </md>.
+        The remainders backwards are 1, 2, 1, 2, thus
+        <me>
+          50_{10} = 1212_{3}
+        </me>.
+        Finally, rewrite <m>250_{10}</m> into base 8.
+        <md>
+          <mrow>250 \amp = 31 \cdot 8 + 2,</mrow>
+          <mrow>31 \amp = 3 \cdot 8 + 7,</mrow>
+          <mrow>3 \amp = 0 \cdot 8 + 3</mrow>
+        </md>.
+        The remainders backwards are 3, 7, 2, thus
+        <me>
+          250_{10} = 372_{8}
+        </me>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <xref ref="ex_numsyst3"></xref>
+
+        <ol>
+          <li>
+            <p>
+              <md>
+                <mrow>111001101_2 \amp = 461_{10},</mrow>
+                <mrow>1010101_2 \amp = 85_{10},</mrow>
+                <mrow>11111_2 \amp = 31_{10},</mrow>
+                <mrow>10110_2 \amp = 22_{10},</mrow>
+                <mrow>101010101_2 \amp = 341_{10},</mrow>
+                <mrow>10001000_2 \amp = 136_{10},</mrow>
+                <mrow>1010111_2 \amp = 87_{10},</mrow>
+                <mrow>111101_2 \amp = 61_{10},</mrow>
+                <mrow>21102_3 \amp = 200_{10},</mrow>
+                <mrow>1234_5 \amp = 194_{10},</mrow>
+                <mrow>1234_7 \amp = 466_{10},</mrow>
+                <mrow>1234_8 \amp = 668_{10},</mrow>
+                <mrow>777_8 \amp = 511_{10},</mrow>
+                <mrow>345_8 \amp = 229_{10},</mrow>
+                <mrow>2012_8 \amp = 1034_{10},</mrow>
+                <mrow>4565_8 \amp = 2421_{10},</mrow>
+                <mrow>1123_8 \amp = 595_{10},</mrow>
+                <mrow>666_8 \amp = 438_{10},</mrow>
+                <mrow>741_8 \amp = 481_{10},</mrow>
+                <mrow>CAB_{16} \amp = 3243_{10},</mrow>
+                <mrow>BEE_{16} \amp = 3054_{10},</mrow>
+                <mrow>EEE_{16} \amp = 3822_{10},</mrow>
+                <mrow>4D4_{16} \amp = 1236_{10},</mrow>
+                <mrow>ABC_{16} \amp = 2748_{10},</mrow>
+                <mrow>9B5_{16} \amp = 2485_{10},</mrow>
+                <mrow>DDD_{16} \amp =3549_{10},</mrow>
+                <mrow>3F2_{16} \amp = 1010_{10}</mrow>
+              </md>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <md>
+                <mrow>64_{10} \amp = 100 0000_2 = 2101_3 = 224_5 = 121_7 = 100_8 = 71_9 = 40_{16},</mrow>
+                <mrow>50_{10} \amp = 11 0010_2 = 1212_3 = 200_5 = 101_7 = 62_8 = 55_9 = 32_{16},</mrow>
+                <mrow>16_{10} \amp = 1 0000_2 = 121_3 = 31_5 = 22_7 = 20_8 = 17_9 = 10_{16},</mrow>
+                <mrow>100_{10} \amp = 110 0100_2 = 1 0201_3 = 400_5 = 202_7 = 144_8 = 121_9</mrow>
+                <mrow>\amp = 64_{16},</mrow>
+                <mrow>2012_{10} \amp = 111 1101 1100_2 = 220 2112_3 = 3 1022_5 = 5603_7 = 3734_8</mrow>
+                <mrow>\amp = 2675_9 = 7DC_{16},</mrow>
+                <mrow>200_{10} \amp = 1100 1000_2 = 2 1102_3 = 1300_5 = 404_7 = 310_8 = 242_9</mrow>
+                <mrow>\amp = C8_{16},</mrow>
+                <mrow>151_{10} \amp = 1001 0111_2 = 1 2121_3 = 1101_5 = 304_7 = 227_8 = 177_9</mrow>
+                <mrow>\amp = 97_{16},</mrow>
+                <mrow>48_{10} \amp = 11 0000_2 = 1210_3 = 143_5 = 66_7 = 60_8 = 53_9 = 30_{16},</mrow>
+                <mrow>99_{10} \amp = 110 0011_2 = 1 0200_3 = 344_5 = 201_7 = 143_8 = 120_9</mrow>
+                <mrow>\amp = 63_{16},</mrow>
+                <mrow>999_{10} \amp = 11 1110 0111_2 = 110 1000_3 = 1 2444_5 = 2625_7 = 1747_8</mrow>
+                <mrow>\amp = 1330_9 = 3E7_{16}</mrow>
+              </md>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <md>
+                <mrow>1121_3 \amp = 43_{10} = 101011_2,</mrow>
+                <mrow>4312_5 \amp = 582_{10} = 1461_7,</mrow>
+                <mrow>654_8 \amp = 428_{10} = 525_9,</mrow>
+                <mrow>AD2_{16} \amp = 2770_{10} = 11035_7,</mrow>
+                <mrow>543_8 \amp = 355_{10} = 111011_3,</mrow>
+                <mrow>543_9 \amp = 444_{10} = 121110_3</mrow>
+              </md>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <md>
+                <mrow>777_8 \amp = 111111111_2 = 1FF_{16},</mrow>
+                <mrow>345_8 \amp = 11100101_2 = E5_{16},</mrow>
+                <mrow>2012_8 \amp = 10000001010_2 = 40A_{16},</mrow>
+                <mrow>456_8 \amp = 100101110_2 = 12E_{16},</mrow>
+                <mrow>235_8 \amp = 10011101_2 = 9D_{16},</mrow>
+                <mrow>147_8 \amp = 1100111_2 = 67_{16},</mrow>
+                <mrow>741_8 \amp = 111100001_2 = 1E1_{16},</mrow>
+                <mrow>CAB_{16} \amp = 110010101011_2 = 6253_8,</mrow>
+                <mrow>BEE_{16} \amp = 101111101110_2 = 5756_8,</mrow>
+                <mrow>EEE_{16} \amp = 111011101110_2 = 7356_8,</mrow>
+                <mrow>4D3_{16} \amp = 10011010011_2 = 2323_8,</mrow>
+                <mrow>ABC_{16} \amp = 101010111100_2 = 5274_8,</mrow>
+                <mrow>FEE_{16} \amp = 111111101110_2 = 7756_8,</mrow>
+                <mrow>9B5_{16} \amp = 100110110101_2 = 4665_8,</mrow>
+                <mrow>3F2_{16} \amp = 1111110010_2 = 1762_8</mrow>
+              </md>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </li>
+  </ol>
+</section>
+

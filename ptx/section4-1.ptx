@@ -1,0 +1,245 @@
+
+
+<section>
+  <title>Binomial theorem</title>
+  <p>
+    In the Algebra course we have learned to expand the expression <m>(x+y)^2</m> to <m>x^2 + 2xy + y^2</m>.
+    In this Section we expand <m>(x+y)^n</m> for arbitrary nonnegative integers <m>n</m>.
+    For this, let us first recall how such an expression should be calculated.
+  </p>
+
+  <p>
+    Consider first <m>(x+y)^2</m>.
+    This is the product of <m>(x+y)</m> by itself,
+    that is, <m>(x+y)^2 = (x+y)\cdot (x+y)</m>,
+    and has to be computed by multiplying every term of the first factor by every term of the second factor:
+    <men xml:id="eq__x_y__2">
+      (x+y)^2 = (x+y) \cdot (x+y) = x^2 + xy + yx + y^2 = x^2 + 2xy + y^2
+    </men>.
+  </p>
+
+  <p>
+    Now, consider <m>(x+y)^3</m>.
+    This is the threefold product of <m>(x+y)</m> with itself,
+    that is, <m>(x+y)^3  = (x+y)\cdot (x+y) \cdot (x+y)</m>.
+    Note, that this is the same as the product <m>(x+y)^2 \cdot (x+y)</m>,
+    for which the first factor we have already computed in <xref ref="eq__x_y__2" />.
+    <md>
+      <mrow>(x+y)^3 \amp = (x+y)^2 \cdot (x+y) = (x^2 + 2xy + y^2)\cdot (x+y)</mrow>
+      <mrow>\amp = x^3 + x^2y + 2x^2y + 2xy^2 + xy^2 + y^3</mrow>
+      <mrow>\amp = x^3 + 3x^2y + 3 xy^2 + y^3</mrow>
+    </md>.
+  </p>
+
+  <p>
+    This way, we can easily continue calculating the higher powers of <m>(x+y)</m>:
+    <md>
+      <mrow>(x+y)^4 \amp = (x+y)^3 \cdot (x+y) = (x^3 + 3x^2y + 3 xy^2 + y^3)\cdot (x+y)</mrow>
+      <mrow>\amp = x^4 + x^3y + 3x^3y + 3x^2y^2 + 3x^2y^2 + 3xy^3 + xy^3 + y^4</mrow>
+      <mrow>\amp = x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4.</mrow>
+      <mrow>(x+y)^5 \amp = (x+y)^4 \cdot (x+y) = (x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4)\cdot (x+y)</mrow>
+      <mrow>\amp = x^5 + x^4y + 4x^4y + 4x^3y^2 + 6x^3y^2 + 6x^2y^3 + 4x^2y^3 + 4xy^4 + xy^4 + y^5</mrow>
+      <mrow>\amp = x^5 + 5x^4y + 10x^3y^2 + 10x^2y^3 + 5xy^4 + y^5.</mrow>
+      <mrow>(x+y)^6 \amp = (x+y)^5 \cdot (x+y) = (x^5 + 5x^4y + 10x^3y^2 + 10x^2y^3 + 5xy^4 + y^5)\cdot (x+y)</mrow>
+      <mrow>\amp = x^6 + x^5y + 5x^5y + 5x^4y^2 + 10x^4y^2 + 10x^3y^3 + 10x^3y^3 + 10x^2y^4</mrow>
+      <mrow>\amp + 5x^2y^4 + 5xy^5 + xy^5 + y^6</mrow>
+      <mrow>\amp = x^6 + 6x^5y + 15x^4y^2 + 20x^3y^3 + 15x^2y^4 + 6xy^5 + y^6</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Let us summarize our findings:
+    <md>
+      <mrow>(x+y)^2 \amp  = x^2 + 2xy + y^2,</mrow>
+      <mrow>(x+y)^3 \amp = x^3 + 3x^2y + 3 xy^2 + y^3,</mrow>
+      <mrow>(x+y)^4 \amp = x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4,</mrow>
+      <mrow>(x+y)^5 \amp = x^5 + 5x^4y + 10x^3y^2 + 10x^2y^3 + 5xy^4 + y^5,</mrow>
+      <mrow>(x+y)^6 \amp = x^6 + 6x^5y + 15x^4y^2 + 20x^3y^3 + 15x^2y^4 + 6xy^5 + y^6</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Now, wait a minute!
+    The coefficients arising in these expressions are exactly the numbers occurring in Pascal's triangle.
+    Indeed, the coefficients of <m>(x+y)^6</m> are
+    <m>1 = \binom{6}{0}</m>, <m>6 = \binom{6}{1}</m>,
+    <m>15 = \binom{6}{2}</m>, <m>20 = \binom{6}{3}</m>,
+    <m>15 = \binom{6}{4}</m>,
+    <m>6 = \binom{6}{5}</m>, <m>1 = \binom{6}{6}</m>.
+    This cannot be a coincidence!
+    It looks like that when we expand <m>(x+y)^n</m>,
+    then the coefficient for the term
+    <m>x^{n-k}y^k</m> is <m>\binom{n}{k}</m>.
+    This is always the case, not only for the first six powers.
+    This is the statement of the binomial theorem.
+  </p>
+
+  <theorem xml:id="thm_binomial">
+    <title>Binomial theorem</title>
+    <statement>
+      <p>
+        Let <m>n</m> be a natural number.
+        Then
+        <md>
+          <mrow>(x+y)^n \amp = x^n + n x^{n-1}y + \binom{n}{2} x^{n-2}y^2 + \dots + \binom{n}{n-2} x^2 y^{n-2} + n x y^{n-1} + y^n</mrow>
+          <mrow>\amp = \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k</mrow>
+        </md>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Note first,
+      that the Binomial theorem holds for <m>n=0</m> and <m>n=1</m>, as well:
+      <m>(x+y)^0 = 1 = \binom{0}{0} x^0 y^0</m>,
+      <m>(x+y)^1 = x + y = \binom{1}{0} x^1 y^0 + \binom{1}{1} x^0 y^1</m>.
+      Now, we can prove the theorem by induction on <m>n</m>.
+      Assume that the statement holds for <m>n-1</m>,
+      that is,
+      <me>
+        (x+y)^{n-1} = \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-1-k}y^k
+      </me>.
+    </p>
+
+    <p>
+      This is the induction hypothesis.
+      Now, compute <m>(x+y)^n</m> using the same method as before,
+      and use the induction hypothesis for expanding <m>(x+y)^{n-1}</m>:
+      <md>
+        <mrow>(x+y)^n \amp = (x+y)^{n-1} \cdot (x+y) = \left( \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-1-k}y^k \right) \cdot \left( x + y \right)</mrow>
+        <mrow>\amp = \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-1-k}y^k \cdot x + \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-1-k}y^k \cdot y</mrow>
+        <mrow>\amp = \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-k}y^k + \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-1-k}y^{k+1}</mrow>
+        <mrow>\amp = x^n + \sum_{k=1}^{n-1} \binom{n-1}{k} x^{n-k}y^k + \sum_{k=0}^{n-2} \binom{n-1}{k} x^{n-1-k}y^{k+1} + y^n</mrow>
+        <mrow>\amp = x^n + \sum_{k=1}^{n-1} \binom{n-1}{k} x^{n-k}y^k + \sum_{k=1}^{n-1} \binom{n-1}{k-1} x^{n-k}y^k + y^n</mrow>
+        <mrow>\amp = x^n + \sum_{k=1}^{n-1} \left( \binom{n-1}{k} + \binom{n-1}{k-1}\right) x^{n-k}y^k + y^n</mrow>
+        <mrow>\amp = x^n + \sum_{k=1}^{n-1} \binom{n}{k} x^{n-k}y^k + y^n = \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k</mrow>
+      </md>.
+    </p>
+
+    <p>
+      Here, we have separated <m>x^n</m> and <m>y^n</m> from the sums in <xref ref="eq_x_nfront" />, then <q>re-indexed</q>
+      the second sum in <xref ref="eq_binomreindex" /> to find the coefficient of the common terms <m>x^{n-k}y^k</m>
+      (for <m>k = 1, 2, \dots , n-1</m>)
+      of the two sums.
+      Finally, in <xref ref="eq_binomsum" /> we used the generating rule of Pascal's triangle (<xref ref="prop_binomsum">Proposition</xref>).
+    </p>
+  </proof>
+
+  <exercise xml:id="ex_binomialwriteout">
+    <statement>
+      <p>
+        Repeat the proof by <q>writing out</q> all sums.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Now we understand why binomial coefficients are called like that:
+    because they arise as the coefficients in the <m>n</m>th power of binomial sums.
+    Moreover, the proof of the Binomial theorem revealed that raising <m>(x+y)</m> to the next power affects the coefficients exactly the same way as we generate Pascal's triangle.
+    Nevertheless, one can find another argument,
+    which explains <q>better</q>
+    why the binomial coefficients arise in the <m>n</m>th power.
+  </p>
+
+  <p>
+    Consider <m>(x+y)^6</m>:
+    <me>
+      (x+y)^6 = x^6 + 6x^5y + 15x^4y^2 + 20x^3y^3 + 15x^2y^4 + 6xy^5 + y^6
+    </me>.
+  </p>
+
+  <p>
+    How do we obtain the coefficient 15 for <m>x^4y^2</m>?
+    Now, <m>(x+y)^6</m> is the 6-fold product of <m>(x+y)</m> by itself:
+    <me>
+      (x+y)^6 = (x+y) \cdot (x+y) \cdot (x+y) \cdot (x+y) \cdot (x+y) \cdot (x+y)
+    </me>.
+  </p>
+
+  <p>
+    The multiplication of these six factors is carried out by choosing a term from each factor (<m>x</m> or <m>y</m>) in every possible way,
+    multiplying these six terms,
+    and then adding the resulting products together.
+    Thus the coefficient of <m>x^4y^2</m> is the number of possibilities to choose four times the <m>x</m> and two times the <m>y</m> out of the six factors.
+    Altogether there are six <m>y</m>'s to choose from,
+    and we need to choose two of them (and the remaining four factors will be chosen as <m>x</m>).
+    This can be done in <m>\binom{6}{2} = 15</m>-many ways.
+    Therefore the coefficient of <m>x^4y^2</m> is <m>\binom{6}{2} = 15</m>.
+  </p>
+  <exercise xml:id="ex_binomialnchoosek">
+    <statement>
+      <p>
+        Prove the Binomial Theorem using the argument provided above.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    The Binomial theorem can be used to calculate several <m>n</m>th powers.
+    For example,
+    choosing <m>y=1</m>, every power of <m>y</m> is 1, as well, thus
+    <md>
+      <mrow>(x+1)^n \amp = x^n + n x^{n-1}\cdot 1 + \binom{n}{2} x^{n-2}\cdot 1^2 + \dots + n x \cdot 1^{n-1} + 1^n</mrow>
+      <mrow>\amp = x^n + n x^{n-1} + \binom{n}{2} x^{n-2} + \dots + n x + 1 = \sum_{k=0}^n \binom{n}{k} x^k</mrow>
+    </md>.
+  </p>
+  <exercise xml:id="ex_binomial1_1">
+    <statement>
+      <p>
+        Write <m>x=y=1</m> into the Binomial theorem.
+        Note that this provides a second proof for <xref ref="prop_sumofbinomial">Proposition</xref>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Alternatively,
+    we can substitute <m>-y</m> instead of <m>y</m> in the Binomial theorem,
+    obtaining
+    <md>
+      <mrow>(x-y)^n \amp = x^n + n x^{n-1}\cdot (-y) + \binom{n}{2} x^{n-2}\cdot (-y)^2 + \dots + n x \cdot (-y)^{n-1} + (-y)^n</mrow>
+      <mrow>\amp = x^n - n x^{n-1} y + \binom{n}{2} x^{n-2} y^2 - \dots + (-1)^{n-1} n x y^{n-1} + (-1)^n y^n</mrow>
+      <mrow>\amp = \sum_{k=0}^n (-1)^k \binom{n}{k} x^{n-k}y^{k}</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Choosing <m>y=-1</m> yields
+    <md>
+      <mrow>(x-1)^n \amp = x^n + n x^{n-1}\cdot (-1) + \binom{n}{2} x^{n-2}\cdot (-1)^2 + \dots + n x \cdot (-1)^{n-1} + (-1)^n</mrow>
+      <mrow>\amp = x^n - n x^{n-1} + \binom{n}{2} x^{n-2} - \dots + (-1)^{n-1} n x  + (-1)^n</mrow>
+      <mrow>\amp = \sum_{k=0}^n (-1)^k \binom{n}{k} x^{n-k}</mrow>
+    </md>.
+  </p>
+  <exercise xml:id="ex_binomial1-1">
+    <statement>
+      <p>
+        Write <m>x=1</m>, <m>y=-1</m> into the Binomial theorem.
+        What do you observe?
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_expandusingbinomialthm">
+    <statement>
+      <p>
+        Expand the following expressions:
+        <m>(x+y)^8</m>, <m>(x-y)^8</m>, <m>(a+1)^{10}</m>,
+        <m>(b-3)^5</m>, <m>(1 + 2/x)^5</m>,
+        <m>\left( a + b \right)^6</m>,
+        <m>\left( 1 + x \right)^5</m>,
+        <m>\left(3a + 4b \right)^4</m>,
+        <m>\left( 3 - 2x \right)^4</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_coefficientinbinomialthm">
+    <statement>
+      <p>
+        In the binomial expansion of <m>\left( 1- x/2 \right)^9</m>,
+        written in terms of <em>ascending</em>
+        powers of <m>x</m>, find the fourth term.
+        Then find the coefficient of <m>x^5</m>.
+      </p>
+    </statement>
+  </exercise>
+</section>
+
